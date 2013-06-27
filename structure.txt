@@ -1,0 +1,13 @@
+/
+/assets
+/assets/css
+/assets/images
+/assets/js
+/assets/js/mce
+/includes
+/includes/admin
+/includes/framework
+/includes/functions
+/includes/shortcodes
+/includes/widgets
+/languages

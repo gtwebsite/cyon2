@@ -1,0 +1,1928 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cyon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-13 00:23+0800\n"
+"PO-Revision-Date: 2013-02-13 00:23+0800\n"
+"Last-Translator: Archie Jereos <eightworks@yahoo.com>\n"
+"Language-Team: Gtwebsite <admin@gtwebsite.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:10
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:23
+#: ../comments.php:35
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:24
+#: ../comments.php:36
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:25
+#: ../comments.php:37
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:42
+msgid "Comments are closed."
+msgstr ""
+
+#: ../content-audio.php:47
+#: ../content-gallery.php:47
+#: ../content-image.php:47
+#: ../content-link.php:47
+#: ../content-page.php:24
+#: ../content-quote.php:43
+#: ../content-single.php:47
+#: ../content-video.php:47
+#: ../functions.php:183
+#: ../functions.php:211
+msgid "Edit"
+msgstr ""
+
+#: ../functions.php:49
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions.php:50
+msgid "Footer Menu"
+msgstr ""
+
+#: ../functions.php:87
+msgid "Homepage Buckets"
+msgstr ""
+
+#: ../functions.php:96
+msgid "Left Sidebar"
+msgstr ""
+
+#: ../functions.php:105
+msgid "Right Sidebar"
+msgstr ""
+
+#: ../functions.php:114
+msgid "Footer Buckets"
+msgstr ""
+
+#: ../functions.php:133
+msgid "Post navigation"
+msgstr ""
+
+#: ../functions.php:134
+msgid "&laquo; Older Posts"
+msgstr ""
+
+#: ../functions.php:135
+msgid "Newer Posts &raquo;"
+msgstr ""
+
+#: ../functions.php:150
+msgid "by"
+msgstr ""
+
+#: ../functions.php:156
+msgid "in categor"
+msgstr ""
+
+#: ../functions.php:156
+#: ../functions.php:158
+msgid ", "
+msgstr ""
+
+#: ../functions.php:158
+msgid "and tagged"
+msgstr ""
+
+#: ../functions.php:163
+msgid "Be the first to"
+msgstr ""
+
+#: ../functions.php:163
+msgid "comment here"
+msgstr ""
+
+#: ../functions.php:165
+#: ../functions.php:167
+msgid "with"
+msgstr ""
+
+#: ../functions.php:165
+msgid "comment"
+msgstr ""
+
+#: ../functions.php:167
+msgid "comments)"
+msgstr ""
+
+#: ../functions.php:183
+msgid "Pingback:"
+msgstr ""
+
+#: ../functions.php:200
+#, php-format
+msgid "%1$s on %2$s <span class=\"says\">said:</span>"
+msgstr ""
+
+#: ../functions.php:206
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../functions.php:215
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:224
+msgid "Reply <span>&darr;</span>"
+msgstr ""
+
+#: ../header.php:51
+msgid "Skip to primary content"
+msgstr ""
+
+#: ../header.php:52
+msgid "Skip to secondary content"
+msgstr ""
+
+#: ../index.php:20
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: ../index.php:22
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: ../index.php:24
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: ../index.php:29
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../index.php:32
+#, php-format
+msgid "Posts Tagged: %s"
+msgstr ""
+
+#: ../index.php:34
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: ../index.php:52
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../index.php:67
+msgid "Nothing Found"
+msgstr ""
+
+#: ../index.php:71
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr ""
+
+#: ../options.php:264
+msgid "Blog Posts"
+msgstr ""
+
+#: ../options.php:264
+msgid "Blog Listings"
+msgstr ""
+
+#: ../options.php:264
+msgid "Pages"
+msgstr ""
+
+#: ../options.php:270
+msgid "Facebook"
+msgstr ""
+
+#: ../options.php:270
+msgid "Twitter"
+msgstr ""
+
+#: ../options.php:270
+msgid "Google+"
+msgstr ""
+
+#: ../options.php:270
+msgid "Pinterest"
+msgstr ""
+
+#: ../options.php:270
+msgid "Email"
+msgstr ""
+
+#: ../options.php:270
+msgid "ShareThis"
+msgstr ""
+
+#: ../options.php:276
+msgid "Use Page's Default"
+msgstr ""
+
+#: ../options.php:276
+msgid "Single Image"
+msgstr ""
+
+#: ../options.php:279
+#: ../options.php:776
+msgid "Static Block"
+msgstr ""
+
+#: ../options.php:279
+msgid "Twitter Updates"
+msgstr ""
+
+#: ../options.php:282
+#: ../options.php:386
+msgid "Light"
+msgstr ""
+
+#: ../options.php:282
+#: ../options.php:386
+msgid "Dark"
+msgstr ""
+
+#: ../options.php:285
+msgid "Default"
+msgstr ""
+
+#: ../options.php:291
+msgid "Presets"
+msgstr ""
+
+#: ../options.php:291
+msgid "Custom"
+msgstr ""
+
+#: ../options.php:297
+msgid "None"
+msgstr ""
+
+#: ../options.php:297
+msgid "Buttons"
+msgstr ""
+
+#: ../options.php:297
+msgid "Thumbnails"
+msgstr ""
+
+#: ../options.php:301
+msgid "- None -"
+msgstr ""
+
+#: ../options.php:302
+msgid "Header Before"
+msgstr ""
+
+#: ../options.php:303
+#: ../options.php:505
+msgid "Header"
+msgstr ""
+
+#: ../options.php:304
+msgid "Body Before"
+msgstr ""
+
+#: ../options.php:305
+msgid "Body After"
+msgstr ""
+
+#: ../options.php:306
+msgid "Body Wrapper Before"
+msgstr ""
+
+#: ../options.php:307
+msgid "Body Wrapper After"
+msgstr ""
+
+#: ../options.php:308
+msgid "Primary Content Before"
+msgstr ""
+
+#: ../options.php:309
+msgid "Primary Content After"
+msgstr ""
+
+#: ../options.php:310
+msgid "Sidebar Before"
+msgstr ""
+
+#: ../options.php:311
+msgid "Sidebar After"
+msgstr ""
+
+#: ../options.php:312
+msgid "Post Header Before"
+msgstr ""
+
+#: ../options.php:313
+msgid "Post Header After"
+msgstr ""
+
+#: ../options.php:314
+msgid "Post Content Before"
+msgstr ""
+
+#: ../options.php:315
+msgid "Post Content After"
+msgstr ""
+
+#: ../options.php:316
+msgid "Post Footer"
+msgstr ""
+
+#: ../options.php:317
+msgid "Homepage Content"
+msgstr ""
+
+#: ../options.php:318
+#: ../options.php:611
+msgid "Footer"
+msgstr ""
+
+#: ../options.php:319
+msgid "Footer After"
+msgstr ""
+
+#: ../options.php:342
+msgid "Select a page:"
+msgstr ""
+
+#: ../options.php:352
+msgid "Styling"
+msgstr ""
+
+#: ../options.php:355
+msgid "Logo and Icons"
+msgstr ""
+
+#: ../options.php:358
+msgid "Logo File"
+msgstr ""
+
+#: ../options.php:361
+msgid "This will replace the website name text and use the image instead. Also replace the admin logo."
+msgstr ""
+
+#: ../options.php:364
+msgid "Favicon File"
+msgstr ""
+
+#: ../options.php:367
+msgid "Use 16 x 16 size of ico file."
+msgstr ""
+
+#: ../options.php:370
+msgid "iOS Icon File"
+msgstr ""
+
+#: ../options.php:373
+msgid "Minimum is 57 x 57 at 72dpi of png file. For retina display, maximum is 114 x 114."
+msgstr ""
+
+#: ../options.php:378
+msgid "Theme Selection"
+msgstr ""
+
+#: ../options.php:381
+#: ../options.php:450
+msgid "Color"
+msgstr ""
+
+#: ../options.php:390
+msgid "Typography"
+msgstr ""
+
+#: ../options.php:393
+msgid "Primary Font"
+msgstr ""
+
+#: ../options.php:394
+msgid "Font use to the whole site"
+msgstr ""
+
+#: ../options.php:400
+msgid "Google Font as Primary"
+msgstr ""
+
+#: ../options.php:408
+msgid "Secondary Font"
+msgstr ""
+
+#: ../options.php:409
+msgid "Font use for Headers"
+msgstr ""
+
+#: ../options.php:415
+msgid "Google Font as Secondary"
+msgstr ""
+
+#: ../options.php:423
+msgid "Main Navigation Font"
+msgstr ""
+
+#: ../options.php:424
+msgid "Font use for Main Navigation"
+msgstr ""
+
+#: ../options.php:430
+msgid "Google Font as Main Navigation"
+msgstr ""
+
+#: ../options.php:440
+msgid "Background"
+msgstr ""
+
+#: ../options.php:443
+msgid "Style"
+msgstr ""
+
+#: ../options.php:448
+msgid "Pattern"
+msgstr ""
+
+#: ../options.php:448
+msgid "Full Screen Image"
+msgstr ""
+
+#: ../options.php:448
+msgid "Youtube Video"
+msgstr ""
+
+#: ../options.php:456
+msgid "Image File"
+msgstr ""
+
+#: ../options.php:462
+#: ../options.php:468
+msgid "Repeat"
+msgstr ""
+
+#: ../options.php:468
+msgid "No Repeat"
+msgstr ""
+
+#: ../options.php:468
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../options.php:468
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../options.php:470
+msgid "Position"
+msgstr ""
+
+#: ../options.php:471
+msgid "This is horizontal-vertical and can also use top, left, center, bottom, right"
+msgstr ""
+
+#: ../options.php:477
+msgid "Youtube ID"
+msgstr ""
+
+#: ../options.php:478
+msgid "This doesnt work on mobile phones or iPad"
+msgstr ""
+
+#: ../options.php:486
+#: ../options.php:649
+msgid "Layout"
+msgstr ""
+
+#: ../options.php:489
+msgid "General Layout"
+msgstr ""
+
+#: ../options.php:492
+msgid "Default layout of the website"
+msgstr ""
+
+#: ../options.php:508
+msgid "Top Left Content"
+msgstr ""
+
+#: ../options.php:511
+msgid "This will show at the very top of the page on the left side corner."
+msgstr ""
+
+#: ../options.php:514
+msgid "Top Right Content"
+msgstr ""
+
+#: ../options.php:517
+msgid "This will show at the very top of the page on the right side corner."
+msgstr ""
+
+#: ../options.php:520
+msgid "Logo/Menu Layout"
+msgstr ""
+
+#: ../options.php:533
+msgid "Breadcrumbs"
+msgstr ""
+
+#: ../options.php:534
+msgid "Yes, use breadcrumbs on inner pages. If you are runnig Woocommerce, this will be ignored."
+msgstr ""
+
+#: ../options.php:541
+#: ../options.php:769
+msgid "Content"
+msgstr ""
+
+#: ../options.php:544
+msgid "Display author"
+msgstr ""
+
+#: ../options.php:549
+#: ../options.php:556
+msgid "Disable"
+msgstr ""
+
+#: ../options.php:549
+#: ../options.php:556
+msgid "Enable"
+msgstr ""
+
+#: ../options.php:551
+msgid "Commenting to all Post/Page"
+msgstr ""
+
+#: ../options.php:558
+msgid "Featured image display"
+msgstr ""
+
+#: ../options.php:565
+msgid "Gallery"
+msgstr ""
+
+#: ../options.php:566
+msgid "Allow to override default WP Gallery"
+msgstr ""
+
+#: ../options.php:570
+msgid "Use default"
+msgstr ""
+
+#: ../options.php:570
+msgid "Slider only"
+msgstr ""
+
+#: ../options.php:570
+msgid "Slider with carousel"
+msgstr ""
+
+#: ../options.php:574
+msgid "Blog List Display"
+msgstr ""
+
+#: ../options.php:577
+msgid "Content display"
+msgstr ""
+
+#: ../options.php:582
+msgid "Excerpt only"
+msgstr ""
+
+#: ../options.php:582
+msgid "Full content"
+msgstr ""
+
+#: ../options.php:584
+msgid "List layout"
+msgstr ""
+
+#: ../options.php:596
+msgid "Use Masonry (a dynamic grid layout)"
+msgstr ""
+
+#: ../options.php:597
+msgid "Yes, use Masonry as default layout"
+msgstr ""
+
+#: ../options.php:602
+msgid "Thumbnail size"
+msgstr ""
+
+#: ../options.php:607
+msgid "Small"
+msgstr ""
+
+#: ../options.php:607
+msgid "Medium"
+msgstr ""
+
+#: ../options.php:607
+msgid "Large"
+msgstr ""
+
+#: ../options.php:607
+msgid "Full"
+msgstr ""
+
+#: ../options.php:614
+msgid "Footer Columns"
+msgstr ""
+
+#: ../options.php:615
+msgid "Shows number of footer columns to be used. Check the <a href=\""
+msgstr ""
+
+#: ../options.php:626
+msgid "Copyright"
+msgstr ""
+
+#: ../options.php:628
+msgid "&copy; "
+msgstr ""
+
+#: ../options.php:631
+msgid "Sub Footer"
+msgstr ""
+
+#: ../options.php:633
+msgid "This will show at the very bottom of the page."
+msgstr ""
+
+#: ../options.php:637
+msgid "Back to Top Button"
+msgstr ""
+
+#: ../options.php:639
+msgid "Shows back to top button in all pages"
+msgstr ""
+
+#: ../options.php:646
+msgid "Homepage"
+msgstr ""
+
+#: ../options.php:652
+msgid "Default layout of Homepage"
+msgstr ""
+
+#: ../options.php:653
+msgid "This will override the default layout"
+msgstr ""
+
+#: ../options.php:663
+msgid "Show Page Content"
+msgstr ""
+
+#: ../options.php:668
+#: ../options.php:726
+#: ../options.php:747
+#: ../options.php:755
+msgid "Yes"
+msgstr ""
+
+#: ../options.php:668
+#: ../options.php:726
+#: ../options.php:747
+#: ../options.php:755
+msgid "No"
+msgstr ""
+
+#: ../options.php:672
+msgid "Middle Buckets"
+msgstr ""
+
+#: ../options.php:675
+msgid "Number of Columns"
+msgstr ""
+
+#: ../options.php:676
+msgid "Shows number of bucket columns to be used. Check the <a href=\""
+msgstr ""
+
+#: ../options.php:689
+msgid "Slider"
+msgstr ""
+
+#: ../options.php:692
+msgid "Type of Slider to be used"
+msgstr ""
+
+#: ../options.php:699
+msgid "Single Image File"
+msgstr ""
+
+#: ../options.php:705
+msgid "Single Image URL when clicked"
+msgstr ""
+
+#: ../options.php:707
+msgid "Leave empty if not applicable."
+msgstr ""
+
+#: ../options.php:712
+msgid "Animation Style"
+msgstr ""
+
+#: ../options.php:718
+msgid "Fade"
+msgstr ""
+
+#: ../options.php:718
+msgid "Slide Horizontal"
+msgstr ""
+
+#: ../options.php:718
+msgid "Slide Vertical"
+msgstr ""
+
+#: ../options.php:720
+msgid "Show caption"
+msgstr ""
+
+#: ../options.php:728
+msgid "Caption Layout"
+msgstr ""
+
+#: ../options.php:733
+#: ../options.php:762
+msgid "Top Left"
+msgstr ""
+
+#: ../options.php:733
+#: ../options.php:762
+msgid "Top Right"
+msgstr ""
+
+#: ../options.php:733
+#: ../options.php:762
+msgid "Bottom Left"
+msgstr ""
+
+#: ../options.php:733
+#: ../options.php:762
+msgid "Bottom Right"
+msgstr ""
+
+#: ../options.php:735
+msgid "Caption Width"
+msgstr ""
+
+#: ../options.php:736
+msgid "Use percentage"
+msgstr ""
+
+#: ../options.php:741
+msgid "Show navigation arrow"
+msgstr ""
+
+#: ../options.php:749
+msgid "Show pagination"
+msgstr ""
+
+#: ../options.php:757
+msgid "Pagination Layout"
+msgstr ""
+
+#: ../options.php:762
+msgid "Top Center"
+msgstr ""
+
+#: ../options.php:762
+msgid "Bottom Center"
+msgstr ""
+
+#: ../options.php:766
+msgid "Middle Content"
+msgstr ""
+
+#: ../options.php:771
+msgid "This will show above the middle buckets."
+msgstr ""
+
+#: ../options.php:784
+msgid "Widgets"
+msgstr ""
+
+#: ../options.php:787
+msgid "Widget 1"
+msgstr ""
+
+#: ../options.php:790
+#: ../options.php:820
+#: ../options.php:850
+msgid "Name"
+msgstr ""
+
+#: ../options.php:796
+#: ../options.php:826
+#: ../options.php:856
+msgid "Description"
+msgstr ""
+
+#: ../options.php:802
+#: ../options.php:832
+#: ../options.php:862
+msgid "Location"
+msgstr ""
+
+#: ../options.php:809
+#: ../options.php:839
+#: ../options.php:869
+msgid "Order Number"
+msgstr ""
+
+#: ../options.php:817
+msgid "Widget 2"
+msgstr ""
+
+#: ../options.php:847
+msgid "Widget 3"
+msgstr ""
+
+#: ../options.php:877
+msgid "Configuration"
+msgstr ""
+
+#: ../options.php:880
+msgid "Social Settings"
+msgstr ""
+
+#: ../options.php:883
+msgid "Pages to appear the social boxes"
+msgstr ""
+
+#: ../options.php:890
+msgid "Social Boxes"
+msgstr ""
+
+#: ../options.php:897
+msgid "Twitter ID"
+msgstr ""
+
+#: ../options.php:905
+msgid "SEO"
+msgstr ""
+
+#: ../options.php:908
+msgid "Activate SEO"
+msgstr ""
+
+#: ../options.php:909
+msgid "Activates SEO options to all pages and posts."
+msgstr ""
+
+#: ../options.php:914
+msgid "Page Title Format"
+msgstr ""
+
+#: ../options.php:916
+msgid "Accepts"
+msgstr ""
+
+#: ../options.php:922
+msgid "Lightbox"
+msgstr ""
+
+#: ../options.php:925
+msgid "Activate Lightbox"
+msgstr ""
+
+#: ../options.php:926
+msgid "Activates lightbox in all linked to images, this includes WP Gallery. Supports jpg, png, gif, and bmp."
+msgstr ""
+
+#: ../options.php:931
+msgid "Gallery Style"
+msgstr ""
+
+#: ../options.php:940
+msgid "Scripts Support"
+msgstr ""
+
+#: ../options.php:943
+msgid "Responsiveness"
+msgstr ""
+
+#: ../options.php:944
+msgid "Allow special styles mobile devices"
+msgstr ""
+
+#: ../options.php:949
+msgid "LazyLoad"
+msgstr ""
+
+#: ../options.php:950
+msgid "Activates LazyLoad in all images"
+msgstr ""
+
+#: ../options.php:955
+msgid "Header Scripts"
+msgstr ""
+
+#: ../options.php:956
+msgid "Scripts and Links placed inside the head tag. Can include &lt;script&gt;, &lt;link&gt; and other tags. Can have Google Analytics here."
+msgstr ""
+
+#: ../options.php:961
+msgid "Footer Scripts"
+msgstr ""
+
+#: ../options.php:962
+msgid "Scripts placed below the footer just before the end body tag. Can include &lt;script&gt;, &lt;link&gt; and other tags."
+msgstr ""
+
+#: ../options.php:969
+msgid "Admin"
+msgstr ""
+
+#: ../options.php:972
+msgid "Login"
+msgstr ""
+
+#: ../options.php:975
+msgid "Background Color"
+msgstr ""
+
+#: ../options.php:983
+msgid "Updates"
+msgstr ""
+
+#: ../options.php:986
+msgid "Remove Core Updates"
+msgstr ""
+
+#: ../options.php:987
+#: ../options.php:993
+msgid "Yes, remove updates and notification"
+msgstr ""
+
+#: ../options.php:992
+msgid "Remove Plugin Updates"
+msgstr ""
+
+#: ../page-popup.php:44
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr ""
+
+#: ../framework/options-framework.php:163
+#: ../framework/options-framework.php:369
+msgid "Theme Options"
+msgstr ""
+
+#: ../framework/options-framework.php:193
+#: ../includes/admin/init.php:57
+msgid "Clear"
+msgstr ""
+
+#: ../framework/options-framework.php:195
+#: ../includes/admin/init.php:59
+msgid "Select Color"
+msgstr ""
+
+#: ../framework/options-framework.php:243
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../framework/options-framework.php:275
+msgid "Default options restored."
+msgstr ""
+
+#: ../framework/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: ../framework/options-medialibrary-uploader.php:126
+msgid "Upload"
+msgstr ""
+
+#: ../framework/options-medialibrary-uploader.php:149
+msgid "View File"
+msgstr ""
+
+#: ../framework/options-medialibrary-uploader.php:282
+msgid "Previously Uploaded"
+msgstr ""
+
+#: ../framework/options-sanitize.php:245
+msgid "Repeat All"
+msgstr ""
+
+#: ../framework/options-sanitize.php:261
+msgid "Middle Left"
+msgstr ""
+
+#: ../framework/options-sanitize.php:262
+msgid "Middle Center"
+msgstr ""
+
+#: ../framework/options-sanitize.php:263
+msgid "Middle Right"
+msgstr ""
+
+#: ../framework/options-sanitize.php:279
+msgid "Scroll Normally"
+msgstr ""
+
+#: ../framework/options-sanitize.php:280
+msgid "Fixed in Place"
+msgstr ""
+
+#: ../framework/options-sanitize.php:354
+msgid "Normal"
+msgstr ""
+
+#: ../framework/options-sanitize.php:355
+msgid "Italic"
+msgstr ""
+
+#: ../framework/options-sanitize.php:356
+msgid "Bold"
+msgstr ""
+
+#: ../framework/options-sanitize.php:357
+msgid "Bold Italic"
+msgstr ""
+
+#: ../includes/admin/init.php:32
+msgid "About Cyon Theme"
+msgstr ""
+
+#: ../includes/admin/init.php:32
+msgid "Cyon Theme"
+msgstr ""
+
+#: ../includes/admin/init.php:33
+msgid "Theme Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:88
+msgid "About"
+msgstr ""
+
+#: ../includes/admin/init.php:198
+msgid "Page Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:209
+#: ../includes/admin/init.php:374
+#: ../includes/admin/init.php:386
+msgid "1 Column"
+msgstr ""
+
+#: ../includes/admin/init.php:210
+#: ../includes/admin/init.php:375
+msgid "2 Columns Left"
+msgstr ""
+
+#: ../includes/admin/init.php:211
+#: ../includes/admin/init.php:376
+msgid "2 Columns Right"
+msgstr ""
+
+#: ../includes/admin/init.php:215
+msgid "Background Image"
+msgstr ""
+
+#: ../includes/admin/init.php:226
+msgid "Gallery Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:231
+msgid "Images Excerpt"
+msgstr ""
+
+#: ../includes/admin/init.php:242
+msgid "Link Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:247
+#: ../includes/admin/init.php:285
+#: ../includes/admin/init.php:301
+msgid "URL"
+msgstr ""
+
+#: ../includes/admin/init.php:258
+msgid "Quote Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:263
+msgid "Author"
+msgstr ""
+
+#: ../includes/admin/init.php:269
+msgid "Position / Company"
+msgstr ""
+
+#: ../includes/admin/init.php:280
+msgid "Audio Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:296
+msgid "Video Settings"
+msgstr ""
+
+#: ../includes/admin/init.php:304
+msgid "Supports Youtube, Vimeo, Metacafe, Dailymotion, Twitvid and local video files such as mp4, m4v, mov, wmv, flv, webm, ogv"
+msgstr ""
+
+#: ../includes/admin/init.php:314
+msgid "SEO Options"
+msgstr ""
+
+#: ../includes/admin/init.php:319
+msgid "Page Title"
+msgstr ""
+
+#: ../includes/admin/init.php:331
+msgid "Keywords"
+msgstr ""
+
+#: ../includes/admin/init.php:337
+msgid "Hide from search engines"
+msgstr ""
+
+#: ../includes/admin/init.php:379
+msgid "Page Layout"
+msgstr ""
+
+#: ../includes/admin/init.php:387
+msgid "2 Columns"
+msgstr ""
+
+#: ../includes/admin/init.php:388
+msgid "3 Columns"
+msgstr ""
+
+#: ../includes/admin/init.php:389
+msgid "4 Columns"
+msgstr ""
+
+#: ../includes/admin/init.php:392
+msgid "Listing Layout"
+msgstr ""
+
+#: ../includes/admin/init.php:403
+msgid "Use Masonry"
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/classes/meta-box.php:286
+msgid "Please correct the errors highlighted below and try again."
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/classes/meta-box.php:344
+msgid "+"
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/classes/meta-box.php:366
+msgid "&#8211;"
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/fields/file.php:65
+msgid "Error: Cannot delete file"
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/fields/image.php:64
+msgid "Order saved"
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/fields/map.php:46
+msgid "Find Address"
+msgstr ""
+
+#: ../includes/admin/meta-box/inc/fields/select-advanced.php:81
+msgid "Select a value"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:250
+msgid "Delete this image"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:250
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:875
+msgid "Delete"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:350
+msgid "Cannot delete file. Something's wrong."
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:575
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:622
+msgid "Remove"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:588
+msgid "Add"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:871
+msgid "Uploaded files"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:882
+msgid "Upload new files"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:888
+msgid "Add more files"
+msgstr ""
+
+#: ../includes/admin/tax-meta-class/Tax-meta-class.php:940
+msgid "Select a color"
+msgstr ""
+
+#: ../includes/admin/widget-image-field/widget-image-field.php:136
+#: ../includes/admin/widget-image-field/widget-image-field.php:137
+msgid "Choose Image"
+msgstr ""
+
+#: ../includes/functions/common.php:23
+msgid "You are here"
+msgstr ""
+
+#: ../includes/functions/common.php:24
+msgid "Home"
+msgstr ""
+
+#: ../includes/functions/common.php:75
+msgid "Articles posted by"
+msgstr ""
+
+#: ../includes/functions/common.php:77
+msgid "Posts tagged"
+msgstr ""
+
+#: ../includes/functions/common.php:79
+msgid "Error 404"
+msgstr ""
+
+#: ../includes/functions/common.php:530
+msgid "Main menu"
+msgstr ""
+
+#: ../includes/functions/common.php:537
+#: ../includes/functions/common.php:540
+msgid "Select a page"
+msgstr ""
+
+#: ../includes/functions/common.php:746
+msgid "No video playback capabilities"
+msgstr ""
+
+#: ../includes/functions/common.php:811
+#: ../includes/functions/slides.php:193
+msgid "Read more"
+msgstr ""
+
+#: ../includes/functions/common.php:827
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: ../includes/functions/common.php:831
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../includes/functions/common.php:921
+msgid "Back to Top"
+msgstr ""
+
+#: ../includes/functions/slides.php:10
+msgid "Cyon Banners"
+msgstr ""
+
+#: ../includes/functions/slides.php:11
+msgid "Banner"
+msgstr ""
+
+#: ../includes/functions/slides.php:12
+#: ../includes/functions/slides.php:13
+#: ../includes/functions/slides.php:15
+msgid "Add New Banner"
+msgstr ""
+
+#: ../includes/functions/slides.php:14
+msgid "Edit Banner"
+msgstr ""
+
+#: ../includes/functions/slides.php:16
+msgid "View Banner"
+msgstr ""
+
+#: ../includes/functions/slides.php:17
+msgid "Search Banner"
+msgstr ""
+
+#: ../includes/functions/slides.php:18
+msgid "No banner found"
+msgstr ""
+
+#: ../includes/functions/slides.php:19
+msgid "No banner found in trash"
+msgstr ""
+
+#: ../includes/functions/slides.php:20
+msgid "Banners"
+msgstr ""
+
+#: ../includes/functions/slides.php:39
+#: ../includes/functions/testimonials.php:39
+#: ../includes/functions/testimonials.php:180
+msgid "Title"
+msgstr ""
+
+#: ../includes/functions/slides.php:41
+#: ../includes/functions/slides.php:78
+#: ../includes/functions/testimonials.php:40
+#: ../includes/functions/testimonials.php:72
+msgid "Sort"
+msgstr ""
+
+#: ../includes/functions/slides.php:65
+msgid "Settings"
+msgstr ""
+
+#: ../includes/functions/slides.php:75
+msgid "Example"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:10
+msgid "Cyon Testimonials"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:11
+msgid "Testimonial"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:12
+#: ../includes/functions/testimonials.php:13
+#: ../includes/functions/testimonials.php:15
+msgid "Add New Testimonial"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:14
+msgid "Edit Testimonial"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:16
+msgid "View Testimonial"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:17
+msgid "Search Testimonial"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:18
+msgid "No testimonial found"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:19
+msgid "No testimonial found in trash"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:20
+msgid "Testimonials"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:66
+msgid "Position/Company"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:164
+msgid "Displays Testimonials"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:165
+msgid "Cyon Testimonial"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:181
+msgid "ID(s), comman separated"
+msgstr ""
+
+#: ../includes/functions/testimonials.php:184
+msgid "View Style"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:131
+msgid "Displays a total cart"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:132
+msgid "Cyon WooCommerce Total Cart"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:139
+msgid "My Cart"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:171
+#: ../includes/overrides/woocommerce.php:190
+#: ../includes/overrides/woocommerce.php:322
+msgid "View your shopping cart"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:171
+#: ../includes/overrides/woocommerce.php:190
+msgid "View Cart"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:203
+msgid "Displays a categories with images/description"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:204
+msgid "Cyon WooCommerce Categories"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:211
+msgid "Categories"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:227
+msgid "Order by:"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:229
+msgid "Category Order"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:233
+msgid "Show image"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:234
+msgid "Show Description"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:235
+msgid "Show post counts"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:237
+msgid "Image Size:"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:239
+msgid "Thumbnail"
+msgstr ""
+
+#: ../includes/overrides/woocommerce.php:296
+msgid "No product categories exist."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:402
+msgid "No video source specified."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:449
+msgid "No audio source specified."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:861
+msgid "Back to top"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:888
+#: ../includes/shortcodes/common.php:991
+#: ../includes/widgets/contact-form.php:69
+#: ../includes/widgets/newsletter.php:72
+msgid "Submit"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:907
+#: ../includes/widgets/newsletter.php:88
+msgid "Please enter your email address."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:916
+#: ../includes/shortcodes/common.php:1030
+#: ../includes/widgets/contact-form.php:105
+#: ../includes/widgets/newsletter.php:97
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:937
+#: ../includes/widgets/newsletter.php:118
+msgid "Your email has been subscribed to our mailing list."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:939
+#: ../includes/shortcodes/common.php:1055
+#: ../includes/widgets/contact-form.php:130
+#: ../includes/widgets/newsletter.php:120
+msgid "There was a problem in the server. Please try again later."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:957
+#: ../includes/shortcodes/common.php:1078
+#: ../includes/widgets/contact-form.php:161
+#: ../includes/widgets/newsletter.php:146
+msgid "Security check"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:959
+#: ../includes/widgets/newsletter.php:148
+msgid "New subscriber from"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:989
+#: ../includes/shortcodes/common.php:1083
+#: ../includes/widgets/contact-form.php:67
+#: ../includes/widgets/contact-form.php:166
+#: ../includes/widgets/contact.php:42
+msgid "Phone"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:990
+#: ../includes/widgets/contact-form.php:68
+msgid "Messsage"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1053
+#: ../includes/widgets/contact-form.php:128
+msgid "Your inquiry has been sent. We will get back to you shortly"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1068
+#: ../includes/widgets/contact-form.php:143
+msgid "Empty field(s) required."
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1080
+#: ../includes/widgets/contact-form.php:163
+msgid "New inquiry from"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1084
+#: ../includes/widgets/contact-form.php:68
+#: ../includes/widgets/contact-form.php:167
+msgid "Message"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1176
+msgid "Submit Form"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1207
+msgid "Blog Categories"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1207
+#: ../includes/shortcodes/common.php:1210
+msgid "feed"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1208
+msgid "Blog Archives"
+msgstr ""
+
+#: ../includes/shortcodes/common.php:1210
+msgid "Product Categories"
+msgstr ""
+
+#: ../includes/shortcodes/price-grid.php:45
+msgid "See details"
+msgstr ""
+
+#: ../includes/widgets/ads.php:10
+msgid "Displays advertising images/urls"
+msgstr ""
+
+#: ../includes/widgets/ads.php:12
+msgid "Cyon Ads"
+msgstr ""
+
+#: ../includes/widgets/ads.php:33
+msgid "Sponsors"
+msgstr ""
+
+#: ../includes/widgets/ads.php:84
+#: ../includes/widgets/flickerpic.php:32
+#: ../includes/widgets/imagegallery.php:49
+msgid "Columns"
+msgstr ""
+
+#: ../includes/widgets/ads.php:85
+msgid "Number of Ads"
+msgstr ""
+
+#: ../includes/widgets/ads.php:95
+msgid "Ad"
+msgstr ""
+
+#: ../includes/widgets/ads.php:97
+#: ../includes/widgets/media.php:25
+msgid "Image URL"
+msgstr ""
+
+#: ../includes/widgets/ads.php:101
+msgid "Target"
+msgstr ""
+
+#: ../includes/widgets/ads.php:102
+msgid "Parent window"
+msgstr ""
+
+#: ../includes/widgets/ads.php:103
+msgid "New window"
+msgstr ""
+
+#: ../includes/widgets/ads.php:107
+msgid "Target URL"
+msgstr ""
+
+#: ../includes/widgets/ads.php:226
+msgid "Insert Into Widget"
+msgstr ""
+
+#: ../includes/widgets/contact-form.php:10
+msgid "Displays Contact Form"
+msgstr ""
+
+#: ../includes/widgets/contact-form.php:11
+msgid "Cyon Contact Form"
+msgstr ""
+
+#: ../includes/widgets/contact-form.php:18
+msgid "Contact Form"
+msgstr ""
+
+#: ../includes/widgets/contact-form.php:19
+#: ../includes/widgets/newsletter.php:19
+msgid "Get the latest tips, news, and special offers delivered to your inbox."
+msgstr ""
+
+#: ../includes/widgets/contact-form.php:29
+#: ../includes/widgets/helloworld.php:29
+#: ../includes/widgets/map.php:38
+#: ../includes/widgets/newsletter.php:31
+msgid "Text"
+msgstr ""
+
+#: ../includes/widgets/contact.php:7
+msgid "Displays contact information"
+msgstr ""
+
+#: ../includes/widgets/contact.php:8
+msgid "Cyon Contact"
+msgstr ""
+
+#: ../includes/widgets/contact.php:41
+#: ../includes/widgets/map.php:37
+msgid "Address"
+msgstr ""
+
+#: ../includes/widgets/contact.php:43
+msgid "Fax"
+msgstr ""
+
+#: ../includes/widgets/contact.php:45
+msgid "Website"
+msgstr ""
+
+#: ../includes/widgets/contact.php:46
+msgid "Show Map"
+msgstr ""
+
+#: ../includes/widgets/contact.php:48
+#: ../includes/widgets/facebooklikebox.php:32
+#: ../includes/widgets/iframe.php:33
+#: ../includes/widgets/map.php:33
+msgid "Height"
+msgstr ""
+
+#: ../includes/widgets/contact.php:49
+#: ../includes/widgets/map.php:34
+msgid "Zoom"
+msgstr ""
+
+#: ../includes/widgets/contact.php:50
+#: ../includes/widgets/map.php:35
+msgid "Latitude"
+msgstr ""
+
+#: ../includes/widgets/contact.php:51
+#: ../includes/widgets/map.php:36
+msgid "Longetitude"
+msgstr ""
+
+#: ../includes/widgets/facebooklikebox.php:7
+msgid "Displays FB Likes"
+msgstr ""
+
+#: ../includes/widgets/facebooklikebox.php:8
+msgid "Cyon FB Like Box"
+msgstr ""
+
+#: ../includes/widgets/facebooklikebox.php:31
+msgid "URL page"
+msgstr ""
+
+#: ../includes/widgets/facebooklikebox.php:33
+msgid "Border Color"
+msgstr ""
+
+#: ../includes/widgets/facebooklikebox.php:34
+msgid "Show Faces"
+msgstr ""
+
+#: ../includes/widgets/facebooklikebox.php:35
+msgid "Show Stream"
+msgstr ""
+
+#: ../includes/widgets/flickerpic.php:10
+msgid "Displays Latest Flickr Photos"
+msgstr ""
+
+#: ../includes/widgets/flickerpic.php:11
+msgid "Cyon Flickr Gallery"
+msgstr ""
+
+#: ../includes/widgets/flickerpic.php:30
+msgid "Flickr ID  (<a href=\"http://www.idgettr.com\" target=\"_blank\">idGettr</a>)"
+msgstr ""
+
+#: ../includes/widgets/flickerpic.php:31
+msgid "Number of images"
+msgstr ""
+
+#: ../includes/widgets/helloworld.php:10
+msgid "Displays a \"Hello World\""
+msgstr ""
+
+#: ../includes/widgets/helloworld.php:11
+msgid "Cyon Says \"Hello World\""
+msgstr ""
+
+#: ../includes/widgets/iframe.php:10
+msgid "Displays Website on Iframe"
+msgstr ""
+
+#: ../includes/widgets/iframe.php:11
+msgid "Cyon Iframe"
+msgstr ""
+
+#: ../includes/widgets/iframe.php:32
+msgid "Width"
+msgstr ""
+
+#: ../includes/widgets/iframe.php:34
+msgid "url"
+msgstr ""
+
+#: ../includes/widgets/iframe.php:35
+msgid "Enable Scrolling"
+msgstr ""
+
+#: ../includes/widgets/imagegallery.php:9
+msgid "Displays Image Gallery from Post"
+msgstr ""
+
+#: ../includes/widgets/imagegallery.php:10
+msgid "Cyon Image Gallery Widget"
+msgstr ""
+
+#: ../includes/widgets/imagegallery.php:32
+msgid "Gallery Post Format"
+msgstr ""
+
+#: ../includes/widgets/imagegallery.php:38
+msgid "Size"
+msgstr ""
+
+#: ../includes/widgets/map.php:7
+msgid "Displays Google Map"
+msgstr ""
+
+#: ../includes/widgets/map.php:8
+msgid "Cyon Google Map"
+msgstr ""
+
+#: ../includes/widgets/media.php:7
+msgid "Displays Video/Audio player"
+msgstr ""
+
+#: ../includes/widgets/media.php:8
+msgid "Cyon Media Player"
+msgstr ""
+
+#: ../includes/widgets/media.php:24
+msgid "Media URL (comma separated for alternative local file formats)"
+msgstr ""
+
+#: ../includes/widgets/newsletter.php:10
+msgid "Displays Newsletter Form"
+msgstr ""
+
+#: ../includes/widgets/newsletter.php:11
+msgid "Cyon Newsletter"
+msgstr ""
+
+#: ../includes/widgets/newsletter.php:18
+msgid "Newsletter Signup"
+msgstr ""
+
+#: ../includes/widgets/newsletter.php:30
+msgid "Show Name"
+msgstr ""
+
+#: ../includes/widgets/social.php:7
+msgid "Displays social icons and links"
+msgstr ""
+
+#: ../includes/widgets/social.php:8
+msgid "Cyon Social Icons"
+msgstr ""
+
+#: ../includes/widgets/social.php:15
+msgid "Socialize"
+msgstr ""
+
+#: ../includes/widgets/social.php:46
+msgid "Linkedin"
+msgstr ""
+
+#: ../includes/widgets/social.php:48
+msgid "Youtube"
+msgstr ""
+
+#: ../includes/widgets/social.php:49
+msgid "Vimeo"
+msgstr ""
+
+#: ../includes/widgets/social.php:50
+msgid "Flickr"
+msgstr ""
+
+#: ../includes/widgets/social.php:52
+msgid "RSS"
+msgstr ""
+
+#: ../includes/widgets/subpage.php:7
+msgid "Displays supages"
+msgstr ""
+
+#: ../includes/widgets/subpage.php:8
+msgid "Cyon Supage"
+msgstr ""
+
+#: ../includes/widgets/tabs.php:7
+msgid "Displays Widgets in Tabs"
+msgstr ""
+
+#: ../includes/widgets/tabs.php:8
+msgid "Cyon Tabs"
+msgstr ""
+
+#: ../includes/widgets/tabs.php:21
+msgid "Widget Area"
+msgstr ""
+
+#: ../includes/widgets/twitterupdate.php:9
+msgid "Displays Twitter Updates"
+msgstr ""
+
+#: ../includes/widgets/twitterupdate.php:10
+msgid "Cyon Twitter Widget"
+msgstr ""
+
+#: ../includes/widgets/twitterupdate.php:26
+msgid "Number of tweets"
+msgstr ""
+
+#: ../includes/widgets/videogallery.php:7
+msgid "Displays Youtube videos in thumbnails"
+msgstr ""
+
+#: ../includes/widgets/videogallery.php:8
+msgid "Cyon Video Gallery"
+msgstr ""
+
+#: ../includes/widgets/videogallery.php:22
+msgid "Youtube IDs separated by commma"
+msgstr ""
+

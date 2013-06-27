@@ -1,0 +1,63 @@
+/* Only for IE 7 and below */
+.widget .cyonform legend {
+	display:none;
+}
+.cyonform button, .cyonform input[type=submit], .cyonform input[type=reset], .cyonform input[type=button], .cyonform .button, #respond input[type=submit] {
+	line-height:24px; padding:0 5px; 
+}
+a.button {
+	position:relative; top:-5px; padding-top:4px;
+}
+
+#access { 
+	height:32px;
+}
+#access ul.menu > li:first-child {
+	margin-left:0;
+}
+
+/* Buttons */
+a.btn.has-icon2x {
+	padding-left:20px;
+}
+a.btn.has-icon {
+	padding-left:10px;
+}
+a.btn.has-icon2x span, a.btn.has-icon span {
+	display:none;
+}
+
+/* Woocomerce only */
+#payment .place-order input[type="submit"] {
+	padding:10px 5px;
+}
+#payment .place-order .form-row input {
+	float:none;
+}
+
+/* Grid */
+.grid .cols2 article {
+	width:49.9%;
+}
+.grid .cols3 article {
+	width:33%;
+}
+.grid .cols4 article {
+	width: 24.8%;
+}
+.grid .cols5 article {
+	width:19.8%;
+}
+.grid .cols6 article {
+	width:16.333%;
+}
+.grid article section > ul > li {
+	border-bottom:1px solid #f4f4f4;
+}
+
+/* Clearers */
+
+#top, #footer-buckets, .wrapper, nav:after, #home-buckets, .widget-content, .entry-content, article, .page-content #bottom, .navigation, dl, .widget li, .widget > div, .products,  .widget > form, .wp-pagenavi, .grid, #author-info, .box, .cyon-tabs .tab_nav, .testimonials, .testimonials li,
+.woocommerce_tabs ul, .type-product, .single_variation_wrap, .type-product .thumbnails, dl.variation, .widget .product_list_widget, #review_form form p, #respond p, .col2-set, #order_review, .gform_wrapper .gform_fields > li, .gform_wrapper .ginput_complex, .tabs .tab_nav, .clearfix, .category-archive-meta {
+	zoom:1!important;
+}

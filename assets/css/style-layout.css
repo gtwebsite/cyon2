@@ -1,0 +1,1077 @@
+/* =WordPress Defaults
+----------------------------------------------- */
+.alignleft {
+	float:left; margin:0 20px 10px 0;
+}
+.alignright {
+	float:right; margin:0 0 10px 20px;
+}
+div.alignleft:empty, div.alignright:empty {
+	display:none;
+}
+.aligncenter {
+	display:block; text-align:center;
+}
+.wp-caption {
+	text-align:center;
+}
+.dropcap:first-letter {
+	display:block; float:left; font-size:280%; margin:-2px 4px 0 0; font-family:"Times New Roman", Times, serif; line-height:normal;
+}
+.skip-link, .assistive-text {
+	display:none;
+}
+img {
+	max-width:100%; height:auto;
+}
+
+
+/* =Article
+----------------------------------------------- */
+#primary .row-fluid article.type-post {
+	display:none;
+}
+
+
+/* =Widgets
+----------------------------------------------- */
+.widget {
+	margin-bottom:30px;
+}
+.widget h3 {
+	font-size:140%; margin:0 0 10px 0; padding:0 0 10px 0; border-bottom:1px solid #f8f8f8;
+}
+.widget ul, .widget ol, .widget li {
+	padding:0; list-style:none;
+}
+.widget > ul > li, .widget > ol > li {
+	padding:0; margin:0; list-style:none;
+}
+.widget > ul > li > ul > li {
+	padding-left:10px;
+}
+.widget > ul > li > ul > li a {
+	color:inherit; font-size:90%;
+}
+.widget > ul > li > ul > li a:hover {
+	text-decoration:underline;
+}
+.widget img {
+	max-width:100%; height:auto;
+}
+.widget iframe {
+	width:100%;
+}
+
+
+/* =Fluid Columns
+----------------------------------------------- */
+.one_half{ 
+	width:48%;
+}
+.one_third{
+	width:30.66%; 
+}
+.two_third{
+	width:65.33%;
+}
+.one_fourth{
+	width:22%;
+}
+.three_fourth{
+	width:74%;
+}
+.one_fifth{
+	width:16.8%;
+}
+.two_fifth{
+	width:37.6%;
+}
+.three_fifth{
+	width:58.4%;
+}
+.four_fifth {
+	width:79.2%;
+}
+.one_sixth{
+	width:13.33%;
+}
+.five_sixth{
+	width:82.67%;
+}
+.one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth,.one_seventh,.one_eighth{
+	position:relative; margin-right:4%; float:left;
+}
+.one_seventh, .one_eighth {
+	margin-right:2%
+}
+.one_seventh {
+	width:12.55%;
+}
+.one_eighth {
+	width:10.75%;
+}
+.last{
+	margin-right:0 !important; clear:right;
+}
+
+/* =Gravity Form
+----------------------------------------------- */
+.cyonform br {
+	display:none;
+}
+.cyonform .gsection_title, .cyonform legend {
+	font-size:18px; border-bottom:1px dashed #efefef; padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
+}
+.cyonform .gform_heading {
+	margin-bottom:10px;
+}
+.cyonform .gform_body { 
+	margin-bottom:20px; 
+}
+.cyonform .gform_footer, .cyonform .gform_page_footer {
+	position:relative; display:inline;
+}
+.cyonform .gform_ajax_spinner {
+	position:absolute; right:-20px; top:0;
+}
+.cyonform .ginput_complex .ginput_left, .cyonform .ginput_complex .ginput_right {
+	float:left; margin-right:10px;
+}
+.cyonform .ginput_complex label, .cyonform .description {
+	display:block; color:#999; font-size:11px; font-style:italic;
+}
+
+/* Fields */
+.cyonform .gform_fields {
+	margin:0; padding:0;
+}
+.cyonform .gform_fields > li, .cyonform .field {
+	margin-bottom:6px; padding:10px; position:relative; list-style:none; margin-left:0;
+}
+.cyonform .field {
+	padding:0; margin-bottom:10px;
+}
+.cyonform .gform_fields .gfield_label, .cyonform .field .label {
+	float:left; width:22%
+}
+.cyonform .gform_fields .ginput_container, .cyonform .field .inputs {
+	float:left; width:78%;
+}
+.cyonform .gform_fields .gsection {
+	padding:0;
+}
+.cyonform .gform_fields .gfield_required {
+	color:#ff0000; position:absolute; left:20%;
+}
+.page-content .cyonform .gform_fields ul li, .page-content .cyonform .gform_fields ul, .page-content .cyonform .selection, .page-content .cyonform .selection li {
+	list-style:none; padding:0; margin:0;
+}
+.cyonform .gform_fields .small, .cyonform .field .small {
+	width:25%;
+}
+.cyonform .gform_fields .medium, .cyonform .field .medium {
+	width:50%;
+}
+.cyonform .gform_fields .large, .cyonform .field .large {
+	width:96%;
+}
+.cyonform .gform_fields select{
+	width:auto!important;
+}
+.cyonform .gfield_error {
+	background:#fff5f5;
+}
+.cyonform .gfield_error input[type=text], .cyonform .gfield_error input[type=email], .cyonform .gfield_error input[type=phone], .cyonform .gfield_error select, .cyonform .gfield_error textarea, .cyonform input.error, .cyonform textarea.error {
+	background:#ffb2b2; border-color:#ffb2b2; color:#fff; text-shadow:none;
+}
+.cyonform .gform_fields .validation_message {
+	clear:both; margin-left:22%; margin-top:5px; color:#ff0000; font-size:11px; font-weight:bold;
+}
+.cyonform .ui-datepicker-trigger {
+	position:relative; left:-23px; top:3px; cursor:pointer; display:inline-block;
+}
+.ui-datepicker-control, .ui-datepicker-links {
+	display:none;
+}
+
+/* Gform Date picker */
+#ui-datepicker-div {
+	z-index:20; padding:10px; background:#fff; box-shadow:1px 1px 3px rgba(0,0,0,.1); border:1px solid #ccc;  border-radius:5px; margin:5px 0 0 0;
+}
+#ui-datepicker-div table {
+	width:15em;
+}
+#ui-datepicker-div table a {
+	color:inherit; cursor:pointer;
+}
+#ui-datepicker-div table a:hover {
+	color:#c1460a;
+}
+#ui-datepicker-div table thead td a {
+	color:#999;
+}
+#ui-datepicker-div table td {
+	text-align:center;
+}
+#ui-datepicker-div table td.ui-datepicker-today {
+	background:#efefef;
+}
+#ui-datepicker-div table td.ui-datepicker-current-day {
+	background:#1e7ec8; color:#fff;
+}
+
+/* Gform Progress Bar */
+.cyonform .gf_progressbar_wrapper {
+	clear:both; width:99%;	margin:0 0 8px 0; padding:0 0 16px 0;
+}
+.cyonform .gf_progressbar_wrapper h3.gf_progressbar_title {
+	font-size:13px; line-height:1em !important; margin:0 0 6px 0!important; padding:0!important; clear:both; filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;
+}
+.cyonform .gf_progressbar {
+	width:99%; height:20px; overflow:hidden; line-height:20px!important; border:1px solid #ACACAC; border-right:1px solid #959595; border-bottom:1px solid #959595;	background-image:url(assets/images/percentbar_bg.png); background-repeat:repeat-x; background-position:bottom; background-color:#FFF; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;
+}
+.cyonform .gf_progressbar_percentage {
+	height:20px; text-align:right; text-shadow: 0 1px 1px rgba(0,0,0,0.50);
+}
+.cyonform .gf_progressbar_percentage span {
+	margin-right:5px; margin-left:5px;
+}
+.cyonform .gf_progressbar_percentage.percentbar_0 span {
+	color:#959595; text-shadow:none;
+}
+.cyonform .percentbar_blue {
+	background-image:url(assets/images/percentbar_blue.png); background-repeat:repeat-x; background-color:#0072BC; color:#FFF;
+}
+.cyonform .percentbar_gray {
+	background-image:url(assets/images/percentbar_gray.png); background-repeat:repeat-x; background-color:#666; color:#FFF;
+}
+.cyonform .percentbar_green { 
+	background-image:url(assets/images/percentbar_green.png); background-repeat:repeat-x; background-color:#94DC21; color:#FFF;
+}
+.cyonform .percentbar_orange {
+	background-image:url(assets/images/percentbar_orange.png); background-repeat:repeat-x; background-color:#DC7021; color:#FFF;
+}
+.cyonform .percentbar_red {
+	background-image:url(assets/images/percentbar_red.png); background-repeat:repeat-x; background-color:#DC2521; color:#FFF;
+}
+.cyonform .percentbar_custom {
+	background-image:url(assets/images/percentbar_custom.png); background-repeat:repeat-x;
+}
+
+/* Widget */
+.widget .cyonform .gform_fields > li { 
+	padding:0;
+}
+.widget .cyonform .gform_fields .ginput_container, .widget .cyonform .gform_fields .gfield_label {
+	float:none; width:auto;
+}
+.widget .cyonform .gform_fields .validation_message {
+	margin-left:0;
+}
+.widget .cyonform .gform_fields .gfield_required { 
+	position:static; padding-left:5px;
+}
+.widget .cyonform li.gfield_error {
+	padding:5px 10px;
+}
+.widget .cyonform input[type=text], .widget .cyonform input[type=email], .widget .cyonform input[type=phone], .widget .cyonform textarea {
+	width:95%!important;
+}
+.widget .cyonform select { 
+	width:100%!important;
+}
+.widget .cyonform .ginput_complex .ginput_left, .widget .cyonform .ginput_complex .ginput_right {
+	float:none; margin-right:0;
+}
+.widget .cyonform .gform_body {
+	margin-bottom:10px;
+}
+.widget .cyonform legend {
+	font-size:inherit; border:0; line-height:inherit;
+}
+
+/* =Contact Info widget
+----------------------------------------------- */
+.cyon-contact address {
+	padding-left:20px; position:relative; margin-bottom:3px;
+}
+.cyon-contact address span {
+	position:absolute; top:4px; left:0;
+}
+
+/* =Newsletter & Contact Form
+----------------------------------------------- */
+.cyon-newsletter legend, .cyon-contact-form legend {
+	margin-bottom:10px;
+}
+.cyon-newsletter p, .cyon-contact-form p {
+	margin-bottom:5px;
+}
+.cyon-newsletter label {
+	display:none;
+}
+.cyon-newsletter p input, .widget .cyon-contact-form p input {
+	width:95%;
+}
+.cyon-contact-form textarea {
+	height:100px;
+}
+.newsletter-shortcode, .contact-form-shortcode {
+	border:1px solid #efefef; padding:10px; margin-bottom:20px;
+}
+.newsletter-shortcode p input {
+	width:20%;
+}
+.newsletter-shortcode p {
+	display:inline;
+}
+
+/* =Gallery Widget
+----------------------------------------------- */
+.cyon-image-gallery .columns .thumbnail {
+	float:left; margin-bottom:2px;
+}
+.cyon-image-gallery .columns .thumbnail img {
+	display:block;
+}
+.cyon-image-gallery .columns .first, .cyon-image-gallery .columns .thumbnail:first-child {
+	margin-left:0; clear:both;
+}
+.cyon-image-gallery .columns2 .thumbnail {
+	width:49%; margin-left:1%;
+}
+.cyon-image-gallery .columns3 .thumbnail {
+	width:32.4%; margin-left:1.3%;
+}
+
+/* =Tab Widget
+----------------------------------------------- */
+.cyon-tabs {
+	overflow:hidden;
+}
+.cyon-tabs .widget {
+	display:none; clear:both; position:relative; z-index:1; top:-1px; margin-bottom:0; padding:10px; 
+}
+.cyon-tabs .widget h3 {
+	display:none;
+}
+
+/* =Social Icons
+----------------------------------------------- */
+.cyon-social [class^="icon2x-"], .cyon-social [class*=" icon2x-"] {
+	margin-right:-2px;
+}
+
+/* =Sitemap
+----------------------------------------------- */
+.cyon-sitemap ul.menu ul {
+	margin-bottom:0;
+}
+
+/* =Ads
+----------------------------------------------- */
+.cyon-ads h3.widget-title {
+	margin:0; padding:0; border:0; font-size:100%; text-align:center;
+}
+.cyon-ads ul.widget-content {
+	padding:0; margin:0; border:0;
+}
+.cyon-ads ul.widget-content li {
+	padding:0; margin-top:10px; border:0; text-align:center;
+}
+.cyon-ads ul.widget-content li.no-margin {
+	margin-left:0; clear:left;
+}
+.cyon-ads ul.widget-content li span {
+	display:block;
+}
+.cyon-ads ul.float li {
+	float:left; margin-left:10px;
+}
+.cyon-ads ul.float li img {
+	width:20px; height:auto;
+}
+
+
+/* =Image Widget
+----------------------------------------------- */
+.widget_sp_image { }
+.widget_sp_image img {
+	width:100%; height:auto; display:block;
+}
+
+
+/* =Map
+----------------------------------------------- */
+.entry-content .gmap, .page-content .gmap {
+	margin-bottom:10px;
+}
+.entry-content .gmap img, .page-content .gmap img, .widget .gmap img {
+	max-width:inherit; height:auto; border:none;
+}
+
+
+/* =Search
+----------------------------------------------- */
+.widget.widget_search { }
+.widget.widget_search input[type=text] {
+	width:70%!important; float:left;
+}
+.widget.widget_search button {
+	width:22%; float:right;
+}
+
+
+/* =Product Search
+----------------------------------------------- */
+.widget_product_search { }
+.widget_product_search label { 
+	display:none;
+}
+.widget_product_search input[type=text] {
+	width:62%; float:left;
+}
+.widget_product_search input[type=submit] {
+	width:30%; float:right;
+}
+
+
+/* =Flickr
+----------------------------------------------- */
+.flickr_badge_image {
+	float:left;
+}
+.flickr_badge_image a {
+	display:block; padding:2px;
+}
+.flickr_badge_image img {
+	display:block;
+}
+
+
+
+/* =Price Grid
+----------------------------------------------- */
+.grid {
+	padding:20px 0;
+}
+.grid aside {
+	padding-top:130px;
+	text-align:right;
+}
+.grid ul, .grid ul li {
+	list-style:none; padding:0; margin:0;
+}
+.grid h2 {
+	margin:0; padding:0;
+}
+.grid article {
+	float:left; border-bottom:0; text-align:center; padding-bottom:0; margin-bottom:0; overflow:visible;
+}
+.grid article header hgroup, .grid article section > ul li, .grid article footer, .grid aside li {
+	padding:15px 5px;
+}
+.grid article.selected header {
+	padding-bottom:10px;
+}
+.grid article footer .btn {
+	display:block; padding:0;
+}
+.grid .cols6 article {
+	width:16.666%;
+}
+.grid .cols5 article {
+	width:20%;
+}
+.grid .cols4 article {
+	width:25%;
+}
+.grid .cols3 article {
+	width:33.333%;
+}
+.grid .cols2 article {
+	width:50%;
+}
+.grid .tooltip p, .grid .tooltip h3 {
+	margin-bottom:0;
+}
+.grid .check, .grid .no {
+	display:block; width:28px; height:28px; overflow:hidden; text-indent:-9999px; margin:0 auto;
+}
+
+
+/* =Grid List
+----------------------------------------------- */
+.has-icon-list [class^="icon-"], .has-icon-list [class*=" icon-"], .has-icon2x-list [class^="icon-"], .has-icon2x-list [class*=" icon-"] {
+	position:absolute; left:0;
+}
+.has-icon-list li, .has-icon2x-list li {
+	position:relative; margin-bottom:5px; padding:0 2.5%;
+}
+ul.cols2 li {
+	float:left; width:45%;
+}
+ul.cols3 li {
+	float:left; width:28.3%;
+}
+ul.cols4 li {
+	float:left; width:20%;
+}
+ul.cols5 li {
+	float:left; width:15%;
+}
+ul.cols6 li {
+	float:left; width:11.6%;
+}
+
+
+/* =Table
+----------------------------------------------- */
+table.table, .shop_table {
+	width:100%; margin-bottom:20px; padding:3px;
+}
+table.table caption {
+	font-style:italic; font-size:110%; margin-bottom:6px; text-align:center;
+}
+table.table th, table.table td, .shop_table th, .shop_table td {
+	padding:6px 8px;
+}
+
+
+/* =Contact Info widget
+----------------------------------------------- */
+.cyon-contact address {
+	padding-left:20px; position:relative; margin-bottom:3px;
+}
+.cyon-contact address span {
+	position:absolute; top:4px; left:0;
+}
+
+/* =Newsletter & Contact Form
+----------------------------------------------- */
+.cyon-newsletter legend, .cyon-contact-form legend {
+	margin-bottom:10px;
+}
+.cyon-newsletter p, .cyon-contact-form p {
+	margin-bottom:5px;
+}
+.cyon-newsletter label {
+	display:none;
+}
+.cyon-newsletter p input, .widget .cyon-contact-form p input {
+	width:95%;
+}
+.cyon-contact-form textarea {
+	height:100px;
+}
+.newsletter-shortcode, .contact-form-shortcode {
+	margin-bottom:20px;
+}
+.newsletter-shortcode p input {
+	width:20%;
+}
+.newsletter-shortcode p {
+	display:inline;
+}
+
+/* =Gallery Widget
+----------------------------------------------- */
+.cyon-image-gallery .columns .thumbnail {
+	float:left; margin-bottom:2px;
+}
+.cyon-image-gallery .columns .thumbnail img {
+	display:block;
+}
+.cyon-image-gallery .columns .first, .cyon-image-gallery .columns .thumbnail:first-child {
+	margin-left:0; clear:both;
+}
+.cyon-image-gallery .columns2 .thumbnail {
+	width:49%; margin-left:1%;
+}
+.cyon-image-gallery .columns3 .thumbnail {
+	width:32.4%; margin-left:1.3%;
+}
+
+
+/* =Toggle & Accordion
+----------------------------------------------- */
+.toggle, .accordion {
+	margin-bottom:5px;
+}
+.toggle h3, .accordion h3 {
+	cursor:pointer; padding:8px 10px; margin:0; 
+}
+
+/* =Tabs
+----------------------------------------------- */
+.tabs {
+	clear:both; margin:0 0 20px 0; padding:0;
+}
+.tabs .tab_nav {
+	position:relative; z-index:2; padding:0; margin:0;
+}
+.tabs .tab_nav li {
+	float:left; margin:0 2px 0 0; list-style:none; padding:0;
+}
+.tabs .tab_nav li a {
+	cursor:pointer; padding:8px 10px; margin:0; display:inline-block;
+}
+.tabs .panel p {
+	margin:0 0 5px 0;
+}
+
+
+/* =Flex Video
+----------------------------------------------- */
+.flex-video {
+	height: 0; padding-top: 25px; padding-bottom: 67.5%; margin-bottom: 10px; position: relative; overflow: hidden;
+}
+.flex-video embed, .flex-video iframe, .flex-video object, .flex-video video {
+	top: 0; left: 0; width: 100%; height: 100%; position: absolute;
+}
+.flex-video-vimeo {
+	padding-top:0;
+}
+
+
+/* =Twitter
+----------------------------------------------- */
+.twitter-share-button {
+	width:95px!important;
+}
+
+/* =Testimonial
+----------------------------------------------- */
+.testimonials {
+	margin:0; padding:0;
+}
+.testimonials li, .page-content .testimonials li {
+	position:relative; list-style:none; margin-left:0; margin-bottom:10px;
+}
+.testimonials li .name {
+	float:left; width:130px;
+}
+.testimonials li .name h4, .cyon-testimonial .name h4 {
+	font-size:100%; margin:0; padding:0;
+}
+.testimonials li .name p, .cyon-testimonial .name p {
+	font-size:85%; line-height:normal; margin:0; padding:0;
+}
+.testimonials li blockquote {
+	border:none; box-shadow:none; position:relative; margin:0 0 0 160px;
+}
+.testimonials li blockquote:after {
+	content:''; display:block; height:0; width:0; border-right:10px solid #f8f8f8; border-top:10px solid transparent; border-bottom:10px solid transparent; position:absolute; top:10px; left:-10px;
+}
+.cyon-testimonial blockquote {
+	border:none; box-shadow:none; position:relative; margin-bottom:15px; padding:10px;
+}
+.cyon-testimonial, .cyon-twitter {
+	overflow:hidden;
+}
+.cyon-testimonial li blockquote:after {
+	content:''; display:block; height:0; width:0; border-top:10px solid #f8f8f8; border-left:10px solid transparent; border-right:10px solid transparent; position:absolute; bottom:-10px; right:10px;
+}
+.cyon-testimonial li img {
+	width:50px; height:auto; float:right; margin-left:10px;
+}
+.cyon-testimonial li .name {
+	text-align:right;
+}
+.flex-testimonials .flex-direction-nav {
+	display:none;
+}
+
+
+/* =Page Gallery
+----------------------------------------------- */
+.gallery dl { 
+	position:relative; float:left; text-align:center; width:100%; margin-bottom:5px; overflow:hidden;
+	-webkit-transition:all .2s linear;
+	-moz-transition:all .2s linear;
+	-o-transition:all .2s linear;
+	transition:all .2s linear;
+}
+.gallery dl:hover {
+	box-shadow:2px 2px 10px rgba(0,0,0,.3);
+}
+.gallery dd {
+	position:absolute; bottom:0; left:0; background:#000; color:#fff; opacity:.8; padding:5px 8px;
+}
+.gallery img {
+	width:100%; height:auto; display:block; float:left;
+}
+.gallery p {
+	margin-bottom:0;
+}
+.gallery-columns-2 dl {
+	width:48.7%; margin:5px .65%;
+}
+.gallery-columns-3 dl {
+	width:32%; margin:5px .65%;
+}
+.gallery-columns-4 dl { width:23.6%;
+	margin:5px .65%;
+}
+.gallery-columns-5 dl {
+	width:18.7%; margin:5px .65%;
+}
+
+
+/* =Author
+----------------------------------------------- */
+#author-info {
+	margin-bottom:10px;
+}
+#author-avatar {
+	float:left; margin:0 -80px 5px 0;
+}
+#author-description {
+	float:left; margin-left:80px;
+}
+#author-description h2 {
+	font-weight:bold; margin-top:0;
+}
+#author-link {
+	margin:10px 0;
+}
+
+
+/* =Comment List
+----------------------------------------------- */
+#comments-title {
+	margin-bottom:10px;
+}
+ol.commentlist {
+	margin:0 0 10px 0; padding:0;
+}
+ol.commentlist li {
+	list-style:none; background:#fff; margin:0; padding:0;
+}
+ol.commentlist li.comment {
+	margin-bottom:5px;
+}
+ol.commentlist li.comment article {
+	margin-bottom:0; border-bottom:0; padding-bottom:0;
+}
+ol.commentlist li.comment article p {
+	padding:10px 0; font-style:italic;
+}
+ol.commentlist li.comment .comment-author img {
+	float:left; margin:5px 10px 0 0; position:relative;
+}
+ol.commentlist .comment-awaiting-moderation {
+	font-size:95%;
+}
+ol.commentlist .children {
+	margin:10px 0 0 0;
+}
+ol.commentlist .children textarea {
+	width:auto;
+}
+ol.commentlist #respond {
+	margin-top:10px;
+}
+p.form-allowed-tags {
+	font-size:11px; line-height:16px; color:#888;
+}
+p.nocomments {
+	display:none;
+}
+
+
+/* =Comment Reply
+----------------------------------------------- */
+#respond {
+	clear:both;
+}
+#respond label {
+	float:left; width:22%;
+}
+#respond input[type=text], #respond select, #respond textarea {
+	float:left;
+}
+#respond p {
+	padding:3px 0; position:relative;
+}
+#respond .required, .cyonform .required {
+	position:absolute; left:20%; 
+}
+#respond .required, .cyonform .required, .woocommerce .form-row .required {
+	color:#ff0000;
+}
+#respond .comment-notes .required {
+	position:static;
+}
+
+
+/* =Pagination
+----------------------------------------------- */
+.navigation {
+	margin-bottom:10px;
+}
+.navigation:empty {
+	display:none;
+}
+.navigation .alignleft, .navigation .alignright {
+	margin-bottom:0;
+}
+
+/* =Gmap
+----------------------------------------------- */
+.gmap {
+	margin-bottom:10px;
+}
+.gmap img {
+	max-width:inherit; height:auto; border:none;
+}
+
+
+/* =Subpages
+----------------------------------------------- */
+.subpages, .postlist {
+	margin-bottom:10px; padding:0;
+}
+
+
+/* =Flexslider
+----------------------------------------------- */
+.flexslider { min-height:50px; }
+.flexslider .flex-caption {
+	position:absolute; bottom:0; left:0; z-index:100; width:94%; background:url(../images/trans-bg.png); color:#aaa; padding:15px 3%; opacity:.8;
+}
+.flexslider .flex-caption h3, .flexslider .flex-caption p {
+	color:#fff; margin:0;
+}
+.flexslider .flex-control-nav a {
+	padding-top:11px; height:0; overflow:hidden;
+}
+.flexslider .flex-control-nav li {
+	margin:0 2px; margin-left:0;
+}
+.flexslider .slides li {
+	margin-left:0; position:relative;
+}
+
+
+/* =Block - Slider
+----------------------------------------------- */
+#slider-block {
+	margin-bottom:10px;
+}
+#slider-block h3 {
+	font-size:140%;
+}
+#slider-block p {
+	margin-top:5px;
+}
+#slider-block img {
+	width:100%; height:auto; display:block;
+}
+
+
+/* =Featured Image
+----------------------------------------------- */
+.entry-featured-image {
+	position:relative;
+}
+.entry-featured-image span.status-box {
+	position:absolute; top:0; left:10px; display:block; width:40px; height:48px; opacity:.6; filter:alpha(opacity=60); z-index:10;
+}
+
+
+/* =General Layout
+----------------------------------------------- */
+.wrapper {
+	margin:0 auto;
+}
+.general-2right #primary, .general-2left #secondary {
+	float:left;
+}
+.general-2left #primary, .general-2right #secondary {
+	float:right;
+}
+
+/* =Layout
+----------------------------------------------- */
+#page { 
+	position:relative; zoom:1; z-index:3;
+}
+	.width-wide #page {
+		min-width:1020px;
+	}
+	.width-wide #page .wrapper {
+		width:1000px; margin:0 auto; padding-left:10px; padding-right:10px;
+	}
+	.width-centered #page {
+		width:1000px; margin:0 auto; padding-left:10px; padding-right:10px;
+	}
+	
+#branding {
+	position:relative; z-index:2;
+}
+#branding .wrapper {
+	padding-top:10px;
+}
+
+	/* Topmost content */
+	#top { }
+	#top p { }
+	#top > div {
+		 margin-bottom:10px;
+	}
+	#top > div.right {
+		text-align:right;
+	}
+
+	/* Site logo/name */
+	#branding hgroup {
+		margin-bottom:10px;
+	}
+	
+	/* Main navigation */
+	#access {
+		margin-bottom:10px;
+	}
+	#access ul, #access ul li {
+		margin:0; padding:0; list-style:none;
+	}
+	#access ul a {
+		-webkit-transition:all .2s linear;
+		-moz-transition:all .2s linear;
+		-o-transition:all .2s linear;
+		transition:all .2s linear;
+	}
+		/* First Level */
+		#access ul.menu > li, #access .menu > ul > li {
+			float:left; margin-left:2px; margin-bottom:2px; position:relative;
+		}
+		#access ul.menu > li:first-child, #access .menu > ul > li:first-child {
+			margin-left:0;
+		}
+		#access ul.menu > li > a, #access .menu > ul > li > a {
+			display:block; height:30px; line-height:30px; padding:0 20px; white-space:nowrap;
+		}
+		#access ul.menu > li a:hover, #access ul.menu li:hover > a, #access ul.menu li.current-menu-item > a, #access ul.menu > li.current-menu-parent > a,
+		#access .menu > ul > li a:hover, #access .menu > ul > li:hover > a, #access .menu > ul > li.current-menu-item > a, #access .menu > ul > li.current-menu-parent > a, #access .menu > ul > li.current_page_item > a {
+			text-decoration:none;
+		}
+		#access ul.menu li:hover {
+			z-index:100; position:relative;
+		}
+		/* Second Level */
+		#access ul.menu > li ul, #access .menu > ul > li ul {
+			position:absolute; top:30px; left:-9999px; display:none; box-shadow:1px 1px 5px rgba(0,0,0,.1); width:180px;
+		}
+		#access ul.menu > li:hover > ul, #access .menu > ul > li:hover > ul {
+			left:0;
+		}
+		#access ul.menu > li > ul > li, #access .menu > ul > li > ul > li {
+			position:relative;
+		}
+		#access ul.menu > li > ul > li a, #access .menu > ul > li > ul > li a {
+			background:#fff; display:block; width:160px; padding:5px 10px;
+		}
+		/* Third Level */
+		#access ul.menu > li > ul > li > ul, #access .menu > ul > li > ul > li > ul {
+			top:13px;
+		}
+		#access ul.menu > li > ul > li:hover > ul, #access .menu > li > li > ul > li:hover > ul {
+			left:130px;
+		}
+
+	/* Logo and Navigation */
+	header.logo-right hgroup {
+		text-align:right;
+	}
+	header.logo-center hgroup {
+		text-align:center;
+	}
+	header.logo-right-menu #access, header.logo-left-menu hgroup {
+		float:left;
+	}
+	header.logo-left-menu #access, header.logo-right-menu hgroup {
+		float:right;
+	}
+
+#main {
+	position:relative; z-index:1;
+}
+
+	#primary {
+		margin-bottom:30px;
+	}
+		
+		/* Breadcrumbs */
+		#breadcrumb {
+			margin-bottom:30px;
+		}
+		#breadcrumb span.pretext {
+			padding-right:3px; position:relative; top:-1px;
+		}
+		#breadcrumb dt {
+			color:#888;
+		}
+		#breadcrumb dt, #breadcrumb dd {
+			display:inline; padding:0 5px 0 0; margin:0;
+		}
+	
+	#secondary:empty {
+		display:none;
+	}
+
+#colophon { }
+
+	#bottom { }
+
+	/* Copyright */
+	#colophon .copyright {
+		margin-bottom:10px;
+	}
+	#colophon .copyright p { }
+
+	/* Footer Navigation */
+	#access2 {
+		margin-bottom:10px;
+	}
+	#access2 ul {
+		text-align:right; 
+	}
+	#access2 ul li {
+		display:inline; padding-left:5px;
+	}
+	
+	/* Sub footer */
+	#subfooter {
+		margin-bottom:10px;
+	}
+	
+	/* Back to top anchor */
+	#backtotop {
+		margin-bottom:10px; clear:both; text-align:right;
+	}
+
+/* =Page Specifics
+----------------------------------------------- */
+#popup {
+	padding:20px;
+}
+
+/* =Cufon
+----------------------------------------------- */
+.cufon-loading {
+	visibility:hidden;
+}
+
+/* =Clearers
+----------------------------------------------- */
+.row-fluid .first-child {
+	margin-left:0!important; clear:both;
+}
+#respond p {
+	*zoom:1;
+}
+#respond p:after, .cyonform .field:after, .cyonform .gfield:after, .widget-content:after {
+	display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden;
+}

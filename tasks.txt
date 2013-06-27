@@ -1,0 +1,103 @@
+Styling:
+- Favicons - done
+- iOS icons - done
+
+Fonts
+- Primary - done
+- Secondary - done
+- Menu - done
+
+Background
+- Image - done
+- Color - done
+- Repeat - done
+- Position - done
+
+Stylesheet
+- Color - partial
+- Grid - done
+
+Site Layout
+- Default - done
+- Page width - done
+
+Content
+- Author - done
+- Comment  - done
+- Featured Image - done
+
+Blog List
+- Content - done
+- Layout - done
+- Masonry
+- Featured Image - done
+
+Header
+- Logo - done
+- Layout - done
+- Breadcrumbs - done
+- Left content - done
+- Right content - done
+
+Footer
+- Bucket - done
+- Copyright - done
+- Subfooter - done
+- Back to top - done
+
+Home
+- Layout - done
+
+Sorter
+- Slider - done
+- Static - done
+- Twitter - removed
+- Blog - done
+- Bucket - done
+
+Social
+- Boxes - done
+- Pages - done
+
+SEO
+- Active - done
+
+Scripts
+- Fancybox - done
+- Responsive
+- LazyLoad - done
+
+Custom Scripts
+- Header - done
+- Footer - done
+
+Testimonials
+
+Widgets
+
+Admin
+- Background - done
+- Updates - done
+
+Pages
+- Home - done
+- Blog - done
+- Category - done
+- Search - done
+- 404 - done
+- Archive - done
+- Taxonomy
+- Custom Types - done
+- Images
+- Author - done
+
+Shortcodes
+- map - done
+- iframe - done
+- video - done
+- audio - done
+- columns - done
+
+Widgets
+
+CSS
