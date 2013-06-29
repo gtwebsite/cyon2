@@ -54,7 +54,6 @@ hr.dotted {
 	border-bottom-style:dotted; border-color:#ddd;
 }
 
-
 /* =Table
 ----------------------------------------------- */
 table.table, .shop_table {
@@ -133,7 +132,7 @@ dl.separator dd {
 .cyonform fieldset {
 	border:0; padding:0;
 }
-.cyonform input[type=text], .cyonform input[type=email], .cyonform input[type=phone], .cyonform input[type=password], .cyonform input[type=submit], .cyonform input[type=button], .cyonform textarea, .cyonform select, .cyonform button, .cyonform .button, .btn, #drop-nav { 
+.cyonform input[type=text], .cyonform input[type=email], .cyonform input[type=phone], .cyonform input[type=password], #ui-datepicker-div select, .cyonform input[type=submit], .cyonform input[type=button], .cyonform textarea, .cyonform select, .cyonform button, .cyonform .button, .btn, #drop-nav { 
 	border:0; margin:0; font-family:inherit; font-size:inherit; border:1px solid #ccc; border-radius:3px; padding:6px 5px; color:#888; white-space:nowrap; line-height:normal; background:#f8f8f8;
 	transition:all ease-in-out .3s;
 	-moz-transition:all ease-in-out .3s;
@@ -149,11 +148,11 @@ dl.separator dd {
 .cyonform input[type=radio], .cyonform input[type=checkbox] {
 	position:relative; top:2px;
 }
-.cyonform select, #drop-nav {
-	padding-top:5px; padding-bottom:5px;
+.cyonform select {
+	padding-top:5px; padding-bottom:5px; line-height:26px;
 }
 .cyonform button, .cyonform input[type=submit], .cyonform input[type=reset], .cyonform input[type=button], .cyonform .button, .btn {
-	cursor:pointer; border-color:#c1c1c1; color:#666; text-transform:uppercase; display:inline-block; box-shadow:1px 1px 3px rgba(0,0,0,.1), inset 1px 1px 1px rgba(255,255,255,.5), inset -1px -1px 2px rgba(0,0,0,.1); border-radius:5px; padding-left:10px; padding-right:10px;
+	cursor:pointer; border-color:#c1c1c1; color:#666; text-transform:uppercase; display:inline-block; box-shadow:1px 1px 3px rgba(0,0,0,.1), inset 1px 1px 1px rgba(255,255,255,.5), inset -1px -1px 2px rgba(0,0,0,.1); border-radius:5px; padding-left:10px; padding-right:10px; margin-bottom:2px;
 }
 .cyonform button:hover, .cyonform input[type=submit]:hover, .cyonform input[type=reset]:hover, .cyonform input[type=button]:hover, .cyonform .button:hover, .btn:hover {
 	color:#222; border-color:#999; text-shadow:1px 1px 0 #fff; background-color:#eee;
@@ -273,64 +272,16 @@ a.btn-small {
 
 /* =Gravity Form
 ----------------------------------------------- */
-.cyonform br {
-	display:none;
-}
 .cyonform .gsection_title, .cyonform legend {
-	font-size:18px; border-bottom:1px dashed #efefef; padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
-}
-.cyonform .gform_heading {
-	margin-bottom:10px;
-}
-.cyonform .gform_body { 
-	margin-bottom:20px; 
-}
-.cyonform .gform_footer, .cyonform .gform_page_footer {
-	position:relative; display:inline;
-}
-.cyonform .gform_ajax_spinner {
-	position:absolute; right:-20px; top:0;
-}
-.cyonform .ginput_complex .ginput_left, .cyonform .ginput_complex .ginput_right {
-	float:left; margin-right:10px;
+	border-bottom:1px dashed #efefef;
 }
 .cyonform .ginput_complex label, .cyonform .description {
 	display:block; color:#999; font-size:11px; font-style:italic;
 }
 
 /* Fields */
-.cyonform .gform_fields {
-	margin:0; padding:0;
-}
-.cyonform .gform_fields > li, .cyonform .field, .cyonform .field, .cyonform .field {
-	margin-bottom:10px; padding:2px 0; position:relative; list-style:none; margin-left:0;
-}
-.cyonform .gform_fields .gfield_label, .cyonform .field .label {
-	float:left; width:22%
-}
-.cyonform .gform_fields .ginput_container, .cyonform .field .inputs {
-	float:left; width:78%; margin-left:0;
-}
-.cyonform .gform_fields .gsection {
-	padding:0;
-}
 .cyonform .gform_fields .gfield_required {
-	color:#ff0000; position:absolute; left:20%;
-}
-.page-content .cyonform .gform_fields ul li, .page-content .cyonform .gform_fields ul, .page-content .cyonform .selection, .page-content .cyonform .selection li {
-	list-style:none; padding:0; margin:0;
-}
-.cyonform .gform_fields .small, .cyonform .field .small {
-	width:25%;
-}
-.cyonform .gform_fields .medium, .cyonform .field .medium {
-	width:50%;
-}
-.cyonform .gform_fields .large, .cyonform .field .large {
-	width:96%;
-}
-.cyonform .gform_fields select{
-	width:auto!important;
+	color:#ff0000;
 }
 .cyonform .gfield_error {
 	background:#fff5f5;
@@ -350,10 +301,7 @@ a.btn-small {
 
 /* Gform Date picker */
 #ui-datepicker-div {
-	z-index:20; padding:10px; background:#fff; box-shadow:1px 1px 3px rgba(0,0,0,.1); border:1px solid #ccc;  border-radius:5px; margin:5px 0 0 0;
-}
-#ui-datepicker-div table {
-	width:15em;
+	background:#fff; box-shadow:1px 1px 3px rgba(0,0,0,.1); border:1px solid #ccc;
 }
 #ui-datepicker-div table a {
 	color:inherit; cursor:pointer;
@@ -375,17 +323,11 @@ a.btn-small {
 }
 
 /* Gform Progress Bar */
-.cyonform .gf_progressbar_wrapper {
-	clear:both; width:99%;	margin:0 0 8px 0; padding:0 0 16px 0;
-}
-.cyonform .gf_progressbar_wrapper h3.gf_progressbar_title {
-	font-size:13px; line-height:1em !important; margin:0 0 6px 0!important; padding:0!important; clear:both; filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;
-}
 .cyonform .gf_progressbar {
-	width:99%; height:20px; overflow:hidden; line-height:20px!important; border:1px solid #ACACAC; border-right:1px solid #959595; border-bottom:1px solid #959595;	background-image:url(assets/images/percentbar_bg.png); background-repeat:repeat-x; background-position:bottom; background-color:#FFF; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;
+	background-color:#f4f4f4;
 }
 .cyonform .gf_progressbar_percentage {
-	height:20px; text-align:right; text-shadow: 0 1px 1px rgba(0,0,0,0.50);
+	height:30px; text-align:right; text-shadow: 0 1px 1px rgba(0,0,0,0.20);
 }
 .cyonform .gf_progressbar_percentage span {
 	margin-right:5px; margin-left:5px;
@@ -394,22 +336,22 @@ a.btn-small {
 	color:#959595; text-shadow:none;
 }
 .cyonform .percentbar_blue {
-	background-image:url(assets/images/percentbar_blue.png); background-repeat:repeat-x; background-color:#0072BC; color:#FFF;
+	background-color:#0072BC; color:#FFF;
 }
 .cyonform .percentbar_gray {
-	background-image:url(assets/images/percentbar_gray.png); background-repeat:repeat-x; background-color:#666; color:#FFF;
+	background-color:#666; color:#FFF;
 }
 .cyonform .percentbar_green { 
-	background-image:url(assets/images/percentbar_green.png); background-repeat:repeat-x; background-color:#94DC21; color:#FFF;
+	background-color:#94DC21; color:#FFF; 
 }
 .cyonform .percentbar_orange {
-	background-image:url(assets/images/percentbar_orange.png); background-repeat:repeat-x; background-color:#DC7021; color:#FFF;
+	background-color:#DC7021; color:#FFF;
 }
 .cyonform .percentbar_red {
-	background-image:url(assets/images/percentbar_red.png); background-repeat:repeat-x; background-color:#DC2521; color:#FFF;
+	background-color:#DC2521; color:#FFF;
 }
 .cyonform .percentbar_custom {
-	background-image:url(assets/images/percentbar_custom.png); background-repeat:repeat-x;
+	background-repeat:repeat-x;
 }
 
 /* =Tab Widget

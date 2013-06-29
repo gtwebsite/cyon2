@@ -1,7 +1,4 @@
 /* Only for IE 7 and below */
-.widget .cyonform legend {
-	display:none;
-}
 .cyonform button, .cyonform input[type=submit], .cyonform input[type=reset], .cyonform input[type=button], .cyonform .button, #respond input[type=submit] {
 	line-height:24px; padding:0 5px; 
 }
@@ -57,7 +54,7 @@ a.btn.has-icon2x span, a.btn.has-icon span {
 
 /* Clearers */
 
-#top, #footer-buckets, .wrapper, nav:after, #home-buckets, .widget-content, .entry-content, article, .page-content #bottom, .navigation, dl, .widget li, .widget > div, .products,  .widget > form, .wp-pagenavi, .grid, #author-info, .box, .cyon-tabs .tab_nav, .testimonials, .testimonials li,
+#top, #footer-buckets, .wrapper, nav:after, #home-buckets, .widget-content, .entry-content, article, .page-content #bottom, .navigation, dl, .widget li, .widget > div, .products,  .widget > form, .wp-pagenavi, .grid, #author-info, .box, .cyon-tabs .tab_nav, .testimonials, .testimonials li, #respond p, .cyonform .field, .cyonform .gfield, .widget-content, .ui-datepicker-header,
 .woocommerce_tabs ul, .type-product, .single_variation_wrap, .type-product .thumbnails, dl.variation, .widget .product_list_widget, #review_form form p, #respond p, .col2-set, #order_review, .gform_wrapper .gform_fields > li, .gform_wrapper .ginput_complex, .tabs .tab_nav, .clearfix, .category-archive-meta {
 	zoom:1!important;
 }

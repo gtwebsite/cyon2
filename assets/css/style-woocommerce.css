@@ -99,12 +99,12 @@ ins { padding:0; background:none; }
 .widget_login p input[type=text], .widget_login p input[type=password] { width:95%; max-width:200px; }
  
 .type-product { }
-.type-product .images { float:left; width:300px; margin-bottom:10px; }
+.type-product .images { float:left; width:300px; margin-bottom:30px; }
 .type-product .images .thumbnails a { display:block; width:19%; float:left; margin-left:1%; margin-bottom:3px; overflow:hidden; height:auto; }
 .type-product .images .thumbnails a img { width:100%; height:auto; display:block; }
 .type-product .images .thumbnails a.first { margin-left:0; clear:both; }
 
-.type-product .summary { float:right; width:420px; }
+.type-product .summary { margin-left:330px; }
 .type-product .stock { margin-bottom:10px; font-style:italic; }
 .type-product div[itemprop="description"] { margin:5px 0 0 0; }
 .type-product h1 { margin:0 0 20px 0; font-size:260%; line-height:normal; }
@@ -209,7 +209,7 @@ article .create-account .form-row-first, article .create-account .form-row-last 
 #order_review .shop_table { float:left; width:47%; }
 #payment { float:right; width:47%; }
 #payment label { display:inline; font-weight:bold; }
-#payment ul { margin-left:0; }
+#payment ul { margin-left:0; padding-left:0; }
 #payment li { margin:0 0 5px 0; list-style:none; }
 #payment li img { position:relative; top:6px; display:inline; }
 #payment li p { margin-left:26px; }

@@ -29,7 +29,7 @@ Content
 Blog List
 - Content - done
 - Layout - done
-- Masonry
+- Masonry - removed
 - Featured Image - done
 
 Header
@@ -72,8 +72,10 @@ Custom Scripts
 - Footer - done
 
 Testimonials
+ - done
 
 Widgets
+ - removed
 
 Admin
 - Background - done
@@ -86,9 +88,9 @@ Pages
 - Search - done
 - 404 - done
 - Archive - done
-- Taxonomy
+- Taxonomy - done
 - Custom Types - done
-- Images
+- Images - done
 - Author - done
 
 Shortcodes

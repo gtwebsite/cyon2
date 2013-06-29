@@ -145,20 +145,21 @@ class Cyon {
 	
 	function registers(){
 		/* Javascripts */
-		wp_register_script('cyon_jquery_all',THEME_ASSETS_URI . '/js/jquery.all.js',array('jquery'),'1.0.0');
-		wp_register_script('cyon_jquery_custom',THEME_ASSETS_URI . '/js/jquery.custom.js',array('cyon_jquery_all'),'1.0.0');
+		wp_register_script('cyon_jquery_all',THEME_ASSETS_URI . 'js/jquery.all.js',array('jquery'),'1.0.0');
+		wp_register_script('cyon_jquery_custom',THEME_ASSETS_URI . 'js/jquery.custom.js',array('cyon_jquery_all'),'1.0.0');
 		wp_register_script('gmap_api','http://maps.google.com/maps/api/js?sensor=false',array('jquery'),'1.0.0',false);
-		wp_register_script('gmap',THEME_ASSETS_URI . '/js/jquery.gmap.min.js',array('jquery'),'3.3.3');
+		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery'),'3.3.3');
 		wp_register_script('mediaelement',THEME_ASSETS_URI . 'js/jquery.mediaelement.min.js',array('jquery'),'2.12.0');
 		
 		/* Styles */
-		wp_register_style('cyon_style_responsive', THEME_ASSETS_URI . '/css/style-responsive.css',array(),'1.0.0',false);
-		wp_register_style('cyon_style_woocommerce', THEME_ASSETS_URI . '/css/style-woocommerce.css',array(),'1.0.0',false);
+		wp_register_style('cyon_style_responsive', THEME_ASSETS_URI . 'css/style-responsive.css',array(),'1.0.0',false);
+		wp_register_style('cyon_style_woocommerce', THEME_ASSETS_URI . 'css/style-woocommerce.css',array(),'1.0.0',false);
+		wp_register_style('cyon_style_woocommerce_responsive', THEME_ASSETS_URI . 'css/style-woocommerce-responsive.css',array(),'1.0.0',false);
 		wp_register_style('mediaelement_style',THEME_ASSETS_URI . 'css/mediaelementplayer.min.css',array(),'2.12.0');
 		
 		/* Admin */
-		wp_register_script('cyon_custom_admin_script', THEME_ASSETS_URI . '/js/jquery.admin.js', array('jquery'),'1.0.0');
-		wp_register_style('cyon_custom_admin_style', THEME_ASSETS_URI . '/css/style-admin.css' );
+		wp_register_script('cyon_custom_admin_script', THEME_ASSETS_URI . 'js/jquery.admin.js', array('jquery'),'1.0.0');
+		wp_register_style('cyon_custom_admin_style', THEME_ASSETS_URI . 'css/style-admin.css' );
 	}
 	
 }

@@ -56,8 +56,12 @@ if ( ! is_admin() || defined('DOING_AJAX') ) {
 /* =Woocommerce only CSS
 ----------------------------------------------- */
 function cyon_register_scripts_styles_woocommerce(){
+	global $data;
 	if(get_option('woocommerce_frontend_css') == 'no'){
 		wp_enqueue_style('cyon_style_woocommerce');
+		if($data['responsive']==1){
+			wp_enqueue_style('cyon_style_woocommerce_responsive'); 
+		}
 	}
 	if (is_product() && get_option('woocommerce_frontend_css') == 'no'){
 		wp_dequeue_script('wc-single-product');

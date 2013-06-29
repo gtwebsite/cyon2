@@ -197,17 +197,11 @@ function cyon_testimonial( $atts, $content = null ) {
 		}
 		$html .= '<ul class="testimonials '.$atts['classname'].'">';
 		foreach ($testimonials as $testimonial) {
-			$html .= '
-					<li class="clearfix">
-						<div class="name">
-							<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />
-							<h4>'.$testimonial['title'].'</h4>
-							<p>'.$testimonial['company'].'</p>
-						</div>
-						<blockquote>
-							'.$testimonial['text'].'
-						</blockquote>
-					</li>';
+			$html .= '<li class="clearfix"><div class="name">';
+			$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+			$html .= '<h4>'.$testimonial['title'].'</h4>';
+			$html .= $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
+			$html .= '</div><blockquote>'.$testimonial['description'].'</blockquote></li>';
 		}
 		$html .= '</ul>';
 		if($atts['style']=='fade'){

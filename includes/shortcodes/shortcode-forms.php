@@ -20,7 +20,7 @@ function cyon_newsletter( $atts, $content = null ) {
 	if($content!=''){
 		$html .= '<legend>'.$content.'</legend>';
 	}
-	$html .= '<div class="box"></div><input type="hidden" class="nonce" name="nonce" value="'.$nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$atts['email'].'" />';
+	$html .= '<div class="box hide-text"></div><input type="hidden" class="nonce" name="nonce" value="'.$nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$atts['email'].'" />';
 	if($atts['name']=='yes'){
 		$html .= '<p><label for="newsletter_name">'.__('Name','cyon').':</label> <input type="text" id="newsletter_name" name="name" placeholder="'.__('Name','cyon').'" /></p>';
 	}
@@ -44,7 +44,7 @@ function cyon_newsletter_ajax(){ ?>
 				jQuery('.cyon-newsletter form').each(function(){
 					jQuery(this).submit(function(){
 						if(jQuery(this).find('input[type=email]').val()=='') {
-							jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter your email address.','cyon'); ?>');
+							jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter your email address.','cyon'); ?>').removeClass('hide-text');
 							jQuery(this).find('input[type=email]').addClass('error');
 							return false;
 						} else {
@@ -53,7 +53,7 @@ function cyon_newsletter_ajax(){ ?>
 							var email = jQuery(this).find('input[type=email]').val();
 							var nonce = jQuery(this).find('input.nonce').val();
 							if(email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-								jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter a valid email address.','cyon'); ?>');
+								jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter a valid email address.','cyon'); ?>').removeClass('hide-text');
 								jQuery(this).find('input[type=email]').addClass('error');
 								return false;
 							} else {
@@ -74,9 +74,9 @@ function cyon_newsletter_ajax(){ ?>
 										jQuery('.cyon-newsletter form').removeClass('form-sending');
 										jQuery('.cyon-newsletter button').show();
 										if(results==1){
-											jQuery('.cyon-newsletter .box').removeClass('box-red').addClass('box-green').text('<?php _e('Your email has been subscribed to our mailing list.'); ?>');
+											jQuery('.cyon-newsletter .box').removeClass('box-red').addClass('box-green').text('<?php _e('Your email has been subscribed to our mailing list.'); ?>').removeClass('hide-text');
 										}else{
-											jQuery('.cyon-newsletter .box').addClass('box-red').text('<?php _e('There was a problem in the server. Please try again later.'); ?>');
+											jQuery('.cyon-newsletter .box').addClass('box-red').text('<?php _e('There was a problem in the server. Please try again later.'); ?>').removeClass('hide-text');
 										}
 										jQuery('.cyon-newsletter input[type=email]').removeClass('error');
 										jQuery('.cyon-newsletter input[type=email]').val('');
@@ -123,7 +123,7 @@ function cyon_contact_form( $atts, $content = null ) {
 	if($content!=''){
 		$html .= '<legend>'.$content.'</legend>';
 	}
-	$html .= '<div class="box"></div><input type="hidden" class="nonce" name="nonce" value="'.$nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$atts['email'].'" />';
+	$html .= '<div class="box hide-text"></div><input type="hidden" class="nonce" name="nonce" value="'.$nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$atts['email'].'" />';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_name">'.__('Name','cyon').':</label></dt><dd class="inputs"><input type="text" id="contact_name" name="name" class="medium" /></dd></dl>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_email">'.__('Email','cyon').':</label></dt><dd class="inputs"><input type="email" id="contact_email" name="email" class="medium" /></dd></dl>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_phone">'.__('Phone','cyon').':</label></dt><dd class="inputs"><input type="phone" id="contact_phone" name="phone" class="medium" /></dd></dl>';
@@ -167,7 +167,7 @@ function cyon_contact_ajax(){ ?>
 							var email = jQuery(this).find('input[type=email]').val();
 							var nonce = jQuery(this).find('input.nonce').val();
 							if(email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-								jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter a valid email address.','cyon'); ?>');
+								jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter a valid email address.','cyon'); ?>').removeClass('hide-text');
 								jQuery(this).find('input[type=email]').addClass('error');
 								return false;
 							} else {
@@ -190,9 +190,9 @@ function cyon_contact_ajax(){ ?>
 										jQuery('.cyon-contact-form form').removeClass('form-sending');
 										jQuery('.cyon-contact-form button').show();
 										if(results==1){
-											jQuery('.cyon-contact-form .box').removeClass('box-red').addClass('box-green').text('<?php _e('Your inquiry has been sent. We will get back to you shortly','cyon'); ?>');
+											jQuery('.cyon-contact-form .box').removeClass('box-red').addClass('box-green').text('<?php _e('Your inquiry has been sent. We will get back to you shortly','cyon'); ?>').removeClass('hide-text');
 										}else{
-											jQuery('.cyon-contact-form .box').addClass('box-red').text('<?php _e('There was a problem in the server. Please try again later.','cyon'); ?>');
+											jQuery('.cyon-contact-form .box').addClass('box-red').text('<?php _e('There was a problem in the server. Please try again later.','cyon'); ?>').removeClass('hide-text');
 										}
 										jQuery('.cyon-contact-form input[type=email]').removeClass('error');
 										jQuery('.cyon-contact-form input[type=text]').val('');
@@ -205,7 +205,7 @@ function cyon_contact_ajax(){ ?>
 								return false;
 							}
 						} else {
-							jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Empty field(s) required.','cyon'); ?>');
+							jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Empty field(s) required.','cyon'); ?>').removeClass('hide-text');
 							return false;
 						} 
 					});

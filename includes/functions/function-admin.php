@@ -273,6 +273,28 @@ if ( class_exists( 'Tax_Meta_Class' ) ){
 }
 
 
+/* =Register new widgets
+----------------------------------------------- */
+function cyon_custom_widgets_init(){
+	global $data;
+	$widgets = $data['widgets'];
+	if(count($widgets)>1){
+		foreach ($widgets as $widget) {
+			if(strlen($widget['title'])>0){
+				register_sidebar( array(
+					'name' => __( $widget['title'] ),
+					'id' => 'cyon-'.str_replace(' ', '-', strtolower($widget['title'])),
+					'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+					'after_widget' => '</aside>',
+					'before_title' => '<h3 class="widget-title">',
+					'after_title' => '</h3>',
+				) );
+			}
+		}
+	}
+}
+add_action( 'widgets_init', 'cyon_custom_widgets_init' );
+
 /* =Remove core and plugin updates
 ----------------------------------------------- */
 if($data['admin_updates']['admin_core_updates']==1){

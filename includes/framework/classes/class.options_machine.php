@@ -568,7 +568,7 @@ class Options_Machine {
 					} else {
 						$i = 0;
 						foreach ($testimonials as $testimonial) {
-							$oldorder = $slide['order'];
+							$oldorder = $testimonial['order'];
 							$i++;
 							$order = $i;
 							$output .= Options_Machine::optionsframework_testimonial_function($value['id'],$value['std'],$oldorder,$order,$int);
@@ -579,36 +579,37 @@ class Options_Machine {
 
 				break;
 
-				/***** Added by Gtwebsite *****/
-				//drag & drop widget manager
-				case 'widget':
+				case 'newslider':
+					/***** Updated by Gtwebsite *****/
 					if(!isset($data[$value['id']])) {
 						$data[$value['id']] = '';
 					}
+					/********************************/
 					$_id = strip_tags( strtolower($value['id']) );
 					$int = '';
 					$int = optionsframework_mlu_get_silentpost( $_id );
 					$output .= '<div class="slider"><ul id="'.$value['id'].'" rel="'.$int.'">';
-					$widgets = $data[$value['id']];
-					$count = count($widgets);
+					$slides = $data[$value['id']];
+					$count = count($slides);
 					if(!isset($value['std'])) $value['std'] = '';
 					if ($count < 2) {
 						$oldorder = 1;
 						$order = 1;
-						$output .= Options_Machine::optionsframework_widget_function($value['id'],$value['std'],$oldorder,$order,$int);
+						$output .= Options_Machine::optionsframework_newslider_function($value['id'],$value['std'],$oldorder,$order,$int);
 					} else {
 						$i = 0;
-						foreach ($widgets as $widget) {
+						foreach ($slides as $slide) {
 							$oldorder = $slide['order'];
 							$i++;
 							$order = $i;
-							$output .= Options_Machine::optionsframework_widget_function($value['id'],$value['std'],$oldorder,$order,$int);
+							$output .= Options_Machine::optionsframework_newslider_function($value['id'],$value['std'],$oldorder,$order,$int);
 						}
 					}			
 					$output .= '</ul>';
-					$output .= '<a href="#" class="button widget_add_button">'. __( 'Add New Widget','cyon' ) .'</a></div>';
-					
+					$output .= '<a href="#" class="button slide_add_button">Add New Slide</a></div>';
+
 				break;
+
 			}
 			
 			//description of each option
@@ -826,7 +827,7 @@ class Options_Machine {
 	    if (isset($slide[$oldorder])) { $val = $slide[$oldorder]; } else {$val = $std;}
 		
 		//initialize all vars
-		$slidevars = array('title','url','company','text');
+		$slidevars = array('title','url','link','description');
 		
 		foreach ($slidevars as $slidevar) {
 			if (!isset($val[$slidevar])) {
@@ -871,8 +872,8 @@ class Options_Machine {
 			}
 		$slider .= '</div>';	
 		
-		$slider .= '<label>'.__( 'Text', 'cyon' ).'</label>';
-		$slider .= '<textarea class="slide of-input" name="'. $id .'['.$order.'][text]" id="'. $id .'_'.$order .'_slide_text" cols="8" rows="8">'.stripslashes($val['text']).'</textarea>';
+		$slider .= '<label>Text</label>';
+		$slider .= '<textarea class="slide of-input" name="'. $id .'['.$order.'][description]" id="'. $id .'_'.$order .'_slide_description" cols="8" rows="8">'.stripslashes($val['description']).'</textarea>';
 	
 		$slider .= '<a class="slide_delete_button" href="#">'.__( 'Delete', 'cyon' ).'</a>';
 	    $slider .= '<div class="clear"></div>' . "\n";
@@ -883,14 +884,8 @@ class Options_Machine {
 		return $slider;
 		
 	}
-	/**
-	 * Drag and drop widget manager
-	 *
-	 * @uses get_option()
-	 *
-	 * @return string
-	 */
-	public static function optionsframework_widget_function($id,$std,$oldorder,$order,$int){
+	
+	public static function optionsframework_newslider_function($id,$std,$oldorder,$order,$int){
 	
 	    $data = get_option(OPTIONS);
 		
@@ -903,7 +898,7 @@ class Options_Machine {
 	    if (isset($slide[$oldorder])) { $val = $slide[$oldorder]; } else {$val = $std;}
 		
 		//initialize all vars
-		$slidevars = array('title','location','order');
+		$slidevars = array('title','url','link','description');
 		
 		foreach ($slidevars as $slidevar) {
 			if (!isset($val[$slidevar])) {
@@ -915,52 +910,42 @@ class Options_Machine {
 		if (!empty($val['title'])) {
 			$slider .= '<li><div class="slide_header"><strong>'.stripslashes($val['title']).'</strong>';
 		} else {
-			$slider .= '<li><div class="slide_header"><strong>'.__( 'Widget', 'cyon' ).' '.$order.'</strong>';
+			$slider .= '<li><div class="slide_header"><strong>Slide '.$order.'</strong>';
 		}
 		
 		$slider .= '<input type="hidden" class="slide of-input order" name="'. $id .'['.$order.'][order]" id="'. $id.'_'.$order .'_slide_order" value="'.$order.'" />';
 	
-		$slider .= '<a class="slide_edit_button" href="#">'.__( 'Edit', 'cyon' ).'</a></div>';
+		$slider .= '<a class="slide_edit_button" href="#">Edit</a></div>';
 		
 		$slider .= '<div class="slide_body">';
 		
-		$slider .= '<label>'.__( 'Name', 'cyon' ).'</label>';
+		$slider .= '<label>Title</label>';
 		$slider .= '<input class="slide of-input of-slider-title" name="'. $id .'['.$order.'][title]" id="'. $id .'_'.$order .'_slide_title" value="'. stripslashes($val['title']) .'" />';
 		
-		$slider .= '<label>'.__( 'Location', 'cyon' ).'</label>';
-		$slider .= '<div class="select_wrapper typography-face" original-title="'. __( 'Location' ) .'">';
-		$slider .= '<select class="of-typography of-typography-face select" name="'. $id .'['.$order.'][location]" id="'. $id .'_'.$order .'_slide_location">';
-			$widget_locations = array(
-				'' => __('- None -','cyon'),
-				'cyon_before_header' => __('Header Before','cyon'),
-				'cyon_header' => __('Header','cyon'),
-				'cyon_before_body' => __('Body Before','cyon'),
-				'cyon_after_body' => __('Body After','cyon'),
-				'cyon_before_body_wrapper' => __('Body Wrapper Before','cyon'),
-				'cyon_after_body_wrapper' => __('Body Wrapper After','cyon'),
-				'cyon_primary_before' => __('Primary Content Before','cyon'),
-				'cyon_primary_after' => __('Primary Content After','cyon'),
-				'cyon_sidebar_before' => __('Sidebar Before','cyon'),
-				'cyon_sidebar_after' => __('Sidebar After','cyon'),
-				'cyon_post_header_before' => __('Post Header Before','cyon'),
-				'cyon_post_header_after' => __('Post Header After','cyon'),
-				'cyon_post_content_before' => __('Post Content Before','cyon'),
-				'cyon_post_content_after' => __('Post Content After','cyon'),
-				'cyon_post_footer' => __('Post Footer','cyon'),
-				'cyon_home_content' => __('Homepage Content','cyon'),
-				'cyon_footer' => __('Footer','cyon'),
-				'cyon_after_footer' => __('Footer After','cyon')
-			);
-			foreach ($widget_locations as $i=>$widget_location) {
-				$slider .= '<option value="'. $i .'" ' . selected($val['location'], $i, false) . '>'. $widget_location .'</option>';
-			}			
-		$slider .= '</select></div><br style="clear:both" />';
-		//$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][location]" id="'. $id .'_'.$order .'_slide_location" value="'. $val['location'] .'" />';
-
-		$slider .= '<label>'.__( 'Order', 'cyon' ).'</label>';
-		$slider .= '<textarea class="slide of-input" name="'. $id .'['.$order.'][order]" id="'. $id .'_'.$order .'_slide_order" cols="8" rows="8">'.stripslashes($val['order']).'</textarea>';
+		$slider .= '<label>Image URL</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
+		
+		$slider .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'" rel="' . $int . '">Upload</span>';
+		
+		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}
+		$slider .= '<span class="button mlu_remove_button '. $hide.'" id="reset_'. $id .'_'.$order .'" title="' . $id . '_'.$order .'">Remove</span>';
+		$slider .='</div>' . "\n";
+		$slider .= '<div class="screenshot">';
+		if(!empty($val['url'])){
+			
+	    	$slider .= '<a class="of-uploaded-image" href="'. $val['url'] . '">';
+	    	$slider .= '<img class="of-option-image" id="image_'.$id.'_'.$order .'" src="'.$val['url'].'" alt="" />';
+	    	$slider .= '</a>';
+			
+			}
+		$slider .= '</div>';	
+		$slider .= '<label>Link URL (optional)</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][link]" id="'. $id .'_'.$order .'_slide_link" value="'. $val['link'] .'" />';
+		
+		$slider .= '<label>Description (optional)</label>';
+		$slider .= '<textarea class="slide of-input" name="'. $id .'['.$order.'][description]" id="'. $id .'_'.$order .'_slide_description" cols="8" rows="8">'.stripslashes($val['description']).'</textarea>';
 	
-		$slider .= '<a class="slide_delete_button" href="#">'.__( 'Delete', 'cyon' ).'</a>';
+		$slider .= '<a class="slide_delete_button" href="#">Delete</a>';
 	    $slider .= '<div class="clear"></div>' . "\n";
 	
 		$slider .= '</div>';
@@ -969,6 +954,7 @@ class Options_Machine {
 		return $slider;
 		
 	}
+
 }//end Options Machine class
 
 ?>

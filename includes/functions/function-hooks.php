@@ -10,12 +10,6 @@ function cyon_header() {
 function cyon_header_wrapper() {
     do_action('cyon_header_wrapper');
 }
-function cyon_footer() {
-    do_action('cyon_footer');
-}
-function cyon_footer_wrapper() {
-    do_action('cyon_footer_wrapper');
-}
 function cyon_body() {
     do_action('cyon_body');
 }
@@ -28,6 +22,15 @@ function cyon_primary() {
 function cyon_secondary() {
     do_action('cyon_secondary');
 }
+function cyon_footer() {
+    do_action('cyon_footer');
+}
+function cyon_footer_wrapper() {
+    do_action('cyon_footer_wrapper');
+}
+function cyon_home_content() {
+    do_action('cyon_home_content');
+}
 function cyon_post_header() {
     do_action('cyon_post_header');
 }
@@ -36,12 +39,6 @@ function cyon_post_content() {
 }
 function cyon_post_footer() {
     do_action('cyon_post_footer');
-}
-function cyon_home_content() {
-    do_action('cyon_home_content');
-}
-function cyon_after_footer() {
-    do_action('cyon_after_footer');
 }
 
 

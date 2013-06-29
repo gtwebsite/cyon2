@@ -71,7 +71,7 @@ class CyonContactFormWidget extends WP_Widget {
 		if($instance['text']!=''){
 			echo '<legend>'.$instance['text'].'</legend>';
 		}
-		echo '<div class="box"></div><input type="hidden" class="nonce" name="nonce" value="'.$this->nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$this->emailto.'" />';
+		echo '<div class="box hide-text"></div><input type="hidden" class="nonce" name="nonce" value="'.$this->nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$this->emailto.'" />';
 		echo '<p><label for="contact_name">'.__('Name').':</label> <input type="text" id="contact_name" name="name" /></p>';
 		echo '<p><label for="contact_email">'.__('Email').':</label> <input type="email" id="contact_email" name="email" /></p>';
 		echo '<p><label for="contact_phone">'.__('Phone').':</label> <input type="phone" id="contact_phone" name="phone" /></p>';
@@ -121,7 +121,7 @@ class CyonContactFormWidget extends WP_Widget {
 							var email = jQuery(this).find('input[type=email]').val();
 							var nonce = jQuery(this).find('input.nonce').val();
 							if(email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-								jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter a valid email address.'); ?>');
+								jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Please enter a valid email address.'); ?>').removeClass('hide-text');
 								jQuery(this).find('input[type=email]').addClass('error');
 								return false;
 							} else {
@@ -145,9 +145,9 @@ class CyonContactFormWidget extends WP_Widget {
 										jQuery('.cyon-contact-form form').removeClass('form-sending');
 										jQuery('.cyon-contact-form button').show();
 										if(results==1){
-											jQuery('.cyon-contact-form .box').removeClass('box-red').addClass('box-green').text('<?php _e('Your inquiry has been sent. We will get back to you shortly'); ?>');
+											jQuery('.cyon-contact-form .box').removeClass('box-red').addClass('box-green').text('<?php _e('Your inquiry has been sent. We will get back to you shortly'); ?>').removeClass('hide-text');
 										}else{
-											jQuery('.cyon-contact-form .box').addClass('box-red').text('<?php _e('There was a problem in the server. Please try again later.'); ?>');
+											jQuery('.cyon-contact-form .box').addClass('box-red').text('<?php _e('There was a problem in the server. Please try again later.'); ?>').removeClass('hide-text');
 										}
 										jQuery('.cyon-contact-form input[type=email]').removeClass('error');
 										jQuery('.cyon-contact-form input[type=text]').val('');
@@ -162,7 +162,7 @@ class CyonContactFormWidget extends WP_Widget {
 								return false;
 							}
 						} else {
-							jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Empty field(s) required.'); ?>');
+							jQuery(this).find('.box').addClass('box-red').removeClass('box-green').text('<?php _e('Empty field(s) required.'); ?>').removeClass('hide-text');
 							return false;
 						} 
 					});

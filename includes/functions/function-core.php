@@ -869,6 +869,27 @@ function cyon_footer_jquery(){
 			});
 			<?php } ?>
 
+			<?php if($data['responsive']==1){ ?>
+			// Responsive Menu Support
+			function checkWidth() {
+				var pagesize = jQuery('#page .wrapper').width();
+				if (pagesize <= 768) {
+					jQuery('#branding nav').attr('id','access_r');
+				}else{
+					jQuery('#branding nav').attr('id','access');
+				}
+			}
+			checkWidth();
+			jQuery(window).resize(checkWidth);
+			jQuery('#access_r').click(function(){
+				if(!jQuery(this).find('ul.menu').hasClass('showmenu')){
+					jQuery(this).find('ul.menu').addClass('showmenu');
+				}else{
+					jQuery(this).find('ul.menu').removeClass('showmenu');
+				}
+			});
+			<?php } ?>
+
 			// Flexslider Banner
 			jQuery('.flexslider').flexslider({
 				controlNav: false,

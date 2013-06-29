@@ -1,0 +1,158 @@
+
+/* =Page Layout on Smaller Screens
+----------------------------------------------- */
+
+#access_r {
+	position:absolute; top:0; left:0; width:100%; background:#f8f8f8; height:40px; cursor:pointer;
+}
+#access_r h3 {
+	z-index:1; display:block!important; box-shadow:inset 1px 1px 3px rgba(0,0,0,.1), 1px 1px #fff; border-radius:3px; background:#e8e8e8 url(../images/icons.png) -380px -718px; width:36px; height:30px; overflow:hidden; text-indent:-999px; no-repeat; margin:0; padding:0; font:inherit!important; color:inherit!important; line-height:30px!important; position:absolute; right:10px; top:5px;
+}
+#access_r ul {
+	margin:0; padding:0; overflow:hidden;
+}
+#access_r ul.menu {
+	width:0; background:#333; box-shadow:2px 2px 20px rgba(0,0,0,.2); z-index:2; position:relative; margin-left:-50px;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+}
+#access_r ul.showmenu {
+	width:80%; margin-left:0;
+}
+#access_r ul.menu > li > a {
+	padding:10px 15px; border-bottom:1px solid #222; border-top:1px solid #444; display:block; font-weight:bold;
+}
+#access_r ul.menu > li ul {
+	background:#222; padding:0; margin:0; box-shadow:inset 1px 1px 2px rgba(0,0,0,.1); display:block!important;
+}
+#access_r ul.menu > li > ul a {
+	padding:10px 15px 10px 30px; display:block; border-bottom:1px solid #1a1a1a; border-top:1px solid #2a2a2a;
+}
+#access_r ul.menu > li ul ul a{
+	padding-left:50px;
+}
+#access_r ul.menu > li > ul > li:first-child > a {
+	border-top:0;
+}
+
+/* Portrait tablet to landscape and desktop */
+@media only screen and (max-width: 1020px){
+	#page { 
+		min-width:100%!important;
+	}
+	#branding {
+		padding-top:40px;
+	}
+	.wrapper {
+		max-width:768px;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media only screen and (max-width:788px) {
+	#page { 
+		min-width:100%;
+	}
+	#page {
+		width:auto; max-width:788px; min-width:auto;
+	}
+	.widget, #secondary, .general-2right #primary, .general-2left #primary, .wrapper, #branding hgroup, #access, .row-fluid article, .postlist li, .cyon-sitemap div, .subpages li {
+		width:auto!important; float:none!important; margin-left:0!important; text-align:left;
+	}
+	.grid article {
+		width:50%!important; float:left!important; text-align:center;
+	}
+	#top div, #top p, #bottom .copyright, #access2 {
+		float:none; text-align:left; width:auto; margin-bottom:10px; margin-left:0; text-align:left;
+	}
+	#access2 ul { 
+		text-align:left;
+	}
+	#primary input[type=text], #primary input[type=email], #primary input[type=phone], #primary textarea, #primary select {
+		width:95%!important; display:block; margin-bottom:5px;
+	}
+	#primary .cyonform .ui-datepicker-trigger {
+		display:none;
+	}
+	#primary select {
+		width:98%!important;
+	}
+	#respond label {
+		float:none;
+	}
+	ol.commentlist .children textarea {
+		width:95%;
+	}
+	.postlist li, .subpages li {
+		margin-bottom:10px;
+	}
+}
+
+/* Landscape phones and down */
+@media only screen and (max-width:480px) {
+	body { 
+		-webkit-text-size-adjust: 100%
+	}
+	#respond label, .cyonform .field .label, .cyonform .gfield_label, .cyonform .inputs, .cyonform .gform_fields .ginput_container {
+		float:none; width:100%!important;
+	}
+	#primary .cyonform .gform_fields .validation_message {
+		margin-left:0;
+	}
+	#primary input[type=text], #primary input[type=email], #primary input[type=phone], #primary textarea, #primary select {
+		width:95%!important; display:block; margin-bottom:5px;
+	}
+	#primary select {
+		width:98%!important;
+	}
+	.ginput_complex .ginput_left, .ginput_complex .ginput_right {
+		float:none; margin-right:0;
+	}
+	.has-icon-list li, .has-icon2x-list li {
+		padding:0 0 0 20px; float:none!important; width:auto!important;
+	}
+	ol.commentlist .children textarea {
+		width:95%;
+	}
+	.gallery dl {
+		float:none; width:100%; margin:0 0 5px 0;
+	}
+	.flexslider .flex-caption {
+		display:none;
+	}
+	.testimonials {
+		margin:0; padding:0;
+	}
+	.testimonials li {
+		margin:0 0 20px 0; border-radius:0; padding:0;
+	}
+	.testimonials li .name { 
+		margin:0 20px 20px 0;
+	}
+	.testimonials li blockquote {
+		margin-left:0; background:none; padding:0; margin-bottom:0;
+	}
+	.testimonials li blockquote:after {
+		display:none;
+	}
+	.grid .span2 {
+		display:none;
+	}
+	.grid .span10 {
+		width:100%; margin-left:0;
+	}
+	.grid .price h2 {
+		font-size:130%;
+	}
+	.grid article header {
+		height:auto;
+	}
+	.grid hgroup h4 {
+		display:none;
+	}
+	.grid article footer, .grid article section > ul li, .grid article header hgroup {
+		padding:10px 5px;
+	}
+}

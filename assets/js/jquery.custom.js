@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 	
 	// Menu
+	jQuery('#access').show();
 	jQuery('#access li').hoverIntent(function(){
 		jQuery(this).find('> ul').slideDown('fast', 'easeOutQuad');
 	},function(){

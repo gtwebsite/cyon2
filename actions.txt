@@ -16,3 +16,7 @@ cyon_primary
 cyon_secondary
 cyon_footer
 cyon_footer_wrapper
+cyon_home_content
+cyon_post_header
+cyon_post_content
+cyon_post_footer

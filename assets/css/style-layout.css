@@ -24,6 +24,9 @@ div.alignleft:empty, div.alignright:empty {
 img {
 	max-width:100%; height:auto;
 }
+.hide-text {
+	display:none;
+}
 
 
 /* =Article
@@ -121,7 +124,7 @@ img {
 	display:none;
 }
 .cyonform .gsection_title, .cyonform legend {
-	font-size:18px; border-bottom:1px dashed #efefef; padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
+	font-size:18px; padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
 }
 .cyonform .gform_heading {
 	margin-bottom:10px;
@@ -138,9 +141,6 @@ img {
 .cyonform .ginput_complex .ginput_left, .cyonform .ginput_complex .ginput_right {
 	float:left; margin-right:10px;
 }
-.cyonform .ginput_complex label, .cyonform .description {
-	display:block; color:#999; font-size:11px; font-style:italic;
-}
 
 /* Fields */
 .cyonform .gform_fields {
@@ -156,13 +156,13 @@ img {
 	float:left; width:22%
 }
 .cyonform .gform_fields .ginput_container, .cyonform .field .inputs {
-	float:left; width:78%;
+	float:left; width:78%; margin:0;
 }
 .cyonform .gform_fields .gsection {
 	padding:0;
 }
 .cyonform .gform_fields .gfield_required {
-	color:#ff0000; position:absolute; left:20%;
+	position:absolute; left:20%;
 }
 .page-content .cyonform .gform_fields ul li, .page-content .cyonform .gform_fields ul, .page-content .cyonform .selection, .page-content .cyonform .selection li {
 	list-style:none; padding:0; margin:0;
@@ -179,46 +179,28 @@ img {
 .cyonform .gform_fields select{
 	width:auto!important;
 }
-.cyonform .gfield_error {
-	background:#fff5f5;
-}
-.cyonform .gfield_error input[type=text], .cyonform .gfield_error input[type=email], .cyonform .gfield_error input[type=phone], .cyonform .gfield_error select, .cyonform .gfield_error textarea, .cyonform input.error, .cyonform textarea.error {
-	background:#ffb2b2; border-color:#ffb2b2; color:#fff; text-shadow:none;
-}
-.cyonform .gform_fields .validation_message {
-	clear:both; margin-left:22%; margin-top:5px; color:#ff0000; font-size:11px; font-weight:bold;
-}
-.cyonform .ui-datepicker-trigger {
-	position:relative; left:-23px; top:3px; cursor:pointer; display:inline-block;
-}
 .ui-datepicker-control, .ui-datepicker-links {
 	display:none;
 }
 
 /* Gform Date picker */
 #ui-datepicker-div {
-	z-index:20; padding:10px; background:#fff; box-shadow:1px 1px 3px rgba(0,0,0,.1); border:1px solid #ccc;  border-radius:5px; margin:5px 0 0 0;
+	z-index:20!important; padding:10px; border-radius:3px; margin:5px 0 0 0;
 }
 #ui-datepicker-div table {
 	width:15em;
 }
-#ui-datepicker-div table a {
-	color:inherit; cursor:pointer;
+#ui-datepicker-div .ui-datepicker-header {
+	margin-bottom:10px;
 }
-#ui-datepicker-div table a:hover {
-	color:#c1460a;
+#ui-datepicker-div select {
+	padding:3px; margin-right:5px;
 }
-#ui-datepicker-div table thead td a {
-	color:#999;
+#ui-datepicker-div .ui-datepicker-header a {
+	float:left; margin-right:5px; cursor:pointer;
 }
-#ui-datepicker-div table td {
-	text-align:center;
-}
-#ui-datepicker-div table td.ui-datepicker-today {
-	background:#efefef;
-}
-#ui-datepicker-div table td.ui-datepicker-current-day {
-	background:#1e7ec8; color:#fff;
+#ui-datepicker-div .ui-datepicker-title {
+	float:right;
 }
 
 /* Gform Progress Bar */
@@ -229,35 +211,15 @@ img {
 	font-size:13px; line-height:1em !important; margin:0 0 6px 0!important; padding:0!important; clear:both; filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;
 }
 .cyonform .gf_progressbar {
-	width:99%; height:20px; overflow:hidden; line-height:20px!important; border:1px solid #ACACAC; border-right:1px solid #959595; border-bottom:1px solid #959595;	background-image:url(assets/images/percentbar_bg.png); background-repeat:repeat-x; background-position:bottom; background-color:#FFF; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px;
+	width:99%; height:30px; overflow:hidden; line-height:30px!important; border-radius:3px;
 }
 .cyonform .gf_progressbar_percentage {
-	height:20px; text-align:right; text-shadow: 0 1px 1px rgba(0,0,0,0.50);
+	height:30px; text-align:right; text-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 .cyonform .gf_progressbar_percentage span {
 	margin-right:5px; margin-left:5px;
 }
-.cyonform .gf_progressbar_percentage.percentbar_0 span {
-	color:#959595; text-shadow:none;
-}
-.cyonform .percentbar_blue {
-	background-image:url(assets/images/percentbar_blue.png); background-repeat:repeat-x; background-color:#0072BC; color:#FFF;
-}
-.cyonform .percentbar_gray {
-	background-image:url(assets/images/percentbar_gray.png); background-repeat:repeat-x; background-color:#666; color:#FFF;
-}
-.cyonform .percentbar_green { 
-	background-image:url(assets/images/percentbar_green.png); background-repeat:repeat-x; background-color:#94DC21; color:#FFF;
-}
-.cyonform .percentbar_orange {
-	background-image:url(assets/images/percentbar_orange.png); background-repeat:repeat-x; background-color:#DC7021; color:#FFF;
-}
-.cyonform .percentbar_red {
-	background-image:url(assets/images/percentbar_red.png); background-repeat:repeat-x; background-color:#DC2521; color:#FFF;
-}
-.cyonform .percentbar_custom {
-	background-image:url(assets/images/percentbar_custom.png); background-repeat:repeat-x;
-}
+
 
 /* Widget */
 .widget .cyonform .gform_fields > li { 
@@ -457,7 +419,7 @@ img {
 	padding:20px 0;
 }
 .grid aside {
-	padding-top:130px;
+	padding-top:100px;
 	text-align:right;
 }
 .grid ul, .grid ul li {
@@ -659,16 +621,19 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	font-size:85%; line-height:normal; margin:0; padding:0;
 }
 .testimonials li blockquote {
-	border:none; box-shadow:none; position:relative; margin:0 0 0 160px;
+	border:none; box-shadow:none; position:relative; margin:0 0 0 140px;
 }
 .testimonials li blockquote:after {
 	content:''; display:block; height:0; width:0; border-right:10px solid #f8f8f8; border-top:10px solid transparent; border-bottom:10px solid transparent; position:absolute; top:10px; left:-10px;
 }
-.cyon-testimonial blockquote {
-	border:none; box-shadow:none; position:relative; margin-bottom:15px; padding:10px;
-}
-.cyon-testimonial, .cyon-twitter {
+.cyon-testimonial {
 	overflow:hidden;
+}
+.cyon-testimonial li {
+	margin:0 0 20px 0; padding:0;
+}
+.cyon-testimonial blockquote {
+	border:none; box-shadow:none; position:relative; margin:0 0 15px 1px; padding:10px;
 }
 .cyon-testimonial li blockquote:after {
 	content:''; display:block; height:0; width:0; border-top:10px solid #f8f8f8; border-left:10px solid transparent; border-right:10px solid transparent; position:absolute; bottom:-10px; right:10px;
@@ -932,7 +897,7 @@ p.nocomments {
 	
 	/* Main navigation */
 	#access {
-		margin-bottom:10px;
+		margin-bottom:10px; display:none;
 	}
 	#access ul, #access ul li {
 		margin:0; padding:0; list-style:none;
@@ -1036,7 +1001,7 @@ p.nocomments {
 		margin-bottom:10px;
 	}
 	#access2 ul {
-		text-align:right; 
+		text-align:right; margin:0; padding:0;
 	}
 	#access2 ul li {
 		display:inline; padding-left:5px;
@@ -1072,6 +1037,6 @@ p.nocomments {
 #respond p {
 	*zoom:1;
 }
-#respond p:after, .cyonform .field:after, .cyonform .gfield:after, .widget-content:after {
+#respond p:after, .cyonform .field:after, .cyonform .gfield:after, .widget-content:after, .ui-datepicker-header:after {
 	display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden;
 }

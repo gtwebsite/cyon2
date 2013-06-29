@@ -2,9 +2,6 @@
 
 class CyonIframeWidget extends WP_Widget {
 
-	// Declare widget-wide variable
-	protected $var1, $var2;
-
 	// Creating your widget
 	function CyonIframeWidget(){
 		$widget_ops = array('classname' => 'cyon-iframe', 'description' => __('Displays Website on Iframe') );

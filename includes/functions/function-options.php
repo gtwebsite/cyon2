@@ -620,22 +620,6 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		/* Create End ------- */
 		$of_options[] = array( 'type' => 'group_end');
 
-		/* =Widget Areas
-		----------------------------------------------- */
-		$of_options[] = array( 'name' => __( 'Widget Areas', 'cyon' ),
-							'type' => 'heading');
-
-		/* Create Begin ------- */
-		$of_options[] = array( 'name' => __( 'Widget Manager', 'cyon' ),
-							'type' => 'group_begin');
-
-		/* Slider */
-		$of_options[] = array( 'desc' => __( 'Unlimited widgets with drag and drop sortings.' ),
-							'id' => 'widgets',
-							'type' => 'widget');
-
-		/* Create End ------- */
-		$of_options[] = array( 'type' => 'group_end');
 
 		/* =Admin
 		----------------------------------------------- */
