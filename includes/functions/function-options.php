@@ -256,7 +256,7 @@ if ( !function_exists( 'cyon_of_options' ) ){
 							'id' => 'content_thumbnail_size',
 							'std' => 'large',
 							'type' => 'radio',
-							'options' => array( 'small' => __( 'Small' ), 'medium' => __( 'Medium' ), 'large' => __( 'Large' ), 'full' => __( 'Full' ) ));
+							'options' => array( 'thumbnail' => __( 'Thumbnail' ), 'medium' => __( 'Medium' ), 'large' => __( 'Large' ), 'full' => __( 'Full' ) ));
 
 		/* Blog/taxonomy End ------- */
 		$of_options[] = array( 'type' => 'group_end');

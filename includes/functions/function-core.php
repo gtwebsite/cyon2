@@ -151,7 +151,7 @@ function cyon_header_styles(){
 			font-family:'<?php echo $secondary_font_face; ?>'; color:<?php echo $data['secondary_font']['color']; ?>;
 		}
 		#access ul.menu > li > a {
-			font-family:'<?php echo $menu_font_face; ?>'; color:<?php echo $data['menu_font']['color']; ?>;
+			font-family:'<?php echo $menu_font_face; ?>'; font-size:<?php echo $data['menu_font']['size']; ?>; font-style:<?php echo $data['menu_font']['style']; ?>; color:<?php echo $data['menu_font']['color']; ?>;
 		}
 	</style>	
 	<?php echo "\n"; ?>
