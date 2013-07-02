@@ -148,7 +148,7 @@ class Cyon {
 		wp_register_script('cyon_jquery_all',THEME_ASSETS_URI . 'js/jquery.all.js',array('jquery'),'1.0.0');
 		wp_register_script('cyon_jquery_custom',THEME_ASSETS_URI . 'js/jquery.custom.js',array('cyon_jquery_all'),'1.0.0');
 		wp_register_script('gmap_api','http://maps.google.com/maps/api/js?sensor=false',array('jquery'),'1.0.0',false);
-		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery'),'3.3.3');
+		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery','gmap_api'),'3.3.3');
 		wp_register_script('mediaelement',THEME_ASSETS_URI . 'js/jquery.mediaelement.min.js',array('jquery'),'2.12.0');
 		
 		/* Styles */

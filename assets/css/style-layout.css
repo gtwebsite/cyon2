@@ -902,12 +902,6 @@ p.nocomments {
 	#access ul, #access ul li {
 		margin:0; padding:0; list-style:none;
 	}
-	#access ul a {
-		-webkit-transition:all .2s linear;
-		-moz-transition:all .2s linear;
-		-o-transition:all .2s linear;
-		transition:all .2s linear;
-	}
 		/* First Level */
 		#access ul.menu > li, #access .menu > ul > li {
 			float:left; margin-left:2px; margin-bottom:2px; position:relative;

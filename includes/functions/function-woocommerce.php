@@ -27,20 +27,20 @@ function cyon_woo_init(){
 	add_action('woocommerce_after_main_content', 		'cyon_woocommerce_output_content_wrapper_end', 10);
 	
 	/* Add product wrapper */
-	add_action('woocommerce_before_shop_loop_item',		function() { echo '<div class="product-wrapper">'; }, 9 );
-	add_action('woocommerce_after_shop_loop_item',		function() { echo '</div>'; }, 999 );
+	add_action('woocommerce_before_shop_loop_item',		'cyon_woocommerce_before_shop_loop_item', 9 );
+	add_action('woocommerce_after_shop_loop_item',		'cyon_woocommerce_after_shop_loop_item', 999 );
 	
 	/* Override related products */
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-	add_action( 'woocommerce_after_single_product_summary', function() { global $data; woocommerce_related_products($data['woocommerce_product_cols'],$data['woocommerce_product_cols']); } , 20, 0 );
+	add_action( 'woocommerce_after_single_product_summary', 'cyon_woocommerce_output_related_products' , 20, 0 );
 	
 	/* Override upsell products */
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
-	add_action( 'woocommerce_after_single_product_summary', function() { global $data; woocommerce_upsell_display($data['woocommerce_product_cols'],$data['woocommerce_product_cols']); } , 15 );
+	add_action( 'woocommerce_after_single_product_summary', 'cyon_woocommerce_upsell_display', 15 );
 	
 	/* Thumbnails */
 	if(get_option('woocommerce_frontend_css') == 'no'){
-		add_filter( 'woocommerce_product_thumbnails_columns', function() { return 5; } );
+		add_filter( 'woocommerce_product_thumbnails_columns', 'cyon_woocommerce_product_thumbnails_columns' );
 	}
 
 	/* Product Columns */
@@ -117,6 +117,11 @@ function cyon_woocommerce_output_content_wrapper() { ?>
 <?php }
  
 
+function cyon_woocommerce_before_shop_loop_item() { ?>
+	<div class="product-wrapper">
+<?php }
+
+
 /* =Wrapper bottom
 ----------------------------------------------- */
 function cyon_woocommerce_output_content_wrapper_end() { ?>
@@ -126,10 +131,34 @@ function cyon_woocommerce_output_content_wrapper_end() { ?>
 		</div>
 <?php }
 
+function cyon_woocommerce_after_shop_loop_item() { ?>
+	</div>
+<?php }
+
+
+/* =Related Products
+----------------------------------------------- */
+function cyon_woocommerce_output_related_products() { 
+	global $data;
+	woocommerce_related_products($data['woocommerce_product_cols'],$data['woocommerce_product_cols']);
+}
+
+
+/* =Upsell Products
+----------------------------------------------- */
+function cyon_woocommerce_upsell_display() {
+	global $data;
+	woocommerce_upsell_display($data['woocommerce_product_cols'],$data['woocommerce_product_cols']);
+}
+
 
 /* =Display 24 products per page
 ----------------------------------------------- */
-add_filter('loop_shop_per_page', function($cols) { global $data; return $data['woocommerce_product_per_page']; } );
+add_filter('loop_shop_per_page', 'cyon_loop_shop_per_page');
+function cyon_loop_shop_per_page($cols){
+	global $data;
+	return $data['woocommerce_product_per_page'];
+}
 
 
 /* =Display rows
@@ -147,6 +176,12 @@ function cyon_woocommerce_reset_loop(){
 	$woocommerce_loop['columns'] = $data['woocommerce_product_cols'];
 }
 
+
+/* =Thumbnail
+----------------------------------------------- */
+function cyon_woocommerce_product_thumbnails_columns(){
+	return 5;
+}
 
 /* Total Cart Shortcode
 use [woocart]
