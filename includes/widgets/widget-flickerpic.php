@@ -27,7 +27,7 @@ class CyonFlickrWidget extends WP_Widget {
 
 		?>
 		  <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title') ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
-		  <p><label for="<?php echo $this->get_field_id('id'); ?>"><?php _e('Flickr ID  (<a href="http://www.idgettr.com" target="_blank">idGettr</a>)') ?>: <input class="widefat" id="<?php echo $this->get_field_id('id'); ?>" name="<?php echo $this->get_field_name('id'); ?>" type="text" value="<?php echo attribute_escape($id); ?>" /></label></p>
+		  <p><label for="<?php echo $this->get_field_id('id'); ?>"><?php _e('Flickr ID'); ?> (<a href="http://www.idgettr.com" target="_blank">idGettr</a>): <input class="widefat" id="<?php echo $this->get_field_id('id'); ?>" name="<?php echo $this->get_field_name('id'); ?>" type="text" value="<?php echo attribute_escape($id); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Number of images') ?>: <input id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="text" size="3" value="<?php echo attribute_escape($count); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Columns') ?>: <input id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>" type="text" size="3" value="<?php echo attribute_escape($columns); ?>" /></label></p>
 

@@ -485,7 +485,7 @@ a.btn-small {
 	border-bottom-color:#fff; border-bottom-left-radius:0; border-bottom-right-radius:0; background:none;
 }
 .toggle h3.toggle-active:before, .accordion h3.accordion-active:before { content: '- '; }
-.toggle .toggle-content, .accordion .accordion-content { display:none; padding:5px 10px; border:1px solid #ddd; border-top:0; border-bottom-left-radius:5px; border-bottom-right-radius:5px; }
+.toggle .toggle-content, .accordion .accordion-content { border:1px solid #ddd; border-top:0; border-bottom-left-radius:5px; border-bottom-right-radius:5px; }
 
 /* =Tabs
 ----------------------------------------------- */
@@ -499,8 +499,8 @@ a.btn-small {
 .tabs .tab_nav li.active a {
 	color:inherit; cursor:default; background:none; border-bottom-color:#fff;
 }
-.tabs .panel { 
-	padding:20px; position:relative; top:-1px; z-index:1; border:1px solid #eee; border-radius:3px; border-top-left-radius:0; display:none;
+.tabs .tab-content { 
+	border:1px solid #eee; border-radius:3px; border-top-left-radius:0;
 }
 
 

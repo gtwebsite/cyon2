@@ -91,21 +91,21 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		$of_options[] = array( 'name' => __( 'Primary', 'cyon' ),
 							'desc' => __( 'General font usage', 'cyon' ),
 							'id' => 'primary_font',
-							'std' => array('size' => '13px','face' => 'segoe ui','style' => 'normal','color' => '#333333'),
+							'std' => array('size' => '13px','face' => 'Segoe UI','style' => 'normal','color' => '#333333'),
 							'type' => 'typography');
 
 		/* Secondary Font */
 		$of_options[] = array( 'name' => __( 'Secondary', 'cyon' ),
 							'desc' => __( 'Font use for headers like H1, H2 and H3', 'cyon' ),
 							'id' => 'secondary_font',
-							'std' => array('face' => 'segoe ui light','color' => '#666666'),
+							'std' => array('face' => 'Segoe UI Light','color' => '#666666'),
 							'type' => 'typography');
 
 		/* Main Navigation Font */
 		$of_options[] = array( 'name' => __( 'Main navigation', 'cyon' ),
 							'desc' => __( 'Font use for main navigation', 'cyon' ),
 							'id' => 'menu_font',
-							'std' => array('size' => '13px','face' => 'segoe ui','style' => 'normal','color' => '#333333'),
+							'std' => array('size' => '13px','face' => 'Segoe UI','style' => 'normal','color' => '#333333'),
 							'type' => 'typography');
 
 		/* Fonts End ------- */
@@ -394,7 +394,7 @@ if ( !function_exists( 'cyon_of_options' ) ){
 
 		/* Info */
 		if ( 0 == get_option('page_on_front') ) { // Check if a page is set to front page
-			$of_options[] = array( 'std' => __( '<h3 style="margin: 0 0 10px">Oppps! Something\'s wrong.</h3><div>You should create a blank page for your homepage. Go to Settings > Reading > Front page displays, then select "A static page". Set "Front page" to the new page you just created.</div>' ),
+			$of_options[] = array( 'std' => '<h3 style="margin: 0 0 10px">'.__( 'Oppps! Something\'s wrong.' ).'</h3><div>'.__( 'You should create a blank page for your homepage. Go to Settings > Reading > Front page displays, then select "A static page". Set "Front page" to the new page you just created.' ).'</div>',
 								'icon' => true,
 								'type' => 'info');
 		}

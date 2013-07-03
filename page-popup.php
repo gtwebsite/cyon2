@@ -55,13 +55,20 @@
 
 <body <?php body_class(); ?>>
 	<div id="popup" role="main">
-		<?php cyon_primary_before(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>		
-				<?php get_template_part( 'content', 'page' ); ?>
-
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div class="article-wrapper">
+					<header class="page-header">
+						<?php cyon_post_header(); ?>
+					</header>
+					<div class="page-content clearfix">
+						<?php cyon_post_content(); ?>
+					</div>
+					<footer class="entry-meta">
+						<?php cyon_post_footer(); ?>
+						<?php edit_post_link( __( 'Edit', 'cyon' ), '<span class="edit-link">', '</span>' ); ?>
+					</footer>
+				</div></article>
 			<?php endwhile; ?>
-		<?php cyon_primary_after(); ?>
 	</div>
 <?php wp_footer(); ?>
 </body>

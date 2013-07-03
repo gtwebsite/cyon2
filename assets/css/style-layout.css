@@ -28,6 +28,8 @@ img {
 	display:none;
 }
 
+* { backface-visibility: hidden;-webkit-backface-visibility: hidden; }
+
 
 /* =Article
 ----------------------------------------------- */
@@ -309,11 +311,8 @@ img {
 
 /* =Tab Widget
 ----------------------------------------------- */
-.cyon-tabs {
+.cyon-tabs aside {
 	overflow:hidden;
-}
-.cyon-tabs .widget {
-	display:none; clear:both; position:relative; z-index:1; top:-1px; margin-bottom:0; padding:10px; 
 }
 .cyon-tabs .widget h3 {
 	display:none;
@@ -353,6 +352,9 @@ img {
 }
 .cyon-ads ul.float li img {
 	width:20px; height:auto;
+}
+.cyon-ads a {
+	float:left;
 }
 
 
@@ -560,9 +562,21 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 ----------------------------------------------- */
 .toggle, .accordion {
 	margin-bottom:5px;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
 }
 .toggle h3, .accordion h3 {
 	cursor:pointer; padding:8px 10px; margin:0; 
+}
+.toggle .toggle-wrapper, .accordion .accordion-wrapper {
+	overflow:hidden;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+}
+.toggle .toggle-content, .accordion .accordion-content {
+	padding:5px 10px;
 }
 
 /* =Tabs
@@ -571,7 +585,7 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	clear:both; margin:0 0 20px 0; padding:0;
 }
 .tabs .tab_nav {
-	position:relative; z-index:2; padding:0; margin:0;
+	position:relative; z-index:2; padding:0; margin:0; top:	1px;
 }
 .tabs .tab_nav li {
 	float:left; margin:0 2px 0 0; list-style:none; padding:0;
@@ -579,9 +593,19 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .tabs .tab_nav li a {
 	cursor:pointer; padding:8px 10px; margin:0; display:inline-block;
 }
+.tabs .panel, .tabs aside {
+	display:none; -webkit-transform: translate3d(0,0,0);
+}
 .tabs .panel p {
 	margin:0 0 5px 0;
 }
+.tabs .tab-content, .tabs aside { 
+	padding:10px; position:relative; z-index:1;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+}
+
 
 
 /* =Flex Video
@@ -817,6 +841,9 @@ p.nocomments {
 }
 .flexslider .slides li {
 	margin-left:0; position:relative;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
 }
 
 
@@ -900,7 +927,10 @@ p.nocomments {
 		margin-bottom:10px; display:none;
 	}
 	#access ul, #access ul li {
-		margin:0; padding:0; list-style:none;
+		margin:0; padding:0; list-style:none
+		;transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform-style: preserve-3d;
 	}
 		/* First Level */
 		#access ul.menu > li, #access .menu > ul > li {
@@ -921,10 +951,10 @@ p.nocomments {
 		}
 		/* Second Level */
 		#access ul.menu > li ul, #access .menu > ul > li ul {
-			position:absolute; top:30px; left:-9999px; display:none; box-shadow:1px 1px 5px rgba(0,0,0,.1); width:180px;
+			position:absolute; top:30px; left:0; display:none; box-shadow:1px 1px 5px rgba(0,0,0,.1); width:180px; overflow:hidden; 
 		}
 		#access ul.menu > li:hover > ul, #access .menu > ul > li:hover > ul {
-			left:0;
+			left:0; display:block;
 		}
 		#access ul.menu > li > ul > li, #access .menu > ul > li > ul > li {
 			position:relative;

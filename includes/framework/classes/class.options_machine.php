@@ -274,17 +274,18 @@ class Options_Machine {
 						$output .= '<div class="select_wrapper typography-face" original-title="Font family">';
 						$output .= '<select class="of-typography of-typography-face select" name="'.$value['id'].'[face]" id="'. $value['id'].'_face">';
 						
-						$faces = array('arial'=>'Arial',
-										'verdana'=>'Verdana, Geneva',
-										'trebuchet'=>'Trebuchet',
-										'georgia' =>'Georgia',
-										'times'=>'Times New Roman',
-										'tahoma'=>'Tahoma, Geneva',
-										'palatino'=>'Palatino',
-										'gelvetica'=>'Helvetica',		
+						$faces = array('Arial'=>'Arial',
 										/***** Updated by Gtwebsite *****/
-										'segoe ui'=>'Segoe UI',		
-										'segoe ui light'=>'Segoe UI Light',		
+										'Lucida Grande'=>'Lucida Grande',
+										'Helvetica'=>'Helvetica',		
+										'Segoe UI'=>'Segoe UI',		
+										'Segoe UI Light'=>'Segoe UI Light',		
+										'Trebuchet'=>'Trebuchet',
+										'Verdana'=>'Verdana, Geneva',
+										'Georgia' =>'Georgia',
+										'Palatino'=>'Palatino',
+										'Times New Roman'=>'Times New Roman',
+										'Tahoma'=>'Tahoma, Geneva',
 										''=>'-------',		
 										'google_font'=>'Show Google Fonts' );
 										/********************************/			

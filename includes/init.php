@@ -150,6 +150,7 @@ class Cyon {
 		wp_register_script('gmap_api','http://maps.google.com/maps/api/js?sensor=false',array('jquery'),'1.0.0',false);
 		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery','gmap_api'),'3.3.3');
 		wp_register_script('mediaelement',THEME_ASSETS_URI . 'js/jquery.mediaelement.min.js',array('jquery'),'2.12.0');
+		wp_register_script('transit',THEME_ASSETS_URI . 'js/jquery.transit.js',array('jquery'),'0.9.9');
 		
 		/* Styles */
 		wp_register_style('cyon_style_responsive', THEME_ASSETS_URI . 'css/style-responsive.css',array(),'1.0.0',false);

@@ -12,7 +12,7 @@ function cyon_toggle( $atts, $content = null ) {
 			title => __( 'Title Here' , 'cyon' )
 		), $atts);
 		
-	$toggle_content .= '<div class="toggle"><h3 class="toggle-title">' . $atts['title'] . '</h3><div class="toggle-content clearfix">'. $content . '</div></div>';
+	$toggle_content .= '<div class="toggle"><h3 class="toggle-title">' . $atts['title'] . '</h3><div class="toggle-wrapper"><div class="toggle-content clearfix">'. $content . '</div></div></div>';
 	return $toggle_content;
 }
 add_shortcode('toggle','cyon_toggle');
@@ -25,7 +25,7 @@ function cyon_accordion( $atts, $content = null ) {
 		array(
 			title => __( 'Title Here' , 'cyon' )
 		), $atts);
-	$accordion_content = array('<div class="accordion"> <h3 class="accordion-title">' . $atts['title'] . '</h3><div class="accordion-content clearfix">'. $content . '</div></div>');
+	$accordion_content = array('<div class="accordion"> <h3 class="accordion-title">' . $atts['title'] . '</h3><div class="accordion-wrapper"><div class="accordion-content clearfix">'. $content . '</div></div></div>');
 	foreach ($accordion_content as $value){
 		return $value ;
 	}
@@ -45,7 +45,7 @@ function cyon_tabs( $atts, $content = null ) {
 	}
 	$html .= '</ul>';
 	foreach( $GLOBALS['tabs'] as $tab ){
-		$html .= '<div id="tab_'.$tab['index'].'" class="panel clearfix"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</div>';
+		$html .= '<div id="tab_'.$tab['index'].'" class="panel"><div class="tab-content clearfix"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</div></div>';
 	}
 	$html .= '</div>';
 	return $html;
