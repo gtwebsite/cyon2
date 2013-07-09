@@ -1,0 +1,59 @@
+Filters:
+cyon_general_width_wrapper
+cyon_category_archive_image
+cyon_category_archive_meta
+cyon_blog_title
+cyon_the_page_layout
+cyon_the_list_layout
+cyon_the_background_image
+
+Actions:
+cyon_header
+- cyon_header_hook, 10
+
+cyon_header_wrapper
+- cyon_header_columns, 10
+- cyon_header_logo, 20
+- cyon_header_mainnav, 30
+
+cyon_body
+- cyon_body_hook, 10
+
+cyon_body_wrapper
+- cyon_breadcrumb, 10
+- cyon_primary_hook, 20
+- cyon_secondary_hook, 30
+
+cyon_primary
+- cyon_primary_archive_header, 10
+- cyon_primary_content, 20
+- cyon_content_nav, 30
+
+cyon_secondary
+- cyon_secondary_content, 10
+
+cyon_footer
+- cyon_footer_hook, 10
+
+cyon_footer_wrapper
+- cyon_footer_columns, 10
+- cyon_footer_copyright, 20
+- cyon_footer_subfooter, 30
+- cyon_footer_backtotop, 40
+
+cyon_home_content
+- cyon_homepage_blocks, 10
+
+cyon_post_header
+- cyon_post_header_title, 10
+- cyon_post_header_meta, 20
+- cyon_post_content_featured, 30
+
+cyon_post_content
+- cyon_post_content_main, 10
+- cyon_readmore, 20
+- cyon_socialshare, 30
+
+cyon_post_footer
+- cyon_author, 10
+- cyon_post_comments, 20

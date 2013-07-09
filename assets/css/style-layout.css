@@ -21,18 +21,29 @@ div.alignleft:empty, div.alignright:empty {
 .skip-link, .assistive-text {
 	display:none;
 }
+
+
+/* =Common
+----------------------------------------------- */
+html {
+	-webkit-font-smoothing: antialiased
+}
 img {
 	max-width:100%; height:auto;
+}
+pre {
+	overflow:auto;
 }
 .hide-text {
 	display:none;
 }
 
-* { backface-visibility: hidden;-webkit-backface-visibility: hidden; }
-
 
 /* =Article
 ----------------------------------------------- */
+.blog-list-1 #primary article .entry-featured-image {
+	width:300px; float:left; margin:10px 10px 10px 0;
+}
 #primary .row-fluid article.type-post {
 	display:none;
 }

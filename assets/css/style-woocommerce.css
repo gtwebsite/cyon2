@@ -112,6 +112,8 @@ ins { padding:0; background:none; }
 .type-product .product_meta { margin-bottom:20px; }
 .type-product .group_table { width:100%; }
 .type-product .group_table td { padding:10px 0; border-bottom:1px solid #ddd; }
+.type-product .tabs h2 { display:none; }
+.type-product .tabs .panel { padding:15px; border:1px solid #eee; }
 
 .type-product form.cart { margin-bottom:10px; }
 .type-product form.cart .variations { margin-bottom:0; }

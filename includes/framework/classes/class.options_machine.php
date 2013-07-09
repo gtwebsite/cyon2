@@ -274,18 +274,18 @@ class Options_Machine {
 						$output .= '<div class="select_wrapper typography-face" original-title="Font family">';
 						$output .= '<select class="of-typography of-typography-face select" name="'.$value['id'].'[face]" id="'. $value['id'].'_face">';
 						
-						$faces = array('Arial'=>'Arial',
+						$faces = array('Arial, serif'=>'Arial',
 										/***** Updated by Gtwebsite *****/
-										'Lucida Grande'=>'Lucida Grande',
-										'Helvetica'=>'Helvetica',		
-										'Segoe UI'=>'Segoe UI',		
-										'Segoe UI Light'=>'Segoe UI Light',		
-										'Trebuchet'=>'Trebuchet',
-										'Verdana'=>'Verdana, Geneva',
-										'Georgia' =>'Georgia',
-										'Palatino'=>'Palatino',
-										'Times New Roman'=>'Times New Roman',
-										'Tahoma'=>'Tahoma, Geneva',
+										'\'Lucida Grande\', \'Lucida Sans Unicode\', Arial, sans-serif'=>'Lucida Grande',
+										'Helvetica, sans-serif'=>'Helvetica',		
+										'\'Segoe UI\', Arial, sans-serif'=>'Segoe UI',		
+										'\'Segoe UI Light\', Arial, sans-serif'=>'Segoe UI Light',		
+										'Trebuchet, sans-serif'=>'Trebuchet',
+										'Verdana, sans-serif'=>'Verdana, Geneva',
+										'Georgia, serif' =>'Georgia',
+										'Palatino, serif'=>'Palatino',
+										'Times New Roman, serif'=>'Times New Roman',
+										'Tahoma, Geneva, serif'=>'Tahoma, Geneva',
 										''=>'-------',		
 										'google_font'=>'Show Google Fonts' );
 										/********************************/			

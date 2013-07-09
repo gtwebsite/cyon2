@@ -516,12 +516,20 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		$of_options[] = array( 'name' => __( 'Social', 'cyon' ),
 							'type' => 'group_begin');
 
+		/* Facebook APP ID */
+		$of_options[] = array( 'name' => __( 'Facebook App ID', 'cyon' ),
+							'desc' => '',
+							'placeholder' => '',
+							'std' => '',
+							'id' => 'socialshare_fbid',
+							'type' => 'text');
+
 		/* Social boxes */
 		$of_options[] = array( 'name' => __( 'Social boxes', 'cyon' ),
 							'id' => 'socialshareboxes',
 							'std' => array('facebook','twitter','plus'),
 							'type' => 'multicheck',
-							'options' => array('facebook' => __( 'Facebook','cyon' ), 'twitter' => __( 'Twitter','cyon' ), 'plus' => __( 'Google+','cyon' ), 'pinterest' => __( 'Pinterest','cyon' ), 'mail' => __( 'Email','cyon' ), 'sharethis' => __( 'ShareThis','cyon' )));
+							'options' => array('facebook_like' => __( 'Facebook Like','cyon' ), 'facebook' => __( 'Facebook Share','cyon' ), 'twitter' => __( 'Twitter','cyon' ), 'plus' => __( 'Google+','cyon' ), 'pinterest' => __( 'Pinterest','cyon' ), 'mail' => __( 'Email','cyon' ), 'sharethis' => __( 'ShareThis','cyon' )));
 
 		/* Share pages */
 		$of_options[] = array( 'name' => __( 'Pages to appear the social boxes', 'cyon' ),

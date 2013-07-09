@@ -43,9 +43,9 @@ add_action('cyon_post_header',		'cyon_post_content_featured',30);
 add_action('cyon_post_content',		'cyon_post_content_main',10);
 add_action('cyon_post_content',		'cyon_readmore',20);
 add_action('cyon_post_content',		'cyon_socialshare',30);
-add_action('cyon_post_content',		'cyon_author',40);
-add_action('cyon_post_content',		'cyon_post_comments',50);
-add_filter( 'use_default_gallery_style', '__return_false' );
+add_action('cyon_post_footer',		'cyon_author',10);
+add_action('cyon_post_footer',		'cyon_post_comments',20);
+add_filter('use_default_gallery_style', '__return_false' );
 add_filter('post_class','cyon_post_layout_class');
 
 /* =Homepage
