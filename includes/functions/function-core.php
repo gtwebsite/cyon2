@@ -1037,24 +1037,6 @@ function cyon_get_list_layout(){
 	return apply_filters('cyon_the_list_layout', $cols );
 }
 
-function cyon_get_masonry() {
-	global $post, $data;
-	$masonry = '';
-	if(is_category() && cyon_get_list_layout()!='1'){
-		if(get_tax_meta(cyon_get_term_id(),'cyon_cat_masonry')=='yes'){
-			$masonry = 1;
-		}elseif(get_tax_meta(cyon_get_term_id(),'cat_masonry')=='no'){
-			$masonry = 0;
-		}else{
-			$masonry = $data['blog_list_masonry'];
-		}
-	}elseif(is_front_page() || is_home() || is_archive() && $data['blog_list_layout_list']!='list-1column'){
-		$masonry = $data['blog_list_masonry'];
-	}
-	return $masonry;
-}
-
-
 /* =Get Page Background
 ----------------------------------------------- */
 function cyon_get_page_bg(){

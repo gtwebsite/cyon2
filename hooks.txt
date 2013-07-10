@@ -1,8 +1,6 @@
 Filters:
-cyon_general_width_wrapper
 cyon_category_archive_image
 cyon_category_archive_meta
-cyon_blog_title
 cyon_the_page_layout
 cyon_the_list_layout
 cyon_the_background_image
