@@ -91,3 +91,6 @@
 #secondary {
 	width:24.096385542168676%;*width:24.036144578313255%;
 }
+.block, .widget {
+	margin-bottom:10px;
+}

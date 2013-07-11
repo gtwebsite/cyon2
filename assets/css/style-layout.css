@@ -51,9 +51,6 @@ pre {
 
 /* =Widgets
 ----------------------------------------------- */
-.widget {
-	margin-bottom:30px;
-}
 .widget h3 {
 	font-size:140%; margin:0 0 10px 0; padding:0 0 10px 0; border-bottom:1px solid #f8f8f8;
 }
@@ -858,11 +855,17 @@ p.nocomments {
 }
 
 
-/* =Block - Slider
+/* =Blocks
 ----------------------------------------------- */
-#slider-block {
+.block {
 	margin-bottom:10px;
 }
+.block .block-title {
+	margin:0;
+}
+
+/* =Block - Slider
+----------------------------------------------- */
 #slider-block h3 {
 	font-size:140%;
 }

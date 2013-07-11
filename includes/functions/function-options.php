@@ -98,7 +98,7 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		$of_options[] = array( 'name' => __( 'Secondary', 'cyon' ),
 							'desc' => __( 'Font use for headers like H1, H2 and H3', 'cyon' ),
 							'id' => 'secondary_font',
-							'std' => array('face' => 'Segoe UI Light','color' => '#666666'),
+							'std' => array('face' => 'Segoe UI Light','style' => 'normal','color' => '#666666'),
 							'type' => 'typography');
 
 		/* Main Navigation Font */
@@ -442,6 +442,12 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		$of_options[] = array( 'name' => __( 'Static content', 'cyon' ),
 							'type' => 'group_begin');
 
+		/* Static block title */
+		$of_options[] = array( 'name' => __( 'Title', 'cyon' ),
+							'std' => '',
+							'id' => 'homepage_middle_block_title',
+							'type' => 'text');
+
 		/* Static Block */
 		$of_options[] = array( 'name' => __( 'Text', 'cyon' ),
 							'desc' => __( 'Can accept HTML tags and shortcodes.' ),
@@ -455,7 +461,13 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		$of_options[] = array( 'name' => __( 'Blog', 'cyon' ),
 							'type' => 'group_begin');
 
-		/* Blog */
+		/* Blog block title */
+		$of_options[] = array( 'name' => __( 'Title', 'cyon' ),
+							'std' => __( 'Latest Posts' ),
+							'id' => 'homepage_blog_title',
+							'type' => 'text');
+
+		/* Number of Posts */
 		$of_options[] = array( 'name' => __( 'Number of posts', 'cyon' ),
 							'desc' => '',
 							'mod' => 'mini',
@@ -484,6 +496,13 @@ if ( !function_exists( 'cyon_of_options' ) ){
 								'4' => THEME_FRAMEWORK_URI . 'assets/images/4-col-portfolio.png'
 							));  
 
+		/* Blog block query */
+		$of_options[] = array( 'name' => __( 'Additional query', 'cyon' ),
+							'std' => __( '' ),
+							'id' => 'homepage_blog_query',
+							'desc' => __( 'It uses the function WP_Query(). <a href="http://codex.wordpress.org/Class_Reference/WP_Query" target="_blank">Click here</a> for documentation.', 'cyon' ),
+							'type' => 'text');
+
 		/* Options End ------- */
 		$of_options[] = array( 'type' => 'group_end' );
 
@@ -491,6 +510,11 @@ if ( !function_exists( 'cyon_of_options' ) ){
 		$of_options[] = array( 'name' => __( 'Widgets', 'cyon' ),
 							'type' => 'group_begin');
 
+		/* Widget block title */
+		$of_options[] = array( 'name' => __( 'Title', 'cyon' ),
+							'std' => '',
+							'id' => 'homepage_bucket_title',
+							'type' => 'text');
 		/* Layout */
 		$of_options[] = array( 'name' => __( 'Bucket layout', 'cyon' ),
 							'id' => 'homepage_bucket_layout',

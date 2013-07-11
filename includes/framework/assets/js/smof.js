@@ -49,26 +49,26 @@ jQuery(document).ready(function($){
 	$('select.fld').trigger('change');
 
   	var checkgooglefont = function() {
-    	var $fold=$(this).parents('.controls').find('.typography-google');
-    	var $sampletext=$(this).parents('.controls').find('.sampletext');
+    	var fold=$(this).parents('.controls').find('.typography-google, .typography-google-weight');
+    	var sampletext=$(this).parents('.controls').find('.sampletext');
 		if($(this).val()=='google_font'){
-	    	$($fold).slideDown('normal', 'swing');
-	    	$($sampletext).slideDown('normal', 'swing');
+	    	$(fold).slideDown('normal', 'swing');
+	    	$(sampletext).slideDown('normal', 'swing');
 		}else{
-	    	$($fold).fadeOut();
-	    	$($sampletext).fadeOut();
+	    	$(fold).fadeOut();
+	    	$(sampletext).fadeOut();
 		}
   	}
 
 	$('select.of-typography-face').on('change',checkgooglefont);
 	$('select.of-typography-face').trigger('change');
 
-	$('.typography-google').each(function(index){
-		$('head').append('<link href="http://fonts.googleapis.com/css?family=' + $(this).find('select option:selected').text() +'" rel="stylesheet" class="font'+ index +'" type="text/css" />');
-		$(this).parents('.controls').find('.sampletext').css('font-family',$(this).find('select option:selected').text());
+	$('.typography-google, .typography-google-weight, .typography-style').each(function(index){
+		$('head').append('<link href="http://fonts.googleapis.com/css?family=' + $(this).parents('.controls').find('.typography-google select option:selected').text() +':' + $(this).parents('.controls').find('.typography-google-weight option:selected').text() + $(this).parent().find('.typography-style option:selected').text() + '" rel="stylesheet" class="font'+ index +'" type="text/css" />');
+		$(this).parents('.controls').find('.sampletext').css({'font-family':$(this).parents('.controls').find('.typography-google select option:selected').text(),'font-weight':$(this).parents('.controls').find('.typography-google-weight option:selected').text(),'font-style':$(this).parents('.controls').find('.typography-style option:selected').text()});
 		$(this).find('select').change(function(){
-			$(this).parents('.controls').find('.sampletext').css('font-family',$(this).find('option:selected').text());
-			$('head').find('link.font'+index).attr('href','http://fonts.googleapis.com/css?family=' + $(this).find('option:selected').text());
+			$(this).parents('.controls').find('.sampletext').css({'font-family':$(this).parents('.controls').find('.typography-google select option:selected').text(),'font-weight':$(this).parents('.controls').find('.typography-google-weight option:selected').text(),'font-style':$(this).parents('.controls').find('.typography-style option:selected').text()});
+			$('head').find('link.font'+index).attr('href','http://fonts.googleapis.com/css?family=' + $(this).parents('.controls').find('.typography-google select option:selected').text() +':' + $(this).parents('.controls').find('.typography-google-weight option:selected').text() + $(this).parent().find('.typography-style option:selected').text());
 		});
 	});
 	/********************************/

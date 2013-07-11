@@ -251,18 +251,7 @@ if ( class_exists( 'Tax_Meta_Class' ) ){
 							'name' => __('Listing Layout', 'cyon'),
 							'std'=> array('default')
 					));
-
-	$new_cat_meta->addSelect( $prefix.'cat_masonry',
-					array(
-							'default' 			=> __('Default', 'cyon'),
-							'yes'				=> __('Yes', 'cyon'),
-							'no'				=> __('No', 'cyon')
-					),
-					array(
-							'name' => __('Use Masonry', 'cyon'),
-							'std'=> array('default')
-					));
-					
+				
 	$new_cat_meta->addImage( $prefix.'cat_image', 
 					array('name'=> __('Image Banner'), 'cyon' ));
 
