@@ -1036,7 +1036,7 @@ function cyon_get_list_layout(){
 				$cols = '4';
 			}
 		}
-	}elseif((is_front_page() && get_option('page_on_front')!='') && is_home() || is_archive() || is_category() && $data['blog_list_layout_list']!='1column'){
+	}elseif((is_front_page() && get_option('page_on_front')!='') || is_home() || is_archive() || is_category() && $data['blog_list_layout_list']!='1column'){
 		if($data['blog_list_layout_list']=='2columns'){
 			$cols = '2';
 		}elseif($data['blog_list_layout_list']=='3columns'){

@@ -52,7 +52,7 @@ pre {
 /* =Widgets
 ----------------------------------------------- */
 .widget h3 {
-	font-size:140%; margin:0 0 10px 0; padding:0 0 10px 0; border-bottom:1px solid #f8f8f8;
+	margin:0 0 10px 0; padding:0 0 10px 0; border-bottom:1px solid #f8f8f8;
 }
 .widget ul, .widget ol, .widget li {
 	padding:0; list-style:none;
@@ -64,7 +64,7 @@ pre {
 	padding-left:10px;
 }
 .widget > ul > li > ul > li a {
-	color:inherit; font-size:90%;
+	color:inherit;
 }
 .widget > ul > li > ul > li a:hover {
 	text-decoration:underline;
@@ -134,7 +134,7 @@ pre {
 	display:none;
 }
 .cyonform .gsection_title, .cyonform legend {
-	font-size:18px; padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
+	padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
 }
 .cyonform .gform_heading {
 	margin-bottom:10px;
@@ -218,7 +218,7 @@ pre {
 	clear:both; width:99%;	margin:0 0 8px 0; padding:0 0 16px 0;
 }
 .cyonform .gf_progressbar_wrapper h3.gf_progressbar_title {
-	font-size:13px; line-height:1em !important; margin:0 0 6px 0!important; padding:0!important; clear:both; filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;
+	font-size:100%; line-height:1em !important; margin:0 0 6px 0!important; padding:0!important; clear:both; filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity:0.6; opacity:0.6;
 }
 .cyonform .gf_progressbar {
 	width:99%; height:30px; overflow:hidden; line-height:30px!important; border-radius:3px;
@@ -341,7 +341,7 @@ pre {
 /* =Ads
 ----------------------------------------------- */
 .cyon-ads h3.widget-title {
-	margin:0; padding:0; border:0; font-size:100%; text-align:center;
+	margin:0; padding:0; border:0; text-align:center;
 }
 .cyon-ads ul.widget-content {
 	padding:0; margin:0; border:0;
@@ -504,7 +504,7 @@ table.table, .shop_table {
 	width:100%; margin-bottom:20px; padding:3px;
 }
 table.table caption {
-	font-style:italic; font-size:110%; margin-bottom:6px; text-align:center;
+	font-style:italic; margin-bottom:6px; text-align:center;
 }
 table.table th, table.table td, .shop_table th, .shop_table td {
 	padding:6px 8px;
@@ -744,7 +744,7 @@ ol.commentlist {
 	margin:0 0 10px 0; padding:0;
 }
 ol.commentlist li {
-	list-style:none; background:#fff; margin:0; padding:0;
+	list-style:none;margin:0; padding:0;
 }
 ol.commentlist li.comment {
 	margin-bottom:5px;
@@ -771,7 +771,7 @@ ol.commentlist #respond {
 	margin-top:10px;
 }
 p.form-allowed-tags {
-	font-size:11px; line-height:16px; color:#888;
+	font-size:85%;
 }
 p.nocomments {
 	display:none;
@@ -855,20 +855,8 @@ p.nocomments {
 }
 
 
-/* =Blocks
------------------------------------------------ */
-.block {
-	margin-bottom:10px;
-}
-.block .block-title {
-	margin:0;
-}
-
 /* =Block - Slider
 ----------------------------------------------- */
-#slider-block h3 {
-	font-size:140%;
-}
 #slider-block p {
 	margin-top:5px;
 }
