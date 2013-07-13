@@ -81,7 +81,7 @@ class Cyon {
 		load_theme_textdomain( 'cyon', THEME_DIR . '/languages' );
 
 		/* This theme styles the visual editor to match the theme style. */ 
-		add_editor_style( THEME_DIR.'/assets/css/style-editor.css' );
+		add_editor_style();
 
 		/* Allow Text Widget do shortcode */ 
 		add_filter( 'widget_text', 'shortcode_unautop' );

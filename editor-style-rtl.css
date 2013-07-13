@@ -21,3 +21,43 @@ blockquote {
 table {
 	text-align: right;
 }
+
+.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
+.clearfix:after{clear:both;}
+.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
+.input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.row{margin-left:-10px;*zoom:1;}.row:before,.row:after{display:table;content:"";line-height:0;}
+.row:after{clear:both;}
+[class*="span"]{float:left;min-height:1px;margin-left:10px;}
+.container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container{width:830px;}
+.span12{width:830px;}
+.span11{width:760px;}
+.span10{width:690px;}
+.span9{width:620px;}
+.span8{width:550px;}
+.span7{width:480px;}
+.span6{width:410px;}
+.span5{width:340px;}
+.span4{width:270px;}
+.span3{width:200px;}
+.span2{width:130px;}
+.span1{width:60px;}
+.row-fluid{width:100%;*zoom:1;}.row-fluid:before,.row-fluid:after{display:table;content:"";line-height:0;}
+.row-fluid:after{clear:both;}
+.row-fluid [class*="span"]{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:left;margin-left:1.2048192771084338%;*margin-left:1.144578313253012%;outline:1px dashed #f4f4f4;}
+.row-fluid [class*="span"]:first-child{margin-left:0;}
+.row-fluid .controls-row [class*="span"]+[class*="span"]{margin-left:1.2048192771084338%;}
+.row-fluid .span12{width:100%;*width:99.93975903614458%;}
+.row-fluid .span11{width:91.56626506024097%;*width:91.50602409638554%;}
+.row-fluid .span10{width:83.13253012048192%;*width:83.0722891566265%;}
+.row-fluid .span9{width:74.6987951807229%;*width:74.63855421686748%;}
+.row-fluid .span8{width:66.26506024096385%;*width:66.20481927710843%;}
+.row-fluid .span7{width:57.831325301204814%;*width:57.77108433734939%;}
+.row-fluid .span6{width:49.39759036144578%;*width:49.33734939759036%;}
+.row-fluid .span5{width:40.963855421686745%;*width:40.903614457831324%;}
+.row-fluid .span4{width:32.53012048192771%;*width:32.46987951807229%;}
+.row-fluid .span3{width:24.096385542168676%;*width:24.036144578313255%;}
+.row-fluid .span2{width:15.662650602409638%;*width:15.602409638554215%;}
+.row-fluid .span1{width:7.228915662650602%;*width:7.16867469879518%;}
+[class*="span"].hide,.row-fluid [class*="span"].hide{display:none;}
+[class*="span"].pull-right,.row-fluid [class*="span"].pull-right{float:right;}

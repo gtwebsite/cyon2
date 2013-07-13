@@ -17,7 +17,6 @@
 										a.addImmediate(c,"Tab Group",'[tabs]<br/>[tab title="Title Here" active="false"]Some content here.[/tab]<br/>[tab title="Title Here" active="false"]Some content here.[/tab]<br/>[/tabs]' );
 										a.addImmediate(c,"Tab Content",'[tab title="Title Here" active="false"]Some content here.[/tab]' );
 										a.addImmediate(c,"Toggle", '[toggle title="Title Here"]Some content here.[/toggle]' );
-										a.addImmediate(c,"Tooltip", '[tip text="Some content here."]Hover here.[/tip]');
 								
 								c=b.addMenu({title:"Snippets"});
 										a.addImmediate(c,"Blog List", '[blog excerpt="yes" thumbnail="yes" cols="" items="4" cat_id="1"]' );
@@ -74,12 +73,12 @@
 										a.addImmediate(c,"One Seventh Last","[one_seventh_last][/one_seventh_last]" );
 										a.addImmediate(c,"One Eighth","[one_eighth][/one_eighth]" );
 										a.addImmediate(c,"One Eighth Last","[one_eighth_last][/one_eighth_last]" );
-/*
+										
 								c=b.addMenu({title:"Columns Visualize"});
 										a.addImmediate(c,"2 Columns", '<div class="row-fluid"><div class="span6"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="span6"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div></div><br>' );
 										a.addImmediate(c,"3 Columns", '<div class="row-fluid"><div class="span4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="span4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="span4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div></div><br>' );
 										a.addImmediate(c,"4 Columns", '<div class="row-fluid"><div class="span3"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="span3"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="span3"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="span3"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div></div><br>' );
-*/
+								
 								c=b.addMenu({title:"Price Grid"});
 										a.addImmediate(c,"New Price Grid",'[pricegrid labels="Setup,Updates" columns="2" bgcolor="#03BCEE"]<br/>[gridcolumn title="Starter" price="$0.00" period="Yearly" link_url="http://" highlighted="yes" best_value="Yes"]<br/>[gridoption text="$0.00" tooltip_title="" tooltip_text="" /]<br/>[/gridcolumn]<br/>[/pricegrid]' );
 										a.addImmediate(c,"Column Normal",'[gridcolumn title="Starter" price="$0.00" period="Yearly" link_url="http://" highlighted="yes" best_value="Yes"]<br/>[gridoption text="$0.00" tooltip_title="" tooltip_text="" /]<br/>[/gridcolumn]' );

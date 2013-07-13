@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
 	});
 	
 	// Ease of Scrolling
-	jQuery('#backtotop, .pagetoscroll').localScroll({ hash:true, easing:'easeInOutExpo' });
+	jQuery('#backtotop, .pagetoscroll, .backtotop-line').localScroll({ hash:true, easing:'easeInOutExpo' });
 	
 	// Toggle
 	jQuery('.toggle .toggle-wrapper').each(function(){

@@ -34,7 +34,7 @@ if ( !function_exists( 'cyon_add_mce_button' ) ){
 		 
 		/* Load the TinyMCE plugin */
 		function cyon_add_mce_button_plugin($plugin_array) {
-		   $plugin_array['cyon_plugin'] = THEME_ASSETS_URI .'/js/mce/editor_plugin.js';
+		   $plugin_array['cyon_plugin'] = THEME_ASSETS_URI .'js/mce/editor_plugin.js';
 		   return $plugin_array;
 		}
 	}	

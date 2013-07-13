@@ -36,6 +36,6 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="page" class="hfeed">
+	<div id="page" class="hfeed"><div class="page_wrapper">
 
 		<?php cyon_header(); ?>

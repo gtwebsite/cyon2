@@ -25,7 +25,7 @@ div.alignleft:empty, div.alignright:empty {
 
 /* =Common
 ----------------------------------------------- */
-html {
+body {
 	-webkit-font-smoothing: antialiased
 }
 img {
@@ -855,6 +855,12 @@ p.nocomments {
 }
 
 
+/* =Blocks
+----------------------------------------------- */
+.block {
+	margin-bottom:30px;
+}
+
 /* =Block - Slider
 ----------------------------------------------- */
 #slider-block p {
@@ -892,13 +898,10 @@ p.nocomments {
 #page { 
 	position:relative; zoom:1; z-index:3;
 }
-	.width-wide #page {
+	.width-wide .page_wrapper {
 		min-width:1020px;
 	}
-	.width-wide #page .wrapper {
-		width:1000px; margin:0 auto; padding-left:10px; padding-right:10px;
-	}
-	.width-centered #page {
+	.width-wide .wrapper, .width-centered .page_wrapper {
 		width:1000px; margin:0 auto; padding-left:10px; padding-right:10px;
 	}
 	

@@ -4,43 +4,56 @@
 
 /* Portrait tablet to landscape and desktop */
 @media only screen and (max-width: 1020px){
-	#page { 
-		min-width:100%!important; width:100%!important; padding:0!important;
+	body {
+		overflow-x:hidden;
 	}
-	.wrapper {
-		padding-left:10px; padding-right:10px;
+	#page {
+		box-shadow:0 0 30px rgba(0,0,0,.3);
+		transition:all .2s ease-in-out;
+		-webkit-transition:all .2s ease-in-out;
+		-moz-transition:all .2s ease-in-out;
+		-ms-transition:all .2s ease-in-out;
+		transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform-style: preserve-3d;
+	}
+	.open_page {
+		transform: translate3d(50%,0,0)!important;
+		-webkit-transform: translate3d(50%,0,0)!important;
+		-moz-transform: translate3d(50%,0,0)!important;
+		-ms-transform: translate3d(50%,0,0)!important;
 	}
 	#branding {
-		padding-top:40px;
+		padding-top:40px; position:static;
 	}
-	.wrapper {
-		max-width:768px;
+	.width-wide .page_wrapper {
+		min-width:768px;
+	}
+	.width-wide .wrapper, .width-centered .page_wrapper {
+		max-width:768px; width:768px; 
+	}
+
+	#access {
+		position:absolute; top:0; left:0; width:100%!important; background:#f8f8f8; height:40px; display:block;
+	}
+	#access h3 {
+		z-index:1; cursor:pointer; display:block!important; border-radius:3px; background:url(../images/icons.png) -380px -718px; width:36px; height:30px; overflow:hidden; text-indent:-999px; no-repeat; margin:0; padding:0; font:inherit!important; color:inherit!important; line-height:30px!important; position:absolute; left:10px; top:5px;
+	}
+	#access h3:active {
+		box-shadow:inset 1px 1px 3px rgba(0,0,0,.1), 1px 1px #fff; background-color:#ddd; 
+	}
+	#access ul.menu {
+		display:none;
 	}
 
 	#access_r {
-		position:absolute; top:0; left:0; width:100%; background:#f8f8f8; height:40px; cursor:pointer;
-	}
-	#access_r h3 {
-		z-index:1; display:block!important; border-radius:3px; background:url(../images/icons.png) -380px -718px; width:36px; height:30px; overflow:hidden; text-indent:-999px; no-repeat; margin:0; padding:0; font:inherit!important; color:inherit!important; line-height:30px!important; position:absolute; right:10px; top:5px;
-		-webkit-transition:all .1s ease-in-out;
-		-moz-transition:all .1s ease-in-out;
-		-o-transition:all .1s ease-in-out;
-		transition:all .1s ease-in-out;
-	}
-	#access_r h3:active {
-		box-shadow:inset 1px 1px 3px rgba(0,0,0,.1), 1px 1px #fff; background-color:#ddd; 
+		position:relative; z-index:1; display:none; width:50%;
 	}
 	#access_r ul {
-		margin:0; padding:0; overflow:hidden;
+		margin:0; padding:0; overflow:hidden; -webkit-overflow-scrolling: touch;
 	}
 	#access_r ul.menu {
-		width:0; background:#333; box-shadow:2px 2px 20px rgba(0,0,0,.2); z-index:2; position:relative; margin-left:-50px; 
-		-webkit-transition:all .2s ease-in-out;
-		-moz-transition:all .2s ease-in-out;
-		-o-transition:all .2s ease-in-out;
-		transition:all .2s ease-in-out;
-		-webkit-transform: translate3d(0,0,0);
-		-webkit-transform-style: preserve-3d;
+		background:#333; box-shadow:2px 2px 20px rgba(0,0,0,.2); z-index:2; position:fixed; height:100%; width:100%; overflow:auto;
 	}
 	#access_r ul.menu > li > a {
 		padding:10px 15px; border-bottom:1px solid #222; border-top:1px solid #444; display:block; color:#fff!important;
@@ -58,27 +71,33 @@
 		border-top:0;
 	}
 	
-	}
+}
 
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width:788px) {
-	#page { 
-		min-width:100%;
+	.open_page {
+		transform: translate3d(80%,0,0)!important;
+		-webkit-transform: translate3d(80%,0,0)!important;
+		-moz-transform: translate3d(80%,0,0)!important;
+		-ms-transform: translate3d(80%,0,0)!important;
 	}
-	#page {
-		width:auto; max-width:788px; min-width:auto;
+	.width-wide .wrapper, .width-centered .page_wrapper, .width-wide .page_wrapper {
+		max-width:inherit; width:auto; min-width:inherit;
 	}
-	.widget, #secondary, .general-2right #primary, .general-2left #primary, .wrapper, #branding hgroup, #access, .row-fluid article, .postlist li, .cyon-sitemap div, .subpages li {
+	.widget, #secondary, .general-2right #primary, .general-2left #primary, #branding hgroup, .row-fluid article, .postlist li, .cyon-sitemap div, .subpages li {
 		width:auto!important; float:none!important; margin-left:0!important; text-align:left;
 	}
 	.grid article {
 		width:50%!important; float:left!important; text-align:center;
 	}
-	#top div, #top p, #bottom .copyright, #access2 {
+	#top div, #top p, #bottom .copyright {
 		float:none; text-align:left; width:auto; margin-bottom:10px; margin-left:0; text-align:left;
 	}
 	#access2 ul { 
 		text-align:left;
+	}
+	#access_r {
+		width:80%;
 	}
 	#primary input[type=text], #primary input[type=email], #primary input[type=phone], #primary textarea, #primary select {
 		width:95%!important; display:block; margin-bottom:5px;
@@ -167,5 +186,8 @@
 	}
 	.grid article footer, .grid article section > ul li, .grid article header hgroup {
 		padding:10px 5px;
+	}
+	.one_half, .one_third, .two_third, .three_fourth, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .five_sixth, .one_seventh, .one_eighth {
+		float:none; margin-right:0; width:100%;
 	}
 }
