@@ -7,6 +7,7 @@ if ( !defined('ABSPATH') )
 use [subpages excerpt='yes' thumbnail='no' id='' cols='' classname='']
 ----------------------------------------------- */
 function cyon_subpages( $atts, $content = null ) {
+	global $data;
 	$atts = shortcode_atts(
 		array(
 			excerpt 	=> 'yes',
@@ -32,7 +33,7 @@ function cyon_subpages( $atts, $content = null ) {
 	foreach ( $subpages as $page ) {
 		$result .= '<li'.$classli.'>';
 		if($atts['thumbnail']=='yes'){
-			$result .= '<div class="page-thumb"><a href="' . get_page_link( $page->ID ) . '">'.get_the_post_thumbnail( $page->ID, 'thumbnail' ).'</a></div>';
+			$result .= '<div class="page-thumb"><a href="' . get_page_link( $page->ID ) . '">'.get_the_post_thumbnail( $page->ID, $data['content_thumbnail_size'] ).'</a></div>';
 		}
 		$result .= '<h4><a href="' . get_page_link( $page->ID ) . '">' . $page->post_title . '</a></h4>';
 		if($atts['excerpt']=='yes'){
@@ -198,7 +199,7 @@ function cyon_testimonial( $atts, $content = null ) {
 		$html .= '<ul class="testimonials '.$atts['classname'].'">';
 		foreach ($testimonials as $testimonial) {
 			$html .= '<li class="clearfix"><div class="name">';
-			$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+			$html .= $testimonial['url']!='' ? '<img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$testimonial['url'].'" class="lazyload" alt="'.$testimonial['title'].'" />' : '';
 			$html .= '<h4>'.$testimonial['title'].'</h4>';
 			$html .= $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
 			$html .= '</div><blockquote>'.$testimonial['description'].'</blockquote></li>';

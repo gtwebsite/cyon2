@@ -62,7 +62,7 @@ class CyonTestimonialWidget extends WP_Widget {
 			foreach ($testimonials as $testimonial) {
 				echo '<li class="clearfix">';
 				echo '<blockquote>'.$testimonial['description'].'</blockquote><div class="name">';
-				echo $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+				echo $testimonial['url']!='' ? '<img src="'.THEME_ASSETS_URI.'images/blank.png" class="lazyload" data-original="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
 				echo '<h4>'.$testimonial['title'].'</h4>';
 				echo $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
 				echo '</div></li>';

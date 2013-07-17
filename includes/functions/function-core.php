@@ -134,8 +134,8 @@ function cyon_header_styles(){
 	<?php if($data['iosicon']!=''){ ?><link rel="apple-touch-icon" href="<?php echo $data['iosicon']; ?>" /><?php echo "\n"; } ?>
 	<?php if($data['favicon']!=''){ ?><link rel="shortcut icon" href="<?php echo $data['favicon']; ?>" /><?php } ?>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9, IE=10" />
-	<meta name="viewport" content="<?php if($data['responsive']==1){ echo 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0'; }else{ echo 'width=1024'; } ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="<?php if($data['responsive']==1){ echo apply_filters('cyon_viewport','width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0'); }else{ echo apply_filters('cyon_viewport','width=1024'); } ?>" />
 	<?php if($data['responsive']==1){ ?><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black" /> <?php echo "\n"; } ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo THEME_ASSETS_URI; ?>css/<?php echo $data['theme_color']; ?>" />
@@ -884,7 +884,7 @@ function cyon_footer_jquery(){
 
 			<?php if($data['lazyload']==1){ ?>
 			// Lazy Load Support
-			jQuery('img').show().lazyload({ 
+			jQuery('img.lazyload').show().lazyload({ 
 				effect : 'fadeIn',
 				skip_invisible : false
 			});
@@ -1408,7 +1408,15 @@ function cyon_post_content_featured(){
 <?php }
 
 function cyon_wp_get_attachment_image_attributes_lazyload( $attr, $attachment ) {
-    $attr['data-original'] = $attr['src'];
-    $attr['src'] = THEME_ASSETS_URI.'images/blank.png';
+	global $post;
+	if(get_post_type(get_the_ID())!='product' && !is_single()){
+		$attr['data-original'] = $attr['src'];
+		$attr['src'] = THEME_ASSETS_URI.'images/blank.png';
+		$attr['class'] = 'lazyload';
+	}elseif(get_post_type(get_the_ID())=='product' && !is_single()){
+		$attr['data-original'] = $attr['src'];
+		$attr['src'] = THEME_ASSETS_URI.'images/blank.png';
+		$attr['class'] = 'lazyload';
+	}
     return $attr;
 }

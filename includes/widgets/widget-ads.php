@@ -170,9 +170,9 @@ class CyonAdsWidget extends WP_Widget {
 				$name = ' <span>'.$instance['ad_name_'.$i].'</span>';
 			}
 			if(!empty($instance['ad_url_'.$i])){
-				$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><a href="'.$href.'"'.$target.'><img src="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" />'.$name.'</a></li>';
+				$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><a href="'.$href.'"'.$target.'><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" class="lazyload" />'.$name.'</a></li>';
 			}else{
-				$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><img src="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" />'.$name.'</li>';
+				$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" class="lazyload" />'.$name.'</li>';
 			}
 			$target = '';
 		}

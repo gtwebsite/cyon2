@@ -1,4 +1,5 @@
 Filters:
+cyon_viewport
 cyon_category_archive_image
 cyon_category_archive_meta
 cyon_the_page_layout
