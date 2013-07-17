@@ -123,6 +123,9 @@
 	#respond label {
 		float:none; display:block;
 	}
+	#respond .required, .cyonform .required {
+		display:none;
+	}
 	ol.commentlist .children textarea {
 		width:95%;
 	}
