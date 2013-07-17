@@ -151,6 +151,7 @@ class Cyon {
 		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery','gmap_api'),'3.3.3');
 		wp_register_script('mediaelement',THEME_ASSETS_URI . 'js/jquery.mediaelement.min.js',array('jquery'),'2.12.0');
 		wp_register_script('transit',THEME_ASSETS_URI . 'js/jquery.transit.js',array('jquery'),'0.9.9');
+		wp_register_script('supersized',THEME_ASSETS_URI . 'js/jquery.supersized.js',array('jquery'),'3.2.7');
 		
 		/* Styles */
 		wp_register_style('cyon_style_responsive', THEME_ASSETS_URI . 'css/style-responsive.css',array(),'1.0.0',false);

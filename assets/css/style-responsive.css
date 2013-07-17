@@ -5,23 +5,28 @@
 /* Portrait tablet to landscape and desktop */
 @media only screen and (max-width: 1020px){
 	body {
-		overflow-x:hidden;
+		overflow-x:hidden; zoom:1;
 	}
 	#page {
-		box-shadow:0 0 30px rgba(0,0,0,.3);
-		transition:all .2s ease-in-out;
+		box-shadow:0 0 30px rgba(0,0,0,.3); /*left:0;*/
+		transition:all  .2s ease-in-out;
 		-webkit-transition:all .2s ease-in-out;
-		-moz-transition:all .2s ease-in-out;
-		-ms-transition:all .2s ease-in-out;
-		transform: translate3d(0,0,0);
+		-moz-transition:all  .2s ease-in-out;
+		-ms-transition:all  .2s ease-in-out;
 		-webkit-transform: translate3d(0,0,0);
-		-webkit-transform-style: preserve-3d;
+		-moz-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		-o-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
 	}
 	.open_page {
+		/*left:50%!important;*/
+
 		transform: translate3d(50%,0,0)!important;
 		-webkit-transform: translate3d(50%,0,0)!important;
 		-moz-transform: translate3d(50%,0,0)!important;
 		-ms-transform: translate3d(50%,0,0)!important;
+		-o-transform: translate3d(50%,0,0)!important;
 	}
 	#branding {
 		padding-top:40px; position:static;
@@ -53,7 +58,7 @@
 		margin:0; padding:0; overflow:hidden; -webkit-overflow-scrolling: touch;
 	}
 	#access_r ul.menu {
-		background:#333; box-shadow:2px 2px 20px rgba(0,0,0,.2); z-index:2; position:fixed; height:100%; width:100%; overflow:auto;
+		background:#333; box-shadow:2px 2px 20px rgba(0,0,0,.2); z-index:2; position:fixed; height:100%; width:0; overflow:auto;
 	}
 	#access_r ul.menu > li > a {
 		padding:10px 15px; border-bottom:1px solid #222; border-top:1px solid #444; display:block; color:#fff!important;
@@ -76,10 +81,14 @@
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width:788px) {
 	.open_page {
+		/*left:80%!important;*/
+
 		transform: translate3d(80%,0,0)!important;
 		-webkit-transform: translate3d(80%,0,0)!important;
 		-moz-transform: translate3d(80%,0,0)!important;
 		-ms-transform: translate3d(80%,0,0)!important;
+		-o-transform: translate3d(80%,0,0)!important;
+
 	}
 	.width-wide .wrapper, .width-centered .page_wrapper, .width-wide .page_wrapper {
 		max-width:inherit; width:auto; min-width:inherit;

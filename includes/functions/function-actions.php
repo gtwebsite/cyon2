@@ -46,7 +46,8 @@ add_action('cyon_post_content',		'cyon_socialshare',30);
 add_action('cyon_post_footer',		'cyon_author',10);
 add_action('cyon_post_footer',		'cyon_post_comments',20);
 add_filter('use_default_gallery_style', '__return_false' );
-add_filter('post_class','cyon_post_layout_class');
+add_filter('post_class',			'cyon_post_layout_class');
+add_filter( 'wp_get_attachment_image_attributes', 'cyon_wp_get_attachment_image_attributes_lazyload', 10, 2 );
 
 /* =Homepage
 ----------------------------------------------- */

@@ -23,6 +23,9 @@ function cyon_register_scripts_styles(){
 	if($data['responsive']==1){
 		wp_enqueue_style('cyon_style_responsive'); 
 	}
+	if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){
+		wp_enqueue_script('supersized');
+	}
 }
 
 /* =SEO Page Title
@@ -881,7 +884,7 @@ function cyon_footer_jquery(){
 
 			<?php if($data['lazyload']==1){ ?>
 			// Lazy Load Support
-			jQuery('img').lazyload({ 
+			jQuery('img').show().lazyload({ 
 				effect : 'fadeIn',
 				skip_invisible : false
 			});
@@ -902,9 +905,13 @@ function cyon_footer_jquery(){
 			}
 			jQuery('#access h3').click( function(){
 				if(jQuery('.open_page').length == 0){
-					jQuery('#page').addClass('open_page'); 
+					jQuery('#page, #supersized').addClass('open_page'); 
+					jQuery('#access_r ul.menu').css('width','100%');
 				}else{
-					jQuery('#page').removeClass('open_page'); 
+					jQuery('#page, #supersized').removeClass('open_page'); 
+					setTimeout( function(){
+						jQuery('#access_r ul.menu').css('width','0');
+					},800);
 				}
 			});
 			checkWidth();
@@ -1324,18 +1331,20 @@ function cyon_post_content_featured(){
 	global $data;
 	$pages = $data['content_featured_image']; ?>
 	<?php if(has_post_thumbnail() && (is_single() && $pages['posts']==1) || (is_page() && $pages['pages']==1)){ ?>
+		<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large'); ?>
 		<div class="entry-featured-image">
 			<?php if(has_post_format('video')){ ?>
 				<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large'); ?>
 				<?php echo do_shortcode('[video width="100%" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
 			<?php }elseif(has_post_format('audio')){ ?>
-				<?php the_post_thumbnail('large');?>
+				<?php the_post_thumbnail( 'large' ); ?>
 				<?php echo do_shortcode('[audio width="100%" src="'.rwmb_meta( 'cyon_audio_url' ).'"]'); ?>
 			<?php }else{ ?>
-				<?php the_post_thumbnail('large');?>
+				<?php the_post_thumbnail( 'large' ); ?>
 			<?php } ?>
 		</div>
 	<?php }elseif(has_post_thumbnail() && (is_category() || is_archive() || is_home() || (is_front_page() && $data['homepage_blog_thumbnail']==1)) && $pages['listing']==1 ){ ?>
+		<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $data['content_thumbnail_size']); ?>
 		<div class="entry-featured-image">
 			<?php if(has_post_format('video')){ ?>
 				<?php
@@ -1358,7 +1367,6 @@ function cyon_post_content_featured(){
 				}
 				if($type!=''){ 
 				?>
-					<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large'); ?>
 					<?php echo do_shortcode('[video width="100%" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
 				<?php }else{
 				$icon = 'facetime_video';
@@ -1399,3 +1407,8 @@ function cyon_post_content_featured(){
 	<?php } ?>
 <?php }
 
+function cyon_wp_get_attachment_image_attributes_lazyload( $attr, $attachment ) {
+    $attr['data-original'] = $attr['src'];
+    $attr['src'] = THEME_ASSETS_URI.'images/blank.png';
+    return $attr;
+}
