@@ -187,9 +187,6 @@ input.error:-moz-placeholder, textarea.error:-moz-placeholder {
 
 /* =Boxes
 ----------------------------------------------- */
-.box:empty {
-	display:none;
-}
 .box, blockquote, code {
 	background:#f8f8f8; border-radius:3px; border:1px dashed #ddd; padding:1px 5px;
 }
@@ -220,34 +217,10 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 .box-red h3 {
 	color:#ff8888;
 }
-.box .btn-close {
-	position:absolute; top:-15px; right:10px;
-}
-.box.has-icon-box {
-	padding-left:50px;
-}
-.box.has-icon-box .icon-box {
-	position:absolute; top:15px; left:15px;
-}
-.box h3 {
-	margin:0;
-}
-.box p, .entry-content blockquote p {
-	margin:5px 0;
-}
-.box br {
-	display:none;
-}
 
 
 /* =Buttons
 ----------------------------------------------- */
-a.btn-large {
-	padding:0 20px; font-size:120%; height:48px; line-height:48px;
-}
-a.btn-small {
-	padding:0 8px; font-size:80%; height:20px; line-height:20px;
-}
 .btn-blue {
 	color: #fff; text-shadow:1px 1px 0 rgba(0,0,0,.2); border-color:#0060c2; background: #007eff;
 }

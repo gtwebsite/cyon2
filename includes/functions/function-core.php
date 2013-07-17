@@ -886,7 +886,8 @@ function cyon_footer_jquery(){
 			// Lazy Load Support
 			jQuery('img.lazyload').show().lazyload({ 
 				effect : 'fadeIn',
-				skip_invisible : false
+				skip_invisible : false,
+				failure_limit : 100
 			});
 			<?php } ?>
 
@@ -897,6 +898,7 @@ function cyon_footer_jquery(){
 				if (pagesize <= 1020) {
 					if(jQuery('#access_r').length == 0){
 						jQuery('#access').clone().prependTo('body').attr('id','access_r').css('display','block');
+						jQuery('#access h3').css('textIndent','0').prepend('<span class="icon-show_lines"></span>');
 					}
 				}else{
 					jQuery('#access_r').remove();
@@ -1371,13 +1373,13 @@ function cyon_post_content_featured(){
 				<?php }else{
 				$icon = 'facetime_video';
 					?>
-				<a href="<?php echo rwmb_meta( 'cyon_video_url' ); ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox-media"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon2x-<?php echo $icon; ?>"></span></span></a>
+				<a href="<?php echo rwmb_meta( 'cyon_video_url' ); ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox-media"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>
 				<?php }	?>
 			<?php }elseif(has_post_format('image')){
 				$icon = 'zoom_in';
 				?>
 				<?php $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); ?>
-				<a href="<?php echo $image_attributes[0]; ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon2x-<?php echo $icon; ?>"></span></span></a>
+				<a href="<?php echo $image_attributes[0]; ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>
 			<?php }else{ ?>
 				<?php 
 				if(has_post_format('link')){
@@ -1388,7 +1390,7 @@ function cyon_post_content_featured(){
 					$icon = 'circle_info';
 				}
 				?>
-				<a href="<?php echo $url; ?>"><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon2x-<?php echo $icon; ?>"></span></span></a>
+				<a href="<?php echo $url; ?>"><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>
 				<?php if(has_post_format('audio')){ ?>
 					<?php echo do_shortcode('[audio width="100%" src="'.rwmb_meta( 'cyon_audio_url' ).'"]'); ?>
 				<?php } ?>
@@ -1400,7 +1402,7 @@ function cyon_post_content_featured(){
 			<?php 
 			$images = rwmb_meta( 'cyon_gallery_images', 'type=image&size='.$data['content_thumbnail_size'] );
 			foreach ( $images as $image ){ ?>
-				<li><a href="<?php echo $image['full_url']; ?>" class="fancybox-group" rel="images-<?php the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['name']; ?>" /><span class="status-box"><span class="icon-box icon2x-camera"></span></span></a></li>
+				<li><a href="<?php echo $image['full_url']; ?>" class="fancybox-group" rel="images-<?php the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['name']; ?>" /><span class="status-box"><span class="icon-box icon-camera"></span></span></a></li>
 			<?php } ?>
 			</ul></div>
 		</div>

@@ -28,17 +28,11 @@ function cyon_button( $atts, $content = null ) {
 	}
 	$icon = '';
 	if($atts['icon']){
-		if($atts['size']=='large'){
-			$classname .= ' has-icon2x';
-			$icon = '<span class="icon2x-'.$atts['icon'].'"></span>';
-		}else{
-			$classname .= ' has-icon';
-			$icon = '<span class="icon-'.$atts['icon'].'"></span>';
-		}
+		$classname .= ' has-icon';
+		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
 	}
 	$title = '';
 	if($atts['title']){
-		$classname .= ' hastip';
 		$title = ' title="'. $atts['title'] . '"';
 	}
 	$html = '<a href="'. $atts['url'] . '" class="btn'.$classname.'"'.$title.'>'. $icon . $content . '</a>';
@@ -47,7 +41,7 @@ function cyon_button( $atts, $content = null ) {
 add_shortcode('button','cyon_button'); 
 
 /* =Header Icons
-use [header size='' icon='' classname=''] xxx [/header]
+use [header size='' icon_color='' icon='' classname=''] xxx [/header]
 ----------------------------------------------- */
 function cyon_header_style( $atts, $content = null ) {
 	$atts = shortcode_atts(
@@ -56,6 +50,7 @@ function cyon_header_style( $atts, $content = null ) {
 			classname	=> '',
 			icon		=> 'right_arrow'
 		), $atts);
+	$classname = '';
 	if($atts['size']==''){
 		$atts['size'] = '2';
 	}
@@ -63,13 +58,11 @@ function cyon_header_style( $atts, $content = null ) {
 		$atts['icon'] = 'right_arrow';
 	}
 	$size = 'h'.$atts['size'];
-	$classname = '';
 	if($atts['classname']){
-		$classname .= ' '.$atts['classname'];
+		$classname .= ' class="'.$atts['classname'].'"';
 	}
-	$classname .= 'has-icon2x';
-	$icon = '<span class="icon2x-'.$atts['icon'].'"></span>';
-	$icon_content = array('<'.$size.' class="'.$classname.'">'. $icon . $content . '</'.$size.'>');
+	$icon = '<span class="icon-'.$atts['icon'].'"></span>';
+	$icon_content = array('<'.$size.$classname.'>'. $icon . $content . '</'.$size.'>');
 	foreach ($icon_content as $value){
 		return $value ;
 	}
@@ -85,25 +78,16 @@ function cyon_inline_icon( $atts, $content = null ) {
 			element		=> 'span',
 			classname	=> '',
 			url			=> '',
+			color		=> '',
 			title		=> '',
-			icon		=> '',
-			size		=> ''
+			icon		=> ''
 		), $atts);
-	$classname = '';
-	if($atts['size']=='large'){
-		$classname .= 'has-icon2x';
-		$iconsize = '2x';
-	}else{
-		$classname .= 'has-icon';
-		$iconsize = '';
-	}
 	$element = $atts['element'];
 	if($atts['classname']){
 		$classname .= ' '.$atts['classname'];
 	}
 	$title = '';
 	if($atts['title']){
-		$classname .= ' hastip';
 		$title = ' title="'. $atts['title'] . '"';
 	}
 	$url = '';
@@ -112,14 +96,14 @@ function cyon_inline_icon( $atts, $content = null ) {
 		$element = 'a';
 	}
 	if($atts['icon']=='' && ($atts['url'] || $atts['element']=='a')){
-		$icon = 'icon'.$iconsize.'-share';
+		$icon = 'icon-share';
 		$element = 'a';
 	}elseif($atts['icon']==''){
-		$icon = 'icon'.$iconsize.'-question-sign';
+		$icon = 'icon-question-sign';
 	}else{
-		$icon = 'icon'.$iconsize.'-'.$atts['icon'];
+		$icon = 'icon-'.$atts['icon'];
 	}
-	$html = '<'.$element.' class="'.$classname.'"'.$title.$url.'><span class="'.$icon.'"></span> ' . $content . '</'.$element.'>';
+	$html = '<'.$element.' class="'.$classname.'"'.$title.$url.'><span class="'.$icon.'"></span>' . $content . '</'.$element.'>';
 	return $html;
 }
 add_shortcode('icon','cyon_inline_icon'); 
@@ -132,7 +116,6 @@ function cyon_bulleted_lists( $atts, $content = null ) {
 		array(
 			icon		=> '',
 			classname	=> '',
-			size		=> '',
 			cols		=> ''
 		), $atts);
 	$classname = '';
@@ -142,20 +125,13 @@ function cyon_bulleted_lists( $atts, $content = null ) {
 	if($atts['classname']){
 		$classname .= ' '.$atts['classname'];
 	}
-	if($atts['size']=='large'){
-		$classname .= ' has-icon2x-list';
-		$iconsize = '2x';
-	}else{
-		$classname .= ' has-icon-list';
-		$iconsize = '';
-	}
+	$classname .= ' has-icon-list';
 	if($atts['icon']==''){
-		$icon = 'icon'.$iconsize.'-ok';
+		$icon = 'icon-ok';
 	}else{
-		$icon = 'icon'.$iconsize.'-'.$atts['icon'];
+		$icon = 'icon-'.$atts['icon'];
 	}
 	$GLOBALS['iconlist'] = $icon;
-	$GLOBALS['iconlist-size'] = $iconsize;
 	$list_content = array('<ul class="clearfix'.$classname.'">'. do_shortcode($content) .'</ul>');
 	foreach ($list_content as $value){
 		return $value ;
@@ -171,13 +147,13 @@ function cyon_bulleted_list( $atts, $content = null ) {
 	if($atts['icon']==''){
 		$icon = $GLOBALS['iconlist'];
 	}else{
-		$icon = 'icon'.$GLOBALS['iconlist-size'].'-'.$atts['icon'];
+		$icon = 'icon-'.$atts['icon'];
 	}
 	$classname = '';
 	if($atts['classname']){
 		$classname = ' '.$atts['classname'];
 	}
-	$list_content = array('<li class="has-icon'.$GLOBALS['iconlist-size'].$classname.'"><span class="'.$icon.'"></span>'. do_shortcode($content) .'</li>');
+	$list_content = array('<li class="has-icon'.$classname.'"><span class="'.$icon.'"></span>'. do_shortcode($content) .'</li>');
 	foreach ($list_content as $value){
 		return $value ;
 	}
@@ -317,7 +293,7 @@ function cyon_box( $atts, $content = null ) {
 		$classname .= ' '.$atts['classname'];
 	}
 	if($atts['icon']!=''){
-		$icon = '<span class="icon-box icon2x-'.$atts['icon'].'"></span>';
+		$icon = '<span class="icon-box icon-'.$atts['icon'].'"></span>';
 		$classname .= ' has-icon-box';
 	}
 	$close = '';
@@ -332,12 +308,12 @@ function cyon_box( $atts, $content = null ) {
 	}
 	$title = '';
 	if($atts['title']!=''){
-		$title = '<h3>'.$atts['title'].'</h3>';
+		$title = '<h3>'.$icon.$atts['title'].'</h3>';
 	}
 	if($classname!=''){
 		$class = ' class="'.$classname.'"';
 	}
-	$html = '<'.$quote.$class.$style.'>'. $icon . $title . do_shortcode($content) . $close .'</'.$quote.'>';
+	$html = '<'.$quote.$class.$style.'>'. $title . do_shortcode($content) . $close .'</'.$quote.'>';
 	return $html;
 }
 add_shortcode('box','cyon_box'); 

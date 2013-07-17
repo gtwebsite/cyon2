@@ -32,17 +32,20 @@
 		padding-top:40px; position:static;
 	}
 	.width-wide .page_wrapper {
-		min-width:768px;
+		min-width:inherit;
 	}
 	.width-wide .wrapper, .width-centered .page_wrapper {
-		max-width:768px; width:768px; 
+		max-width:inherit; width:auto;
 	}
 
 	#access {
-		position:absolute; top:0; left:0; width:100%!important; background:#f8f8f8; height:40px; display:block;
+		position:absolute; top:0; left:0; width:100%!important; background:#f8f8f8; height:40px; display:block; text-indent:-999px;
 	}
 	#access h3 {
-		z-index:1; cursor:pointer; display:block!important; border-radius:3px; background:url(../images/icons.png) -380px -718px; width:36px; height:30px; overflow:hidden; text-indent:-999px; no-repeat; margin:0; padding:0; font:inherit!important; color:inherit!important; line-height:30px!important; position:absolute; left:10px; top:5px;
+		z-index:1; cursor:pointer; display:block!important; border-radius:3px; width:36px; height:30px; margin:0; padding:0; overflow:hidden; font-size:24px!important; color:inherit!important; line-height:30px!important; position:absolute; left:10px; top:5px;
+	}
+	#access h3 span {
+		padding:0 6px;
 	}
 	#access h3:active {
 		box-shadow:inset 1px 1px 3px rgba(0,0,0,.1), 1px 1px #fff; background-color:#ddd; 
@@ -118,7 +121,7 @@
 		width:98%!important;
 	}
 	#respond label {
-		float:none;
+		float:none; display:block;
 	}
 	ol.commentlist .children textarea {
 		width:95%;

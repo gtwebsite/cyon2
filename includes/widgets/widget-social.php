@@ -79,16 +79,16 @@ class CyonSocialWidget extends WP_Widget {
 		echo $before_widget;
 		$html = ''; 
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		$html .= empty($instance['facebook']) ? '' : '<a href="'.$instance['facebook'].'" class="hastip has-icon2x" title="Facebook"><span class="icon2x-facebook"></span></a>';
-		$html .= empty($instance['google_plus']) ? '' : '<a href="'.$instance['google_plus'].'" class="hastip has-icon2x" title="Google+"><span class="icon2x-google_plus"></span></a>';
-		$html .= empty($instance['twitter']) ? '' : '<a href="'.$instance['twitter'].'" class="hastip has-icon2x" title="Twitter"><span class="icon2x-twitter"></span></a>';
-		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" class="hastip has-icon2x" title="Linkedin"><span class="icon2x-linked_in"></span></a>';
-		$html .= empty($instance['pinterest']) ? '' : '<a href="'.$instance['pinterest'].'" class="hastip has-icon2x" title="Pinterest"><span class="icon2x-pinterest"></span></a>';
-		$html .= empty($instance['youtube']) ? '' : '<a href="'.$instance['youtube'].'" class="hastip has-icon2x" title="Youtube"><span class="icon2x-youtube"></span></a>';
-		$html .= empty($instance['vimeo']) ? '' : '<a href="'.$instance['vimeo'].'" class="hastip has-icon2x" title="Vimeo"><span class="icon2x-vimeo"></span></a>';
-		$html .= empty($instance['flickr']) ? '' : '<a href="'.$instance['flickr'].'" class="hastip has-icon2x" title="Flickr"><span class="icon2x-flickr"></span></a>';
-		$html .= empty($instance['email']) ? '' : '<a href="mailto:'.$instance['email'].'" class="hastip has-icon2x" title="Email"><span class="icon2x-e-mail"></span></a>';
-		$html .= empty($instance['rss']) ? '' : '<a href="'.$instance['rss'].'" class="hastip has-icon2x" title="RSS"><span class="icon2x-rss"></span></a>';
+		$html .= empty($instance['facebook']) ? '' : '<a href="'.$instance['facebook'].'" title="Facebook"><span class="icon-facebook"></span></a>';
+		$html .= empty($instance['google_plus']) ? '' : '<a href="'.$instance['google_plus'].'" title="Google+"><span class="icon-google_plus"></span></a>';
+		$html .= empty($instance['twitter']) ? '' : '<a href="'.$instance['twitter'].'" title="Twitter"><span class="icon-twitter"></span></a>';
+		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" title="Linkedin"><span class="icon-linked_in"></span></a>';
+		$html .= empty($instance['pinterest']) ? '' : '<a href="'.$instance['pinterest'].'" title="Pinterest"><span class="icon-pinterest"></span></a>';
+		$html .= empty($instance['youtube']) ? '' : '<a href="'.$instance['youtube'].'" title="Youtube"><span class="icon-youtube"></span></a>';
+		$html .= empty($instance['vimeo']) ? '' : '<a href="'.$instance['vimeo'].'" title="Vimeo"><span class="icon-vimeo"></span></a>';
+		$html .= empty($instance['flickr']) ? '' : '<a href="'.$instance['flickr'].'" title="Flickr"><span class="icon-flickr"></span></a>';
+		$html .= empty($instance['email']) ? '' : '<a href="mailto:'.$instance['email'].'" title="Email"><span class="icon-e-mail"></span></a>';
+		$html .= empty($instance['rss']) ? '' : '<a href="'.$instance['rss'].'" title="RSS"><span class="icon-rss"></span></a>';
 		
 		if (!empty($title)){
 			echo $before_title . $title . $after_title;;

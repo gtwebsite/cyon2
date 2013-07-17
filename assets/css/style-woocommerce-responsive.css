@@ -2,8 +2,6 @@
 ----------------------------------------------- */
 
 @media (min-width: 788px) and (max-width: 1020px){
-	.type-product .images { float:none; }
-	.type-product .summary { margin-left:0; }
 	.wp-pagenavi { float:none; margin:0 auto 5px auto; text-align:center; }
 	.woocommerce_ordering .selector { margin:0 auto; float:none; display:block; }
 }
