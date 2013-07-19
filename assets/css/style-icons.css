@@ -19,6 +19,12 @@ li.has-icon, ul.has-icon > li {
 	display: inline-block; font-family:'Glyphicons'; font-style: normal; position:relative; top:2px; font-weight:normal;
 }
 
+.no-fontface [class^="icon-"]:before, .no-fontface [class*=" icon-"]:before {
+	font-family:'Arial'; content:"»"!important; top:-1px;
+}
+
+
+
 .icon-glass:before {
   content: "\e001";
 }
@@ -1280,3 +1286,4 @@ li.has-icon, ul.has-icon > li {
 .icon-e-mail:before {
   content: "\e420";
 }
+

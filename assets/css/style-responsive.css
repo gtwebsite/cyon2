@@ -8,7 +8,7 @@
 		overflow-x:hidden; zoom:1;
 	}
 	#page {
-		box-shadow:0 0 30px rgba(0,0,0,.3); /*left:0;*/
+		box-shadow:0 0 30px rgba(0,0,0,.3); left:0;
 		transition:all  .2s ease-in-out;
 		-webkit-transition:all .2s ease-in-out;
 		-moz-transition:all  .2s ease-in-out;
@@ -27,6 +27,9 @@
 		-moz-transform: translate3d(50%,0,0)!important;
 		-ms-transform: translate3d(50%,0,0)!important;
 		-o-transform: translate3d(50%,0,0)!important;
+	}
+	.no-csstransforms .open_page {
+		left:50%!important;
 	}
 	#branding {
 		padding-top:40px; position:static;
@@ -55,7 +58,7 @@
 	}
 
 	#access_r {
-		position:relative; z-index:1; display:none; width:50%;
+		position:relative; z-index:1; width:50%;
 	}
 	#access_r ul {
 		margin:0; padding:0; overflow:hidden; -webkit-overflow-scrolling: touch;
@@ -84,14 +87,15 @@
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width:788px) {
 	.open_page {
-		/*left:80%!important;*/
-
 		transform: translate3d(80%,0,0)!important;
 		-webkit-transform: translate3d(80%,0,0)!important;
 		-moz-transform: translate3d(80%,0,0)!important;
 		-ms-transform: translate3d(80%,0,0)!important;
 		-o-transform: translate3d(80%,0,0)!important;
 
+	}
+	.no-csstransforms .open_page {
+		left:80%!important;
 	}
 	.width-wide .wrapper, .width-centered .page_wrapper, .width-wide .page_wrapper {
 		max-width:inherit; width:auto; min-width:inherit;

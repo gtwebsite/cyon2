@@ -1410,15 +1410,17 @@ function cyon_post_content_featured(){
 <?php }
 
 function cyon_wp_get_attachment_image_attributes_lazyload( $attr, $attachment ) {
-	global $post;
-	if(get_post_type(get_the_ID())!='product' && !is_single()){
-		$attr['data-original'] = $attr['src'];
-		$attr['src'] = THEME_ASSETS_URI.'images/blank.png';
-		$attr['class'] = 'lazyload';
-	}elseif(get_post_type(get_the_ID())=='product' && !is_single()){
-		$attr['data-original'] = $attr['src'];
-		$attr['src'] = THEME_ASSETS_URI.'images/blank.png';
-		$attr['class'] = 'lazyload';
+	global $post, $data;
+	if(! is_admin() && $data['lazyload']==1){
+		if(get_post_type(get_the_ID())!='product' && !is_single()){
+			$attr['data-original'] = $attr['src'];
+			$attr['src'] = THEME_ASSETS_URI.'images/blank.png';
+			$attr['class'] = 'lazyload';
+		}elseif(get_post_type(get_the_ID())=='product' && !is_single()){
+			$attr['data-original'] = $attr['src'];
+			$attr['src'] = THEME_ASSETS_URI.'images/blank.png';
+			$attr['class'] = 'lazyload';
+		}
 	}
     return $attr;
 }
