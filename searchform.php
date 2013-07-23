@@ -6,7 +6,7 @@
  * @subpackage Cyon Theme
  */
 ?>
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="cyonform">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="cyonform searchform">
 		<fieldset>
 			<label for="s" class="assistive-text"><?php _e( 'Search', 'cyon' ); ?></label>
 			<input type="text" class="field" name="s" id="s" autocomplete="off" x-webkit-speech x-webkit-gramar="builtin:search" placeholder="<?php esc_attr_e( 'Search entire website...', 'cyon' ); ?>" />

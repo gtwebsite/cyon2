@@ -129,7 +129,8 @@ class CyonAdsWidget extends WP_Widget {
 	// Displays your widget on the front-end
 	function widget($args, $instance){
 		extract($args, EXTR_SKIP);
-		
+		global $data;
+
 		// Start widget
 		echo $before_widget;
 		$html = ''; 
@@ -169,10 +170,18 @@ class CyonAdsWidget extends WP_Widget {
 			if(!empty($instance['ad_name_'.$i])){
 				$name = ' <span>'.$instance['ad_name_'.$i].'</span>';
 			}
-			if(!empty($instance['ad_url_'.$i])){
-				$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><a href="'.$href.'"'.$target.'><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" class="lazyload" />'.$name.'</a></li>';
+			if($data['lazyload']==1){
+				if(!empty($instance['ad_url_'.$i])){
+					$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><a href="'.$href.'"'.$target.'><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" class="lazyload" />'.$name.'</a></li>';
+				}else{
+					$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" class="lazyload" />'.$name.'</li>';
+				}
 			}else{
-				$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" class="lazyload" />'.$name.'</li>';
+				if(!empty($instance['ad_url_'.$i])){
+					$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><a href="'.$href.'"'.$target.'><img src="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" />'.$name.'</a></li>';
+				}else{
+					$html .= empty($instance['ad_img_1']) ? '' : '<li'.$class_li.'><img src="'.$instance['ad_img_'.$i].'" alt="'.$instance['ad_name_'.$i].'" />'.$name.'</li>';
+				}
 			}
 			$target = '';
 		}

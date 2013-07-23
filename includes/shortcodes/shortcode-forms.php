@@ -318,3 +318,12 @@ function cyon_custom_form($atts, $content = null){
 	return $html;
 }
 add_shortcode('custom_form','cyon_custom_form'); 
+
+
+/* =Search
+use [search_form] xxx [/search_form]
+----------------------------------------------- */
+function cyon_search_form( $atts, $content = null ) {
+	return get_search_form( false );
+}
+add_shortcode('search_form','cyon_search_form'); 

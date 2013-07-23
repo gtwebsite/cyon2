@@ -199,7 +199,11 @@ function cyon_testimonial( $atts, $content = null ) {
 		$html .= '<ul class="testimonials '.$atts['classname'].'">';
 		foreach ($testimonials as $testimonial) {
 			$html .= '<li class="clearfix"><div class="name">';
-			$html .= $testimonial['url']!='' ? '<img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$testimonial['url'].'" class="lazyload" alt="'.$testimonial['title'].'" />' : '';
+			if($data['lazyload']==1){
+				$html .= $testimonial['url']!='' ? '<img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$testimonial['url'].'" class="lazyload" alt="'.$testimonial['title'].'" />' : '';
+			}else{
+				$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+			}
 			$html .= '<h4>'.$testimonial['title'].'</h4>';
 			$html .= $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
 			$html .= '</div><blockquote>'.$testimonial['description'].'</blockquote></li>';

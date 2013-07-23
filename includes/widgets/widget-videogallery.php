@@ -35,6 +35,7 @@ class CyonVideoGalleryWidget extends WP_Widget {
 	// Displays your widget on the front-end
 	function widget($args, $instance){
 		extract($args, EXTR_SKIP);
+		global $data;
 		
 		// Start widget
 		echo $before_widget;
@@ -49,7 +50,11 @@ class CyonVideoGalleryWidget extends WP_Widget {
 		for( $i=0; $i<count($videoids); $i++){
 			$video = 'http://i4.ytimg.com/vi/'.$videoids[$i].'/hqdefault.jpg';
 			echo '<li>';
-			echo '<a href="http://www.youtube.com/embed/'.$videoids[$i].'/?autoplay=1" class="iframe"><img src="'.$video.'" /></a>';
+			if($data['lazyload']==1){
+				echo '<a href="http://www.youtube.com/embed/'.$videoids[$i].'/?autoplay=1" class="iframe"><img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$video.'" class="lazyload" /></a>';
+			}else{
+				echo '<a href="http://www.youtube.com/embed/'.$videoids[$i].'/?autoplay=1" class="iframe"><img src="'.$video.'" /></a>';
+			}
 			echo '</li>';
 		}
 		
