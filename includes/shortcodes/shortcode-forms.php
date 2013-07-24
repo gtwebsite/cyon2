@@ -92,21 +92,6 @@ function cyon_newsletter_ajax(){ ?>
 			});
 		</script>
 <?php } }
-if(!function_exists('cyon_newsletter_email')) {
-function cyon_newsletter_email() {
-	if (! wp_verify_nonce($_REQUEST['nonce'], 'cyon_newsletter_nonce') ) die(__('Security check','cyon')); 
-	if(isset($_REQUEST['nonce']) && isset($_REQUEST['email'])) {
-		$subject = __('New subscriber from','cyon').' '.get_bloginfo('name');
-		$body = __('Name').': <b>'.$_REQUEST['email'].'</b><br>';
-		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
-		if( mail($_REQUEST['emailto'], $subject, $body) ) {
-			echo 1;
-		} else {
-			echo 0;
-		}
-	}
-	die();
-} }
 
 /* =Contact Form
 use [contact email=""] xxx [/contact]
@@ -119,11 +104,12 @@ function cyon_contact_form( $atts, $content = null ) {
 			classname => ''
 		), $atts);
 	$html = '<div class="cyon-contact-form contact-form-shortcode '.$atts['classname'].'"><form action="" method="post" class="cyonform">';
+	$html .= '<input type="hidden" class="nonce" name="nonce" value="'.$nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$atts['email'].'" />';
 	$html .= '<fieldset>';
 	if($content!=''){
 		$html .= '<legend>'.$content.'</legend>';
 	}
-	$html .= '<div class="box hide-text"></div><input type="hidden" class="nonce" name="nonce" value="'.$nonce.'" /><input type="hidden" class="emailto" name="emailto" value="'.$atts['email'].'" />';
+	$html .= '<div class="box hide-text"></div>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_name">'.__('Name','cyon').':</label></dt><dd class="inputs"><input type="text" id="contact_name" name="name" class="medium" /></dd></dl>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_email">'.__('Email','cyon').':</label></dt><dd class="inputs"><input type="email" id="contact_email" name="email" class="medium" /></dd></dl>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_phone">'.__('Phone','cyon').':</label></dt><dd class="inputs"><input type="phone" id="contact_phone" name="phone" class="medium" /></dd></dl>';
@@ -213,23 +199,7 @@ function cyon_contact_ajax(){ ?>
 			});
 		</script>
 <?php } }
-if(!function_exists('cyon_contact_email')) {
-function cyon_contact_email() {
-	if (! wp_verify_nonce($_REQUEST['nonce'], 'cyon_contact_nonce') ) die(__('Security check','cyon')); 
-	if(isset($_REQUEST['nonce']) && isset($_REQUEST['email'])) {
-		$subject = __('New inquiry from','cyon').' '.get_bloginfo('name');
-		$body = __('Name').': <b>'.$_REQUEST['email'].'</b><br>';
-		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
-		$body .= __('Phone').': <b>'.$_REQUEST['phone'].'</b><br>';
-		$body .= __('Message').': <b>'.$_REQUEST['message'].'</b>';
-		if( mail($_REQUEST['emailto'], $subject, $body) ) {
-			echo 1;
-		} else {
-			echo 0;
-		}
-	}
-	die();
-} }
+
 
 /* =Custom Form
 For viewing purpose only, no actual function

@@ -5,16 +5,18 @@ if ( !defined('ABSPATH') )
 
 /* =Check for jQuery running
 ----------------------------------------------- */
+if(!function_exists('cyon_check_jquery')) {
 function cyon_check_jquery(){ ?>
 	<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {  
 			document.write('<?php __('Javascript is not running. This website requires javascript, please turn it on.', 'cyon'); ?>');
 		}
 	</script>
-<?php }
+<?php } }
 
 /* =Get all jQuery and CSS
 ----------------------------------------------- */
+if(!function_exists('cyon_register_scripts_styles')) {
 function cyon_register_scripts_styles(){
 	global $data;
 	wp_enqueue_script('cyon_jquery_all');
@@ -26,10 +28,11 @@ function cyon_register_scripts_styles(){
 	if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){
 		wp_enqueue_script('supersized');
 	}
-}
+} }
 
 /* =SEO Page Title
 ----------------------------------------------- */
+if(!function_exists('cyon_wp_title')) {
 function cyon_wp_title($title){
 	global $post, $data;
 
@@ -55,10 +58,11 @@ function cyon_wp_title($title){
 	}
 	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) ) : '';
 	return $filtered_title;
-}
+} }
 
 /* =SEO Meta Info
 ----------------------------------------------- */
+if(!function_exists('cyon_header_meta')) {
 function cyon_header_meta(){
 	global $post,$data;
 	if($data['seo_activate']==1 && (is_page() || is_single())){
@@ -68,18 +72,20 @@ function cyon_header_meta(){
 			add_action('wp_head','wp_no_robots');
 		}
 	}
-}
+} }
 
 
 /* =Header Scripts
 ----------------------------------------------- */
+if(!function_exists('cyon_header_scripts')) {
 function cyon_header_scripts(){
 	global $data;
 	echo $data['header_scripts']."\n";
-}
+} }
 
 /* =Load Header Styles
 ----------------------------------------------- */
+if(!function_exists('cyon_header_styles')) {
 function cyon_header_styles(){
 	global $data; 
 	
@@ -164,11 +170,12 @@ function cyon_header_styles(){
 		}
 	</style>	
 	<?php echo "\n"; ?>
-<?php }
+<?php } }
 
 
 /* =Header Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_header_hook')) {
 function cyon_header_hook(){
 	global $data;  ?>
 	<!-- Header -->
@@ -185,11 +192,12 @@ function cyon_header_hook(){
 			
 		</div>
 	</header>
-<?php }
+<?php } }
 
 
 /* =Header Columns
 ----------------------------------------------- */
+if(!function_exists('cyon_header_columns')) {
 function cyon_header_columns(){
 	global $data;
 	if($data['top_left_content'] || $data['top_right_content']){ ?>
@@ -207,11 +215,12 @@ function cyon_header_columns(){
 		<?php } ?>
 	</div>
 	<?php }
-}
+} }
 
 
 /* =Logo / Sitename
 ----------------------------------------------- */
+if(!function_exists('cyon_header_logo')) {
 function cyon_header_logo(){
 	global $data;  ?>
 	<!-- Logo / Site Name -->
@@ -223,11 +232,12 @@ function cyon_header_logo(){
 		<?php } ?>
 		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</hgroup> <?php
-}
+} }
 
 
 /* =Main Navigation
 ----------------------------------------------- */
+if(!function_exists('cyon_header_mainnav')) {
 function cyon_header_mainnav(){ ?>
 	<!-- Main Menu -->
 	<nav id="access" class="clearfix" role="navigation">
@@ -242,10 +252,11 @@ function cyon_header_mainnav(){ ?>
 		}
 		?>
 	</nav> <?php
-}
+} }
 
 /* =Body Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_body_hook')) {
 function cyon_body_hook(){ ?>
 		<!-- Body -->
 		<div id="main" class="<?php echo cyon_get_page_layout(); ?>">
@@ -253,21 +264,23 @@ function cyon_body_hook(){ ?>
 				<?php cyon_body_wrapper(); ?>
 			</div>
 		</div>
-<?php }
+<?php } }
 
 
 /* =Primary Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_primary_hook')) {
 function cyon_primary_hook(){ ?>
 	<!-- Center -->
 	<div id="primary">
 		<?php cyon_primary(); ?>
 	</div>
-<?php }
+<?php } }
 
 
 /* =Primary Contents
 ----------------------------------------------- */
+if(!function_exists('cyon_primary_content')) {
 function cyon_primary_content(){ ?>
 	<div id="content" class="clearfix<?php if (cyon_get_list_layout()!=1 ) { echo ' row-fluid'; } ?>" role="main">
 	<?php
@@ -303,22 +316,24 @@ function cyon_primary_content(){ ?>
 
 	<?php } wp_reset_postdata(); ?>
 	</div>
-<?php  }
+<?php  } }
 
 
 /* =Primary Post Header Title
 ----------------------------------------------- */
+if(!function_exists('cyon_post_header_title')) {
 function cyon_post_header_title(){ ?>
 	<?php if(is_single() || is_page()){ ?>
 		<h1 class="page-title"><?php the_title(); ?></h1>
 	<?php }else{ ?>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 	<?php } ?>
-<?php }
+<?php } }
 
 
 /* =Primary Post Header Meta
 ----------------------------------------------- */
+if(!function_exists('cyon_post_header_meta')) {
 function cyon_post_header_meta(){
 	global $data;
 	if(is_single() || is_home() || is_archive() ){
@@ -350,11 +365,12 @@ function cyon_post_header_meta(){
 			}
 		echo '</p>';
 	}
-}
+} }
 
 
 /* =Primary Post Content
 ----------------------------------------------- */
+if(!function_exists('cyon_post_content_main')) {
 function cyon_post_content_main(){
 	global $data;
 	if(is_page() || is_single()){
@@ -366,10 +382,11 @@ function cyon_post_content_main(){
 			the_excerpt();
 		}
 	}
-}
+} }
 
 /* =Primary Archive Header
 ----------------------------------------------- */
+if(!function_exists('cyon_primary_archive_header')) {
 function cyon_primary_archive_header(){ ?>
 	<?php if ( have_posts() ) { ?>
 		<?php if ( is_archive() ) { ?>
@@ -417,11 +434,12 @@ function cyon_primary_archive_header(){ ?>
 			</header>
 		<?php } ?>
 	<?php } ?>
-<?php }
+<?php } }
 
 
 /* =Secondary Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_secondary_hook')) {
 function cyon_secondary_hook(){ ?>
 	<?php if(cyon_get_page_layout()!='general-1column'){ ?>
 	<!-- Secondary -->
@@ -429,21 +447,23 @@ function cyon_secondary_hook(){ ?>
 		<?php cyon_secondary(); ?>
 	</div>
 	<?php } ?>
-<?php }
+<?php } }
 
 /* =Secondary Contents
 ----------------------------------------------- */
+if(!function_exists('cyon_secondary_content')) {
 function cyon_secondary_content(){
 	if(cyon_get_page_layout()=='general-2right'){
 		dynamic_sidebar( 'right-sidebar' );
 	}elseif(cyon_get_page_layout()=='general-2left'){
 		dynamic_sidebar( 'left-sidebar' );
 	}
-}
+} }
 
 
 /* =Breadcrumbs
 ----------------------------------------------- */
+if(!function_exists('cyon_breadcrumb')) {
 function cyon_breadcrumb() {
 	global $data;
 	if (!is_front_page() && $data['breadcrumbs']==1) {
@@ -526,11 +546,12 @@ function cyon_breadcrumb() {
 			echo '</dl>';
 		}
 	}
-}
+} }
 
 
 /* =Comments
 ----------------------------------------------- */
+if(!function_exists('cyon_post_comments')) {
 function cyon_post_comments(){
 	global $data;
 	if($data['content_comment']['posts']==1 && is_single()){
@@ -539,11 +560,12 @@ function cyon_post_comments(){
 	if($data['content_comment']['pages']==1 && is_page()){
 		comments_template( '', true );
 	}
-}
+} }
 
 
 /* =Social sharing
 ----------------------------------------------- */
+if(!function_exists('cyon_socialshare')) {
 function cyon_socialshare() {
 	global $data;
 	$social = $data['socialshare'];
@@ -578,28 +600,31 @@ function cyon_socialshare() {
 		echo '<p class="share">'.$socialboxes.'</p>';
 		add_action ('wp_footer','cyon_social_js',10);
 	}
-}
+} }
 
+if(!function_exists('cyon_social_js')) {
 function cyon_social_js(){ ?>
 	<script type="text/javascript">var switchTo5x=true;</script>
 	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 	<script type="text/javascript">stLight.options({publisher: "32ae9ff6-93e1-4428-9772-72735858587d"});</script>
-<?php }
+<?php } }
 
 
 /* =Read more
 ----------------------------------------------- */
+if(!function_exists('cyon_readmore')) {
 function cyon_readmore() {
 	global $data;
 	if((is_archive() || is_home()) && $data['content_blog_post']=='excerpt'){
 	 ?>
 		<p class="readmore"><a href="<?php the_permalink(); ?>"><?php _e('Read more','cyon'); ?></a></p>
 <?php	}
-}
+} }
 
 
 /* =Author
 ----------------------------------------------- */
+if(!function_exists('cyon_author')) {
 function cyon_author(){
 	global $data;
 	if($data['content_author']==1 && is_single()) { 
@@ -620,11 +645,12 @@ function cyon_author(){
 		</div>
 		<?php }
 	}
-}
+} }
 
 
 /* =Homepage Block
 ----------------------------------------------- */
+if(!function_exists('cyon_homepage_blocks')) {
 function cyon_homepage_blocks(){
 	global $data;
 	$layout = $data['homepage_blocks']['enabled'];
@@ -649,11 +675,12 @@ function cyon_homepage_blocks(){
 			}
 		}
 	}
-}
+} }
 
 
 /* =Homepage Block Slider
 ----------------------------------------------- */
+if(!function_exists('cyon_home_block_slider')) {
 function cyon_home_block_slider(){
 	global $data;
 	$slides = $data['homepage_slider'];
@@ -684,10 +711,11 @@ function cyon_home_block_slider(){
 			echo '</div>';
 		}
 	}
-}
+} }
 
 /* =Homepage Block Page
 ----------------------------------------------- */
+if(!function_exists('cyon_home_block_page')) {
 function cyon_home_block_page(){
 	$page = get_post(get_option('page_on_front', true)); ?>
 	<article class="block page type-page" id="page-block"><div class="block-wrapper article-wrapper">
@@ -698,10 +726,11 @@ function cyon_home_block_page(){
 			<?php echo apply_filters('the_content',$page->post_content); ?>
 		</div>
 	</div></article>
-<?php }
+<?php } }
 
 /* =Homepage Block Bucket
 ----------------------------------------------- */
+if(!function_exists('cyon_home_block_bucket')) {
 function cyon_home_block_bucket(){
 	global $data;
 	if (is_active_sidebar('home-columns')){
@@ -716,10 +745,11 @@ function cyon_home_block_bucket(){
 			</div>
 		</div>
 	<?php }
-}
+} }
 
 /* =Homepage Block Static
 ----------------------------------------------- */
+if(!function_exists('cyon_home_block_static')) {
 function cyon_home_block_static(){
 	global $data; ?>
 	<?php if($data['homepage_middle_block']!=''){ ?>
@@ -730,10 +760,11 @@ function cyon_home_block_static(){
 		</div>
 	</div>
 <?php }
-}
+} }
 
 /* =Homepage Block Blog
 ----------------------------------------------- */
+if(!function_exists('cyon_home_block_blog')) {
 function cyon_home_block_blog(){
 	global $data;
 	$post_per_page = $data['homepage_blog']!='' ? $data['homepage_blog'] : 3;
@@ -781,12 +812,13 @@ function cyon_home_block_blog(){
 		</div>
 	<?php endif;
 	wp_reset_postdata();
-}
+} }
 
 
 
 /* =Homepage Widgets
 ----------------------------------------------- */
+if(!function_exists('cyon_homepage_columns')) {
 function cyon_homepage_columns(){
 	if ( is_active_sidebar( 'home-columns' ) && is_front_page() ){ ?>
 	<?php
@@ -800,11 +832,12 @@ function cyon_homepage_columns(){
 			<?php dynamic_sidebar( 'home-columns' ); ?>
 		</div>
 	<?php }
-}
+} }
 
 
 /* =Footer Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_hook')) {
 function cyon_footer_hook(){
 	global $data;  ?>
 	<!-- Footer -->
@@ -813,10 +846,11 @@ function cyon_footer_hook(){
 			<?php cyon_footer_wrapper(); ?>
 		</div>
 	</footer>
-<?php }
+<?php } }
 
 /* =Footer Widgets Columns
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_columns')) {
 function cyon_footer_columns(){
 	global $data; 
 	if ( ! is_404() && is_active_sidebar( 'footer-columns' ) ){ ?>
@@ -831,10 +865,11 @@ function cyon_footer_columns(){
 		<?php dynamic_sidebar( 'footer-columns' ); ?>
 	</div>
 	<?php }
-}
+} }
 
 /* =Copyright
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_copyright')) {
 function cyon_footer_copyright(){
 	global $data;  ?>
 	<!-- Copyright -->
@@ -849,10 +884,11 @@ function cyon_footer_copyright(){
 		<?php echo $data['footer_copyright'] != '' ? '<div class="copyright '.$span.'"><p>'.do_shortcode($data['footer_copyright']).'</p></div>' : ''; ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1', 'container_id' => 'access2', 'container_class' => $span, 'fallback_cb' => false ) ); ?>
 	</div><?php
-}
+} }
 
 /* =Subfooter
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_subfooter')) {
 function cyon_footer_subfooter(){
 	global $data;
 	if ( $data['footer_sub'] ){ ?>
@@ -861,10 +897,11 @@ function cyon_footer_subfooter(){
 		<?php echo do_shortcode($data['footer_sub']); ?>
 	</div>
 	<?php }
-}
+} }
 
 /* =Back to top
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_backtotop')) {
 function cyon_footer_backtotop(){
 	global $data;
 	if ( $data['footer_backtotop'] ){ ?>
@@ -873,10 +910,11 @@ function cyon_footer_backtotop(){
 		<p><a href="#page" class="backtotop"><?php _e('Back to Top','cyon'); ?> </a></p>
 	</div>
 	<?php }
-}
+} }
 
 /* =Load Footer jQuery
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_jquery')) {
 function cyon_footer_jquery(){
 	global $data; ?>
 	<script type="text/javascript">
@@ -989,18 +1027,20 @@ function cyon_footer_jquery(){
 
 		});
 	</script> 
-<?php }
+<?php } }
 
 /* =Footer Scripts
 ----------------------------------------------- */
+if(!function_exists('cyon_footer_scripts')) {
 function cyon_footer_scripts(){
 	global $data;
 	echo $data['footer_scripts']."\n";
-}
+} }
 
 
 /* =Get Page Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_get_page_layout')) {
 function cyon_get_page_layout(){
 	global $post, $data;
 	if(is_front_page()) {
@@ -1015,21 +1055,23 @@ function cyon_get_page_layout(){
 		$page_layout = get_post_meta($post->ID,'cyon_layout',true);
 	}
 	return apply_filters('cyon_the_page_layout', $page_layout );
-}
+} }
 
 
 /* =Get Term ID
 ----------------------------------------------- */
+if(!function_exists('cyon_get_term_id')) {
 function cyon_get_term_id(){
 	$current_cat = get_query_var('cat');
 	$term_slug = get_category ($current_cat);
 	$current_term = get_term_by( 'slug', $term_slug->slug, 'category' );
 	return $current_term->term_id;
-}
+} }
 
 
 /* =Get Post Listing Layout
 ----------------------------------------------- */
+if(!function_exists('cyon_get_list_layout')) {
 function cyon_get_list_layout(){
 	global $post, $data;
 	$cols = 1;
@@ -1061,10 +1103,11 @@ function cyon_get_list_layout(){
 		}
 	}
 	return apply_filters('cyon_the_list_layout', $cols );
-}
+} }
 
 /* =Get Page Background
 ----------------------------------------------- */
+if(!function_exists('cyon_get_page_bg')) {
 function cyon_get_page_bg(){
 	global $post, $data;
 	if(is_home() && get_post_meta(get_option('page_for_posts', true),'cyon_background',true)!=''){
@@ -1081,10 +1124,11 @@ function cyon_get_page_bg(){
 		$page_bg = $data['background_style_image'];
 	}
 	return apply_filters('cyon_the_background_image', $page_bg);
-}
+} }
 
 /* =Replace body classes
 ----------------------------------------------- */
+if(!function_exists('cyon_replace_body_class')) {
 function cyon_replace_body_class($classes) {
 	global $post, $data;
 	/* Add Ancestor classes */
@@ -1104,21 +1148,23 @@ function cyon_replace_body_class($classes) {
 	$classes[] = 'width-'.$data['page_width'];
 	
 	return $classes;
-}
+} }
 
 /* =Add CSS for Blog listing if multiple columns
 ----------------------------------------------- */
+if(!function_exists('cyon_post_layout_class')) {
 function cyon_post_layout_class($classes) {
 	global $post;
 	if(cyon_get_list_layout()!=1){
 		$classes[] = 'span'. 12/cyon_get_list_layout();
 	}
 	return $classes;
-}
+} }
 
 
 /* =Replace Login logo
 ----------------------------------------------- */
+if(!function_exists('cyon_admin_login')) {
 function cyon_admin_login() {
 	global $data; ?>
 	<style type="text/css">
@@ -1139,11 +1185,12 @@ function cyon_admin_login() {
 		}
 		body.login #login { padding-top:50px; }
 	</style>
-<?php }
+<?php } }
 
 
 /* =Checkspam
 ----------------------------------------------- */
+if(!function_exists('cyon_checkspam')) {
 function cyon_checkspam ($content) {
 	$isSpam = FALSE;
 	$content = (array) $content;
@@ -1181,11 +1228,85 @@ function cyon_checkspam ($content) {
 		
 	}
 	return $isSpam;
-}
+} }
+
+/* =Contact submission
+----------------------------------------------- */
+if(!function_exists('cyon_contact_email')) {
+function cyon_contact_email() {
+	if (! wp_verify_nonce($_REQUEST['nonce'], 'cyon_contact_nonce') ) die(__('Security check')); 
+	if(isset($_REQUEST['nonce']) && isset($_REQUEST['email'])) {
+		$subject = __('New inquiry from').' '.get_bloginfo('name');
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From: '.$_REQUEST['name'].' <'.$_REQUEST['email'].'>' . "\r\n";
+		$body = __('Name').': <b>'.$_REQUEST['name'].'</b><br>';
+		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
+		$body .= __('Phone').': <b>'.$_REQUEST['phone'].'</b><br>';
+		if($_REQUEST['dropdown']){
+			$body .= __('Selected').': <b>'.$_REQUEST['dropdown'].'</b><br>';
+		}
+		$body .= __('Message').': <b>'.$_REQUEST['message'].'</b>';
+
+		$content['comment_author'] = $_REQUEST['name'];
+		$content['comment_author_email'] = $_REQUEST['email'];
+		$content['comment_author_url'] = '';
+		$content['comment_content'] = $_REQUEST['message'];
+	
+		/* Check spam */
+		if (cyon_checkspam ($content)) {
+			echo 0;
+			die();
+		}
+
+		/* Send mail */
+		if( mail($_REQUEST['emailto'], $subject, $body, $headers) ) {
+			echo 1;
+		} else {
+			echo 0;
+		}
+	}
+	die();
+} }
+
+/* =Newsletter submission
+----------------------------------------------- */
+if(!function_exists('cyon_newsletter_email')) {
+function cyon_newsletter_email() {
+	if (! wp_verify_nonce($_REQUEST['nonce'], 'cyon_newsletter_nonce') ) die(__('Security check')); 
+	if(isset($_REQUEST['nonce']) && isset($_REQUEST['email'])) {
+		$subject = __('New subscriber from').' '.get_bloginfo('name');
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From: '.$_REQUEST['name'].' <'.$_REQUEST['email'].'>' . "\r\n";
+		$body = __('Name').': <b>'.$_REQUEST['name'].'</b><br>';
+		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
+
+		$content['comment_author'] = $_REQUEST['name'];
+		$content['comment_author_email'] = $_REQUEST['email'];
+		$content['comment_author_url'] = '';
+		$content['comment_content'] = '';
+	
+		/* Check spam */
+		if (cyon_checkspam ($content)) {
+			echo 0;
+			die();
+		}
+
+		/* Send mail */
+		if( mail($_REQUEST['emailto'], $subject, $body, $headers) ) {
+			echo 1;
+		} else {
+			echo 0;
+		}
+	}
+	die();
+} }
 
 
 /* =Register Widgets
 ----------------------------------------------- */
+if(!function_exists('cyon_widgets_init')) {
 function cyon_widgets_init() {
 	global $data;
 
@@ -1247,11 +1368,12 @@ function cyon_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-}
+} }
 
 
 /* =Category Pagination
 ----------------------------------------------- */
+if(!function_exists('cyon_content_nav')) {
 function cyon_content_nav() {
 	global $wp_query;
 	if(function_exists( 'wp_pagenavi' )){
@@ -1266,10 +1388,12 @@ function cyon_content_nav() {
 		<?php endif;
 	}
 }
+}
 
 
 /* =Custom Comments
 ----------------------------------------------- */
+if(!function_exists('cyon_comment')) {
 function cyon_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
@@ -1325,10 +1449,11 @@ function cyon_comment( $comment, $args, $depth ) {
 	<?php
 			break;
 	endswitch;
-}
+} }
 
 /* =Featured Media
 ----------------------------------------------- */
+if(!function_exists('cyon_post_content_featured')) {
 function cyon_post_content_featured(){
 	global $data;
 	$pages = $data['content_featured_image']; ?>
@@ -1407,8 +1532,9 @@ function cyon_post_content_featured(){
 			</ul></div>
 		</div>
 	<?php } ?>
-<?php }
+<?php } }
 
+if(!function_exists('cyon_wp_get_attachment_image_attributes_lazyload')) {
 function cyon_wp_get_attachment_image_attributes_lazyload( $attr, $attachment ) {
 	global $post, $data;
 	if(! is_admin() && $data['lazyload']==1){
@@ -1423,4 +1549,4 @@ function cyon_wp_get_attachment_image_attributes_lazyload( $attr, $attachment ) 
 		}
 	}
     return $attr;
-}
+} }

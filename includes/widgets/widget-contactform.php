@@ -178,21 +178,3 @@ add_action( 'widgets_init', create_function('', 'return register_widget("CyonCon
 // Sending email
 add_action('wp_ajax_cyon_contact_action', 'cyon_contact_email');
 add_action('wp_ajax_nopriv_cyon_contact_action', 'cyon_contact_email');
-if(!function_exists('cyon_contact_email')) {
-function cyon_contact_email() {
-	if (! wp_verify_nonce($_REQUEST['nonce'], 'cyon_contact_nonce') ) die(__('Security check')); 
-	if(isset($_REQUEST['nonce']) && isset($_REQUEST['email'])) {
-		$subject = __('New inquiry from').' '.get_bloginfo('name');
-		$body = __('Name').': <b>'.$_REQUEST['email'].'</b><br>';
-		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
-		$body .= __('Phone').': <b>'.$_REQUEST['phone'].'</b><br>';
-		$body .= __('Selected').': <b>'.$_REQUEST['dropdown'].'</b><br>';
-		$body .= __('Message').': <b>'.$_REQUEST['message'].'</b>';
-		if( mail($_REQUEST['emailto'], $subject, $body) ) {
-			echo 1;
-		} else {
-			echo 0;
-		}
-	}
-	die();
-} }

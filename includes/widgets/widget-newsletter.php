@@ -141,18 +141,3 @@ add_action( 'widgets_init', create_function('', 'return register_widget("CyonNew
 // Sending email
 add_action('wp_ajax_cyon_newsletter_action', 'cyon_newsletter_email');
 add_action('wp_ajax_nopriv_cyon_newsletter_action', 'cyon_newsletter_email');
-if(!function_exists('cyon_newsletter_email')) {
-function cyon_newsletter_email() {
-	if (! wp_verify_nonce($_REQUEST['nonce'], 'cyon_newsletter_nonce') ) die(__('Security check')); 
-	if(isset($_REQUEST['nonce']) && isset($_REQUEST['email'])) {
-		$subject = __('New subscriber from').' '.get_bloginfo('name');
-		$body = __('Name').': <b>'.$_REQUEST['email'].'</b><br>';
-		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
-		if( mail($_REQUEST['emailto'], $subject, $body) ) {
-			echo 1;
-		} else {
-			echo 0;
-		}
-	}
-	die();
-} }

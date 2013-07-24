@@ -7,6 +7,7 @@ add_theme_support( 'woocommerce' );
 
 /* =Woocommerce initiate
 ----------------------------------------------- */
+if(!function_exists('cyon_woo_init')) {
 function cyon_woo_init(){
 
 	/* Remove sidebar */
@@ -47,7 +48,8 @@ function cyon_woo_init(){
 	add_action('wp_head', 'cyon_woocommerce_reset_loop');
 	add_filter('cyon_the_list_layout','cyon_woocommerce_product_cols');
 
-}
+} }
+
 if ( ! is_admin() || defined('DOING_AJAX') ) {
 	add_action( 'woocommerce_init', 'cyon_woo_init' );
 }
@@ -55,6 +57,7 @@ if ( ! is_admin() || defined('DOING_AJAX') ) {
 
 /* =Woocommerce only CSS
 ----------------------------------------------- */
+if(!function_exists('cyon_register_scripts_styles_woocommerce')) {
 function cyon_register_scripts_styles_woocommerce(){
 	global $data;
 	if(get_option('woocommerce_frontend_css') == 'no'){
@@ -67,11 +70,12 @@ function cyon_register_scripts_styles_woocommerce(){
 		wp_dequeue_script('wc-single-product');
 		wp_enqueue_script('cyon-wc-single-product', THEME_ASSETS_URI . 'js/jquery.single.product.js', array('jquery'),'1.0.0', false);
 	}
-}
+} }
 
 
 /* =Woocommerce only JS
 ----------------------------------------------- */
+if(!function_exists('cyon_woo_header_js_css_hook')) {
 function cyon_woo_header_js_css_hook(){
 	global $data;
 ?>
@@ -104,65 +108,74 @@ function cyon_woo_header_js_css_hook(){
 
 	</style>
 	<?php } ?>
-<?php }
+<?php } }
  
 
 /* =Wrapper top
 ----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_output_content_wrapper')) {
 function cyon_woocommerce_output_content_wrapper() { ?>
 		<div id="main" class="<?php echo cyon_get_page_layout(); ?>">
 			<div class="wrapper clearfix">
 				<!-- Center -->
 				<div id="primary">
-<?php }
+<?php } }
  
 
+if(!function_exists('cyon_woocommerce_before_shop_loop_item')) {
 function cyon_woocommerce_before_shop_loop_item() { ?>
 	<div class="product-wrapper">
-<?php }
+<?php } }
 
 
 /* =Wrapper bottom
 ----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_output_content_wrapper_end')) {
 function cyon_woocommerce_output_content_wrapper_end() { ?>
 				</div>
 				<?php cyon_secondary_hook(); ?>
 			</div>
 		</div>
-<?php }
+<?php } }
 
+if(!function_exists('cyon_woocommerce_after_shop_loop_item')) {
 function cyon_woocommerce_after_shop_loop_item() { ?>
 	</div>
-<?php }
+<?php } }
 
 
 /* =Related Products
 ----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_output_related_products')) {
 function cyon_woocommerce_output_related_products() { 
 	global $data;
 	woocommerce_related_products($data['woocommerce_product_cols'],$data['woocommerce_product_cols']);
-}
+} }
 
 
 /* =Upsell Products
 ----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_upsell_display')) {
 function cyon_woocommerce_upsell_display() {
 	global $data;
 	woocommerce_upsell_display($data['woocommerce_product_cols'],$data['woocommerce_product_cols']);
-}
+} }
 
 
 /* =Display 24 products per page
 ----------------------------------------------- */
-add_filter('loop_shop_per_page', 'cyon_loop_shop_per_page');
+if(!function_exists('cyon_loop_shop_per_page')) {
 function cyon_loop_shop_per_page($cols){
 	global $data;
 	return $data['woocommerce_product_per_page'];
-}
+} }
+
+add_filter('loop_shop_per_page', 'cyon_loop_shop_per_page');
 
 
 /* =Display rows
 ----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_product_cols')) {
 function cyon_woocommerce_product_cols($layout){
 	global $data;
 	if(is_woocommerce()){
@@ -170,26 +183,32 @@ function cyon_woocommerce_product_cols($layout){
 	}else{
 		return $layout;
 	}
-}
+} }
+
+if(!function_exists('cyon_woocommerce_reset_loop')) {
 function cyon_woocommerce_reset_loop(){
 	global $woocommerce_loop, $data;
 	$woocommerce_loop['columns'] = $data['woocommerce_product_cols'];
-}
+} }
 
 
 /* =Thumbnail
 ----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_product_thumbnails_columns')) {
 function cyon_woocommerce_product_thumbnails_columns(){
 	return 5;
-}
+} }
+
 
 /* Total Cart Shortcode
 use [woocart]
 ----------------------------------------------- */
+if(!function_exists('cyon_woocart')) {
 function cyon_woocart( $atts, $content = null ) {
 	global $woocommerce;
-	return '<a class="cart-contents" href="'.$woocommerce->cart->get_cart_url().'" title="'.__('View your shopping cart', 'woothemes').'">'.sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count).' ('.$woocommerce->cart->get_cart_total().') - '.__('View Cart').'</a>';
-}
+	return __('Your total cart:','cyon').' <a class="cart-contents" href="'.$woocommerce->cart->get_cart_url().'" title="'.__('View your shopping cart', 'woothemes').'">'.sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count).' ('.$woocommerce->cart->get_cart_total().')</a>';
+} }
+
 add_shortcode('woocart','cyon_woocart');
 
 
@@ -318,14 +337,16 @@ add_action( 'widgets_init', create_function('', 'return register_widget("CyonWoo
 
 
 /* Total Cart Widget AJAX */
+if(!function_exists('cyon_woocommerce_header_add_to_cart_fragment')) {
 function cyon_woocommerce_header_add_to_cart_fragment($fragments){
 	global $woocommerce;
 	ob_start();
 	?>
-		<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+		<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> (<?php echo $woocommerce->cart->get_cart_total(); ?>)</a>
 	<?php
 	$fragments['a.cart-contents'] = ob_get_clean();
 	return $fragments;
-}
+} }
+
 add_filter('add_to_cart_fragments', 'cyon_woocommerce_header_add_to_cart_fragment');
 

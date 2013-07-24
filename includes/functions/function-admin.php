@@ -5,40 +5,38 @@ if ( !defined('ABSPATH') )
 /* =Get Script and Styles
 ----------------------------------------------- */
 if ( !function_exists( 'cyon_admin_scripts_styles' ) ){
-	function cyon_admin_scripts_styles() {
-		wp_enqueue_script( 'cyon_custom_admin_script' );
-		wp_enqueue_style( 'cyon_custom_admin_style' );
-	}
-}
+function cyon_admin_scripts_styles() {
+	wp_enqueue_script( 'cyon_custom_admin_script' );
+	wp_enqueue_style( 'cyon_custom_admin_style' );
+} }
 add_action( 'admin_enqueue_scripts', 'cyon_admin_scripts_styles' );
 
 
 /* =Adding MCE button
 ----------------------------------------------- */
 if ( !function_exists( 'cyon_add_mce_button' ) ){
-	function cyon_add_mce_button() {
-		/* Don't bother doing this stuff if the current user lacks permissions */
-	   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )
-		 return;
+function cyon_add_mce_button() {
+	/* Don't bother doing this stuff if the current user lacks permissions */
+   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )
+	 return;
+ 
+   /* Add only in Rich Editor mode */
+   if ( get_user_option('rich_editing') == 'true') {
+	 add_filter("mce_external_plugins", "cyon_add_mce_button_plugin");
+	 add_filter('mce_buttons', 'cyon_add_mce_button_register');
+   }
+
+	function cyon_add_mce_button_register($buttons) {
+	   array_push($buttons, "separator", "cyon_plugin");
+	   return $buttons;
+	}
 	 
-	   /* Add only in Rich Editor mode */
-	   if ( get_user_option('rich_editing') == 'true') {
-		 add_filter("mce_external_plugins", "cyon_add_mce_button_plugin");
-		 add_filter('mce_buttons', 'cyon_add_mce_button_register');
-	   }
-	
-		function cyon_add_mce_button_register($buttons) {
-		   array_push($buttons, "separator", "cyon_plugin");
-		   return $buttons;
-		}
-		 
-		/* Load the TinyMCE plugin */
-		function cyon_add_mce_button_plugin($plugin_array) {
-		   $plugin_array['cyon_plugin'] = THEME_ASSETS_URI .'js/mce/editor_plugin.js';
-		   return $plugin_array;
-		}
-	}	
-}
+	/* Load the TinyMCE plugin */
+	function cyon_add_mce_button_plugin($plugin_array) {
+	   $plugin_array['cyon_plugin'] = THEME_ASSETS_URI .'js/mce/editor_plugin.js';
+	   return $plugin_array;
+	}
+} }
 add_action('init', 'cyon_add_mce_button');
 
 
@@ -201,15 +199,14 @@ if($data['seo_activate']==1){
 
 /* Register Post/Page metaboxes */
 if( !function_exists( 'cyon_register_meta_boxes' ) ){
-	function cyon_register_meta_boxes(){
-		global $cyon_meta_boxes;
-		if ( class_exists( 'RW_Meta_Box' ) ){
-			foreach ( $cyon_meta_boxes as $cyon_meta_box ){
-				new RW_Meta_Box( $cyon_meta_box );
-			}
+function cyon_register_meta_boxes(){
+	global $cyon_meta_boxes;
+	if ( class_exists( 'RW_Meta_Box' ) ){
+		foreach ( $cyon_meta_boxes as $cyon_meta_box ){
+			new RW_Meta_Box( $cyon_meta_box );
 		}
 	}
-}
+} }
 add_action( 'admin_init', 'cyon_register_meta_boxes' );
 
 /* =Adding Taxonomy Meta boxes on Post Categories
@@ -264,6 +261,7 @@ if ( class_exists( 'Tax_Meta_Class' ) ){
 
 /* =Register new widgets
 ----------------------------------------------- */
+if(!function_exists('cyon_custom_widgets_init')) {
 function cyon_custom_widgets_init(){
 	global $data;
 	$widgets = $data['widgets'];
@@ -281,8 +279,9 @@ function cyon_custom_widgets_init(){
 			}
 		}
 	}
-}
+} }
 add_action( 'widgets_init', 'cyon_custom_widgets_init' );
+
 
 /* =Remove core and plugin updates
 ----------------------------------------------- */
