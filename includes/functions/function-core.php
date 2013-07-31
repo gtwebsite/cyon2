@@ -24,6 +24,7 @@ function cyon_register_scripts_styles(){
 	wp_enqueue_script('transit');
 	if($data['responsive']==1){
 		wp_enqueue_style('cyon_style_responsive'); 
+		wp_enqueue_script('nonbounce'); 
 	}
 	if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){
 		wp_enqueue_script('supersized');
@@ -907,7 +908,7 @@ function cyon_footer_backtotop(){
 	if ( $data['footer_backtotop'] ){ ?>
 	<!-- Back to Top -->
 	<div id="backtotop">
-		<p><a href="#page" class="backtotop"><?php _e('Back to Top','cyon'); ?> </a></p>
+		<p><a href="#topmost" class="backtotop"><?php _e('Back to Top','cyon'); ?> </a></p>
 	</div>
 	<?php }
 } }
@@ -935,27 +936,23 @@ function cyon_footer_jquery(){
 				var pagesize = jQuery('body').width();
 				if (pagesize <= 1020) {
 					if(jQuery('#access_r').length == 0){
-						jQuery('#access').clone().prependTo('body').attr('id','access_r').css('display','block');
-						jQuery('#access h3').css('textIndent','0').prepend('<span class="icon-show_lines"></span>');
+						jQuery('#access').hide().clone().prependTo('body').attr('id','access_r').show();
+						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-show_lines"></span>');
 					}
 				}else{
-					jQuery('#access_r').remove();
+					jQuery('#access_r').hide().remove();
 					jQuery('#access').show();
 				}
 			}
-			jQuery('#access h3').click( function(){
-				if(jQuery('.open_page').length == 0){
-					jQuery('#page, #supersized').addClass('open_page'); 
-					jQuery('#access_r ul.menu').css('width','100%');
-				}else{
-					jQuery('#page, #supersized').removeClass('open_page'); 
-					setTimeout( function(){
-						jQuery('#access_r ul.menu').css('width','0');
-					},800);
-				}
-			});
 			checkWidth();
 			jQuery(window).resize(checkWidth);
+			jQuery('#access_r h3').live( 'click', function(){
+				if(jQuery('.open_menu').length == 0){
+					jQuery('#access_r').addClass('open_menu').transition({ height:jQuery('#access_r ul.menu').height() + 40 + 'px' });; 
+				}else{
+					jQuery('#access_r').removeClass('open_menu').transition({ height:'40px' });; 
+				}
+			});
 
 			<?php } ?>
 

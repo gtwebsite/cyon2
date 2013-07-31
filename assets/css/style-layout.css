@@ -1,22 +1,30 @@
 /* =WordPress Defaults
 ----------------------------------------------- */
 .alignleft {
-	float:left; margin:0 20px 10px 0;
+	float:left;
+	margin:0 20px 10px 0;
 }
 .alignright {
-	float:right; margin:0 0 10px 20px;
+	float:right;
+	margin:0 0 10px 20px;
 }
 div.alignleft:empty, div.alignright:empty {
 	display:none;
 }
 .aligncenter {
-	display:block; text-align:center;
+	display:block;
+	text-align:center;
 }
 .wp-caption {
 	text-align:center;
 }
 .dropcap:first-letter {
-	display:block; float:left; font-size:280%; margin:-2px 4px 0 0; font-family:"Times New Roman", Times, serif; line-height:normal;
+	display:block;
+	float:left;
+	font-size:280%;
+	margin:-2px 4px 0 0;
+	font-family:"Times New Roman", Times, serif;
+	line-height:normal;
 }
 .skip-link, .assistive-text {
 	display:none;
@@ -29,7 +37,8 @@ body {
 	-webkit-font-smoothing: antialiased
 }
 img {
-	max-width:100%; height:auto;
+	max-width:100%;
+	height:auto;
 }
 img.lazyload {
 	display:none;
@@ -40,12 +49,18 @@ pre {
 .hide-text {
 	display:none;
 }
+a, input, button, img {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+}
 
 
 /* =Article
 ----------------------------------------------- */
 .blog-list-1 #primary article .entry-featured-image {
-	width:300px; float:left; margin:10px 10px 10px 0;
+	width:300px;
+	float:left;
+	margin:10px 10px 10px 0;
 }
 #primary .row-fluid article.type-post {
 	display:none;
@@ -55,13 +70,18 @@ pre {
 /* =Widgets
 ----------------------------------------------- */
 .widget h3 {
-	margin:0 0 10px 0; padding:0 0 10px 0; border-bottom:1px solid #f8f8f8;
+	margin:0 0 10px 0;
+	padding:0 0 10px 0;
+	border-bottom:1px solid #f8f8f8;
 }
 .widget ul, .widget ol, .widget li {
-	padding:0; list-style:none;
+	padding:0;
+	list-style:none;
 }
 .widget > ul > li, .widget > ol > li {
-	padding:0; margin:0; list-style:none;
+	padding:0;
+	margin:0;
+	list-style:none;
 }
 .widget > ul > li > ul > li {
 	padding-left:10px;
@@ -73,7 +93,8 @@ pre {
 	text-decoration:underline;
 }
 .widget img {
-	max-width:100%; height:auto;
+	max-width:100%;
+	height:auto;
 }
 .widget iframe {
 	width:100%;
@@ -116,7 +137,9 @@ pre {
 	width:82.67%;
 }
 .one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth,.one_seventh,.one_eighth{
-	position:relative; margin-right:4%; float:left;
+	position:relative;
+	margin-right:4%;
+	float:left;
 }
 .one_seventh, .one_eighth {
 	margin-right:2%
@@ -128,7 +151,8 @@ pre {
 	width:10.75%;
 }
 .last{
-	margin-right:0 !important; clear:right;
+	margin-right:0!important;
+	clear:right;
 }
 
 /* =Gravity Form
@@ -137,7 +161,11 @@ pre {
 	display:none;
 }
 .cyonform .gsection_title, .cyonform legend {
-	padding-bottom:5px; margin-bottom:10px; margin-top:20px; display:block; width:100%;
+	padding-bottom:5px;
+	margin-bottom:10px;
+	margin-top:20px;
+	display:block;
+	width:100%;
 }
 .cyonform .gform_heading {
 	margin-bottom:10px;
@@ -146,39 +174,55 @@ pre {
 	margin-bottom:20px; 
 }
 .cyonform .gform_footer, .cyonform .gform_page_footer {
-	position:relative; display:inline;
+	position:relative;
+	display:inline;
 }
 .cyonform .gform_ajax_spinner {
-	position:absolute; right:-20px; top:0;
+	position:absolute;
+	right:-20px;
+	top:0;
 }
 .cyonform .ginput_complex .ginput_left, .cyonform .ginput_complex .ginput_right {
-	float:left; margin-right:10px;
+	float:left;
+	margin-right:10px;
 }
 
 /* Fields */
 .cyonform .gform_fields {
-	margin:0; padding:0;
+	margin:0;
+	padding:0;
 }
 .cyonform .gform_fields > li, .cyonform .field {
-	margin-bottom:6px; padding:10px; position:relative; list-style:none; margin-left:0;
+	margin-bottom:6px;
+	padding:10px;
+	position:relative;
+	list-style:none;
+	margin-left:0;
 }
 .cyonform .field {
-	padding:0; margin-bottom:10px;
+	padding:0;
+	margin-bottom:10px;
 }
 .cyonform .gform_fields .gfield_label, .cyonform .field .label {
-	float:left; width:22%
+	float:left;
+	width:22%
 }
 .cyonform .gform_fields .ginput_container, .cyonform .field .inputs {
-	float:left; width:78%; margin:0;
+	float:left;
+	width:78%;
+	margin:0;
 }
 .cyonform .gform_fields .gsection {
 	padding:0;
 }
 .cyonform .gform_fields .gfield_required {
-	position:absolute; left:20%;
+	position:absolute;
+	left:20%;
 }
 .page-content .cyonform .gform_fields ul li, .page-content .cyonform .gform_fields ul, .page-content .cyonform .selection, .page-content .cyonform .selection li {
-	list-style:none; padding:0; margin:0;
+	list-style:none;
+	padding:0;
+	margin:0;
 }
 .cyonform .gform_fields .small, .cyonform .field .small {
 	width:25%;
@@ -198,7 +242,10 @@ pre {
 
 /* Gform Date picker */
 #ui-datepicker-div {
-	z-index:20!important; padding:10px; border-radius:3px; margin:5px 0 0 0;
+	z-index:20!important;
+	padding:10px;
+	border-radius:3px;
+	margin:5px 0 0 0;
 }
 #ui-datepicker-div table {
 	width:15em;
@@ -207,10 +254,13 @@ pre {
 	margin-bottom:10px;
 }
 #ui-datepicker-div select {
-	padding:3px; margin-right:5px;
+	padding:3px;
+	margin-right:5px;
 }
 #ui-datepicker-div .ui-datepicker-header a {
-	float:left; margin-right:5px; cursor:pointer;
+	float:left;
+	margin-right:5px;
+	cursor:pointer;
 }
 #ui-datepicker-div .ui-datepicker-title {
 	float:right;
@@ -928,7 +978,11 @@ p.nocomments {
 /* =Layout
 ----------------------------------------------- */
 #page { 
-	position:relative; zoom:1; z-index:3;
+	position:relative;
+	zoom:1;
+	z-index:3;
+	width:100%;
+	overflow-x:hidden;
 }
 	.width-wide .page_wrapper {
 		min-width:1020px;
