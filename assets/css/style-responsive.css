@@ -29,6 +29,7 @@
 		background:#f8f8f8;
 		height:40px;
 		overflow:hidden;
+		position:relative;
 	}
 	#access_r h3 {
 		cursor:pointer;

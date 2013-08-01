@@ -2,6 +2,10 @@
 if ( !defined('ABSPATH') )
 	die('-1');
 
+/* =Init
+----------------------------------------------- */
+add_action( 'template_redirect', 'cyon_check_offline' );
+
 /* =Head
 ----------------------------------------------- */
 add_action('wp_head',				'cyon_header_meta',5);

@@ -14,6 +14,17 @@ function cyon_check_jquery(){ ?>
 	</script>
 <?php } }
 
+/* =Check if online
+----------------------------------------------- */
+if(!function_exists('cyon_check_offline')) {
+function cyon_check_offline($template){
+	global $wp_query, $data;
+	if($data['site_offline_page']>0){
+		include( THEME_DIR . '/offline.php');
+		exit();
+	}
+} }
+
 /* =Get all jQuery and CSS
 ----------------------------------------------- */
 if(!function_exists('cyon_register_scripts_styles')) {

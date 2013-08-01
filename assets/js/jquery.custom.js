@@ -6,9 +6,14 @@ jQuery(document).ready(function(){
 		var org_height = jQuery(this).find('> ul').css('height');
 		jQuery(this).find('> ul').css({ height:'0px', display:'block' });
 		jQuery(this).hoverIntent(function(){
-			jQuery(this).find('> ul').transition({ height: org_height });
+			jQuery(this).addClass('hover').find('> ul').transition({
+				height: org_height,
+				complete: function(){
+					jQuery('#access .hover > ul').css('overflow','visible');
+				}
+			});
 		},function(){
-			jQuery(this).find('> ul').transition({ height:'0px' });
+			jQuery(this).removeClass('hover').find('> ul').transition({ height:'0px' }).css('overflow','hidden');
 		});
 	})
 

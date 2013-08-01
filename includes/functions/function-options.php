@@ -39,16 +39,25 @@ function cyon_of_options() {
 	( 
 		'disabled' => array (
 			'placebo' 			=> 'placebo', 
-			'home_block_static' => 'Static content',
-			'home_block_blog' 	=> 'Latest blog'
+			'home_block_static' => __( 'Static content', 'cyon' ),
+			'home_block_blog' 	=> __( 'Latest blog', 'cyon' )
 		), 
 		'enabled' => array (
 			'placebo' 			=> 'placebo', 
-			'home_block_slider' => 'Slider',
-			'home_block_page' 	=> 'Page content',
-			'home_block_bucket' => 'Bucket widgets'
+			'home_block_slider' => __( 'Slider', 'cyon' ),
+			'home_block_page' 	=> __( 'Page content', 'cyon' ),
+			'home_block_bucket' => __( 'Bucket widgets', 'cyon' )
 		),
 	);
+	
+	/* = Query pages */
+	$getpages = get_pages(array('hierarchical'=>0));
+	$pages = array();
+	$pages[-1] = __('Disable offline');
+	$pages[0] = '-------';
+	foreach ( array_slice($getpages,1) as $page ) {
+		$pages[$page->ID] = $page->post_title;
+	}
 
 	/* =The options array
 	----------------------------------------------- */
@@ -192,9 +201,9 @@ function cyon_of_options() {
 	/* Width */
 	$of_options[] = array( 'name' => __( 'Page width', 'cyon' ),
 						'id' => 'page_width',
-						'std' => 'wide',
+						'std' => 'centered',
 						'type' => 'radio',
-						'options' => array( 'wide' => 'Wide', 'centered' => 'Centered' ));
+						'options' => array( 'wide' => __( 'Wide', 'cyon' ), 'centered' => __( 'Centered', 'cyon' ) ));
 
 
 	/* Layout End ------- */
@@ -216,14 +225,14 @@ function cyon_of_options() {
 						'id' => 'content_comment',
 						'std' => array( 'posts' ),
 						'type' => 'multicheck',
-						'options' => array( 'posts' => __( 'Posts' ), 'pages' => __( 'Pages' ) ));
+						'options' => array( 'posts' => __( 'Posts', 'cyon' ), 'pages' => __( 'Pages', 'cyon' ) ));
 
 	/* Featured image */
 	$of_options[] = array( 'name' => __( 'Display featured image', 'cyon' ),
 						'id' => 'content_featured_image',
 						'std' => array( 'posts', 'listing' ),
 						'type' => 'multicheck',
-						'options' => array( 'posts' => __( 'Posts' ), 'listing' => __( 'Blog/taxonomy listing' ), 'pages' => __( 'Pages' ) ));
+						'options' => array( 'posts' => __( 'Posts', 'cyon' ), 'listing' => __( 'Blog/taxonomy listing', 'cyon' ), 'pages' => __( 'Pages', 'cyon' ) ));
 
 	/* Content End ------- */
 	$of_options[] = array( 'type' => 'group_end');
@@ -237,7 +246,7 @@ function cyon_of_options() {
 						'id' => 'content_blog_post',
 						'std' => 'excerpt',
 						'type' => 'radio',
-						'options' => array( 'excerpt' => 'Excerpt', 'full' => 'Full content' ));
+						'options' => array( 'excerpt' => __( 'Excerpt', 'cyon' ), 'full' => __('Full content', 'cyon') ));
 
 	/* Layout */
 	$of_options[] = array( 'name' => __( 'Default layout', 'cyon' ),
@@ -256,7 +265,7 @@ function cyon_of_options() {
 						'id' => 'content_thumbnail_size',
 						'std' => 'large',
 						'type' => 'radio',
-						'options' => array( 'thumbnail' => __( 'Thumbnail' ), 'medium' => __( 'Medium' ), 'large' => __( 'Large' ), 'full' => __( 'Full' ) ));
+						'options' => array( 'thumbnail' => __( 'Thumbnail', 'cyon' ), 'medium' => __( 'Medium', 'cyon' ), 'large' => __( 'Large' ), 'full' => __( 'Full', 'cyon' ) ));
 
 	/* Blog/taxonomy End ------- */
 	$of_options[] = array( 'type' => 'group_end');
@@ -330,13 +339,13 @@ function cyon_of_options() {
 
 	/* Top Left */
 	$of_options[] = array( 'name' => __( 'Top left content', 'cyon' ),
-						'desc' => __( 'This will show at the very top left.' ),
+						'desc' => __( 'This will show at the very top left.', 'cyon' ),
 						'id' => 'top_left_content',
 						'type' => 'textarea');
 
 	/* Top Right */
 	$of_options[] = array( 'name' => __( 'Top right content', 'cyon' ),
-						'desc' => __( 'This will show at the very top right.' ),
+						'desc' => __( 'This will show at the very top right.', 'cyon' ),
 						'id' => 'top_right_content',
 						'type' => 'textarea');
 
@@ -355,7 +364,7 @@ function cyon_of_options() {
 	/* Layout */
 	$of_options[] = array( 'name' => __( 'Bucket layout', 'cyon' ),
 						'id' => 'footer_bucket_layout',
-						'desc' => 'Shows number of footer columns to be used.',
+						'desc' => __( 'Shows number of footer columns to be used.', 'cyon' ),
 						'std' => 'bucket-4columns',
 						'type' => 'images',
 						'options' => array(
@@ -367,7 +376,7 @@ function cyon_of_options() {
 
 	/* Copyright */
 	$of_options[] = array( 'name' => __( 'Copyright', 'cyon' ),
-						'std' => __( '&copy; 2013 MyCompany.com. All Rights Reserved.' ),
+						'std' => __( '&copy; 2013 MyCompany.com. All Rights Reserved.', 'cyon' ),
 						'id' => 'footer_copyright',
 						'type' => 'text');
 
@@ -394,7 +403,7 @@ function cyon_of_options() {
 
 	/* Info */
 	if ( 0 == get_option('page_on_front') ) { // Check if a page is set to front page
-		$of_options[] = array( 'std' => '<h3 style="margin: 0 0 10px">'.__( 'Oppps! Something\'s wrong.' ).'</h3><div>'.__( 'You should create a blank page for your homepage. Go to Settings > Reading > Front page displays, then select "A static page". Set "Front page" to the new page you just created.' ).'</div>',
+		$of_options[] = array( 'std' => '<h3 style="margin: 0 0 10px">'.__( 'Oppps! Something\'s wrong.' ).'</h3><div>'.__( 'You should create a blank page for your homepage. Go to Settings > Reading > Front page displays, then select "A static page". Set "Front page" to the new page you just created.', 'cyon' ).'</div>',
 							'icon' => true,
 							'type' => 'info');
 	}
@@ -405,7 +414,7 @@ function cyon_of_options() {
 
 	/* Layout */
 	$of_options[] = array( 'name' => __( 'Default layout of the homepage', 'cyon' ),
-						'desc' => __( 'This will override the default layout.' ),
+						'desc' => __( 'This will override the default layout.', 'cyon' ),
 						'id' => 'homepage_layout',
 						'std' => 'general-1column',
 						'type' => 'images',
@@ -418,7 +427,7 @@ function cyon_of_options() {
 	/* Sorter */
 	$of_options[] = array( 'name' => __( 'Block sorter', 'cyon' ),
 						'id' => 'homepage_blocks',
-						'desc' => 'Organize how you want the layout to appear on the homepage',
+						'desc' => __( 'Organize how you want the layout to appear on the homepage', 'cyon' ),
 						'std' => $of_options_homepage_blocks,
 						'type' => 'sorter');  
 
@@ -431,7 +440,7 @@ function cyon_of_options() {
 
 	/* Slider */
 	$of_options[] = array( 'name' => __( 'Images', 'cyon' ),
-						'desc' => __( 'Unlimited slider with drag and drop sortings.' ),
+						'desc' => __( 'Unlimited slider with drag and drop sortings.', 'cyon' ),
 						'id' => 'homepage_slider',
 						'type' => 'slider');
 
@@ -450,7 +459,7 @@ function cyon_of_options() {
 
 	/* Static Block */
 	$of_options[] = array( 'name' => __( 'Text', 'cyon' ),
-						'desc' => __( 'Can accept HTML tags and shortcodes.' ),
+						'desc' => __( 'Can accept HTML tags and shortcodes.', 'cyon' ),
 						'id' => 'homepage_middle_block',
 						'type' => 'textarea');
 
@@ -463,7 +472,7 @@ function cyon_of_options() {
 
 	/* Blog block title */
 	$of_options[] = array( 'name' => __( 'Title', 'cyon' ),
-						'std' => __( 'Latest Posts' ),
+						'std' => __( 'Latest Posts', 'cyon' ),
 						'id' => 'homepage_blog_title',
 						'type' => 'text');
 
@@ -488,6 +497,7 @@ function cyon_of_options() {
 						'id' => 'homepage_blog_layout',
 						'desc' => '',
 						'std' => '3',
+						'placeholder' => '',
 						'type' => 'images',
 						'options' => array(
 							'1' => THEME_FRAMEWORK_URI . 'assets/images/1-col-portfolio.png',
@@ -498,7 +508,8 @@ function cyon_of_options() {
 
 	/* Blog block query */
 	$of_options[] = array( 'name' => __( 'Additional query', 'cyon' ),
-						'std' => __( '' ),
+						'std' => '',
+						'placeholder' => '&cat=4',
 						'id' => 'homepage_blog_query',
 						'desc' => __( 'It uses the function WP_Query(). <a href="http://codex.wordpress.org/Class_Reference/WP_Query" target="_blank">Click here</a> for documentation.', 'cyon' ),
 						'type' => 'text');
@@ -518,7 +529,7 @@ function cyon_of_options() {
 	/* Layout */
 	$of_options[] = array( 'name' => __( 'Bucket layout', 'cyon' ),
 						'id' => 'homepage_bucket_layout',
-						'desc' => 'Shows number of bucket columns to be used.',
+						'desc' => __( 'Shows number of bucket columns to be used.', 'cyon' ),
 						'std' => 'bucket-3columns',
 						'type' => 'images',
 						'options' => array(
@@ -571,7 +582,7 @@ function cyon_of_options() {
 
 	/* Activate */
 	$of_options[] = array( 'name' => __( 'Activate SEO', 'cyon' ),
-						'desc' => __( 'Activates SEO options to all pages and posts in the admin.' ),
+						'desc' => __( 'Activates SEO options to all pages and posts in the admin.', 'cyon' ),
 						'id' => 'seo_activate',
 						'std' => 0,
 						'folds' => 1,
@@ -594,21 +605,21 @@ function cyon_of_options() {
 
 	/* Lightbox */
 	$of_options[] = array( 'name' => __( 'Activate Fancybox', 'cyon' ),
-						'desc' => __( 'Activates lightbox in all linked to images, this includes WP Gallery. Supports jpg, png, gif, and bmp' ),
+						'desc' => __( 'Activates lightbox in all linked to images, this includes WP Gallery. Supports jpg, png, gif, and bmp', 'cyon' ),
 						'std' => 1,
 						'id' => 'lightbox_activate',
 						'type' => 'checkbox');
 
 	/* Responsive */
 	$of_options[] = array( 'name' => __( 'Responsiveness', 'cyon' ),
-						'desc' => __( 'Allow special styles for mobile devices' ),
+						'desc' => __( 'Allow special styles for mobile devices', 'cyon' ),
 						'std' => 0,
 						'id' => 'responsive',
 						'type' => 'checkbox');
 
 	/* LazyLoad */
 	$of_options[] = array( 'name' => __( 'LazyLoad', 'cyon' ),
-						'desc' => __( 'Activates LazyLoad in all images' ),
+						'desc' => __( 'Activates LazyLoad in all images', 'cyon' ),
 						'std' => 1,
 						'id' => 'lazyload',
 						'type' => 'checkbox');
@@ -622,13 +633,13 @@ function cyon_of_options() {
 
 	/* Header */
 	$of_options[] = array( 'name' => __( 'Header', 'cyon' ),
-						'desc' => __( 'Scripts and Links placed inside the head tag. Can have Google Analytics here.' ),
+						'desc' => __( 'Scripts and Links placed inside the head tag. Can have Google Analytics here.', 'cyon' ),
 						'id' => 'header_scripts',
 						'type' => 'textarea');
 
 	/* Footer */
 	$of_options[] = array( 'name' => __( 'Footer', 'cyon' ),
-						'desc' => __( 'Scripts placed below the footer just before the end body tag.' ),
+						'desc' => __( 'Scripts placed below the footer just before the end body tag.', 'cyon' ),
 						'id' => 'footer_scripts',
 						'type' => 'textarea');
 
@@ -645,7 +656,7 @@ function cyon_of_options() {
 						'type' => 'group_begin');
 
 	/* Slider */
-	$of_options[] = array( 'desc' => __( 'Unlimited testimonial with drag and drop sortings.' ),
+	$of_options[] = array( 'desc' => __( 'Unlimited testimonial with drag and drop sortings.', 'cyon' ),
 						'id' => 'testimonials',
 						'type' => 'testimonial');
 
@@ -673,9 +684,23 @@ function cyon_of_options() {
 						'id' => 'admin_updates',
 						'std' => array('admin_plugin_updates'),
 						'type' => 'multicheck',
-						'options' => array('admin_core_updates'=>'Remove WP core updates', 'admin_plugin_updates'=>'Remove plugin updates') );
+						'options' => array('admin_core_updates'=> __( 'Remove WP core updates', 'cyon' ), 'admin_plugin_updates'=> __( 'Remove plugin updates', 'cyon' )) );
 
 	/* WP-admin End ------- */
+	$of_options[] = array( 'type' => 'group_end');
+
+	/* Offline Begin ------- */
+	$of_options[] = array( 'name' => __( 'Offline page', 'cyon' ),
+						'type' => 'group_begin');
+
+	/* Offline title */
+	$of_options[] = array( 'name' => __( 'Static Page', 'cyon' ),
+						'id' => 'site_offline_page',
+						'type' => 'select',
+						'std' => '',
+						'options' => $pages);  
+
+	/* Offline End ------- */
 	$of_options[] = array( 'type' => 'group_end');
 
 	/* Maintenance Begin ------- */
