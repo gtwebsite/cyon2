@@ -79,7 +79,7 @@ class CyonContactWidget extends WP_Widget {
 		echo $before_widget;
 		$html = ''; 
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		$html .= empty($instance['address']) ? '' : '<address><span class="icon-google_maps"></span>'.$instance['address'].'</address>';
+		$html .= empty($instance['address']) ? '' : '<address><span class="icon-map-marker"></span>'.$instance['address'].'</address>';
 		$html .= empty($instance['phone']) ? '' : '<address><a href="tel:'.$instance['phone'].'"><span class="icon-phone"></span>'.$instance['phone'].'</a></address>';
 		$html .= empty($instance['fax']) ? '' : '<address><span class="icon-print"></span>'.$instance['fax'].'</address>';
 		$html .= empty($instance['email']) ? '' : '<address><a href="mailto:'.$instance['email'].'"><span class="icon-envelope"></span>'.$instance['email'].'</a></address>';

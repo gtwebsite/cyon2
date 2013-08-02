@@ -19,7 +19,7 @@ function cyon_check_jquery(){ ?>
 if(!function_exists('cyon_check_offline')) {
 function cyon_check_offline($template){
 	global $wp_query, $data;
-	if($data['site_offline_page']>0){
+	if($data['site_offline_page']>0 && !is_user_logged_in()){
 		include( THEME_DIR . '/offline.php');
 		exit();
 	}

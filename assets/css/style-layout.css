@@ -319,7 +319,12 @@ a, input, button, img {
 /* =Contact Info widget
 ----------------------------------------------- */
 .cyon-contact address {
-	margin-bottom:3px; font-style:normal;
+	margin-bottom:3px;
+	font-style:normal;
+}
+.cyon-contact address span {
+	width:20px;
+	text-align:center;
 }
 
 /* =Newsletter & Contact Form
@@ -567,7 +572,7 @@ a.btn-small {
 	padding-left:20px;
 }
 .has-icon-list [class^="icon-"], .has-icon-list [class*=" icon-"], .has-icon2x-list [class^="icon-"], .has-icon2x-list [class*=" icon-"] {
-	position:absolute; left:0;
+	position:absolute; left:0; top:3px;
 }
 .has-icon-list li, .has-icon2x-list li {
 	position:relative; margin-bottom:5px; padding:0 2.5%;
