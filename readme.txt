@@ -14,13 +14,16 @@ Widgets - to which page appear
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4
+* Replace Glyphicons with Font Awesome
 * Compiled most common JS
 * Updated responsive
 * Updated to font icons
 * Updated lazy load
+* Updated FancyBox 2.1.5
 * Added jQuery Transit
 * Added grid gutter sizes for responsive grid layout
 * Added search shortcode
+* Added offline option
 * Removed Twitter widget
 * Removed Tooltip
 

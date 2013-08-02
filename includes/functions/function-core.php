@@ -893,7 +893,7 @@ function cyon_footer_copyright(){
 			$span='span6';
 		} ?>
 	<div id="bottom"<?php echo $class; ?>>
-		<?php echo $data['footer_copyright'] != '' ? '<div class="copyright '.$span.'"><p>'.do_shortcode($data['footer_copyright']).'</p></div>' : ''; ?>
+		<?php echo $data['footer_copyright'] != '' ? '<div class="copyright '.$span.'">'.do_shortcode($data['footer_copyright']).'</div>' : ''; ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1', 'container_id' => 'access2', 'container_class' => $span, 'fallback_cb' => false ) ); ?>
 	</div><?php
 } }
@@ -919,7 +919,7 @@ function cyon_footer_backtotop(){
 	if ( $data['footer_backtotop'] ){ ?>
 	<!-- Back to Top -->
 	<div id="backtotop">
-		<p><a href="#topmost" class="backtotop"><?php _e('Back to Top','cyon'); ?> </a></p>
+		<a href="#topmost" class="backtotop"><?php _e('Back to Top','cyon'); ?> </a>
 	</div>
 	<?php }
 } }
