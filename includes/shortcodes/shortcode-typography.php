@@ -301,14 +301,15 @@ function cyon_box( $atts, $content = null ) {
 		$close = '<a class="btn btn-close"><span class="icon-remove"></span></a>';
 	}
 	$quote = '';
+	$title = '';
 	if($atts['quote']=='yes'){
 		$quote = 'blockquote';
+		$title .= '<div class="icon-quote-left"></div>';
 	}else{
 		$quote = 'div';
 	}
-	$title = '';
 	if($atts['title']!=''){
-		$title = '<h3>'.$icon.$atts['title'].'</h3>';
+		$title .= '<h3>'.$icon.$atts['title'].'</h3>';
 	}
 	if($classname!=''){
 		$class = ' class="'.$classname.'"';

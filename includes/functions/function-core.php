@@ -945,7 +945,7 @@ function cyon_footer_jquery(){
 			// Responsive Menu Support
 			function checkWidth() {
 				var pagesize = jQuery('body').width();
-				if (pagesize <= 1020) {
+				if (pagesize <= 974) {
 					if(jQuery('#access_r').length == 0){
 						jQuery('#access').hide().clone().prependTo('body').attr('id','access_r').show();
 						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-reorder"></span>');

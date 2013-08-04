@@ -552,7 +552,9 @@ a.btn-small {
 	display:none;
 }
 .box .btn-close {
-	position:absolute; top:-15px; right:10px;
+	position:absolute;
+	top:-15px;
+	right:10px;
 }
 .box .btn-close .icon-remove {
 	padding-right:0;
@@ -561,7 +563,10 @@ a.btn-small {
 	padding-left:50px;
 }
 .box.has-icon-box .icon-box {
-	position:absolute; top:10px; left:15px; font-size:24px;
+	position:absolute;
+	top:10px;
+	left:15px;
+	font-size:24px;
 }
 .box h3 {
 	margin:0;
@@ -571,6 +576,11 @@ a.btn-small {
 }
 .box br {
 	display:none;
+}
+blockquote.box > div {
+	font-size:400%;
+	float:left;
+	margin:0 10px 0 0;
 }
 
 
