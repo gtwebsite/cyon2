@@ -49,9 +49,11 @@ pre {
 .hide-text {
 	display:none;
 }
-a, input, button, img {
+a, input, button, select, textarea, img {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-appearance: none;
 }
 
 
@@ -166,6 +168,13 @@ a, input, button, img {
 	margin-top:20px;
 	display:block;
 	width:100%;
+}
+.cyonform legend {
+	margin-bottom:10px;
+}
+.cyonform legend + * {
+	-webkit-margin-top-collapse:separate;
+	margin-top:10px;
 }
 .cyonform .gform_heading {
 	margin-bottom:10px;
@@ -552,7 +561,7 @@ a.btn-small {
 	padding-left:50px;
 }
 .box.has-icon-box .icon-box {
-	position:absolute; top:5px; left:15px; font-size:24px;
+	position:absolute; top:10px; left:15px; font-size:24px;
 }
 .box h3 {
 	margin:0;
@@ -663,6 +672,14 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 }
 .toggle h3, .accordion h3 {
 	cursor:pointer; padding:8px 10px; margin:0; 
+}
+.toggle h3:before, .accordion h3:before {
+	float:right;
+	display: inline-block;
+	font-family: 'FontAwesome';
+	font-style: normal;
+	position: relative;
+	font-weight: normal;
 }
 .toggle .toggle-wrapper, .accordion .accordion-wrapper {
 	overflow:hidden;
@@ -1020,7 +1037,8 @@ p.nocomments {
 	
 	/* Main navigation */
 	#access {
-		margin-bottom:10px; display:none;
+		margin-bottom:10px;
+		display:none;
 	}
 	#access ul, #access ul li {
 		margin:0; padding:0; list-style:none;
@@ -1030,33 +1048,52 @@ p.nocomments {
 	}
 		/* First Level */
 		#access ul.menu > li, #access .menu > ul > li {
-			float:left; margin-left:2px; margin-bottom:2px; position:relative;
+			float:left;
+			margin-left:2px;
+			margin-bottom:2px;
+			position:relative;
 		}
 		#access ul.menu > li:first-child, #access .menu > ul > li:first-child {
 			margin-left:0;
 		}
 		#access ul.menu > li > a, #access .menu > ul > li > a {
-			display:block; height:30px; line-height:30px; padding:0 20px; white-space:nowrap;
+			display:block;
+			height:30px;
+			line-height:30px;
+			padding:0 20px;
+			white-space:nowrap;
 		}
 		#access ul.menu > li a:hover, #access ul.menu li:hover > a, #access ul.menu li.current-menu-item > a, #access ul.menu > li.current-menu-parent > a,
 		#access .menu > ul > li a:hover, #access .menu > ul > li:hover > a, #access .menu > ul > li.current-menu-item > a, #access .menu > ul > li.current-menu-parent > a, #access .menu > ul > li.current_page_item > a {
 			text-decoration:none;
 		}
 		#access ul.menu li:hover {
-			z-index:100; position:relative;
+			z-index:100;
+			position:relative;
 		}
+		
 		/* Second Level */
 		#access ul.menu .sub-menu {
-			position:absolute; top:30px; left:-9999px; display:none; box-shadow:1px 1px 5px rgba(0,0,0,.1); width:200px; overflow:hidden; 
+			position:absolute;
+			top:30px;
+			left:-9999px;
+			display:none;
+			box-shadow:1px 1px 5px rgba(0,0,0,.1);
+			width:200px;
+			overflow:hidden; 
 		}
 		#access ul.menu > li:hover > ul, #access .menu > ul > li:hover > ul {
-			left:0; display:block;
+			left:0;
+			display:block;
 		}
 		#access ul.menu > li > ul > li, #access .menu > ul > li > ul > li {
 			position:relative;
 		}
 		#access ul.menu > li > ul > li a, #access .menu > ul > li > ul > li a {
-			background:#fff; display:block; width:180px; padding:8px 10px;
+			background:#fff;
+			display:block;
+			width:180px;
+			padding:8px 10px;
 		}
 		/* Third Level */
 		#access ul.menu > li > ul > li > ul, #access .menu > ul > li > ul > li > ul {
@@ -1093,13 +1130,17 @@ p.nocomments {
 			margin-bottom:30px;
 		}
 		#breadcrumb span.pretext {
-			padding-right:3px; position:relative; top:-1px;
+			padding-right:3px;
+			position:relative
+			top:-1px;
 		}
 		#breadcrumb dt {
 			color:#888;
 		}
 		#breadcrumb dt, #breadcrumb dd {
-			display:inline; padding:0 5px 0 0; margin:0;
+			display:inline;
+			padding:0 5px 0 0;
+			margin:0;
 		}
 	
 	#secondary:empty {
@@ -1121,10 +1162,13 @@ p.nocomments {
 		margin-bottom:10px;
 	}
 	#access2 ul {
-		text-align:right; margin:0; padding:0;
+		text-align:right;
+		margin:0;
+		padding:0;
 	}
 	#access2 ul li {
-		display:inline; padding-left:5px;
+		display:inline;
+		padding-left:5px;
 	}
 	
 	/* Sub footer */
@@ -1134,7 +1178,9 @@ p.nocomments {
 	
 	/* Back to top anchor */
 	#backtotop {
-		margin-bottom:10px; clear:both; text-align:right;
+		margin-bottom:10px;
+		clear:both;
+		text-align:right;
 	}
 
 /* =Page Specifics
@@ -1152,11 +1198,18 @@ p.nocomments {
 /* =Clearers
 ----------------------------------------------- */
 .row-fluid .first-child {
-	margin-left:0!important; clear:both;
+	margin-left:0!important;
+	clear:both;
 }
 #respond p {
 	*zoom:1;
 }
 #respond p:after, .cyonform .field:after, .cyonform .gfield:after, .widget-content:after, .ui-datepicker-header:after {
-	display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden;
+	display:block;
+	content:".";
+	clear:both;
+	font-size:0;
+	line-height:0;
+	height:0;
+	overflow:hidden;
 }

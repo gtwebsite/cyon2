@@ -1,5 +1,8 @@
 jQuery(document).ready(function(){
 	
+	// Enable active on tap
+	document.addEventListener("touchstart", function(){}, true);
+	
 	// Menu
 	jQuery('#access').show();
 	jQuery('#access li').each(function(){
@@ -32,10 +35,10 @@ jQuery(document).ready(function(){
 		jQuery(this).parent().find('h3').click(function(){
 			if(jQuery(this).parent().find('.toggle-wrapper').height()==0){
 				jQuery(this).parent().find('.toggle-wrapper').transition({ height: org_height });
-				jQuery(this).addClass('toggle-active');
+				jQuery(this).parent().addClass('toggle-active');
 			}else{
 				jQuery(this).parent().find('.toggle-wrapper').transition({ height:'0px' });
-				jQuery(this).removeClass('toggle-active');
+				jQuery(this).parent().removeClass('toggle-active');
 			}
 		});
 	});
@@ -47,12 +50,12 @@ jQuery(document).ready(function(){
 		jQuery(this).parent().find('h3').click(function(){
 			if(jQuery(this).parent().find('.accordion-wrapper').height()==0){
 				jQuery('.accordion .accordion-wrapper').transition({ height:'0px' }).delay(50);
-				jQuery('.accordion .accordion-title').removeClass('accordion-active');
+				jQuery('.accordion').removeClass('accordion-active');
 				jQuery(this).parent().find('.accordion-wrapper').transition({ height: org_height });
-				jQuery(this).addClass('accordion-active');
+				jQuery(this).parent().addClass('accordion-active');
 			}else{
 				jQuery(this).parent().find('.accordion-wrapper').transition({ height:'0px' });
-				jQuery(this).removeClass('accordion-active');
+				jQuery(this).parent().removeClass('accordion-active');
 			}
 		});
 	});

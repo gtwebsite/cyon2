@@ -80,14 +80,14 @@ class CyonSocialWidget extends WP_Widget {
 		$html = ''; 
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$html .= empty($instance['facebook']) ? '' : '<a href="'.$instance['facebook'].'" title="Facebook"><span class="icon-facebook"></span></a>';
-		$html .= empty($instance['google_plus']) ? '' : '<a href="'.$instance['google_plus'].'" title="Google+"><span class="icon-google_plus"></span></a>';
+		$html .= empty($instance['google_plus']) ? '' : '<a href="'.$instance['google_plus'].'" title="Google+"><span class="icon-google-plus"></span></a>';
 		$html .= empty($instance['twitter']) ? '' : '<a href="'.$instance['twitter'].'" title="Twitter"><span class="icon-twitter"></span></a>';
-		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" title="Linkedin"><span class="icon-linked_in"></span></a>';
+		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" title="Linkedin"><span class="icon-linkedin"></span></a>';
 		$html .= empty($instance['pinterest']) ? '' : '<a href="'.$instance['pinterest'].'" title="Pinterest"><span class="icon-pinterest"></span></a>';
 		$html .= empty($instance['youtube']) ? '' : '<a href="'.$instance['youtube'].'" title="Youtube"><span class="icon-youtube"></span></a>';
 		$html .= empty($instance['vimeo']) ? '' : '<a href="'.$instance['vimeo'].'" title="Vimeo"><span class="icon-vimeo"></span></a>';
 		$html .= empty($instance['flickr']) ? '' : '<a href="'.$instance['flickr'].'" title="Flickr"><span class="icon-flickr"></span></a>';
-		$html .= empty($instance['email']) ? '' : '<a href="mailto:'.$instance['email'].'" title="Email"><span class="icon-e-mail"></span></a>';
+		$html .= empty($instance['email']) ? '' : '<a href="mailto:'.$instance['email'].'" title="Email"><span class="icon-envelope"></span></a>';
 		$html .= empty($instance['rss']) ? '' : '<a href="'.$instance['rss'].'" title="RSS"><span class="icon-rss"></span></a>';
 		
 		if (!empty($title)){

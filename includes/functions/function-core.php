@@ -948,7 +948,7 @@ function cyon_footer_jquery(){
 				if (pagesize <= 1020) {
 					if(jQuery('#access_r').length == 0){
 						jQuery('#access').hide().clone().prependTo('body').attr('id','access_r').show();
-						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-show_lines"></span>');
+						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-reorder"></span>');
 					}
 				}else{
 					jQuery('#access_r').hide().remove();
@@ -1504,7 +1504,7 @@ function cyon_post_content_featured(){
 				?>
 					<?php echo do_shortcode('[video width="100%" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
 				<?php }else{
-				$icon = 'facetime_video';
+				$icon = 'facetime-video';
 					?>
 				<a href="<?php echo rwmb_meta( 'cyon_video_url' ); ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox-media"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>
 				<?php }	?>
@@ -1520,7 +1520,7 @@ function cyon_post_content_featured(){
 					$icon = 'share';
 				}else{
 					$url = get_permalink();
-					$icon = 'circle_info';
+					$icon = 'info-sign';
 				}
 				?>
 				<a href="<?php echo $url; ?>"><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>

@@ -441,27 +441,23 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Toggle & Accordion
 ----------------------------------------------- */
-.toggle h3, .accordion h3 {
-	border:1px solid #ddd;  border-radius:3px; text-shadow:1px 1px 1px #fff; box-shadow:inset 1px 1px 1px rgba(255,255,255,.5); background:#f8f8f8;
+.toggle, .accordion {
+	border:1px solid #ddd;  border-radius:3px; text-shadow:1px 1px 1px #fff; box-shadow:inset 1px 1px 1px rgba(255,255,255,.5); background-color:#f8f8f8;
+	transition:background-color .2s ease-in-out;
 }
-.toggle h3:hover , .accordion h3:hover {
-	background:none;
-	transition:background-color ease-in-out .3s;
-	-moz-transition:background-color ease-in-out .3s;
-	-webkit-transition:background-color ease-in-out .3s;
-	-ms-transition:background-color ease-in-out .3s;
+.toggle-active, .accordion-active, .toggle:hover, .accordion:hover {
+	background-color:#fff;
 }
 .toggle h3:before, .accordion h3:before {
-	content: '+ '; float:right;
+	content: "\f107";
 }
-.toggle h3.toggle-active, .accordion h3.accordion-active {
-	border-bottom-color:#fff; border-bottom-left-radius:0; border-bottom-right-radius:0; background:none;
-}
-.toggle h3.toggle-active:before, .accordion h3.accordion-active:before { content: '- '; }
-.toggle .toggle-content, .accordion .accordion-content { border:1px solid #ddd; border-top:0; border-bottom-left-radius:5px; border-bottom-right-radius:5px; }
+.toggle-active h3:before, .accordion-active h3:before { content: "\f106"; }
 
 /* =Tabs
 ----------------------------------------------- */
+.tabs {
+	 border-bottom:1px solid #efefef; border-radius:3px;
+}
 .tabs .tab_nav li a {
 	text-shadow:1px 1px 0 #fff; border:1px solid #efefef; white-space:nowrap; border-top-left-radius:3px; border-top-right-radius:3px; box-shadow:inset 1px 1px 1px rgba(255,255,255,.5); background:#f8f8f8;
 	transition:background-color ease-in-out .3s;
@@ -473,7 +469,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	color:inherit; cursor:default; background:none; border-bottom-color:#fff;
 }
 .tabs .tab-content { 
-	border:1px solid #eee; border-radius:3px; border-top-left-radius:0;
+	border:1px solid #eee; border-radius:3px; border-top-left-radius:3px; border-bottom:0;
 }
 
 

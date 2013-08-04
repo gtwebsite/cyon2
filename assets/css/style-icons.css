@@ -11,7 +11,7 @@ li.has-icon, ul.has-icon > li {
 }
 
 *[class^="icon-"], *[class*=" icon-"] {
-	display: inline-block; position: relative; line-height:1em; padding-right:5px; text-decoration: none; -webkit-font-smoothing: antialiased !important;
+	display: inline-block; position: relative; line-height:1em; padding-right:5px; text-decoration: none; -webkit-font-smoothing: antialiased !important; min-width:12px; text-align:center;
 	*display: inline;
 	*zoom: 1;
 }
