@@ -149,7 +149,7 @@ dl.separator dd {
 	position:relative; top:2px;
 }
 .cyonform select {
-	padding-top:5px; padding-bottom:5px; line-height:26px;
+	padding-top:5px; padding-bottom:5px; line-height:26px; height:30px;
 }
 .cyonform button, .cyonform input[type=submit], .cyonform input[type=reset], .cyonform input[type=button], .cyonform .button, .btn {
 	cursor:pointer; border-color:#c1c1c1; color:#666; text-transform:uppercase; display:inline-block; box-shadow:1px 1px 3px rgba(0,0,0,.1), inset 1px 1px 1px rgba(255,255,255,.5), inset -1px -1px 2px rgba(0,0,0,.1); border-radius:5px; padding-left:10px; padding-right:10px; margin-bottom:2px;
@@ -192,6 +192,12 @@ input.error:-moz-placeholder, textarea.error:-moz-placeholder {
 }
 div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocommerce-error, .gform_wrapper .validation_error, .entry-content blockquote, .page-content blockquote {
 	padding:10px 15px; position:relative; margin:0 0 20px 0; border-radius:3px; text-shadow:1px 1px rgba(255,255,255,.8);
+}
+.box.alignleft {
+	margin-right:20px;
+}
+.box.alignright {
+	margin-left:20px;
 }
 .box-blue {
 	background-color:#e3f7ff; border-color:#b5bdcd;
@@ -245,9 +251,6 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Gravity Form
 ----------------------------------------------- */
-.cyonform .gsection_title, .cyonform legend {
-	border-bottom:1px dashed #efefef;
-}
 .cyonform .ginput_complex label, .cyonform .description {
 	display:block; color:#999; font-size:11px; font-style:italic;
 }
