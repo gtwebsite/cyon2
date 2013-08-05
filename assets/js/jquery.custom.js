@@ -80,10 +80,4 @@ jQuery(document).ready(function(){
 		return false;
 	});
 
-	var ieMobile = ( !!window.ActiveXObject && +( /IEMobile\/(\d+\.?(\d+)?)/.exec( navigator.userAgent )[1] ) ) || NaN;
-
-	if ( ieMobile < 10 ) {
-		jQuery('body').addClass('no-fontface no-csstransforms');
-	}
-
 });

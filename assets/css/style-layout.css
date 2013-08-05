@@ -1013,7 +1013,6 @@ p.nocomments {
 	zoom:1;
 	z-index:3;
 	width:100%;
-	overflow-x:hidden;
 }
 	.width-wide .page_wrapper {
 		min-width:1020px;
