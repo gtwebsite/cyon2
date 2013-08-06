@@ -151,6 +151,22 @@
 	.postlist li, .subpages li {
 		margin-bottom:10px;
 	}
+	.swiper-container .swiper-caption {
+		position:relative;
+		left:auto;
+		bottom:auto;
+		background:none;
+		padding:0;
+		opacity:1;
+		color:inherit;
+		margin-top:10px;
+	}
+	.swiper-container .swiper-caption h3, .swiper-container .swiper-caption p {
+		color:inherit;
+	}
+	.swiper-container .swiper-left, .swiper-container .swiper-right {
+		display:none;
+	}
 }
 
 /* Landscape phones and down */
@@ -194,26 +210,6 @@
 		width:auto;
 		float:none;
 		margin:0;
-	}
-	.testimonials {
-		margin:0; padding:0;
-	}
-	.testimonials li {
-		margin:0 0 20px 0;
-		border-radius:0;
-		padding:0;
-	}
-	.testimonials li .name { 
-		margin:0 20px 20px 0;
-	}
-	.testimonials li blockquote {
-		margin-left:0;
-		padding:0;
-		margin-bottom:0;
-		background:none;
-	}
-	.testimonials li blockquote:after {
-		display:none;
 	}
 	.grid .span2 {
 		display:none;
