@@ -4,26 +4,24 @@
 
 == Description ==
 
-== Future Updates ==
-slider add thumbnail
-slider feature list
-Widgets - to which page appear
-
 
 == Changelog ==
 
+= 2.1.0 =
+* Replaced Glyphicons to Font Awesome
+* Replaced Flexslider to Swiper 2.0
+* Updated FancyBox 2.1.5
+* Added offline option
+
 = 2.0.0 =
 * Replaced framework to SMOF 1.4
-* Replace Glyphicons with Font Awesome
-* Compiled most common JS
+* Compiled most common JS and CSS
 * Updated responsive
 * Updated to font icons
 * Updated lazy load
-* Updated FancyBox 2.1.5
 * Added jQuery Transit
 * Added grid gutter sizes for responsive grid layout
 * Added search shortcode
-* Added offline option
 * Removed Twitter widget
 * Removed Tooltip
 

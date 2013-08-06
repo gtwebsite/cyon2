@@ -44,13 +44,14 @@
 		color:inherit;
 		line-height:30px;
 		position:absolute;
+		text-align:center;
 		right:10px;
 		top:5px;
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
 		-webkit-touch-callout: none;
 	}
 	#access_r h3 span {
-		padding:0 6px;
+		padding:0;
 	}
 	#access_r h3:active {
 		background-color:#ddd; 

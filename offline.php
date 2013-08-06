@@ -24,12 +24,7 @@ while ( $query->have_posts() ) {
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-	wp_head();
-?>
-
+<?php cyon_offline_header(); ?>
 </head>
 <body class="offline">
 	<div id="page" class="hfeed"><div class="page_wrapper">
@@ -42,7 +37,7 @@ while ( $query->have_posts() ) {
 			</div>
 		</article>
 	</div></div>
-	<?php wp_footer(); ?>
+	<?php cyon_offline_footer(); ?>
 </body>
 </html>
 <?php } ?>

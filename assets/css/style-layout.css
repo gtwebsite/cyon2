@@ -766,46 +766,41 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 
 /* =Testimonial
 ----------------------------------------------- */
-.testimonials {
-	margin:0; padding:0;
+.cyon-testimonial .name h4 {
+	font-size:100%;
+	margin:0;
+	padding:0;
 }
-.testimonials li, .page-content .testimonials li {
-	position:relative; list-style:none; margin-left:0; margin-bottom:10px;
-}
-.testimonials li .name {
-	float:left; width:130px;
-}
-.testimonials li .name h4, .cyon-testimonial .name h4 {
-	font-size:100%; margin:0; padding:0;
-}
-.testimonials li .name p, .cyon-testimonial .name p {
-	font-size:85%; line-height:normal; margin:0; padding:0;
-}
-.testimonials li blockquote {
-	border:none; box-shadow:none; position:relative; margin:0 0 0 140px;
-}
-.testimonials li blockquote:after {
-	content:''; display:block; height:0; width:0; border-right:10px solid #f8f8f8; border-top:10px solid transparent; border-bottom:10px solid transparent; position:absolute; top:10px; left:-10px;
+.cyon-testimonial .name p {
+	font-size:85%;
+	line-height:normal;
+	margin:0;
+	padding:0;
 }
 .cyon-testimonial {
 	overflow:hidden;
 }
 .cyon-testimonial li {
-	margin:0 0 20px 0; padding:0;
+	margin:0 0 20px 0;
+	padding:0;
 }
 .cyon-testimonial blockquote {
-	border:none; box-shadow:none; position:relative; margin:0 0 15px 1px; padding:10px;
+	border:none;
+	box-shadow:none;
+	position:relative;
+	margin:0 0 15px 1px;
+	padding:10px;
 }
-.cyon-testimonial li blockquote:after {
-	content:''; display:block; height:0; width:0; border-top:10px solid #f8f8f8; border-left:10px solid transparent; border-right:10px solid transparent; position:absolute; bottom:-10px; right:10px;
+.cyon-testimonial img {
+	width:50px;
+	height:auto;
+	float:right;
+	margin-left:10px;
 }
-.cyon-testimonial li img {
-	width:50px; height:auto; float:right; margin-left:10px;
-}
-.cyon-testimonial li .name {
+.cyon-testimonial .name {
 	text-align:right;
 }
-.flex-testimonials .flex-direction-nav {
+.cyon-testimonial .swiper-left, .cyon-testimonial .swiper-right, .cyon-testimonial .swiper-pager {
 	display:none;
 }
 
@@ -957,31 +952,10 @@ p.nocomments {
 /* =Subpages
 ----------------------------------------------- */
 .subpages, .postlist {
-	margin-bottom:10px; padding:0;
+	margin-bottom:10px;
+	padding:0;
 }
 
-
-/* =Flexslider
------------------------------------------------ */
-.flexslider { min-height:50px; }
-.flexslider .flex-caption {
-	position:absolute; bottom:0; left:0; z-index:100; width:94%; background:url(../images/trans-bg.png); color:#aaa; padding:15px 3%; opacity:.8;
-}
-.flexslider .flex-caption h3, .flexslider .flex-caption p {
-	color:#fff; margin:0;
-}
-.flexslider .flex-control-nav a {
-	padding-top:11px; height:0; overflow:hidden;
-}
-.flexslider .flex-control-nav li {
-	margin:0 2px; margin-left:0;
-}
-.flexslider .slides li {
-	margin-left:0; position:relative;
-	transform: translate3d(0,0,0);
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-transform-style: preserve-3d;
-}
 
 
 /* =Blocks

@@ -42,7 +42,7 @@ class CyonTestimonialWidget extends WP_Widget {
 		$testimonials = $data['testimonials'];
 		
 		$title = $instance['title'];
-		if($instance['style']=='true'){ $fade='yes'; }else{ $fade='no'; }
+		if($instance['style']=='true'){ $slide='yes'; }else{ $slide='no'; }
 
 
 		// Start widget
@@ -54,26 +54,32 @@ class CyonTestimonialWidget extends WP_Widget {
 		}
 		echo '<div class="widget-content">';
 		if(count($testimonials)>0){
-			if($fade=='yes'){
-				$classname = ' class="slides"';
-				echo '<div class="flexslider flex-testimonials">';
+			if($slide=='yes'){
+				echo '<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+			}else{
+				echo '<ul>';
 			}
-			echo '<ul'.$classname.'>';
 			foreach ($testimonials as $testimonial) {
-				echo '<li class="clearfix">';
-				echo '<blockquote>'.$testimonial['description'].'</blockquote><div class="name">';
-				if($data['lazyload']==1){
-					echo $testimonial['url']!='' ? '<img src="'.THEME_ASSETS_URI.'images/blank.png" class="lazyload" data-original="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+				if($slide=='yes'){
+					echo '<div class="swiper-slide">';
 				}else{
-					echo $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+					echo '<li>';
 				}
+				echo '<blockquote class="clearfix"><div class="icon-quote-left"></div>'.$testimonial['description'].'<div class="bubble"></div></blockquote><div class="name clearfix">';
+				echo $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
 				echo '<h4>'.$testimonial['title'].'</h4>';
 				echo $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
-				echo '</div></li>';
-			}
-			echo '</ul>';
-			if($fade=='yes'){
 				echo '</div>';
+				if($slide=='yes'){
+					echo '</div>';
+				}else{
+					echo '</li>';
+				}
+			}
+			if($slide=='yes'){
+				echo '</div></div>';
+			}else{
+				echo '</ul>';
 			}
 		}
  

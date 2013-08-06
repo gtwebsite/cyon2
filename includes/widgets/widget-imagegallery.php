@@ -82,8 +82,7 @@ class CyonImageGalleryWidget extends WP_Widget {
 			}
 			echo '<div class="widget-content'.$classes.'">';
 		}else{
-			$classes .= 'slides';
-			echo '<div class="widget-content"><div class="flexslider"><ul class="'.$classes.'">';
+			echo '<div class="widget-content"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
 		}
 		while ($post->have_posts()) {
 			$post->the_post();
@@ -100,9 +99,7 @@ class CyonImageGalleryWidget extends WP_Widget {
 					}
 					echo '<div class="thumbnail'.$first_class.'"><a href="'.$image['full_url'].'" class="fancybox" rel="widget_gallery_'.$this->id.'" title="'.$image['name'].'"><img src="'.$image['url'].'" alt="'.$image['name'].'" /></a></div>';
 				}else{
-					echo '<li><a href="'.$image['full_url'].'" class="fancybox" rel="widget_gallery_'.$this->id.'" title="'.$image['name'].'"><img src="'.$image['url'].'" alt="'.$image['name'].'" /></a></li>';
-					add_action ( 'wp_footer', 'cyon_header_banner_js_css');
-					add_action ( 'wp_footer', 'cyon_footer_banner_common_hook');
+					echo '<div class="swiper-slide"><a href="'.$image['full_url'].'" class="fancybox" rel="widget_gallery_'.$this->id.'" title="'.$image['name'].'"><img src="'.$image['url'].'" alt="'.$image['name'].'" /></a></div>';
 				}
 			}
 		}
@@ -110,7 +107,7 @@ class CyonImageGalleryWidget extends WP_Widget {
 		if($instance['style']==1){
 			echo '</div>';
 		}else{
-			echo '</ul></div></div>';
+			echo '</div></div></div>';
 		}
 		// End widget
 		echo $after_widget;

@@ -185,33 +185,43 @@ function cyon_testimonial( $atts, $content = null ) {
 		array(
 			id		=> '',
 			classname => '',
-			style	=> 'list' // list, fade
+			style	=> 'list' // list, slide
 		), $atts);
 	global $data;
 	$testimonials = $data['testimonials'];
 	$html = '';
 
 	if(count($testimonials)>0){
-		if($atts['style']=='fade'){
-			$atts['classname'] .= ' slides';
-			$html .= '<div class="flexslider flex-testimonials">';
+		$html .= '<div class="cyon-testimonial '.$atts['classname'].'">';
+		if($atts['style']=='slide'){
+			$html .= '<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+		}else{
+			$html .= '<ul>';
 		}
-		$html .= '<ul class="testimonials '.$atts['classname'].'">';
 		foreach ($testimonials as $testimonial) {
-			$html .= '<li class="clearfix"><div class="name">';
-			if($data['lazyload']==1){
-				$html .= $testimonial['url']!='' ? '<img src="'.THEME_ASSETS_URI.'images/blank.png" data-original="'.$testimonial['url'].'" class="lazyload" alt="'.$testimonial['title'].'" />' : '';
+			if($atts['style']=='slide'){
+				$html .= '<div class="swiper-slide">';
 			}else{
-				$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
+				$html .= '<li>';
 			}
+			$html .= '<blockquote class="clearfix"><div class="icon-quote-left"></div>'.$testimonial['description'].'<div class="bubble"></div></blockquote><div class="name clearfix">';
+			$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
 			$html .= '<h4>'.$testimonial['title'].'</h4>';
 			$html .= $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
-			$html .= '</div><blockquote>'.$testimonial['description'].'</blockquote></li>';
+			$html .= '</div>';
+			if($atts['style']=='slide'){
+				$html .= '</div>';
+			}else{
+				$html .= '</li>';
+			}
 		}
 		$html .= '</ul>';
-		if($atts['style']=='fade'){
-			$html .= '</div>';
+		if($atts['style']=='slide'){
+			$html .= '</div></div>';
+		}else{
+			$html .= '</ul>';
 		}
+		$html .= '</div>';
 	}
 
 	return $html;

@@ -465,6 +465,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 }
 .toggle-active h3:before, .accordion-active h3:before { content: "\f106"; }
 
+
 /* =Tabs
 ----------------------------------------------- */
 .tabs {
@@ -482,6 +483,101 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 }
 .tabs .tab-content { 
 	border:1px solid #eee; border-radius:3px; border-top-left-radius:3px; border-bottom:0;
+}
+
+
+/* =Testimonial
+----------------------------------------------- */
+.cyon-testimonial .bubble {
+	content:'';
+	display:block;
+	height:0;
+	width:0;
+	border-top:10px solid #f8f8f8;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	position:absolute;
+	bottom:-10px;
+	right:10px;
+}
+.cyon-testimonial .icon-quote-left {
+	opacity:.5;
+	float:left;
+	margin:0 10px 5px 0;
+	font-size:200%;
+}
+
+
+/* =Swiper
+----------------------------------------------- */
+.swiper-slide {
+	position:relative; 
+}
+.swiper-wrapper {
+	height:0;
+	overflow:hidden;
+}
+.swiper-caption {
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:100;
+	width:94%;
+	background:url(../images/trans-bg.png);
+	color:#aaa;
+	padding:15px 3%;
+}
+.swiper-caption h3, .swiper-caption p {
+	color:#fff;
+	margin:0;
+}
+.swiper-right, .swiper-left {
+	position:absolute;
+	z-index:100;
+	top:50%;
+	display:block;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	font-size:30px;
+	text-align:center;
+	margin-top:-15px;
+	color:#000;
+	opacity:0.5;
+}
+.swiper-right span, .swiper-left span {
+	padding-right:0;
+}
+.swiper-right:hover, .swiper-left:hover {
+	color:#fff;
+}
+.swiper-right {
+	right:5px;
+}
+.swiper-left {
+	left:5px;
+}
+.swiper-pager{
+	position:absolute;
+	z-index:100;
+	right:5px;
+	top:5px;
+}
+.swiper-pagination-switch{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	border-radius:10px;
+	background:#000;
+	margin-left:5px;
+	opacity:0.5;
+	cursor:pointer;
+}
+.swiper-visible-switch{
+	background:#aaa;
+}
+.swiper-active-switch{
+	background:#fff;
 }
 
 

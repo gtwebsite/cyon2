@@ -64,6 +64,16 @@ function cyon_post_footer() {
     do_action('cyon_post_footer');
 } }
 
+if(!function_exists('cyon_offline_header')) {
+function cyon_offline_header() {
+    do_action('cyon_offline_header');
+} }
+
+if(!function_exists('cyon_offline_footer')) {
+function cyon_offline_footer() {
+    do_action('cyon_offline_footer');
+} }
+
 
 /* =Include all shortcodes
 ----------------------------------------------- */

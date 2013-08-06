@@ -702,23 +702,23 @@ function cyon_home_block_slider(){
 	global $data;
 	$slides = $data['homepage_slider'];
 	if(count($slides)>1){
-		echo '<div class="block" id="slider-block"><div class="flexslider"><ul class="slides">';
+		echo '<div class="block" id="slider-block"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
 		foreach ($slides as $slide) {
 			if($slide['url']!=''){
-				echo '<li>';
+				echo '<div class="swiper-slide">';
 				echo $slide['link']!='' ? '<a href="'.$slide['link'].'">' : '';
 				echo '<img src="'.$slide['url'].'" alt="'.$slide['title'].'" />';
 				echo $slide['link']!='' ? '</a>' : '';
 				if($slide['description']!=''){
-					echo '<div class="flex-caption">';
-					echo '<h3 class="flex-title">'.$slide['title'].'</h3><div class="flex-content">'.apply_filters('the_content',$slide['description']).'</div>';
+					echo '<div class="swiper-caption">';
+					echo '<h3 class="swiper-title">'.$slide['title'].'</h3><div class="swiper-content">'.apply_filters('the_content',$slide['description']).'</div>';
 					echo $slide['link']!='' ? '<p class="readmore"><a href="'.$slide['link'].'">'.__('Read more').'</a></p>' : '';
 					echo '</div>';
 				}
-				echo '</li>';
+				echo '</div>';
 			}
 		}
-		echo '</ul></div></div>';
+		echo '</div></div></div>';
 	}else{
 		if($slides[1]['url']!=''){
 			echo '<div class="block" id="slider-block">';
@@ -972,12 +972,26 @@ function cyon_footer_jquery(){
 
 			<?php } ?>
 
-			// Flexslider Banner
-			jQuery('.flexslider').flexslider({
-				controlNav: false,
-				animation: 'slide'
+			// Swiper
+			var cyonSwipe = [];
+			jQuery('.swiper-container').each(function(index){
+				jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
+				cyonSwipe[index] = jQuery(this).swiper({
+					loop: true,
+					calculateHeight: true,
+					pagination: '.swiper-pager-' + index,
+					paginationClickable: true
+				});
 			});
-
+			jQuery('.swiper-left').on('click', function(e){
+				e.preventDefault();
+				cyonSwipe[jQuery('.swiper-left').index(this)].swipePrev();
+			})
+			jQuery('.swiper-right').on('click', function(e){
+				e.preventDefault();
+				cyonSwipe[jQuery('.swiper-right').index(this)].swipeNext();
+			})
+			
 			<?php if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){ ?>
 			// Supersized Support
 			jQuery.supersized({ 
@@ -1536,13 +1550,13 @@ function cyon_post_content_featured(){
 		</div>
 	<?php }elseif(has_post_format('gallery') && (is_category() || is_archive() || is_home() || is_front_page()) && $pages['listing']==1){ ?>
 		<div class="entry-featured-image">
-			<div class="flexslider"><ul class="slides">
+			<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">
 			<?php 
 			$images = rwmb_meta( 'cyon_gallery_images', 'type=image&size='.$data['content_thumbnail_size'] );
 			foreach ( $images as $image ){ ?>
-				<li><a href="<?php echo $image['full_url']; ?>" class="fancybox-group" rel="images-<?php the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['name']; ?>" /><span class="status-box"><span class="icon-box icon-camera"></span></span></a></li>
+				<div class="swiper-slide"><a href="<?php echo $image['full_url']; ?>" class="fancybox-group" rel="images-<?php the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['name']; ?>" /><span class="status-box"><span class="icon-box icon-camera"></span></span></a></div>
 			<?php } ?>
-			</ul></div>
+			</div></div>
 		</div>
 	<?php } ?>
 <?php } }
