@@ -389,6 +389,12 @@ a, input, button, select, textarea, img, h1, h2, h3 {
 	display:none;
 }
 
+/* =Supersized
+----------------------------------------------- */
+#supersized img {
+	max-width:none;
+}
+
 /* =Social Icons
 ----------------------------------------------- */
 .cyon-social a span {
@@ -1018,11 +1024,15 @@ p.nocomments {
 		min-width:1020px;
 	}
 	.width-wide .wrapper, .width-centered .page_wrapper {
-		width:1000px; margin:0 auto; padding-left:10px; padding-right:10px;
+		width:1000px;
+		margin:0 auto;
+		padding-left:10px;
+		padding-right:10px;
 	}
 	
 #branding {
-	position:relative; z-index:2;
+	position:relative;
+	z-index:2;
 }
 #branding .wrapper {
 	padding-top:10px;

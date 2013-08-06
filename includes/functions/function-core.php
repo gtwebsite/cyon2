@@ -147,6 +147,11 @@ function cyon_header_styles(){
 	if(cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']!='full'){
 		$background_pattern = ' background-image:url('.cyon_get_page_bg().'); background-repeat:'.$data['background_style_pattern_repeat'].'; background-position:'.$data['background_style_pattern_position'].';';
 	}
+	if($data['background_style_pattern_repeat']=='full'){
+		$background_element = 'body';
+	}else{
+		$background_element = '#page';
+	}
 
 	?>
 	<?php if($data['iosicon']!=''){ ?><link rel="apple-touch-icon" href="<?php echo $data['iosicon']; ?>" /><?php echo "\n"; } ?>
@@ -171,11 +176,11 @@ function cyon_header_styles(){
 		body {
 			font-family:<?php echo $primary_font_face; ?>; font-size:<?php echo $data['primary_font']['size']; ?>; font-style:<?php echo $data['primary_font']['style']; ?>; font-weight:<?php echo $data['primary_font']['googlew']; ?>; color:<?php echo $data['primary_font']['color']; ?>;
 		}
+		<?php echo $background_element; ?> {
+			 background-color:<?php echo $data['background_color'] ?>;<?php echo $background_pattern."\n"; ?>
+		}
 		h1, h2, h3 {
 			font-family:<?php echo $secondary_font_face; ?>; color:<?php echo $data['secondary_font']['color']; ?>; font-style:<?php echo $data['secondary_font']['style']; ?>; font-weight:<?php echo $data['secondary_font']['googlew']; ?>;
-		}
-		#page {
-			 background-color:<?php echo $data['background_color'] ?>;<?php echo $background_pattern."\n"; ?>
 		}
 		#access ul.menu > li > a {
 			font-family:<?php echo $menu_font_face; ?>; font-size:<?php echo $data['menu_font']['size']; ?>; font-style:<?php echo $data['menu_font']['style']; ?>; color:<?php echo $data['menu_font']['color']; ?>; font-weight:<?php echo $data['menu_font']['googlew']; ?>;
