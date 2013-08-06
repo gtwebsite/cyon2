@@ -336,6 +336,15 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	border:1px solid #f8f8f8; border-bottom-left-radius:3px; border-bottom-right-radius:3px;
 }
 
+
+/* =Social Icons
+----------------------------------------------- */
+.cyon-social a span {
+	background-color:#f4f4f4;
+	border-radius:32px;
+}
+
+
 /* =Price Grid
 ----------------------------------------------- */
 .grid h2 {
