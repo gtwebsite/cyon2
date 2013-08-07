@@ -62,8 +62,10 @@ jQuery(document).ready(function(){
 
 
 	// Tabs
-	jQuery('.tabs').find('.tab_nav li:first-child').addClass('active');
-	jQuery(jQuery('.tabs .tab_nav li.active a').attr('href')).show();
+	jQuery('.tabs').each(function(){
+		jQuery(this).find('.tab_nav li:first-child').addClass('active');
+		jQuery(this).find(jQuery(this).find('.tab_nav li.active a').attr('href')).show();
+	});
 	jQuery('.tabs .tab_nav li a').click(function(e){
 		var prev = jQuery(this).parent().parent().find('li.active a').attr('href');
 		if (!jQuery(this).parent().hasClass('active')) {

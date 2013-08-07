@@ -576,6 +576,7 @@ function cyon_of_options() {
 	/* Social End ------- */
 	$of_options[] = array( 'type' => 'group_end');
 
+
 	/* SEO Begin ------- */
 	$of_options[] = array( 'name' => __( 'SEO', 'cyon' ),
 						'type' => 'group_begin');
@@ -598,6 +599,7 @@ function cyon_of_options() {
 
 	/* SEO End ------- */
 	$of_options[] = array( 'type' => 'group_end' );
+
 
 	/* Scripts Begin ------- */
 	$of_options[] = array( 'name' => __( 'Scripts Support', 'cyon' ),

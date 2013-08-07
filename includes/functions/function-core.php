@@ -702,7 +702,7 @@ function cyon_home_block_slider(){
 	global $data;
 	$slides = $data['homepage_slider'];
 	if(count($slides)>1){
-		echo '<div class="block" id="slider-block"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+		echo '<div class="block swiper" id="slider-block"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
 		foreach ($slides as $slide) {
 			if($slide['url']!=''){
 				echo '<div class="swiper-slide">';
@@ -974,9 +974,9 @@ function cyon_footer_jquery(){
 
 			// Swiper
 			var cyonSwipe = [];
-			jQuery('.swiper-container').each(function(index){
+			jQuery('.swiper').each(function(index){
 				jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
-				cyonSwipe[index] = jQuery(this).swiper({
+				cyonSwipe[index] = jQuery(this).find('.swiper-container').swiper({
 					loop: true,
 					calculateHeight: true,
 					pagination: '.swiper-pager-' + index,
@@ -1549,7 +1549,7 @@ function cyon_post_content_featured(){
 			<?php } ?>
 		</div>
 	<?php }elseif(has_post_format('gallery') && (is_category() || is_archive() || is_home() || is_front_page()) && $pages['listing']==1){ ?>
-		<div class="entry-featured-image">
+		<div class="entry-featured-image swiper">
 			<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">
 			<?php 
 			$images = rwmb_meta( 'cyon_gallery_images', 'type=image&size='.$data['content_thumbnail_size'] );

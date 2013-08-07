@@ -4,8 +4,8 @@ class CyonTestimonialWidget extends WP_Widget {
 
 	// Creating your widget
 	function CyonTestimonialWidget(){
-		$widget_ops = array('classname' => 'cyon-testimonial', 'description' => __('Displays on testimonials') );
-		$this->WP_Widget('CyonTestimonialWidget', __('Cyon Testimonial'), $widget_ops);
+		$widget_ops = array('classname' => 'cyon-testimonial', 'description' => __('Displays on testimonials','cyon') );
+		$this->WP_Widget('CyonTestimonialWidget', __('Cyon Testimonial','cyon'), $widget_ops);
 	}
  
  	// Widget form in WP Admin
@@ -55,7 +55,7 @@ class CyonTestimonialWidget extends WP_Widget {
 		echo '<div class="widget-content">';
 		if(count($testimonials)>0){
 			if($slide=='yes'){
-				echo '<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+				echo '<div class="swiper"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
 			}else{
 				echo '<ul>';
 			}
@@ -77,7 +77,7 @@ class CyonTestimonialWidget extends WP_Widget {
 				}
 			}
 			if($slide=='yes'){
-				echo '</div></div>';
+				echo '</div></div></div>';
 			}else{
 				echo '</ul>';
 			}

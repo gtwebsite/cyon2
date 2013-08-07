@@ -333,7 +333,10 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 /* =Tab Widget
 ----------------------------------------------- */
 .cyon-tabs .widget {
-	border:1px solid #f8f8f8; border-bottom-left-radius:3px; border-bottom-right-radius:3px;
+	border:1px solid #efefef;
+	border-radius:3px;
+	border-top-left-radius:0;
+	margin-bottom:0;
 }
 
 
@@ -468,9 +471,6 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Tabs
 ----------------------------------------------- */
-.tabs {
-	 border-bottom:1px solid #efefef; border-radius:3px;
-}
 .tabs .tab_nav li a {
 	text-shadow:1px 1px 0 #fff; border:1px solid #efefef; white-space:nowrap; border-top-left-radius:3px; border-top-right-radius:3px; box-shadow:inset 1px 1px 1px rgba(255,255,255,.5); background:#f8f8f8;
 	transition:background-color ease-in-out .3s;
@@ -481,8 +481,8 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 .tabs .tab_nav li.active a {
 	color:inherit; cursor:default; background:none; border-bottom-color:#fff;
 }
-.tabs .tab-content { 
-	border:1px solid #eee; border-radius:3px; border-top-left-radius:3px; border-bottom:0;
+.tabs .panel { 
+	border:1px solid #eee; border-radius:3px; border-top-left-radius:0;
 }
 
 
@@ -510,8 +510,8 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Swiper
 ----------------------------------------------- */
-.swiper-slide {
-	position:relative; 
+.swiper, .swiper-slide {
+	position:relative;
 }
 .swiper-wrapper {
 	height:0;

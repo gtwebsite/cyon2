@@ -194,7 +194,7 @@ function cyon_testimonial( $atts, $content = null ) {
 	if(count($testimonials)>0){
 		$html .= '<div class="cyon-testimonial '.$atts['classname'].'">';
 		if($atts['style']=='slide'){
-			$html .= '<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+			$html .= '<div class="swiper"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
 		}else{
 			$html .= '<ul>';
 		}
@@ -217,7 +217,7 @@ function cyon_testimonial( $atts, $content = null ) {
 		}
 		$html .= '</ul>';
 		if($atts['style']=='slide'){
-			$html .= '</div></div>';
+			$html .= '</div></div></div>';
 		}else{
 			$html .= '</ul>';
 		}
