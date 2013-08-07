@@ -251,19 +251,19 @@ a, input, button, select, textarea, img, h1, h2, h3 {
 /* Gform Date picker */
 #ui-datepicker-div {
 	z-index:20!important;
-	padding:10px;
+	padding:15px;
 	border-radius:3px;
 	margin:5px 0 0 0;
 }
 #ui-datepicker-div table {
-	width:15em;
+	width:18em;
 }
 #ui-datepicker-div .ui-datepicker-header {
 	margin-bottom:10px;
 }
 #ui-datepicker-div select {
-	padding:3px;
-	margin-right:5px;
+	padding:3px!important;
+	margin-right:5px!important;
 }
 #ui-datepicker-div .ui-datepicker-header a {
 	float:left;
