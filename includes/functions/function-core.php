@@ -1528,7 +1528,7 @@ function cyon_post_content_featured(){
 				<a href="<?php echo rwmb_meta( 'cyon_video_url' ); ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox-media"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>
 				<?php }	?>
 			<?php }elseif(has_post_format('image')){
-				$icon = 'zoom_in';
+				$icon = 'zoom-in';
 				?>
 				<?php $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); ?>
 				<a href="<?php echo $image_attributes[0]; ?>" <?php if($data['lightbox_activate']==1){ ?>class="fancybox"<?php }else{ ?>target="_blank"<?php } ?>><?php the_post_thumbnail( $data['content_thumbnail_size'] ); ?><span class="status-box"><span class="icon-box icon-<?php echo $icon; ?>"></span></span></a>
