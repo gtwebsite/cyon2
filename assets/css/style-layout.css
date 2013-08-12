@@ -52,9 +52,10 @@ pre {
 a, input, button, select, textarea, img, h1, h2, h3 {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-touch-callout: none;
+}
+a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	-webkit-user-select: none;
 }
-
 
 /* =Article
 ----------------------------------------------- */
