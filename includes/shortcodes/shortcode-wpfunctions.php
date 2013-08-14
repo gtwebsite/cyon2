@@ -81,7 +81,7 @@ function cyon_blog( $atts, $content = null ) {
 			cat_id 		=> 1
 		), $atts);
 	$args = array(
-		'numberposts' 	=> $atts['items'],
+		'posts_per_page' 	=> $atts['items'],
 		'category' 		=> $atts['cat_id']
 	);
 	$posts = get_posts($args);
@@ -177,53 +177,3 @@ function cyon_sitemap( $atts, $content = null ) {
 add_shortcode('sitemap','cyon_sitemap'); 
 
 
-/* =Testimonials
-use [testimonials id='' style='' classname='']
------------------------------------------------ */
-function cyon_testimonial( $atts, $content = null ) {
-	$atts = shortcode_atts(
-		array(
-			id		=> '',
-			classname => '',
-			style	=> 'list' // list, slide
-		), $atts);
-	global $data;
-	$testimonials = $data['testimonials'];
-	$html = '';
-
-	if(count($testimonials)>0){
-		$html .= '<div class="cyon-testimonial '.$atts['classname'].'">';
-		if($atts['style']=='slide'){
-			$html .= '<div class="swiper"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
-		}else{
-			$html .= '<ul>';
-		}
-		foreach ($testimonials as $testimonial) {
-			if($atts['style']=='slide'){
-				$html .= '<div class="swiper-slide">';
-			}else{
-				$html .= '<li>';
-			}
-			$html .= '<blockquote class="clearfix"><div class="icon-quote-left"></div>'.$testimonial['description'].'<div class="bubble"></div></blockquote><div class="name clearfix">';
-			$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
-			$html .= '<h4>'.$testimonial['title'].'</h4>';
-			$html .= $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
-			$html .= '</div>';
-			if($atts['style']=='slide'){
-				$html .= '</div>';
-			}else{
-				$html .= '</li>';
-			}
-		}
-		$html .= '</ul>';
-		if($atts['style']=='slide'){
-			$html .= '</div></div></div>';
-		}else{
-			$html .= '</ul>';
-		}
-		$html .= '</div>';
-	}
-
-	return $html;
-}
-add_shortcode('testimonials','cyon_testimonial'); 

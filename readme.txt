@@ -12,6 +12,9 @@
 * Replaced Flexslider to Swiper 2.0
 * Updated FancyBox 2.1.5
 * Added offline option
+* Added social shortcode
+* Added carousel shortcode
+* Added Related Posts
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4

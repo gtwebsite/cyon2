@@ -55,7 +55,8 @@ cyon_post_content
 
 cyon_post_footer
 - cyon_author, 10
-- cyon_post_comments, 20
+- cyon_related_posts, 20
+- cyon_post_comments, 30
 
 cyon_offline_header
 cyon_offline_footer

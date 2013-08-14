@@ -55,7 +55,7 @@ class CyonTestimonialWidget extends WP_Widget {
 		echo '<div class="widget-content">';
 		if(count($testimonials)>0){
 			if($slide=='yes'){
-				echo '<div class="swiper"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+				echo '<div class="swiper"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
 			}else{
 				echo '<ul>';
 			}

@@ -806,6 +806,18 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 }
 
 
+
+/* =Carousel
+----------------------------------------------- */
+.carousel {
+	margin:0 auto;
+	overflow:visible;
+}
+.carousel .swiper-slide-wrapper {
+	padding:10px;
+}
+
+
 /* =Page Gallery
 ----------------------------------------------- */
 .gallery dl { 
@@ -819,13 +831,20 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	box-shadow:2px 2px 10px rgba(0,0,0,.3);
 }
 .gallery dd {
-	position:absolute; bottom:0; left:0; background:#000; color:#fff; opacity:.8; padding:5px 8px;
+	position:absolute; bottom:-10px; left:0; background:#000; color:#fff; padding:5px 2%; margin:0; width:96%; opacity:0;
+	-webkit-transition:all .2s linear;
+	-moz-transition:all .2s linear;
+	-o-transition:all .2s linear;
+	transition:all .2s linear;
+}
+.gallery dl:hover dd {
+	opacity:.8; bottom:0;
 }
 .gallery img {
 	width:100%; height:auto; display:block; float:left;
 }
 .gallery p {
-	margin-bottom:0;
+	margin:0; padding:0; line-height:0;
 }
 .gallery-columns-2 dl {
 	width:48.7%; margin:5px .65%;
@@ -833,8 +852,8 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .gallery-columns-3 dl {
 	width:32%; margin:5px .65%;
 }
-.gallery-columns-4 dl { width:23.6%;
-	margin:5px .65%;
+.gallery-columns-4 dl {
+	width:23.6%; margin:5px .65%;
 }
 .gallery-columns-5 dl {
 	width:18.7%; margin:5px .65%;

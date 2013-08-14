@@ -371,3 +371,40 @@ function cyon_backtotop( $atts, $content = null ) {
 	return $html;
 }
 add_shortcode('backtotop','cyon_backtotop'); 
+
+
+/* =Social Boxes
+use [social]
+----------------------------------------------- */
+function cyon_social( $atts, $content = null ) {
+	global $data;
+	$social = $data['socialshare'];
+	$socialb = $data['socialshareboxes'];
+	$socialboxes = '';
+	if($socialb['facebook_like']==1 && $data['socialshare_fbid']!=''){
+		$socialboxes .= '<iframe src="//www.facebook.com/plugins/like.php?href='.get_permalink( $post->ID ).'&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=35&amp;appId='.$data['socialshare_fbid'].'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe><br />';
+	}
+	if($socialb['facebook']==1){
+		$socialboxes .= '<span class="st_facebook_hcount" displayText="Facebook"></span>';
+	}
+	if($socialb['twitter']==1){
+		$socialboxes .= '<span class="st_twitter_hcount" displayText="Tweet"></span>';
+	}
+	if($socialb['plus']==1){
+		$socialboxes .= '<span class="st_googleplus_hcount" displayText="Google +"></span>';
+	}
+	if($socialb['pinterest']==1){
+		$socialboxes .= '<span class="st_pinterest_hcount" displayText="Pinterest"></span>';
+	}
+	if($socialb['mail']==1){
+		$socialboxes .= '<span class="st_email_hcount" displayText="Email"></span>';
+	}
+	if($socialb['sharethis']==1){
+		$socialboxes .= '<span class="st_sharethis_hcount" displayText="ShareThis"></span>';
+	}
+	add_action ('wp_footer','cyon_social_js',10);
+	return '<p class="share">'.$socialboxes.'</p>';
+}
+add_shortcode('social','cyon_social'); 
+
+

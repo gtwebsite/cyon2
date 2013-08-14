@@ -220,6 +220,13 @@ function cyon_of_options() {
 						'id' => 'content_author',
 						'type' => 'checkbox');
 
+	/* Related Posts */
+	$of_options[] = array( 'name' => __( 'Display related posts', 'cyon' ),
+						'desc' => __( 'Yes, display related posts after the content', 'cyon' ),
+						'std' => 0,
+						'id' => 'content_related_posts',
+						'type' => 'checkbox');
+
 	/* Comment */
 	$of_options[] = array( 'name' => __( 'Display comment', 'cyon' ),
 						'id' => 'content_comment',

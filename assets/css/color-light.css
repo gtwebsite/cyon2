@@ -510,7 +510,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Swiper
 ----------------------------------------------- */
-.swiper, .swiper-slide {
+.swiper, .carousel, .swiper-slide {
 	position:relative;
 }
 .swiper-wrapper {
@@ -549,13 +549,13 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	padding-right:0;
 }
 .swiper-right:hover, .swiper-left:hover {
-	color:#fff;
+	color:#666;
 }
 .swiper-right {
-	right:5px;
+	right:-40px;
 }
 .swiper-left {
-	left:5px;
+	left:-40px;
 }
 .swiper-pager{
 	position:absolute;

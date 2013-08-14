@@ -31,6 +31,7 @@ if(!function_exists('cyon_register_scripts_styles')) {
 function cyon_register_scripts_styles(){
 	global $data;
 	wp_enqueue_script('cyon_jquery_all');
+	wp_enqueue_script('isotope');
 	wp_enqueue_script('cyon_jquery_custom');
 	wp_enqueue_script('transit');
 	if($data['responsive']==1){
@@ -41,6 +42,7 @@ function cyon_register_scripts_styles(){
 		wp_enqueue_script('supersized');
 	}
 } }
+
 
 /* =SEO Page Title
 ----------------------------------------------- */
@@ -160,6 +162,9 @@ function cyon_header_styles(){
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="<?php if($data['responsive']==1){ echo apply_filters('cyon_viewport','width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0'); }else{ echo apply_filters('cyon_viewport','width=1024'); } ?>" />
 	<?php if($data['responsive']==1){ ?><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black" /> <?php echo "\n"; } ?>
+	<meta name="application-name" content="<?php echo get_bloginfo( 'name' ); ?>"/>
+	<?php if($data['background_color']){ ?><meta name="msapplication-TileColor" content="<?php echo $data['background_color']; ?>" /><?php } ?>
+	<?php if(cyon_get_page_bg()){ ?><meta name="msapplication-TileImage" content="<?php echo cyon_get_page_bg(); ?>"/><?php } ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo THEME_ASSETS_URI; ?>css/<?php echo $data['theme_color']; ?>" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo THEME_ASSETS_URI; ?>css/<?php echo $data['theme_gutter']; ?>" />
@@ -400,6 +405,37 @@ function cyon_post_content_main(){
 		}
 	}
 } }
+
+
+if(!function_exists('cyon_related_posts')) {
+function cyon_related_posts() {
+	global $data;
+	$posttags = get_the_tags();
+	
+	if ($posttags) {
+		$tags = '';
+		$count=1;
+		foreach($posttags as $tag) {
+			if (1 == $count) {
+				$plus = '';
+			}else{
+				$plus = ',';
+			}
+			$tags .= $plus . $tag->name ; 
+			$count++;
+		}
+		$query  = new WP_Query( 'posts_per_page=5&tag='.$tags );
+		if ( $query->have_posts() && $data['content_related_posts']==1 ) {
+			echo '<div class="related-posts"><h3>'.__('Related Posts','cyon').'</h3><ul class="list">';
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+			}
+			echo '</ul></div>';
+		}
+	}
+} }
+
 
 /* =Primary Archive Header
 ----------------------------------------------- */
@@ -983,11 +1019,11 @@ function cyon_footer_jquery(){
 					paginationClickable: true
 				});
 			});
-			jQuery('.swiper-left').on('click', function(e){
+			jQuery('.swiper .swiper-left').on('click', function(e){
 				e.preventDefault();
 				cyonSwipe[jQuery('.swiper-left').index(this)].swipePrev();
 			})
-			jQuery('.swiper-right').on('click', function(e){
+			jQuery('.swiper .swiper-right').on('click', function(e){
 				e.preventDefault();
 				cyonSwipe[jQuery('.swiper-right').index(this)].swipeNext();
 			})
