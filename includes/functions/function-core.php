@@ -31,7 +31,9 @@ if(!function_exists('cyon_register_scripts_styles')) {
 function cyon_register_scripts_styles(){
 	global $data;
 	wp_enqueue_script('cyon_jquery_all');
-	wp_enqueue_script('isotope');
+	if($data['content_gallery_masonry']==1) {
+		wp_enqueue_script('isotope');
+	}
 	wp_enqueue_script('cyon_jquery_custom');
 	wp_enqueue_script('transit');
 	if($data['responsive']==1){
@@ -224,16 +226,16 @@ function cyon_header_columns(){
 	global $data;
 	if($data['top_left_content'] || $data['top_right_content']){ ?>
 	<!-- Top Contents -->
-	<div id="top" class="row-fluid">
+	<div id="top"<?php if($data['top_left_content'] && $data['top_right_content']){ ?> class="row-fluid"<?php } ?>>
 		<?php if($data['top_left_content']){ ?>
-		<div class="span6">
+		<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6"><?php } ?>
 			<p><?php echo do_shortcode($data['top_left_content']); ?></p>
-		</div>
+		<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
 		<?php } ?>
 		<?php if($data['top_right_content']){ ?>
-		<div class="span6 right">
+		<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6 right"><?php } ?>
 			<p><?php echo do_shortcode($data['top_right_content']); ?></p>
-		</div>
+		<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
 		<?php } ?>
 	</div>
 	<?php }
@@ -1013,6 +1015,7 @@ function cyon_footer_jquery(){
 			jQuery('.swiper').each(function(index){
 				jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
 				cyonSwipe[index] = jQuery(this).find('.swiper-container').swiper({
+					autoplay:Math.floor(Math.random() * 6000) + 4000,
 					loop: true,
 					calculateHeight: true,
 					pagination: '.swiper-pager-' + index,
@@ -1089,6 +1092,28 @@ function cyon_footer_jquery(){
 			<?php } ?>
 
 		});
+		<?php if($data['content_gallery_masonry']==1) { ?>
+		// Isotope Support
+		jQuery(window).load(function(){
+			jQuery('.gallery').imagesLoaded(function(){
+				jQuery('.gallery').isotope({
+					itemSelector: '.gallery-item',
+					animationOptions: {
+						duration: 750,
+						easing: 'linear',
+						queue: false
+					},
+					masonry: {
+						gutterWidth: 10
+					}
+				});
+				jQuery(window).trigger('scroll');
+			});
+		});
+		jQuery(window).scroll(function(){
+			jQuery('.gallery').isotope('reLayout');
+		});
+		<?php } ?>
 	</script> 
 <?php } }
 

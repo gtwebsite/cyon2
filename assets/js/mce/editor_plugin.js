@@ -20,6 +20,7 @@
 								
 								c=b.addMenu({title:"Snippets"});
 										a.addImmediate(c,"Blog List", '[blog excerpt="yes" thumbnail="yes" cols="" items="4" cat_id="1"]' );
+										a.addImmediate(c,"Carousel", '[carousel slidesperview="" width="" height="" loop=""]<br/>[slide title="Title Here"]Some content here.[/slide]<br/>[/carousel]' );
 										a.addImmediate(c,"Contact Form", '[contact email=""]Contact us for more information about our services[/contact]' );
 										a.addImmediate(c,"Newsletter Form", '[newsletter name="yes" email=""]Get the latest tips, news, and special offers delivered to your inbox.[/newsletter]' );
 										a.addImmediate(c,"Sitemap", '[sitemap]' );
@@ -38,7 +39,7 @@
 										a.addImmediate(c,"Code",'[code inline="yes"][/code]' );
 										a.addImmediate(c,"Header",'[header size="" icon=""]Title Here[/header]' );
 										a.addImmediate(c,"Horizontal Line",'[line style=""]' );
-										a.addImmediate(c,"Icon",'[icon element="" icon="" title="" url="" size=""]Text here[/icon]' );
+										a.addImmediate(c,"Icon",'[icon element="" icon="" title="" url="" color="" size=""]Text here[/icon]' );
 										a.addImmediate(c,"Lists",'[lists icon="" cols="" size=""]<br/>[list icon=""]Item name[/list]<br/>[list icon=""]Item name[/list]<br/>[/lists]' );
 
 								c=b.addMenu({title:"Table"});

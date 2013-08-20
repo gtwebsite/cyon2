@@ -70,7 +70,7 @@ function cyon_header_style( $atts, $content = null ) {
 add_shortcode('header','cyon_header_style'); 
 
 /* =Inline Icons
-use [icon element='' icon='' classname='' title='' url='' size=''] xxx [/icon]
+use [icon element='' icon='' classname='' title='' url='' size='' color='' align=''] xxx [/icon]
 ----------------------------------------------- */
 function cyon_inline_icon( $atts, $content = null ) {
 	$atts = shortcode_atts(
@@ -80,12 +80,27 @@ function cyon_inline_icon( $atts, $content = null ) {
 			url			=> '',
 			color		=> '',
 			title		=> '',
-			icon		=> ''
+			icon		=> '',
+			size		=> '',
+			align		=> ''
 		), $atts);
 	$element = $atts['element'];
 	if($atts['classname']){
 		$classname .= ' '.$atts['classname'];
 	}
+	$size = '';
+	if($atts['size']){
+		$size = ' font-size:'. $atts['size'].';';
+	}
+	$color = '';
+	if($atts['color']){
+		$color = ' color:'. $atts['color'].';';
+	}
+	$align = '';
+	if($atts['align']){
+		$align = ' align:'. $atts['align'].';';
+	}
+	$style = ' style="'.$size.$color.$align.'"';
 	$title = '';
 	if($atts['title']){
 		$title = ' title="'. $atts['title'] . '"';
@@ -103,7 +118,7 @@ function cyon_inline_icon( $atts, $content = null ) {
 	}else{
 		$icon = 'icon-'.$atts['icon'];
 	}
-	$html = '<'.$element.' class="'.$classname.'"'.$title.$url.'><span class="'.$icon.'"></span>' . $content . '</'.$element.'>';
+	$html = '<'.$element.' class="'.$classname.'"'.$title.$url.$style.'><span class="'.$icon.'"></span>' . $content . '</'.$element.'>';
 	return $html;
 }
 add_shortcode('icon','cyon_inline_icon'); 

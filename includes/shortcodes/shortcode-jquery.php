@@ -138,7 +138,7 @@ function cyon_carousel( $atts, $content = null ) {
 	}
 	
 	$carousel_content = array('
-		<div class="carousel" id="carousel-'.$instance.'" style="width:'.$atts['width'].';"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-container" style="height:'.$atts['height'].'px"><div class="swiper-wrapper"">'.do_shortcode($content).'</div></div></div>
+		<div class="carousel" id="carousel-'.$instance.'" style="width:'.$atts['width'].';"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-container" style="height:'.$atts['height'].'px"><div class="swiper-wrapper">'.do_shortcode($content).'</div></div></div>
 		<script type="text/javascript">
 			jQuery(document).ready(function(){
 				var cyonCarousel'.$instance.' = jQuery(\'#carousel-'.$instance.' .swiper-container\').swiper({'.$loop.'

@@ -80,9 +80,9 @@ function cyon_woo_header_js_css_hook(){
 	global $data;
 ?>
 	<?php if(get_option('woocommerce_frontend_css') == 'no'){  ?>
+			<?php if(is_shop() || is_product_category() || is_product_tag() || is_product()){  ?>
 	<script type="text/javascript">
 		jQuery(document).ready(function(){
-			<?php if(is_shop() || is_product_category() || is_product_tag() || is_product()){  ?>
 			jQuery('#primary ul.products').addClass('row-fluid').show();
 			<?php } ?>
 			<?php if(get_option('woocommerce_enable_lightbox') == 'no' && is_product()){ ?>
@@ -95,12 +95,16 @@ function cyon_woo_header_js_css_hook(){
 					}
 				}
 			});
-			<?php } ?>
-			<?php if(is_product() && cyon_get_list_layout()!=1) { ?>
-				jQuery('#primary div[itemscope]').removeClass('span<?php echo 12/cyon_get_list_layout(); ?>');
-			<?php } ?>
 		});
 	</script>
+			<?php } ?>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			<?php if(is_product() && cyon_get_list_layout()!=1) { ?>
+				jQuery('#primary div[itemscope]').removeClass('span<?php echo 12/cyon_get_list_layout(); ?>');
+		});
+	</script>
+			<?php } ?>
 	<style media="all" type="text/css">
 		.blockOverlay {
 			background:<?php echo $data['background_color']; ?>!important;

@@ -801,7 +801,8 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .cyon-testimonial .name {
 	text-align:right;
 }
-.cyon-testimonial .swiper-left, .cyon-testimonial .swiper-right, .cyon-testimonial .swiper-pager {
+.cyon-testimonial .swiper-left, .cyon-testimonial .swiper-right, .cyon-testimonial .swiper-pager,
+.cyon-twitter .swiper-left, .cyon-twitter .swiper-right, .cyon-twitter .swiper-pager {
 	display:none;
 }
 

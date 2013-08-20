@@ -14,8 +14,11 @@ function cyon_subpages( $atts, $content = null ) {
 			thumbnail 	=> 'no',
 			classname 	=> '',
 			cols	 	=> '',
-			id 			=> get_the_ID()
+			id 			=> get_the_ID(),
+			style		=> 'list'
 		), $atts);
+	static $instance = 0;
+	$instance++;
 	$args = array(
 		'sort_order' 	=> 'ASC',
 		'sort_column' 	=> 'menu_order',
@@ -24,14 +27,26 @@ function cyon_subpages( $atts, $content = null ) {
 	);
 	$subpages = get_pages($args);
 	$result = '';
-	if($atts['cols']>1){
+	$class = 'subpages';
+	if($atts['classname']){
+		$class .= ' '.$atts['classname'];
+	}
+	if($atts['cols']>1 && $atts['style']=='list'){
 		global $subpage_cols;
 		$subpage_cols = $atts['cols'];
 		$cols = 12 / $atts['cols'];
 		$classli = ' class="span'.$cols.'"';
+		$wrapper = '<li class="span'.$cols.'">';
+		$wrapper_end = '</li>';
+		$class .= ' row-fluid';
+		$result .= '<ul class="'.$class.'">';
+	}elseif($atts['style']=='slide'){
+		$result .= '<div class="carousel '.$class.'" id="subpages-'.$instance.'"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-container"><div class="swiper-wrapper">';
+		$wrapper = '<div class="swiper-slide"><div class="swiper-slide-wrapper">';
+		$wrapper_end = '</div></div>';
 	}
 	foreach ( $subpages as $page ) {
-		$result .= '<li'.$classli.'>';
+		$result .= $wrapper;
 		if($atts['thumbnail']=='yes'){
 			$result .= '<div class="page-thumb"><a href="' . get_page_link( $page->ID ) . '">'.get_the_post_thumbnail( $page->ID, $data['content_thumbnail_size'] ).'</a></div>';
 		}
@@ -39,24 +54,42 @@ function cyon_subpages( $atts, $content = null ) {
 		if($atts['excerpt']=='yes'){
 			$result .= do_shortcode($page->post_excerpt);
 		}
-		$result .= '</li>';
-		echo $option;
+		$result .= $wrapper_end;
 	}
-	$class = 'subpages';
-	if($atts['classname']){
-		$class .= ' '.$atts['classname'];
-	}
-	if($atts['cols']>1){
-		$class .= ' row-fluid';
+	if($atts['cols']>1 && $atts['style']=='list'){
+		$result .= '</ul>';
 		ob_start();
-			add_action('wp_footer','cyon_cyon_subpages_js_css',10);
+			add_action('wp_footer','cyon_subpages_js_css',10);
 		ob_get_clean();
+	}elseif($atts['style']=='slide'){
+		$result .= '</div></div></div>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				var cyonSubpages'.$instance.' = jQuery(\'#subpages-'.$instance.' .swiper-container\').swiper({
+					loop: true,
+					slidesPerGroup: '.$atts['cols'].',
+					slidesPerView: '.$atts['cols'].',
+					calculateHeight: true,
+					onSlideChangeEnd: function(){
+						jQuery(window).trigger(\'scroll\');
+					}
+				});
+				jQuery(\'#subpages-'.$instance.' .swiper-left\').on(\'click\', function(e){
+					e.preventDefault();
+					cyonSubpages'.$instance.'.swipePrev();
+				})
+				jQuery(\'#subpages-'.$instance.' .swiper-right\').on(\'click\', function(e){
+					e.preventDefault();
+					cyonSubpages'.$instance.'.swipeNext();
+				})
+			});
+		</script>';
 	}
-	return '<ul class="'.$class.'">'.$result.'</ul>';
+	return $result;
 }
 add_shortcode('subpages','cyon_subpages'); 
 
-function cyon_cyon_subpages_js_css(){
+function cyon_subpages_js_css(){
 		global $subpage_cols;
 ?>
 		<script type="text/javascript">
@@ -78,23 +111,37 @@ function cyon_blog( $atts, $content = null ) {
 			items 		=> 4,
 			classname 	=> '',
 			cols	 	=> '',
-			cat_id 		=> 1
+			cat_id 		=> 1,
+			style		=> 'list'
 		), $atts);
+	static $instance = 0;
+	$instance++;
 	$args = array(
 		'posts_per_page' 	=> $atts['items'],
 		'category' 		=> $atts['cat_id']
 	);
 	$posts = get_posts($args);
 	$result = '';
-	if($atts['cols']>1){
+	$class = 'postlist';
+	if($atts['classname']){
+		$class .= ' '.$atts['classname'];
+	}
+	if($atts['cols']>1 && $atts['style']=='list'){
 		global $blog_cols;
 		$blog_cols = $atts['cols'];
 		$cols = 12 / $atts['cols'];
-		$classli = ' class="span'.$cols.'"';
+		$wrapper = '<li class="span'.$cols.'">';
+		$wrapper_end = '</li>';
+		$class .= ' row-fluid';
+		$result .= '<ul class="'.$class.'">';
+	}elseif($atts['style']=='slide'){
+		$result .= '<div class="carousel '.$class.'" id="bloglist-'.$instance.'"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-container"><div class="swiper-wrapper">';
+		$wrapper = '<div class="swiper-slide"><div class="swiper-slide-wrapper">';
+		$wrapper_end = '</div></div>';
 	}
 	foreach ( $posts as $post ) {
 		setup_postdata($post);
-		$result .= '<li'.$classli.'>';
+		$result .= $wrapper;
 		if($atts['thumbnail']=='yes'){
 			$result .= '<div class="entry-featured-image"><a href="' . get_page_link( $post->ID ) . '">'.get_the_post_thumbnail( $post->ID, $data['content_thumbnail_size'] ).'</a></div>';
 		}
@@ -106,25 +153,43 @@ function cyon_blog( $atts, $content = null ) {
 				$result .= get_the_excerpt();
 			}
 		}
-		$result .= '</li>';
-		echo $option;
+		$result .= $wrapper_end;
 	}
-	$class = 'postlist';
-	if($atts['classname']){
-		$class .= ' '.$atts['classname'];
-	}
-	if($atts['cols']>1){
-		$class .= ' row-fluid';
+	if($atts['cols']>1 && $atts['style']=='list'){
+		$result .= '</ul>';
 		ob_start();
-			add_action('wp_footer','cyon_cyon_blog_js_css',10);
+			add_action('wp_footer','cyon_blog_js_css',10);
 		ob_get_clean();
+	}elseif($atts['style']=='slide'){
+		$result .= '</div></div></div>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				var cyonBloglist'.$instance.' = jQuery(\'#bloglist-'.$instance.' .swiper-container\').swiper({
+					loop: true,
+					slidesPerGroup: '.$atts['cols'].',
+					slidesPerView: '.$atts['cols'].',
+					calculateHeight: true,
+					onSlideChangeEnd: function(){
+						jQuery(window).trigger(\'scroll\');
+					}
+				});
+				jQuery(\'#bloglist-'.$instance.' .swiper-left\').on(\'click\', function(e){
+					e.preventDefault();
+					cyonBloglist'.$instance.'.swipePrev();
+				})
+				jQuery(\'#bloglist-'.$instance.' .swiper-right\').on(\'click\', function(e){
+					e.preventDefault();
+					cyonBloglist'.$instance.'.swipeNext();
+				})
+			});
+		</script>';
 	}
 	wp_reset_query();
-	return '<ul class="'.$class.'">'.$result.'</ul>';
+	return $result;
 }
 add_shortcode('blog','cyon_blog'); 
 
-function cyon_cyon_blog_js_css(){
+function cyon_blog_js_css(){
 		global $blog_cols;
 ?>
 		<script type="text/javascript">

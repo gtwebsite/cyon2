@@ -241,6 +241,13 @@ function cyon_of_options() {
 						'type' => 'multicheck',
 						'options' => array( 'posts' => __( 'Posts', 'cyon' ), 'listing' => __( 'Blog/taxonomy listing', 'cyon' ), 'pages' => __( 'Pages', 'cyon' ) ));
 
+	/* Gallery */
+	$of_options[] = array( 'name' => __( 'Use masonry on gallery', 'cyon' ),
+						'desc' => __( 'Yes, use masonry.', 'cyon' ),
+						'std' => 1,
+						'id' => 'content_gallery_masonry',
+						'type' => 'checkbox');
+
 	/* Content End ------- */
 	$of_options[] = array( 'type' => 'group_end');
 
@@ -605,6 +612,47 @@ function cyon_of_options() {
 						'type' => 'text');
 
 	/* SEO End ------- */
+	$of_options[] = array( 'type' => 'group_end' );
+
+
+	/* Twitter Begin ------- */
+	$of_options[] = array( 'name' => __( 'Twitter API', 'cyon' ),
+						'type' => 'group_begin');
+
+	/* Consumer Key */
+	$of_options[] = array( 'name' => __( 'Consumer key', 'cyon' ),
+						'desc' => '',
+						'placeholder' => '',
+						'std' => '',
+						'id' => 'twitter_consumer_key',
+						'type' => 'text');
+
+	/* Consumer Secret */
+	$of_options[] = array( 'name' => __( 'Consumer secret', 'cyon' ),
+						'desc' => '',
+						'placeholder' => '',
+						'std' => '',
+						'id' => 'twitter_consumer_secret',
+						'type' => 'text');
+
+	/* Access Token */
+	$of_options[] = array( 'name' => __( 'Access token', 'cyon' ),
+						'desc' => '',
+						'placeholder' => '',
+						'std' => '',
+						'id' => 'twitter_access_token',
+						'type' => 'text');
+
+	/* Access Token Secret */
+	$of_options[] = array( 'name' => __( 'Access token secet', 'cyon' ),
+						'desc' => '',
+						'placeholder' => '',
+						'std' => '',
+						'id' => 'twitter_access_token_secret',
+						'type' => 'text');
+
+
+	/* Twitter End ------- */
 	$of_options[] = array( 'type' => 'group_end' );
 
 

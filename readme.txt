@@ -11,10 +11,13 @@
 * Replaced Glyphicons to Font Awesome
 * Replaced Flexslider to Swiper 2.0
 * Updated FancyBox 2.1.5
+* Added carousel on bloglist shortcode
+* Added carousel on subpage shortcode
 * Added offline option
 * Added social shortcode
 * Added carousel shortcode
 * Added Related Posts
+* Added Isotope on gallery
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4
