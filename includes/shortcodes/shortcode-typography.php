@@ -28,14 +28,13 @@ function cyon_button( $atts, $content = null ) {
 	}
 	$icon = '';
 	if($atts['icon']){
-		$classname .= ' has-icon';
 		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
 	}
 	$title = '';
 	if($atts['title']){
 		$title = ' title="'. $atts['title'] . '"';
 	}
-	$html = '<a href="'. $atts['url'] . '" class="btn'.$classname.'"'.$title.'>'. $icon . $content . '</a>';
+	$html = '<a href="'. $atts['url'] . '" class="btn"'.$title.'>'. $icon . $content . '</a>';
 	return $html;
 }
 add_shortcode('button','cyon_button'); 

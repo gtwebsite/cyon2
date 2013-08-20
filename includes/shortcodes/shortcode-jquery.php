@@ -4,28 +4,38 @@ if ( !defined('ABSPATH') )
 	die('-1');
 
 /* =Toggle
-use [toggle title='title'] xxx [/accordion]
+use [toggle title='title' icon=''] xxx [/accordion]
 ----------------------------------------------- */
 function cyon_toggle( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			title => __( 'Title Here' , 'cyon' )
+			title 		=> __( 'Title Here' , 'cyon' ),
+			icon		=> '',
 		), $atts);
 		
-	$toggle_content .= '<div class="toggle"><h3 class="toggle-title">' . $atts['title'] . '</h3><div class="toggle-wrapper"><div class="toggle-content clearfix">'. $content . '</div></div></div>';
+	$icon = '';
+	if($atts['icon']){
+		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
+	}
+	$toggle_content .= '<div class="toggle"><h3 class="toggle-title">' . $icon . $atts['title'] . '</h3><div class="toggle-wrapper"><div class="toggle-content clearfix">'. $content . '</div></div></div>';
 	return $toggle_content;
 }
 add_shortcode('toggle','cyon_toggle');
 
 /* =Accordion
-use [accordion title='title'] xxx [/accordion]
+use [accordion title='title' icon=''] xxx [/accordion]
 ----------------------------------------------- */
 function cyon_accordion( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			title => __( 'Title Here' , 'cyon' )
+			title 		=> __( 'Title Here' , 'cyon' ),
+			icon		=> '',
 		), $atts);
-	$accordion_content = array('<div class="accordion"> <h3 class="accordion-title">' . $atts['title'] . '</h3><div class="accordion-wrapper"><div class="accordion-content clearfix">'. $content . '</div></div></div>');
+	$icon = '';
+	if($atts['icon']){
+		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
+	}
+	$accordion_content = array('<div class="accordion"> <h3 class="accordion-title">' . $icon . $atts['title'] . '</h3><div class="accordion-wrapper"><div class="accordion-content clearfix">'. $content . '</div></div></div>');
 	foreach ($accordion_content as $value){
 		return $value ;
 	}
@@ -33,7 +43,7 @@ function cyon_accordion( $atts, $content = null ) {
 add_shortcode('accordion','cyon_accordion'); 
 
 /* =Tabs
-use [tabs] [tab title=''] xxx [/tab] [/tabs]
+use [tabs] [tab title='' icon=''] xxx [/tab] [/tabs]
 ----------------------------------------------- */
 $tab_nav = array();
 function cyon_tabs( $atts, $content = null ) {
@@ -41,7 +51,11 @@ function cyon_tabs( $atts, $content = null ) {
 	do_shortcode($content);
 	$html = '<div class="tabs"><ul class="tab_nav clearfix">';
 	foreach( $GLOBALS['tabs'] as $tab ){
-		$html .= '<li><a href="#tab_'.$tab['index'].'">'.$tab['title'].'</a></li>';
+		$icon = '';
+		if($tab['icon']){
+			$icon = '<span class="icon-'.$tab['icon'].'"></span>';
+		}
+		$html .= '<li><a href="#tab_'.$tab['index'].'">'.$icon.$tab['title'].'</a></li>';
 	}
 	$html .= '</ul>';
 	foreach( $GLOBALS['tabs'] as $tab ){
@@ -55,11 +69,12 @@ add_shortcode('tabs','cyon_tabs');
 function cyon_tab( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			title => __( 'Title Here' , 'cyon' ),
-			active => false
+			title 		=> __( 'Title Here' , 'cyon' ),
+			icon		=> '',
+			active 		=> false
 		), $atts);
 	$x = $GLOBALS['tab_count'];
-	$GLOBALS['tabs'][$x] = array( 'title'=> $atts['title'], 'content' =>  do_shortcode($content), 'index' => $x );
+	$GLOBALS['tabs'][$x] = array( 'title'=> $atts['title'], 'icon'=>$atts['icon'], 'content' =>  do_shortcode($content), 'index' => $x );
 	$GLOBALS['tab_count']++;
 }
 add_shortcode('tab','cyon_tab'); 
