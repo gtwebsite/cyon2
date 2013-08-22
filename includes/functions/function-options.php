@@ -241,13 +241,6 @@ function cyon_of_options() {
 						'type' => 'multicheck',
 						'options' => array( 'posts' => __( 'Posts', 'cyon' ), 'listing' => __( 'Blog/taxonomy listing', 'cyon' ), 'pages' => __( 'Pages', 'cyon' ) ));
 
-	/* Gallery */
-	$of_options[] = array( 'name' => __( 'Use masonry on gallery', 'cyon' ),
-						'desc' => __( 'Yes, use masonry.', 'cyon' ),
-						'std' => 1,
-						'id' => 'content_gallery_masonry',
-						'type' => 'checkbox');
-
 	/* Content End ------- */
 	$of_options[] = array( 'type' => 'group_end');
 

@@ -31,9 +31,7 @@ if(!function_exists('cyon_register_scripts_styles')) {
 function cyon_register_scripts_styles(){
 	global $data;
 	wp_enqueue_script('cyon_jquery_all');
-	if($data['content_gallery_masonry']==1) {
-		wp_enqueue_script('isotope');
-	}
+	wp_enqueue_script('isotope');
 	wp_enqueue_script('cyon_jquery_custom');
 	wp_enqueue_script('transit');
 	if($data['responsive']==1){
@@ -306,7 +304,7 @@ function cyon_primary_hook(){ ?>
 ----------------------------------------------- */
 if(!function_exists('cyon_primary_content')) {
 function cyon_primary_content(){ ?>
-	<div id="content" class="clearfix<?php if (cyon_get_list_layout()!=1 ) { echo ' row-fluid'; } ?>" role="main">
+	<div id="content" class="clearfix<?php if (cyon_get_list_layout()!=1 && !get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_masonry') ) { echo ' row-fluid'; } ?>" role="main">
 	<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) : the_post();
@@ -414,7 +412,7 @@ function cyon_related_posts() {
 	global $data;
 	$posttags = get_the_tags();
 	
-	if ($posttags) {
+	if ($posttags && is_single()) {
 		$tags = '';
 		$count=1;
 		foreach($posttags as $tag) {
@@ -1085,35 +1083,50 @@ function cyon_footer_jquery(){
 			});
 			<?php } ?>
 			
-			<?php if(cyon_get_list_layout()!=1){ ?>
+			<?php if(cyon_get_list_layout()!=1 && !get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_masonry')){ ?>
 			// Post list columns
-			jQuery('#primary .row-fluid article.type-post').show();
 			jQuery('#primary .row-fluid article:nth-of-type(<?php echo cyon_get_list_layout(); ?>n+1)').addClass('first-child');
 			<?php } ?>
 
+			<?php if(cyon_get_list_layout()!=1 && get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_masonry')){ ?>
+			jQuery('#primary article').width((jQuery('#content').width() / <?php echo cyon_get_list_layout(); ?>)-3);
+			<?php } ?>
+			
 		});
-		<?php if($data['content_gallery_masonry']==1) { ?>
+
+		<?php if(cyon_get_list_layout()!=1 && get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_masonry')){ ?>
 		// Isotope Support
 		jQuery(window).load(function(){
-			jQuery('.gallery').imagesLoaded(function(){
-				jQuery('.gallery').isotope({
-					itemSelector: '.gallery-item',
+			jQuery('.blog-list-masonry #content').imagesLoaded(function(){
+				jQuery('.blog-list-masonry #content').isotope({
+					itemSelector: 'article.post',
 					animationOptions: {
 						duration: 750,
 						easing: 'linear',
 						queue: false
-					},
-					masonry: {
-						gutterWidth: 10
 					}
 				});
+				checkMasonry();
 				jQuery(window).trigger('scroll');
 			});
 		});
+		function checkMasonry() {
+			var pagesize = jQuery('#content').width();
+			if (pagesize <= 480) {
+				jQuery('#primary article').width(jQuery('#content').width());
+			}else if (pagesize <= 974) {
+				jQuery('#primary article').width((jQuery('#content').width() / 2)-2);
+			}else{
+				jQuery('#primary article').width((jQuery('#content').width() / <?php echo cyon_get_list_layout(); ?>)-3);
+			}
+			jQuery(window).trigger('scroll');
+		}
+		jQuery(window).resize(checkMasonry);
 		jQuery(window).scroll(function(){
-			jQuery('.gallery').isotope('reLayout');
+			jQuery('.blog-list-masonry #content').isotope('reLayout');
 		});
 		<?php } ?>
+
 	</script> 
 <?php } }
 
@@ -1164,9 +1177,7 @@ function cyon_get_list_layout(){
 	global $post, $data;
 	$cols = 1;
 	if(is_category()){
-		if(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_listing')=='list-1column'){
-			$cols = '1';
-		}elseif(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_listing')=='list-2columns'){
+		if(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_listing')=='list-2columns'){
 			$cols = '2';
 		}elseif(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_listing')=='list-3columns'){
 			$cols = '3';
@@ -1230,6 +1241,9 @@ function cyon_replace_body_class($classes) {
 		if(is_archive() || is_home()){
 			$classes[] = 'blog-list-'.cyon_get_list_layout();
 		}
+		if(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_masonry')){
+			$classes[] = 'blog-list-masonry';
+		}
 	}
 	
 	/* Add page width */
@@ -1243,7 +1257,7 @@ function cyon_replace_body_class($classes) {
 if(!function_exists('cyon_post_layout_class')) {
 function cyon_post_layout_class($classes) {
 	global $post;
-	if(cyon_get_list_layout()!=1){
+	if(cyon_get_list_layout()!=1 && !get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_masonry')){
 		$classes[] = 'span'. 12/cyon_get_list_layout();
 	}
 	return $classes;
@@ -1611,7 +1625,7 @@ function cyon_post_content_featured(){
 		</div>
 	<?php }elseif(has_post_format('gallery') && (is_category() || is_archive() || is_home() || is_front_page()) && $pages['listing']==1){ ?>
 		<div class="entry-featured-image swiper">
-			<div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">
+			<div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">
 			<?php 
 			$images = rwmb_meta( 'cyon_gallery_images', 'type=image&size='.$data['content_thumbnail_size'] );
 			foreach ( $images as $image ){ ?>

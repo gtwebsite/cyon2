@@ -2,6 +2,15 @@
 
 * by the Greater Than Website team, http://gtwebsite.com/
 
+== Todos ==
+* Additional slider type - Nivo
+* Slider layout
+* Blog Masonry
+* Tooltip
+* Messagebox
+* Gallery slides
+* Portfolio
+
 == Description ==
 
 
@@ -18,6 +27,8 @@
 * Added carousel shortcode
 * Added Related Posts
 * Added Isotope on gallery
+* Added carousel on gallery
+* Added Isotope on categories
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4

@@ -64,9 +64,6 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	float:left;
 	margin:10px 10px 10px 0;
 }
-#primary .row-fluid article.type-post {
-	display:none;
-}
 
 
 /* =Widgets
@@ -394,22 +391,6 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 ----------------------------------------------- */
 #supersized img {
 	max-width:none;
-}
-
-/* =Social Icons
------------------------------------------------ */
-.cyon-social a {
-	display:inline-block;
-}
-.cyon-social a span {
-	font-size:18px;
-	line-height:32px;
-	min-width:32px;
-	min-width:32px;
-	text-align:center;
-	margin-bottom:5px;
-	margin-right:5px;
-	padding:0;
 }
 
 /* =Sitemap
@@ -933,6 +914,9 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	width:18.7%; margin:5px .65%;
 }
 
+.gallery-carousel {
+	text-align:center; margin:20px 0;
+}
 
 /* =Author
 ----------------------------------------------- */

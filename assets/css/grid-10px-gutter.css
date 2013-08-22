@@ -94,3 +94,6 @@
 .block, .widget {
 	margin-bottom:10px;
 }
+.isotope article .article-wrapper {
+	margin:0 5px 10px 5px;
+}

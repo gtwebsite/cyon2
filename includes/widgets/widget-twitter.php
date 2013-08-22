@@ -56,9 +56,6 @@ class CyonTwitterWidget extends WP_Widget {
 			echo $before_title . $title . $after_title;;
 		}
 		echo '<div class="widget-content">';
-		ob_start();
-			add_action('wp_footer','cyon_twitter_js_css',110);
-		ob_get_clean();
 		
     	// Widget code here
 		$xml = simplexml_load_file(THEME_URI.'/includes/functions/tmhOAuth/twitter_json_to_rss.php?consumer_key='.$data['twitter_consumer_key'].'&consumer_secret='.$data['twitter_consumer_secret'].'&user_token='.$data['twitter_access_token'].'&user_secret='.$data['twitter_access_token_secret'].'&screen_name='.$instance['username'].'&count='.$instance['count']) or die(__('Error: Cannot load updates','cyon'));
@@ -98,19 +95,3 @@ class CyonTwitterWidget extends WP_Widget {
 // Adding your widget to WordPress
 add_action( 'widgets_init', create_function('', 'return register_widget("CyonTwitterWidget");') );
 
-function cyon_twitter_js_css(){
-?>
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-				var cyonTwitter = [];
-				jQuery('.cyon-twitter .swiper').each(function(index){
-					jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
-					cyonTwitter[index] = jQuery(this).find('.swiper-container').swiper({
-						autoplay:5000,
-						loop: true,
-						calculateHeight: true
-					});
-				});
-			});
-		</script>
-<?php }

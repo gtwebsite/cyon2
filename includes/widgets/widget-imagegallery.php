@@ -82,7 +82,7 @@ class CyonImageGalleryWidget extends WP_Widget {
 			}
 			echo '<div class="widget-content'.$classes.'">';
 		}else{
-			echo '<div class="widget-content swiper"><div class="swiper-container"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-wrapper">';
+			echo '<div class="widget-content swiper"><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
 		}
 		while ($post->have_posts()) {
 			$post->the_post();
