@@ -304,6 +304,13 @@ function cyon_of_options() {
 								'4' => THEME_FRAMEWORK_URI . 'assets/images/4-col-portfolio.png'
 							));  
 							
+		/* Masonry */
+		$of_options[] = array( 'name' => __( 'User masonry', 'cyon' ),
+							'desc' => __( 'Yes, display list in masonry', 'cyon' ),
+							'std' => 0,
+							'id' => 'woocommerce_product_cols_masonry',
+							'type' => 'checkbox');
+
 		/* Woocommerce End ------- */
 		$of_options[] = array( 'type' => 'group_end');
 	}

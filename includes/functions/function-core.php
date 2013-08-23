@@ -1008,27 +1008,6 @@ function cyon_footer_jquery(){
 
 			<?php } ?>
 
-			// Swiper
-			var cyonSwipe = [];
-			jQuery('.swiper').each(function(index){
-				jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
-				cyonSwipe[index] = jQuery(this).find('.swiper-container').swiper({
-					autoplay:Math.floor(Math.random() * 6000) + 4000,
-					loop: true,
-					calculateHeight: true,
-					pagination: '.swiper-pager-' + index,
-					paginationClickable: true
-				});
-			});
-			jQuery('.swiper .swiper-left').on('click', function(e){
-				e.preventDefault();
-				cyonSwipe[jQuery('.swiper-left').index(this)].swipePrev();
-			})
-			jQuery('.swiper .swiper-right').on('click', function(e){
-				e.preventDefault();
-				cyonSwipe[jQuery('.swiper-right').index(this)].swipeNext();
-			})
-			
 			<?php if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){ ?>
 			// Supersized Support
 			jQuery.supersized({ 
@@ -1111,7 +1090,7 @@ function cyon_footer_jquery(){
 			});
 		});
 		function checkMasonry() {
-			var pagesize = jQuery('#content').width();
+			var pagesize = jQuery('.page_wrapper').width();
 			if (pagesize <= 480) {
 				jQuery('#primary article').width(jQuery('#content').width());
 			}else if (pagesize <= 974) {

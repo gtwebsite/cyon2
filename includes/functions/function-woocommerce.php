@@ -43,6 +43,10 @@ function cyon_woo_init(){
 	if(get_option('woocommerce_frontend_css') == 'no'){
 		add_filter( 'woocommerce_product_thumbnails_columns', 'cyon_woocommerce_product_thumbnails_columns' );
 	}
+	
+	/* Override product tabs */
+	remove_action('woocommerce_after_single_product_summary','woocommerce_output_product_data_tabs',10);
+	add_action('woocommerce_after_single_product_summary','cyon_woocommerce_output_product_data_tabs',10);
 
 	/* Product Columns */
 	add_action('wp_head', 'cyon_woocommerce_reset_loop');
@@ -79,13 +83,51 @@ if(!function_exists('cyon_woo_header_js_css_hook')) {
 function cyon_woo_header_js_css_hook(){
 	global $data;
 ?>
-	<?php if(get_option('woocommerce_frontend_css') == 'no'){  ?>
-			<?php if(is_shop() || is_product_category() || is_product_tag() || is_product()){  ?>
+<?php if(get_option('woocommerce_frontend_css') == 'no'){  ?>
+	<?php if(is_shop() || is_product_category() || is_product_tag() || is_product()){  ?>
 	<script type="text/javascript">
+			<?php if($data['woocommerce_product_cols_masonry']){ ?>
+		// Isotope Support
 		jQuery(document).ready(function(){
-			jQuery('#primary ul.products').addClass('row-fluid').show();
+			jQuery('#primary li.product').removeClass('span<?php echo 12/cyon_get_list_layout(); ?>');
+		});
+		jQuery(window).load(function(){
+			jQuery('.blog-list-masonry #content').imagesLoaded(function(){
+				jQuery('#primary ul.products').isotope({
+					itemSelector: 'li.product',
+					animationOptions: {
+						duration: 750,
+						easing: 'linear',
+						queue: false
+					}
+				});
+				checkProductMasonry();
+				jQuery(window).trigger('scroll');
+			});
+		});
+		function checkProductMasonry() {
+			var pagesize = jQuery('.page_wrapper').width();
+			if (pagesize <= 480) {
+				jQuery('#primary li.type-product').width(jQuery('#primary').width());
+			}else if (pagesize <= 974) {
+				jQuery('#primary li.type-product').width((jQuery('#primary').width() / 2)-2);
+			}else{
+				jQuery('#primary li.type-product').width((jQuery('#primary').width() / <?php echo cyon_get_list_layout(); ?>)-3);
+			}
+			jQuery(window).trigger('scroll');
+		}
+		jQuery(window).resize(checkProductMasonry);
+		jQuery(window).scroll(function(){
+			jQuery('#primary ul.products').isotope('reLayout');
+		});
+			<?php }else{ ?>
+		jQuery(document).ready(function(){
+			jQuery('#primary ul.products').addClass('row-fluid');
+		});
 			<?php } ?>
-			<?php if(get_option('woocommerce_enable_lightbox') == 'no' && is_product()){ ?>
+		<?php if(is_product()){ ?>
+		jQuery(document).ready(function(){
+			<?php if(get_option('woocommerce_enable_lightbox') == 'no'){ ?>
 			jQuery('.zoom').fancybox({
 				openEffect	: 'elastic',
 				closeEffect	: 'elastic',
@@ -95,16 +137,14 @@ function cyon_woo_header_js_css_hook(){
 					}
 				}
 			});
-		});
-	</script>
 			<?php } ?>
-	<script type="text/javascript">
-		jQuery(document).ready(function(){
-			<?php if(is_product() && cyon_get_list_layout()!=1) { ?>
+			<?php if(cyon_get_list_layout()!=1) { ?>
 				jQuery('#primary div[itemscope]').removeClass('span<?php echo 12/cyon_get_list_layout(); ?>');
-		});
-	</script>
 			<?php } ?>
+		});
+		<?php } ?>
+	</script>
+	<?php } ?>
 	<style media="all" type="text/css">
 		.blockOverlay {
 			background:<?php echo $data['background_color']; ?>!important;
@@ -203,6 +243,35 @@ function cyon_woocommerce_product_thumbnails_columns(){
 	return 5;
 } }
 
+/* =Product Tabs
+----------------------------------------------- */
+if(!function_exists('cyon_woocommerce_output_product_data_tabs')) {
+function cyon_woocommerce_output_product_data_tabs(){
+	$tabs = apply_filters( 'woocommerce_product_tabs', array() );
+	if ( ! empty( $tabs ) ) : ?>
+		<div class="tabs">
+			<ul class="tab_nav">
+				<?php foreach ( $tabs as $key => $tab ) : ?>
+	
+					<li class="<?php echo $key ?>_tab">
+						<a href="#tab-<?php echo $key ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', $tab['title'], $key ) ?></a>
+					</li>
+	
+				<?php endforeach; ?>
+			</ul>
+			<div class="panel">
+			<?php foreach ( $tabs as $key => $tab ) : ?>
+	
+				<div class="tab-content" id="tab-<?php echo $key ?>">
+					<?php call_user_func( $tab['callback'], $key, $tab ) ?>
+				</div>
+	
+			<?php endforeach; ?>
+			</div>
+		</div>
+	<?php
+	endif;
+} }
 
 /* Total Cart Shortcode
 use [woocart]

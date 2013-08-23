@@ -57,11 +57,11 @@ function cyon_tabs( $atts, $content = null ) {
 		}
 		$html .= '<li><a href="#tab_'.$tab['index'].'">'.$icon.$tab['title'].'</a></li>';
 	}
-	$html .= '</ul>';
+	$html .= '</ul><div class="panel">';
 	foreach( $GLOBALS['tabs'] as $tab ){
-		$html .= '<div id="tab_'.$tab['index'].'" class="panel"><div class="tab-content clearfix"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</div></div>';
+		$html .= '<div id="tab_'.$tab['index'].'" class="tab-content clearfix"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</div>';
 	}
-	$html .= '</div>';
+	$html .= '</div></div>';
 	return $html;
 }
 add_shortcode('tabs','cyon_tabs'); 

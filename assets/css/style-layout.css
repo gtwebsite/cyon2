@@ -712,17 +712,8 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .tabs .tab_nav li a {
 	cursor:pointer; padding:8px 10px; margin:0; display:inline-block;
 }
-.tabs .panel, .tabs aside {
-	display:none; -webkit-transform: translate3d(0,0,0);
-}
 .tabs .panel p {
 	margin:0 0 5px 0;
-}
-.tabs .tab-content, .tabs aside { 
-	padding:10px; position:relative; z-index:1;
-	transform: translate3d(0,0,0);
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-transform-style: preserve-3d;
 }
 
 
@@ -1081,6 +1072,7 @@ p.nocomments {
 	zoom:1;
 	z-index:3;
 	width:100%;
+	opacity:0;
 }
 	.width-wide .page_wrapper {
 		min-width:1020px;
@@ -1118,7 +1110,6 @@ p.nocomments {
 	/* Main navigation */
 	#access {
 		margin-bottom:10px;
-		display:none;
 	}
 	#access ul, #access ul li {
 		margin:0; padding:0; list-style:none;

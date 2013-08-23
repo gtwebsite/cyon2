@@ -1,10 +1,11 @@
 jQuery(document).ready(function(){
 	
+	jQuery('#page').transition({ opacity:1 })
+
 	// Enable active on tap
 	document.addEventListener("touchstart", function(){}, true);
 	
 	// Menu
-	jQuery('#access').show();
 	jQuery('#access li').each(function(){
 		var org_height = jQuery(this).find('> ul').css('height');
 		jQuery(this).find('> ul').css({ height:'0px', display:'block' });
@@ -28,6 +29,29 @@ jQuery(document).ready(function(){
 	// Ease of Scrolling
 	jQuery('#backtotop, .pagetoscroll, .backtotop-line').localScroll({ hash:true, easing:'easeInOutExpo' });
 	
+
+	// Slider
+	var cyonSwipe = [];
+	jQuery('.swiper').each(function(index){
+		jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
+		cyonSwipe[index] = jQuery(this).find('.swiper-container').swiper({
+			autoplay:Math.floor(Math.random() * 6000) + 4000,
+			loop: true,
+			calculateHeight: true,
+			pagination: '.swiper-pager-' + index,
+			paginationClickable: true
+		});
+	});
+	jQuery('.swiper .swiper-left').on('click', function(e){
+		e.preventDefault();
+		cyonSwipe[jQuery('.swiper-left').index(this)].swipePrev();
+	})
+	jQuery('.swiper .swiper-right').on('click', function(e){
+		e.preventDefault();
+		cyonSwipe[jQuery('.swiper-right').index(this)].swipeNext();
+	})
+
+			
 	// Toggle
 	jQuery('.toggle .toggle-wrapper').each(function(){
 		var org_height = jQuery(this).css('height');
@@ -60,26 +84,10 @@ jQuery(document).ready(function(){
 		});
 	});
 
+});
 
-	// Tabs
-	jQuery('.tabs').each(function(){
-		jQuery(this).find('.tab_nav li:first-child').addClass('active');
-		jQuery(this).find(jQuery(this).find('.tab_nav li.active a').attr('href')).show();
+jQuery(window).load(function(){
+	jQuery('.tabs').imagesLoaded(function(){
+		jQuery('.tabs').tabulous();
 	});
-	jQuery('.tabs .tab_nav li a').click(function(e){
-		var prev = jQuery(this).parent().parent().find('li.active a').attr('href');
-		if (!jQuery(this).parent().hasClass('active')) {
-			jQuery(this).parent().parent().find('li.active').removeClass('active');
-			jQuery(this).parent().addClass('active');
-		}
-		var current = jQuery(this).attr('href');
-		if(jQuery(jQuery(this).attr('href')).is(':hidden')){
-			jQuery(prev).stop().slideUp('slow', 'easeOutQuad', function(){
-				jQuery(current).stop().slideDown('fast', 'easeOutQuad');
-			});
-		}
-		e.preventDefault();
-		return false;
-	});
-
 });

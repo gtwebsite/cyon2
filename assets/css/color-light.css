@@ -334,14 +334,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	background-repeat:repeat-x;
 }
 
-/* =Tab Widget
------------------------------------------------ */
-.cyon-tabs .widget {
-	border:1px solid #efefef;
-	border-radius:3px;
-	border-top-left-radius:0;
-	margin-bottom:0;
-}
+
 
 
 /* =Social Icons
@@ -510,7 +503,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	-webkit-transition:background-color ease-in-out .3s;
 	-ms-transition:background-color ease-in-out .3s;
 }
-.tabs .tab_nav li.active a {
+.tabs .tab_nav a.active {
 	color:inherit; cursor:default; background:none; border-bottom-color:#fff;
 }
 .tabs .panel { 
