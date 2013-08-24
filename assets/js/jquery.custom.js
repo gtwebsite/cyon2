@@ -29,6 +29,10 @@ jQuery(document).ready(function(){
 	// Ease of Scrolling
 	jQuery('#backtotop, .pagetoscroll, .backtotop-line').localScroll({ hash:true, easing:'easeInOutExpo' });
 	
+	
+	// Tooltip
+	jQuery('.hastip, dfn, abbr').tooltipster();
+
 
 	// Slider
 	var cyonSwipe = [];
@@ -58,11 +62,11 @@ jQuery(document).ready(function(){
 		jQuery(this).css({ height:'0px', display:'block' });
 		jQuery(this).parent().find('h3').click(function(){
 			if(jQuery(this).parent().find('.toggle-wrapper').height()==0){
-				jQuery(this).parent().find('.toggle-wrapper').transition({ height: org_height });
 				jQuery(this).parent().addClass('toggle-active');
+				jQuery(this).parent().find('.toggle-wrapper').height(org_height);
 			}else{
-				jQuery(this).parent().find('.toggle-wrapper').transition({ height:'0px' });
 				jQuery(this).parent().removeClass('toggle-active');
+				jQuery(this).parent().find('.toggle-wrapper').height(0);
 			}
 		});
 	});
@@ -73,13 +77,13 @@ jQuery(document).ready(function(){
 		jQuery(this).css({ height:'0px', display:'block' });
 		jQuery(this).parent().find('h3').click(function(){
 			if(jQuery(this).parent().find('.accordion-wrapper').height()==0){
-				jQuery('.accordion .accordion-wrapper').transition({ height:'0px' }).delay(50);
 				jQuery('.accordion').removeClass('accordion-active');
-				jQuery(this).parent().find('.accordion-wrapper').transition({ height: org_height });
+				jQuery('.accordion .accordion-wrapper').height(0);
+				jQuery(this).parent().find('.accordion-wrapper').height(org_height);
 				jQuery(this).parent().addClass('accordion-active');
 			}else{
-				jQuery(this).parent().find('.accordion-wrapper').transition({ height:'0px' });
 				jQuery(this).parent().removeClass('accordion-active');
+				jQuery(this).parent().find('.accordion-wrapper').height(0);
 			}
 		});
 	});

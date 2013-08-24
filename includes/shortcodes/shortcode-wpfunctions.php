@@ -100,7 +100,7 @@ function cyon_subpages_js_css(){
 <?php }
 
 /* =Show Blog
-use [blog excerpt="yes" thumbnail="yes" cols="" items="4" cat_id="1" classname=""]
+use [blog excerpt="yes" thumbnail="yes" cols="" items="4" cat_id="1" classname="" style="slide"]
 ----------------------------------------------- */
 function cyon_blog( $atts, $content = null ) {
 	global $data;

@@ -33,8 +33,9 @@ function cyon_button( $atts, $content = null ) {
 	$title = '';
 	if($atts['title']){
 		$title = ' title="'. $atts['title'] . '"';
+		$classname .= ' hastip';
 	}
-	$html = '<a href="'. $atts['url'] . '" class="btn"'.$title.'>'. $icon . $content . '</a>';
+	$html = '<a href="'. $atts['url'] . '" class="btn'.$classname.'"'.$title.'>'. $icon . $content . '</a>';
 	return $html;
 }
 add_shortcode('button','cyon_button'); 
@@ -103,6 +104,7 @@ function cyon_inline_icon( $atts, $content = null ) {
 	$title = '';
 	if($atts['title']){
 		$title = ' title="'. $atts['title'] . '"';
+		$classname .= ' hastip';
 	}
 	$url = '';
 	if($atts['url'] || $atts['element']=='a'){

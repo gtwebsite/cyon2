@@ -84,9 +84,9 @@ function cyon_pricegrid_gridoption( $atts, $content = null ) {
 		$tipclass = ' class="hastip"';
 	}
 	if($atts['checked'] == 'yes'){
-		$content = '<span class="check">Yes</span>';
+		$content = '<span class="check hastip" title="'.__('Yes','cyon').'">'.__('Yes','cyon').'</span>';
 	}elseif($atts['checked'] == 'no'){
-		$content = '<span class="no">No</span>';
+		$content = '<span class="no hastip" title="'.__('No','cyon').'">'.__('No','cyon').'</span>';
 	}elseif($atts['text']){
 		$content = '<span>'.$atts['text'].'</span>';
 	}else{

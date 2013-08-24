@@ -79,16 +79,16 @@ class CyonSocialWidget extends WP_Widget {
 		echo $before_widget;
 		$html = ''; 
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		$html .= empty($instance['facebook']) ? '' : '<a href="'.$instance['facebook'].'" title="Facebook"><span class="icon-facebook"></span><span class="icon-facebook copy"></span></a>';
-		$html .= empty($instance['google_plus']) ? '' : '<a href="'.$instance['google_plus'].'" title="Google+"><span class="icon-google-plus"></span><span class="icon-facebook copy"></span></a>';
-		$html .= empty($instance['twitter']) ? '' : '<a href="'.$instance['twitter'].'" title="Twitter"><span class="icon-twitter"></span><span class="icon-twitter copy"></span></a>';
-		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" title="Linkedin"><span class="icon-linkedin"></span><span class="icon-linkedin copy"></span></a>';
-		$html .= empty($instance['pinterest']) ? '' : '<a href="'.$instance['pinterest'].'" title="Pinterest"><span class="icon-pinterest"></span><span class="icon-pinterest copy"></span></a>';
-		$html .= empty($instance['youtube']) ? '' : '<a href="'.$instance['youtube'].'" title="Youtube"><span class="icon-youtube"></span><span class="icon-youtube copy"></span></a>';
-		$html .= empty($instance['tumblr']) ? '' : '<a href="'.$instance['tumblr'].'" title="Tumblr"><span class="icon-tumblr"></span><span class="icon-tumblr copy"></span></a>';
-		$html .= empty($instance['flickr']) ? '' : '<a href="'.$instance['flickr'].'" title="Flickr"><span class="icon-flickr"></span><span class="icon-flickr copy"></span></a>';
-		$html .= empty($instance['email']) ? '' : '<a href="mailto:'.$instance['email'].'" title="Email"><span class="icon-envelope"></span><span class="icon-envelope copy"></span></a>';
-		$html .= empty($instance['rss']) ? '' : '<a href="'.$instance['rss'].'" title="RSS"><span class="icon-rss"></span><span class="icon-rss copy"></span></a>';
+		$html .= empty($instance['facebook']) ? '' : '<a href="'.$instance['facebook'].'" class="hastip" title="Facebook"><span class="icon-facebook"></span><span class="icon-facebook copy"></span></a>';
+		$html .= empty($instance['google_plus']) ? '' : '<a href="'.$instance['google_plus'].'" class="hastip" title="Google+"><span class="icon-google-plus"></span><span class="icon-facebook copy"></span></a>';
+		$html .= empty($instance['twitter']) ? '' : '<a href="'.$instance['twitter'].'" class="hastip" title="Twitter"><span class="icon-twitter"></span><span class="icon-twitter copy"></span></a>';
+		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" class="hastip" title="Linkedin"><span class="icon-linkedin"></span><span class="icon-linkedin copy"></span></a>';
+		$html .= empty($instance['pinterest']) ? '' : '<a href="'.$instance['pinterest'].'" class="hastip" title="Pinterest"><span class="icon-pinterest"></span><span class="icon-pinterest copy"></span></a>';
+		$html .= empty($instance['youtube']) ? '' : '<a href="'.$instance['youtube'].'" class="hastip" title="Youtube"><span class="icon-youtube"></span><span class="icon-youtube copy"></span></a>';
+		$html .= empty($instance['tumblr']) ? '' : '<a href="'.$instance['tumblr'].'" class="hastip" title="Tumblr"><span class="icon-tumblr"></span><span class="icon-tumblr copy"></span></a>';
+		$html .= empty($instance['flickr']) ? '' : '<a href="'.$instance['flickr'].'" class="hastip" title="Flickr"><span class="icon-flickr"></span><span class="icon-flickr copy"></span></a>';
+		$html .= empty($instance['email']) ? '' : '<a href="mailto:'.$instance['email'].'" class="hastip" title="Email"><span class="icon-envelope"></span><span class="icon-envelope copy"></span></a>';
+		$html .= empty($instance['rss']) ? '' : '<a href="'.$instance['rss'].'" class="hastip" title="RSS"><span class="icon-rss"></span><span class="icon-rss copy"></span></a>';
 		
 		if (!empty($title)){
 			echo $before_title . $title . $after_title;;

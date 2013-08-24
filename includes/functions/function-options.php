@@ -452,11 +452,66 @@ function cyon_of_options() {
 	$of_options[] = array( 'name' => __( 'Slider', 'cyon' ),
 						'type' => 'group_begin');
 
-	/* Slider */
+	/* Slider Images */
 	$of_options[] = array( 'name' => __( 'Images', 'cyon' ),
 						'desc' => __( 'Unlimited slider with drag and drop sortings.', 'cyon' ),
 						'id' => 'homepage_slider',
 						'type' => 'slider');
+
+	/* Slider Styles */
+	$of_options[] = array( 'name' => __( 'Style', 'cyon' ),
+						'id' => 'homepage_slider_style',
+						'std' => 'swiper',
+						'type' => 'select',
+						'folds' => 1,
+						'options' => array( 'swiper' => __( 'Swiper', 'cyon' ), 'fotorama' => __( 'Fotorama', 'cyon' ), 'camera' => __( 'Camera', 'cyon' ) ));
+
+	/* Fotorama */
+	$of_options[] = array( 'name' => __( 'Effects','cyon' ),
+						'desc' => '',
+						'id' => 'homepage_slider_fotorama_effects',
+						'std' => 'slide',
+						'type' => 'select',
+						'fold' => array( 'homepage_slider_style_fotorama' ),
+						'options' => array( 'slide' => __( 'Slide', 'cyon' ), 'crossfade' => __( 'Fade', 'cyon' ), 'dissolve' => __( 'Dissolve', 'cyon' ) ));
+
+	/* Camera */
+	$of_options[] = array( 'name' => __( 'Effects','cyon' ),
+						'desc' => '',
+						'id' => 'homepage_slider_camera_effects',
+						'std' => 'scrollLeft',
+						'type' => 'select',
+						'fold' => array( 'homepage_slider_style_camera' ),
+						'options' => array( 
+							'random' => __( 'Random', 'cyon' ),
+							'simpleFade' => __( 'Fade', 'cyon' ), 
+							'curtainTopLeft' => __( 'Curtain Top Left', 'cyon' ), 
+							'curtainTopRight' => __( 'Curtain Top Right', 'cyon' ), 
+							'curtainBottomLeft' => __( 'Curtain Bottom Left', 'cyon' ), 
+							'curtainBottomRight' => __( 'Curtain Bottom Left', 'cyon' ), 
+							'curtainSliceLeft' => __( 'Curtain Slice Left', 'cyon' ), 
+							'curtainSliceRight' => __( 'Curtain Slice Right', 'cyon' ), 
+							'blindCurtainTopLeft' => __( 'Blind Curtain Top Left', 'cyon' ), 
+							'blindCurtainTopRight' => __( 'Blind Curtain Top Right', 'cyon' ), 
+							'blindCurtainBottomLeft' => __( 'Blind Curtain Bottom Left', 'cyon' ), 
+							'blindCurtainBottomRight' => __( 'Blind Curtain Bottom Right', 'cyon' ), 
+							'blindCurtainSliceBottom' => __( 'Blind Curtain Slice Bottom', 'cyon' ), 
+							'blindCurtainSliceTop' => __( 'Blind Curtain Slice Top', 'cyon' ), 
+							'stampede' => __( 'Stampede', 'cyon' ), 
+							'mosaic' => __( 'Mosaic', 'cyon' ), 
+							'mosaicReverse' => __( 'Mosaic Reverse', 'cyon' ), 
+							'mosaicRandom' => __( 'Mosaic Random', 'cyon' ), 
+							'mosaicSpiral' => __( 'Mosaic Spiral', 'cyon' ), 
+							'mosaicSpiralReverse' => __( 'Mosaic Spiral Reverse', 'cyon' ), 
+							'topLeftBottomRight' => __( 'Top Left Bottom Right', 'cyon' ), 
+							'bottomRightTopLeft' => __( 'Bottom Right Top Left', 'cyon' ), 
+							'bottomLeftTopRight' => __( 'Bottom Left Top Right', 'cyon' ),
+							'scrollLeft' => __( 'Scroll Left', 'cyon' ), 
+							'scrollRight' => __( 'Scroll Right', 'cyon' ), 
+							'scrollHorz' => __( 'Scroll Horz', 'cyon' ), 
+							'scrollBottom' => __( 'Scroll Bottom', 'cyon' ), 
+							'scrollTop' => __( 'Scroll Top', 'cyon' ) 
+						));
 
 	/* Options End ------- */
 	$of_options[] = array( 'type' => 'group_end' );
@@ -605,7 +660,7 @@ function cyon_of_options() {
 
 	/* Page title format */
 	$of_options[] = array( 'name' => __( 'Page title format', 'cyon' ),
-						'desc' => __( 'Accepts:' ).' {PAGETITLE}, {BLOGTITLE}, {BLOGTAGLINE}',
+						'desc' => __( 'Accepts:','cyon' ).' {PAGETITLE}, {BLOGTITLE}, {BLOGTAGLINE}',
 						'id' => 'seo_title_format',
 						'std' => '{PAGETITLE} | {BLOGTITLE}',
 						'fold' => 'seo_activate',

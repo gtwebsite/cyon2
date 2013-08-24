@@ -72,7 +72,7 @@ class CyonTwitterWidget extends WP_Widget {
 				}else{
 					echo '<li>';
 				}
-				echo make_clickable('<p>'.$item->description.'<br /><small><a href="'.$item->link.'">'.human_time_diff(strtotime($item->created), current_time('timestamp')).' ago</a></small></p>');
+				echo make_clickable('<p>'.$item->description.'<br /><small><a href="'.$item->link.'">'.human_time_diff(strtotime($item->created), current_time('timestamp')).' '.__('ago','cyon').'</a></small></p>');
 				if($slide=='yes'){
 					echo '</div>';
 				}else{

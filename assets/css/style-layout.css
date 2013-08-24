@@ -693,6 +693,10 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	-webkit-transform-style: preserve-3d;
+	transition:height ease-in-out .3s;
+	-webkit-transition:height ease-in-out .3s;
+	-moz-transition:height ease-in-out .3s;
+	-ms-transition:height ease-in-out .3s;
 }
 .toggle .toggle-content, .accordion .accordion-content {
 	padding:5px 10px;
@@ -714,6 +718,9 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 }
 .tabs .panel p {
 	margin:0 0 5px 0;
+}
+.tabs .tab-content {
+	-webkit-backface-visibility: hidden;
 }
 
 
@@ -827,6 +834,7 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	margin-top:-15px;
 	color:#000;
 	opacity:0.5;
+	-webkit-backface-visibility: hidden;
 }
 .swiper-right span, .swiper-left span {
 	padding-right:0;
@@ -1256,6 +1264,9 @@ p.nocomments {
 
 /* =Page Specifics
 ----------------------------------------------- */
+.page-template-page-popup-php {
+	background:#fff;
+}
 #popup, .offline {
 	padding:20px;
 }

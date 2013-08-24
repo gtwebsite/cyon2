@@ -6,6 +6,7 @@ if ( !defined('ABSPATH') )
 /* =Map
 use [map width='' height='350' zoom='14' long='' lat='' address='New York, USA'] xxx [/map]
 ----------------------------------------------- */
+if(!function_exists('cyon_map')){
 function cyon_map( $atts, $content = null, $id ) {
 	$atts = shortcode_atts(
 		array(
@@ -21,12 +22,13 @@ function cyon_map( $atts, $content = null, $id ) {
 		wp_enqueue_script('gmap');
 	ob_get_clean();
 	return '<div class="gmap" data-address="'.$atts['address'].'" data-lat="'.$atts['lat'].'" data-long="'.$atts['long'].'" data-zoom="'.$atts['zoom'].'" style="max-width: '.$atts['width'].'; height: '.$atts['height'].'px;">'. $content .'</div>';
-}
+} }
 add_shortcode('map','cyon_map'); 
 
 /* =IFrame
 use [iframe width='500' height='350' scroll='yes' url='http://localhost/']
 ----------------------------------------------- */
+if(!function_exists('cyon_iframe')){
 function cyon_iframe( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
@@ -36,13 +38,14 @@ function cyon_iframe( $atts, $content = null ) {
 			url			=> 'http://lipsum.com/'
 		), $atts);
 	return '<div style="width:'.$atts['width'].'px; max-width:100%; height:'.$atts['height'].'px; overflow:visible;"><iframe style="max-width:100%;" width="'.$atts['width'].'" height="'.$atts['height'].'" frameborder="0" scrolling="'.$atts['scroll'].'" marginheight="0" marginwidth="0" src="'.$atts['url'].'"></iframe></div>';
-}
+} }
 add_shortcode('iframe','cyon_iframe'); 
 
 
 /* =Video
 use [video width='480' height='270' src='' poster='' subtitles='' chapters='']
 ----------------------------------------------- */
+if(!function_exists('cyon_video')){
 function cyon_video( $atts, $content = null ) {
 	global $data;
 	$atts = shortcode_atts(
@@ -72,7 +75,7 @@ function cyon_video( $atts, $content = null ) {
 			$html .= '<video width="'.$atts['width'].'" height="'.$atts['height'].'" type="video/flv" src="'.$atts['src'].'" autoplay'.$style.' /></video>';
 			ob_start();
 				wp_enqueue_script('mediaelement');
-				wp_enqueue_style('mediaelement_style');
+				wp_enqueue_style('mediaelement');
 			ob_get_clean();
 		}else{
 			$type = '';
@@ -111,14 +114,14 @@ function cyon_video( $atts, $content = null ) {
 			$html .= '</video>';
 			ob_start();
 				wp_enqueue_script('mediaelement');
-				wp_enqueue_style('mediaelement_style');
+				wp_enqueue_style('mediaelement');
 			ob_get_clean();
 		}
 	}else{
 		$html = __('No video source specified.');
 	}
 	return $html;
-}
+} }
 add_shortcode('video','cyon_video'); 
 
 if (!function_exists('get_youtube_id')){
@@ -142,6 +145,7 @@ if (!function_exists('get_vimeo_id')){
 /* =Audio
 use [audio width='480' src='']
 ----------------------------------------------- */
+if(!function_exists('cyon_audio')){
 function cyon_audio( $atts, $content = null ) {
 	global $data;
 	$atts = shortcode_atts(
@@ -161,13 +165,13 @@ function cyon_audio( $atts, $content = null ) {
 		$html .= '</audio>';
 		ob_start();
 			wp_enqueue_script('mediaelement');
-			wp_enqueue_style('mediaelement_style');
+			wp_enqueue_style('mediaelement');
 		ob_get_clean();
 	}else{
 		$html = __('No audio source specified.');
 	}
 	return $html;
-}
+} }
 add_shortcode('audio','cyon_audio'); 
 
 
@@ -175,6 +179,7 @@ add_shortcode('audio','cyon_audio');
 /* =Gallery
 Override default gallery code
 ----------------------------------------------- */
+if(!function_exists('cyon_post_gallery')){
 function cyon_post_gallery( $blank = NULL, $attr ) {
 	$post = get_post();
 
@@ -303,42 +308,15 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 			</script> 
 		";
 	}elseif($attr['style']=='carousel'){
-		$gallery_script = "
-			<script type='text/javascript'>
-				// Carousel Support
-				jQuery(window).load(function(){
-					jQuery('#$selector').imagesLoaded(function(){
-						var cyonCarouselGallery{$id} = jQuery('#$selector .swiper-container').swiper({
-							loop:true,
-							slidesPerGroup: {$columns},
-							slidesPerView: {$columns},
-							calculateHeight: true
-						});
-						jQuery('#$selector .swiper-left').on('click', function(e){
-							e.preventDefault();
-							cyonCarouselGallery{$id}.swipePrev();
-							jQuery('.carousel-large-$selector img').attr('src',jQuery('#$selector .swiper-slide-active a').attr('href'));
-						})
-						jQuery('#$selector .swiper-right').on('click', function(e){
-							e.preventDefault();
-							cyonCarouselGallery{$id}.swipeNext();
-							jQuery('.carousel-large-$selector img').attr('src',jQuery('#$selector .swiper-slide-active a').attr('href'));
-						})
-						jQuery('.carousel-large-$selector').append('<img src=\"' + jQuery(this).find('.swiper-slide-active a').attr('href') +'\" />');
-						jQuery('#$selector .swiper-slide a').click(function(e){
-							jQuery('.carousel-large-$selector img').attr('src',jQuery(this).attr('href'));
-							e.preventDefault();
-							false;
-						});
-					});
-				});
-			</script> 
-		";
+		ob_start();
+			wp_enqueue_script('fotorama');
+			wp_enqueue_style('fotorama');
+		ob_get_clean();
 	}
 	
 	$size_class = sanitize_html_class( $size );
 	if($attr['style']=='carousel'){
-		$gallery_div = $gallery_script. "\n\t\t" . "<div id='$selector' class='carousel' style='width:92%'><a class='swiper-left' href='#'><span class='icon-chevron-left'></span></a><a class='swiper-right' href='#'><span class='icon-chevron-right'></span></a><div class='swiper-container'><div class='swiper-wrapper'>";
+		$gallery_div = $gallery_script. "\n\t\t" . "<div id='$selector' class='fotorama' data-nav='thumbs' data-width='100%' data-autoplay='true'>";
 	}else{
 		$gallery_div = $gallery_script. "\n\t\t" . "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
 	}
@@ -360,9 +338,8 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
 
 		if($attr['style']=='carousel'){
-			$large_image_url = wp_get_attachment_image_src( $id, 'large');
-			$thumbnail_image_url = wp_get_attachment_image_src( $id, $size);
-			$output .= '<div class="swiper-slide"><div class="swiper-slide-wrapper"><a href="'.$large_image_url[0].'"><img src="'.$thumbnail_image_url[0].'" alt="" /></a>';
+			$large_image_url = wp_get_attachment_image_src( $id, $size);
+			$output .= '<img src="'.$large_image_url[0].'" alt="" data-caption="'. wptexturize($attachment->post_excerpt) .'" />';
 		}else{
 			$output .= "<{$itemtag} class='gallery-item'>";
 			$output .= "
@@ -376,9 +353,7 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 				" . wptexturize($attachment->post_excerpt) . "
 				</{$captiontag}>";
 		}
-		if($attr['style']=='carousel'){
-			$output .= "</div></div>";
-		}else{
+		if($attr['style']!='carousel'){
 			$output .= "</{$itemtag}>";
 			if ( $columns > 0 && ++$i % $columns == 0 )
 				$output .= '<br style="clear: both" />';
@@ -386,7 +361,7 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 	}
 
 	if($attr['style']=='carousel'){
-		$output .= "</div></div></div><div class='gallery-carousel carousel-large-$selector'></div>\n";
+		$output .= "</div>\n";
 	}else{
 		$output .= "
 				<br style='clear: both;' />
@@ -394,6 +369,6 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 	}
 
 	return $output;
-}
+} }
 add_filter( 'post_gallery', 'cyon_post_gallery', 10, 2);
 

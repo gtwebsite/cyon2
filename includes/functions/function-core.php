@@ -738,23 +738,59 @@ function cyon_home_block_slider(){
 	global $data;
 	$slides = $data['homepage_slider'];
 	if(count($slides)>1){
-		echo '<div class="block swiper" id="slider-block"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
-		foreach ($slides as $slide) {
-			if($slide['url']!=''){
-				echo '<div class="swiper-slide">';
-				echo $slide['link']!='' ? '<a href="'.$slide['link'].'">' : '';
-				echo '<img src="'.$slide['url'].'" alt="'.$slide['title'].'" />';
-				echo $slide['link']!='' ? '</a>' : '';
-				if($slide['description']!=''){
-					echo '<div class="swiper-caption">';
-					echo '<h3 class="swiper-title">'.$slide['title'].'</h3><div class="swiper-content">'.apply_filters('the_content',$slide['description']).'</div>';
-					echo $slide['link']!='' ? '<p class="readmore"><a href="'.$slide['link'].'">'.__('Read more').'</a></p>' : '';
+		if($data['homepage_slider_style']=='fotorama') {
+			ob_start();
+				wp_enqueue_script('fotorama');
+				wp_enqueue_style('fotorama');
+			ob_get_clean();
+			echo '<div class="block fotorama" id="slider-block" data-width="100%" data-autoplay="true" data-loop="true" data-transition="'.$data['homepage_slider_fotorama_effects'].'">';
+			foreach ($slides as $slide) {
+				if($slide['url']!=''){
+					echo '<img src="'.$slide['url'].'" alt="'.$slide['title'].'" data-caption="'.apply_filters('the_content',$slide['description']).'" />';
+				}
+			}
+			echo '</div>';
+		}elseif($data['homepage_slider_style']=='camera') {
+			ob_start();
+				wp_enqueue_script('camera');
+				wp_enqueue_style('camera');
+			ob_get_clean();
+			echo '
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+						jQuery(\'#slider-block\').camera({
+							easing: \'easeInOutExpo\',
+							time: 5000,
+							fx: \''.$data['homepage_slider_camera_effects'].'\'
+						});
+					});
+				</script> 
+				<div class="block camera_wrap" id="slider-block">';
+			foreach ($slides as $slide) {
+				if($slide['url']!=''){
+					echo '<div data-src="'.$slide['url'].'"><div class="camera_caption fadeFromBottom camera_effected">'.apply_filters('the_content',$slide['description']).'</div></div>';
+				}
+			}
+			echo '</div>';
+		} else {
+			echo '<div class="block swiper" id="slider-block"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
+			foreach ($slides as $slide) {
+				if($slide['url']!=''){
+					echo '<div class="swiper-slide">';
+					echo $slide['link']!='' ? '<a href="'.$slide['link'].'">' : '';
+					echo '<img src="'.$slide['url'].'" alt="'.$slide['title'].'" />';
+					echo $slide['link']!='' ? '</a>' : '';
+					if($slide['description']!=''){
+						echo '<div class="swiper-caption">';
+						echo '<h3 class="swiper-title">'.$slide['title'].'</h3><div class="swiper-content">'.apply_filters('the_content',$slide['description']).'</div>';
+						echo $slide['link']!='' ? '<p class="readmore"><a href="'.$slide['link'].'">'.__('Read more').'</a></p>' : '';
+						echo '</div>';
+					}
 					echo '</div>';
 				}
-				echo '</div>';
 			}
+			echo '</div></div></div>';
 		}
-		echo '</div></div></div>';
 	}else{
 		if($slides[1]['url']!=''){
 			echo '<div class="block" id="slider-block">';

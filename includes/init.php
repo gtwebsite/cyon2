@@ -153,12 +153,16 @@ class Cyon {
 		wp_register_script('transit',THEME_ASSETS_URI . 'js/jquery.transit.js',array('jquery'),'0.9.9');
 		wp_register_script('supersized',THEME_ASSETS_URI . 'js/jquery.supersized.js',array('jquery'),'3.2.7');
 		wp_register_script('isotope',THEME_ASSETS_URI . 'js/jquery.isotope.min.js',array('jquery'),'1.5.25');
+		wp_register_script('fotorama',THEME_ASSETS_URI . 'js/jquery.fotorama.min.js',array('jquery'),'4.3.0');
+		wp_register_script('camera',THEME_ASSETS_URI . 'js/jquery.camera.min.js',array('jquery'),'1.3.4');
 		
 		/* Styles */
 		wp_register_style('cyon_style_responsive', THEME_ASSETS_URI . 'css/style-responsive.css',array(),'1.0.0',false);
 		wp_register_style('cyon_style_woocommerce', THEME_ASSETS_URI . 'css/style-woocommerce.css',array(),'1.0.0',false);
 		wp_register_style('cyon_style_woocommerce_responsive', THEME_ASSETS_URI . 'css/style-woocommerce-responsive.css',array(),'1.0.0',false);
-		wp_register_style('mediaelement_style',THEME_ASSETS_URI . 'css/mediaelementplayer.min.css',array(),'2.12.0');
+		wp_register_style('mediaelement',THEME_ASSETS_URI . 'css/mediaelementplayer.min.css',array(),'2.12.0');
+		wp_register_style('fotorama',THEME_ASSETS_URI . 'css/style-fotorama.css',array(),'4.3.0');
+		wp_register_style('camera',THEME_ASSETS_URI . 'css/style-camera.css',array(),'1.3.4');
 		
 		/* Admin */
 		wp_register_script('cyon_custom_admin_script', THEME_ASSETS_URI . 'js/jquery.admin.js', array('jquery'),'1.0.0');
