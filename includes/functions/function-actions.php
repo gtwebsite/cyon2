@@ -4,7 +4,7 @@ if ( !defined('ABSPATH') )
 
 /* =Init
 ----------------------------------------------- */
-add_action( 'template_redirect', 'cyon_check_offline' );
+add_action( 'template_redirect', 	'cyon_check_offline' );
 
 /* =Head
 ----------------------------------------------- */
@@ -56,7 +56,7 @@ add_filter( 'wp_get_attachment_image_attributes', 'cyon_wp_get_attachment_image_
 
 /* =Homepage
 ----------------------------------------------- */
-add_action('cyon_home_content','cyon_homepage_blocks',10);
+add_action('cyon_home_content',		'cyon_homepage_blocks',10);
 
 /* =Footer
 ----------------------------------------------- */

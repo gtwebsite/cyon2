@@ -494,13 +494,21 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	text-align:right;
 }
 .grid ul, .grid ul li {
-	list-style:none; padding:0; margin:0;
+	list-style:none;
+	padding:0;
+	margin:0;
 }
 .grid h2 {
-	margin:0; padding:0;
+	margin:0;
+	padding:0;
 }
 .grid article {
-	float:left; border-bottom:0; text-align:center; padding-bottom:0; margin-bottom:0; overflow:visible;
+	float:left;
+	border-bottom:0;
+	text-align:center;
+	padding-bottom:0;
+	margin-bottom:0;
+	overflow:visible;
 }
 .grid article header hgroup, .grid article section > ul li, .grid article footer, .grid aside li {
 	padding:15px 5px;
@@ -509,7 +517,8 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	padding-bottom:10px;
 }
 .grid article footer .btn {
-	display:block; padding:0;
+	display:block;
+	padding:0;
 }
 .grid .cols6 article {
 	width:16.666%;
@@ -530,17 +539,29 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	margin-bottom:0;
 }
 .grid .check, .grid .no {
-	display:block; width:28px; height:28px; overflow:hidden; text-indent:-9999px; margin:0 auto;
+	display:block;
+	width:32px;
+	height:32px;
+	overflow:hidden;
+	text-indent:-9999px;
+	margin:0 auto;
 }
 
 
 /* =Buttons
 ----------------------------------------------- */
 a.btn-large {
-	padding:0 20px; font-size:140%; font-weight:bold; height:48px; line-height:48px;
+	padding:0 20px;
+	font-size:140%;
+	font-weight:bold;
+	height:48px;
+	line-height:48px;
 }
 a.btn-small {
-	padding:0 8px; font-size:80%; height:20px; line-height:20px;
+	padding:0 8px;
+	font-size:80%;
+	height:20px;
+	line-height:20px;
 }
 
 /* =Boxes

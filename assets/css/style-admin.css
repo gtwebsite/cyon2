@@ -1,32 +1,10 @@
 /* =Editor menu
 ----------------------------------------------- */
 span.mce_cyon_plugin {
-	background:url(../images/icons-admin.png) -68px -5px no-repeat!important;
+	background:url(../images/icons-admin.png) 2px 3px no-repeat!important;
 }
 
 .mceButtonMenu div[role="presentation"] { 
 	max-height:200px!important; max-width:150px; overflow:auto; overflow-x: hidden;
-}
-
-#adminmenu #toplevel_page_gtw-theme div.wp-menu-image, #adminmenu #menu-posts-cyon_banner div.wp-menu-image, #adminmenu #menu-posts-cyon_testimonial div.wp-menu-image, span.mce_cyon_plugin {
-	background-image:url(../images/icons-admin.png);
-}
-#adminmenu #toplevel_page_gtw-theme div.wp-menu-image {
-	background-position: 0 -32px;
-}
-#adminmenu #toplevel_page_gtw-theme .wp-menu-open div.wp-menu-image, #adminmenu #toplevel_page_gtw-theme a:hover div.wp-menu-image {
-	background-position: 0 0;
-}
-#adminmenu #menu-posts-cyon_banner div.wp-menu-image {
-	background-position: -32px -32px;
-}
-#adminmenu #menu-posts-cyon_banner .wp-menu-open div.wp-menu-image, #adminmenu #menu-posts-cyon_banner a:hover div.wp-menu-image {
-	background-position: -32px 0;
-}
-#adminmenu #menu-posts-cyon_testimonial div.wp-menu-image {
-	background-position: -64px -32px;
-}
-#adminmenu #menu-posts-cyon_testimonial .wp-menu-open div.wp-menu-image, #adminmenu #menu-posts-cyon_testimonial a:hover div.wp-menu-image {
-	background-position: -64px 0;
 }
 

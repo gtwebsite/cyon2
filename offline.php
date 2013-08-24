@@ -19,11 +19,18 @@ while ( $query->have_posts() ) {
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php the_title() ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<title><?php the_title() ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<script type="text/javascript" src="http://127.0.0.1/cyon/site2/wp-includes/js/jquery/jquery.js?ver=1.10.2"></script>
+	<script type="text/javascript" src="http://127.0.0.1/cyon/site2/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery('#page').css({ opacity:1 });
+		});
+	</script>
 <?php cyon_offline_header(); ?>
 </head>
 <body class="offline">

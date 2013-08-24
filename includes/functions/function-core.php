@@ -32,15 +32,14 @@ function cyon_register_scripts_styles(){
 	global $data;
 	wp_enqueue_script('cyon_jquery_all');
 	wp_enqueue_script('isotope');
-	wp_enqueue_script('cyon_jquery_custom');
 	wp_enqueue_script('transit');
 	if($data['responsive']==1){
 		wp_enqueue_style('cyon_style_responsive'); 
-		wp_enqueue_script('nonbounce'); 
 	}
 	if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){
 		wp_enqueue_script('supersized');
 	}
+	wp_enqueue_script('cyon_jquery_custom');
 } }
 
 
@@ -1057,6 +1056,7 @@ function cyon_footer_jquery(){
 			jQuery('a img.size-medium, a img.size-thumbnail, a img.size-large').parent().addClass("fancybox");
 			jQuery('.gallery a').attr('rel', 'group');
 			jQuery('.fancybox-media').fancybox({
+				padding		: 0,
 				openEffect	: 'none',
 				closeEffect	: 'none',
 				helpers : {
@@ -1064,6 +1064,7 @@ function cyon_footer_jquery(){
 				}
 			});
 			jQuery('.fancybox').fancybox({
+				padding		: 0,
 				openEffect	: 'elastic',
 				closeEffect	: 'elastic',
 				helpers : {
@@ -1073,6 +1074,7 @@ function cyon_footer_jquery(){
 				}
 			});
 			jQuery('.iframe').fancybox({
+				padding		: 0,
 				type		: 'iframe',
 				maxWidth	: 800,
 				maxHeight	: 600,
@@ -1088,6 +1090,7 @@ function cyon_footer_jquery(){
 				return jQuery(this).attr('href').match(/\.(jpg|jpeg|png|gif|bmp|JPG|JPEG|PNG|GIF|BMP)/);
 			}).addClass("fancybox-group");
 			jQuery(".fancybox-group").fancybox({
+				padding		: 0,
 				openEffect	: 'elastic',
 				closeEffect	: 'elastic',
 				helpers : {
