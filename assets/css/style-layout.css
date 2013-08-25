@@ -393,12 +393,6 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	max-width:none;
 }
 
-/* =Sitemap
------------------------------------------------ */
-.cyon-sitemap ul.menu ul {
-	margin-bottom:0;
-}
-
 /* =Ads
 ----------------------------------------------- */
 .cyon-ads h3.widget-title {
