@@ -86,26 +86,51 @@ use [testimonials id='' style='' classname='']
 function cyon_testimonial( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			id		=> '',
-			classname => '',
-			style	=> 'list' // list, slide
+			id			=> '',
+			classname 	=> '',
+			cols 		=> '1',
+			style		=> 'list' // list, slide
 		), $atts);
 	global $data;
+	static $instance = 0;
+	$instance++;
 	$testimonials = $data['testimonials'];
 	$html = '';
 
 	if(count($testimonials)>0){
 		$html .= '<div class="cyon-testimonial '.$atts['classname'].'">';
 		if($atts['style']=='slide'){
-			$html .= '<div class="swiper"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
+			$html .= '<div id="testimonial-'.$instance.'"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
 		}else{
-			$html .= '<ul>';
+			if($atts['cols']>1){
+				$html .= '<ul class="row-fluid">';
+			}else{
+				$html .= '<ul>';
+			}
 		}
+		$count = 0;
 		foreach ($testimonials as $testimonial) {
 			if($atts['style']=='slide'){
-				$html .= '<div class="swiper-slide">';
+				$html .= '<div class="swiper-slide"><div class="swiper-slide-wrapper">';
 			}else{
-				$html .= '<li>';
+				$count++;
+				if($atts['cols']==2){
+					$span = 'span6';
+				}elseif($atts['cols']==3){
+					$span = 'span4';
+				}elseif($atts['cols']==4){
+					$span = 'span3';
+				}elseif($atts['cols']==6){
+					$span = 'span2';
+				}else{
+					$span = '';
+				}
+				if($count==$atts['cols']){
+					$count = 0;
+				}elseif($count==1){
+					$span .= ' first-child';
+				}
+				$html .= '<li class="'.$span.'">';
 			}
 			$html .= '<blockquote class="clearfix"><div class="icon-quote-left"></div>'.$testimonial['description'].'<div class="bubble"></div></blockquote><div class="name clearfix">';
 			$html .= $testimonial['url']!='' ? '<img src="'.$testimonial['url'].'" alt="'.$testimonial['title'].'" />' : '';
@@ -113,14 +138,24 @@ function cyon_testimonial( $atts, $content = null ) {
 			$html .= $testimonial['company']!='' ? '<p>'.$testimonial['company'].'</p>' : '';
 			$html .= '</div>';
 			if($atts['style']=='slide'){
-				$html .= '</div>';
+				$html .= '</div></div>';
 			}else{
 				$html .= '</li>';
 			}
 		}
-		$html .= '</ul>';
 		if($atts['style']=='slide'){
-			$html .= '</div></div></div>';
+			$html .= '</div></div></div>
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+						var cyonTestimonial'.$instance.' = jQuery(\'#testimonial-'.$instance.' .swiper-container\').swiper({
+							autoplay:Math.floor(Math.random() * 6000) + 4000,
+							loop: true,
+							calculateHeight: true,
+							slidesPerGroup: '.$atts['cols'].',
+							slidesPerView: '.$atts['cols'].'
+						});
+					});
+				</script>';
 		}else{
 			$html .= '</ul>';
 		}
@@ -163,11 +198,11 @@ function cyon_carousel( $atts, $content = null ) {
 				jQuery(\'#carousel-'.$instance.' .swiper-left\').on(\'click\', function(e){
 					e.preventDefault();
 					cyonCarousel'.$instance.'.swipePrev();
-				})
+				});
 				jQuery(\'#carousel-'.$instance.' .swiper-right\').on(\'click\', function(e){
 					e.preventDefault();
 					cyonCarousel'.$instance.'.swipeNext();
-				})
+				});
 			});
 		</script>
 	');

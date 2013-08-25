@@ -531,6 +531,9 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	margin:0 10px 5px 0;
 	font-size:200%;
 }
+.cyon-testimonial .swiper-slide-wrapper {
+	padding:5px;
+}
 
 
 /* =WP PageNavi

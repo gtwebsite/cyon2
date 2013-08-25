@@ -781,7 +781,10 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .cyon-testimonial {
 	overflow:hidden;
 }
-.cyon-testimonial li {
+.cyon-testimonial > ul {
+	padding:0;
+}
+.cyon-testimonial > ul > li {
 	margin:0 0 20px 0;
 	padding:0;
 }
@@ -1050,8 +1053,10 @@ p.nocomments {
 /* =Subpages
 ----------------------------------------------- */
 .subpages, .postlist {
-	margin-bottom:10px;
 	padding:0;
+}
+.subpages > li, .postlist > li {
+	margin-bottom:20px;
 }
 
 

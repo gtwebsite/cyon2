@@ -105,7 +105,7 @@
 		width:auto; 
 		min-width:inherit;
 	}
-	.widget, #secondary, #top > div.right, .general-2right #primary, .general-2left #primary, #branding hgroup, .row-fluid article, .postlist li, .cyon-sitemap div, .subpages li {
+	.widget, #secondary, #top > div.right, .general-2right #primary, .general-2left #primary, #branding hgroup, .row-fluid article, .row-fluid > li, .postlist li, .cyon-sitemap div, .subpages li {
 		width:auto!important;
 		float:none!important;
 		margin-left:0!important;

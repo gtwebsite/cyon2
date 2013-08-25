@@ -16,6 +16,7 @@
 * Replaced Flexslider to Swiper 2.0
 * Replace tabs with Tabulous
 * Updated FancyBox 2.1.5
+* Updated social icons
 * Added carousel on bloglist shortcode
 * Added carousel on subpage shortcode
 * Added offline option
@@ -28,6 +29,7 @@
 * Added Isotope on product list
 * Added Tooltipster
 * Added Fotorama and Camera on homepage slider
+* Added carousel and columns on testimonial shortcode
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4
