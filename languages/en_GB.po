@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cyon\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-02 06:21+0800\n"
-"PO-Revision-Date: 2013-08-02 06:21+0800\n"
+"POT-Creation-Date: 2013-08-26 01:38+0800\n"
+"PO-Revision-Date: 2013-08-26 01:38+0800\n"
 "Last-Translator: Archie Jereos <eightworks@yahoo.com>\n"
 "Language-Team: Gtwebsite <admin@gtwebsite.com>\n"
 "Language: en_GB\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../comments.php:10
@@ -37,16 +37,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../page-popup.php:44 ../includes/functions/function-core.php:71
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../page-popup.php:68
+#: ../page-popup.php:47
 #: ../includes/framework/classes/class.options_machine.php:861
-#: ../includes/functions/function-core.php:313
-#: ../includes/functions/function-core.php:1412
-#: ../includes/functions/function-core.php:1440
+#: ../includes/functions/function-core.php:322
+#: ../includes/functions/function-core.php:1524
+#: ../includes/functions/function-core.php:1552
 msgid "Edit"
 msgstr ""
 
@@ -55,12 +50,12 @@ msgid "Search"
 msgstr ""
 
 #: ../includes/init.php:101
-#: ../includes/shortcodes/shortcode-wpfunctions.php:149
+#: ../includes/shortcodes/shortcode-wpfunctions.php:214
 msgid "Main Menu"
 msgstr ""
 
 #: ../includes/init.php:102
-#: ../includes/shortcodes/shortcode-wpfunctions.php:154
+#: ../includes/shortcodes/shortcode-wpfunctions.php:219
 msgid "Footer Menu"
 msgstr ""
 
@@ -82,9 +77,9 @@ msgid "Testimonial"
 msgstr ""
 
 #: ../includes/framework/classes/class.options_machine.php:865
-#: ../includes/functions/function-core.php:1251
-#: ../includes/functions/function-core.php:1290
-#: ../includes/functions/function-woocommerce.php:252
+#: ../includes/functions/function-core.php:1363
+#: ../includes/functions/function-core.php:1402
+#: ../includes/functions/function-woocommerce.php:325
 #: ../includes/shortcodes/shortcode-forms.php:25
 #: ../includes/shortcodes/shortcode-forms.php:113
 #: ../includes/widgets/widget-ads.php:108
@@ -139,7 +134,7 @@ msgid "Page Settings"
 msgstr ""
 
 #: ../includes/functions/function-admin.php:58
-#: ../includes/functions/function-options.php:496
+#: ../includes/functions/function-options.php:565
 msgid "Layout"
 msgstr ""
 
@@ -166,7 +161,7 @@ msgid "2 Columns Right"
 msgstr ""
 
 #: ../includes/functions/function-admin.php:70
-#: ../includes/functions/function-admin.php:256
+#: ../includes/functions/function-admin.php:259
 msgid "Background Image"
 msgstr ""
 
@@ -259,6 +254,10 @@ msgid "Listing Layout"
 msgstr ""
 
 #: ../includes/functions/function-admin.php:253
+msgid "Masonry Enable"
+msgstr ""
+
+#: ../includes/functions/function-admin.php:256
 msgid "Image Banner"
 msgstr ""
 
@@ -268,157 +267,166 @@ msgid ""
 "on."
 msgstr ""
 
-#: ../includes/functions/function-core.php:199
+#: ../includes/functions/function-core.php:72
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../includes/functions/function-core.php:208
 msgid "Skip to primary content"
 msgstr ""
 
-#: ../includes/functions/function-core.php:200
+#: ../includes/functions/function-core.php:209
 msgid "Skip to secondary content"
 msgstr ""
 
-#: ../includes/functions/function-core.php:256
+#: ../includes/functions/function-core.php:265
 msgid "Main menu"
 msgstr ""
 
-#: ../includes/functions/function-core.php:322
+#: ../includes/functions/function-core.php:331
 msgid "Nothing Found"
 msgstr ""
 
-#: ../includes/functions/function-core.php:325
+#: ../includes/functions/function-core.php:334
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
 
-#: ../includes/functions/function-core.php:358
+#: ../includes/functions/function-core.php:367
 msgid "by"
 msgstr ""
 
-#: ../includes/functions/function-core.php:364
+#: ../includes/functions/function-core.php:373
 msgid "in categor"
 msgstr ""
 
-#: ../includes/functions/function-core.php:364
-#: ../includes/functions/function-core.php:366
+#: ../includes/functions/function-core.php:373
+#: ../includes/functions/function-core.php:375
 msgid ", "
 msgstr ""
 
-#: ../includes/functions/function-core.php:366
+#: ../includes/functions/function-core.php:375
 msgid "and tagged"
 msgstr ""
 
-#: ../includes/functions/function-core.php:371
+#: ../includes/functions/function-core.php:380
 msgid "Be the first to"
 msgstr ""
 
-#: ../includes/functions/function-core.php:371
+#: ../includes/functions/function-core.php:380
 msgid "comment here"
 msgstr ""
 
-#: ../includes/functions/function-core.php:373
-#: ../includes/functions/function-core.php:375
+#: ../includes/functions/function-core.php:382
+#: ../includes/functions/function-core.php:384
 msgid "with"
 msgstr ""
 
-#: ../includes/functions/function-core.php:373
+#: ../includes/functions/function-core.php:382
 msgid "comment"
 msgstr ""
 
-#: ../includes/functions/function-core.php:375
+#: ../includes/functions/function-core.php:384
 msgid "comments)"
 msgstr ""
 
-#: ../includes/functions/function-core.php:408
+#: ../includes/functions/function-core.php:428
+msgid "Related Posts"
+msgstr ""
+
+#: ../includes/functions/function-core.php:448
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:410
+#: ../includes/functions/function-core.php:450
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:412
+#: ../includes/functions/function-core.php:452
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:417
+#: ../includes/functions/function-core.php:457
 #, php-format
 msgid "Author Archives: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:420
+#: ../includes/functions/function-core.php:460
 #, php-format
 msgid "Posts Tagged: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:422
+#: ../includes/functions/function-core.php:462
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:439
+#: ../includes/functions/function-core.php:479
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:492
+#: ../includes/functions/function-core.php:532
 msgid "You are here"
 msgstr ""
 
-#: ../includes/functions/function-core.php:493
+#: ../includes/functions/function-core.php:533
 msgid "Home"
 msgstr ""
 
-#: ../includes/functions/function-core.php:531
+#: ../includes/functions/function-core.php:571
 msgid "Search results for"
 msgstr ""
 
-#: ../includes/functions/function-core.php:544
+#: ../includes/functions/function-core.php:584
 msgid "Articles posted by"
 msgstr ""
 
-#: ../includes/functions/function-core.php:546
+#: ../includes/functions/function-core.php:586
 msgid "Posts tagged"
 msgstr ""
 
-#: ../includes/functions/function-core.php:556
+#: ../includes/functions/function-core.php:596
 msgid "Error 404"
 msgstr ""
 
-#: ../includes/functions/function-core.php:632
-#: ../includes/functions/function-core.php:710
-#: ../includes/functions/function-core.php:818
+#: ../includes/functions/function-core.php:672
+#: ../includes/functions/function-core.php:785
+#: ../includes/functions/function-core.php:894
 msgid "Read more"
 msgstr ""
 
-#: ../includes/functions/function-core.php:649
+#: ../includes/functions/function-core.php:689
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:653
+#: ../includes/functions/function-core.php:693
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../includes/functions/function-core.php:922
+#: ../includes/functions/function-core.php:998
 msgid "Back to Top"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1245
-#: ../includes/functions/function-core.php:1284
+#: ../includes/functions/function-core.php:1357
+#: ../includes/functions/function-core.php:1396
 msgid "Security check"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1247
+#: ../includes/functions/function-core.php:1359
 msgid "New inquiry from"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1252
-#: ../includes/functions/function-core.php:1291
-#: ../includes/functions/function-options.php:566
+#: ../includes/functions/function-core.php:1364
+#: ../includes/functions/function-core.php:1403
+#: ../includes/functions/function-options.php:636
 #: ../includes/shortcodes/shortcode-forms.php:27
 #: ../includes/shortcodes/shortcode-forms.php:114
 #: ../includes/widgets/widget-contact.php:44
@@ -426,81 +434,81 @@ msgstr ""
 #: ../includes/widgets/widget-contactform.php:76
 #: ../includes/widgets/widget-newsletter.php:29
 #: ../includes/widgets/widget-newsletter.php:71
-#: ../includes/widgets/widget-social.php:51
+#: ../includes/widgets/widget-social.php:60
 msgid "Email"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1253
+#: ../includes/functions/function-core.php:1365
 #: ../includes/shortcodes/shortcode-forms.php:115
 #: ../includes/widgets/widget-contact.php:42
 #: ../includes/widgets/widget-contactform.php:77
 msgid "Phone"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1255
+#: ../includes/functions/function-core.php:1367
 msgid "Selected"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1257
+#: ../includes/functions/function-core.php:1369
 msgid "Message"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1286
+#: ../includes/functions/function-core.php:1398
 msgid "New subscriber from"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1344
+#: ../includes/functions/function-core.php:1456
 msgid "Homepage Buckets"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1353
+#: ../includes/functions/function-core.php:1465
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1362
+#: ../includes/functions/function-core.php:1474
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1371
+#: ../includes/functions/function-core.php:1483
 msgid "Footer Buckets"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1392
+#: ../includes/functions/function-core.php:1504
 msgid "Post navigation"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1393
+#: ../includes/functions/function-core.php:1505
 msgid "&laquo; Older Posts"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1394
+#: ../includes/functions/function-core.php:1506
 msgid "Newer Posts &raquo;"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1412
+#: ../includes/functions/function-core.php:1524
 msgid "Pingback:"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1429
+#: ../includes/functions/function-core.php:1541
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1435
+#: ../includes/functions/function-core.php:1547
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../includes/functions/function-core.php:1444
+#: ../includes/functions/function-core.php:1556
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../includes/functions/function-core.php:1453
+#: ../includes/functions/function-core.php:1565
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
 #: ../includes/functions/function-options.php:42
-#: ../includes/functions/function-options.php:451
+#: ../includes/functions/function-options.php:520
 msgid "Static content"
 msgstr ""
 
@@ -509,7 +517,7 @@ msgid "Latest blog"
 msgstr ""
 
 #: ../includes/functions/function-options.php:47
-#: ../includes/functions/function-options.php:438
+#: ../includes/functions/function-options.php:452
 msgid "Slider"
 msgstr ""
 
@@ -546,7 +554,7 @@ msgstr ""
 #: ../includes/functions/function-options.php:81
 #: ../includes/functions/function-options.php:89
 #: ../includes/functions/function-options.php:129
-#: ../includes/functions/function-options.php:315
+#: ../includes/functions/function-options.php:329
 msgid "No file selected"
 msgstr ""
 
@@ -671,218 +679,373 @@ msgid "Yes, display author info after the content"
 msgstr ""
 
 #: ../includes/functions/function-options.php:224
-msgid "Display comment"
+msgid "Display related posts"
 msgstr ""
 
-#: ../includes/functions/function-options.php:228
-#: ../includes/functions/function-options.php:235
-msgid "Posts"
-msgstr ""
-
-#: ../includes/functions/function-options.php:228
-#: ../includes/functions/function-options.php:235
-#: ../includes/functions/function-options.php:573
-#: ../includes/shortcodes/shortcode-wpfunctions.php:151
-msgid "Pages"
+#: ../includes/functions/function-options.php:225
+msgid "Yes, display related posts after the content"
 msgstr ""
 
 #: ../includes/functions/function-options.php:231
-msgid "Display featured image"
+msgid "Display comment"
 msgstr ""
 
 #: ../includes/functions/function-options.php:235
+#: ../includes/functions/function-options.php:242
+msgid "Posts"
+msgstr ""
+
+#: ../includes/functions/function-options.php:235
+#: ../includes/functions/function-options.php:242
+#: ../includes/functions/function-options.php:643
+#: ../includes/shortcodes/shortcode-wpfunctions.php:216
+msgid "Pages"
+msgstr ""
+
+#: ../includes/functions/function-options.php:238
+msgid "Display featured image"
+msgstr ""
+
+#: ../includes/functions/function-options.php:242
 msgid "Blog/taxonomy listing"
 msgstr ""
 
-#: ../includes/functions/function-options.php:241
+#: ../includes/functions/function-options.php:248
 msgid "Blog/Taxonomy List"
 msgstr ""
 
-#: ../includes/functions/function-options.php:245
+#: ../includes/functions/function-options.php:252
 msgid "Content display"
 msgstr ""
 
-#: ../includes/functions/function-options.php:249
+#: ../includes/functions/function-options.php:256
 msgid "Excerpt"
 msgstr ""
 
-#: ../includes/functions/function-options.php:249
+#: ../includes/functions/function-options.php:256
 msgid "Full content"
 msgstr ""
 
-#: ../includes/functions/function-options.php:252
+#: ../includes/functions/function-options.php:259
 msgid "Default layout"
 msgstr ""
 
-#: ../includes/functions/function-options.php:264
+#: ../includes/functions/function-options.php:271
 msgid "Featured image size"
 msgstr ""
 
-#: ../includes/functions/function-options.php:268
-#: ../includes/functions/function-woocommerce.php:261
+#: ../includes/functions/function-options.php:275
+#: ../includes/functions/function-woocommerce.php:334
 msgid "Thumbnail"
 msgstr ""
 
-#: ../includes/functions/function-options.php:268
-#: ../includes/functions/function-woocommerce.php:262
+#: ../includes/functions/function-options.php:275
+#: ../includes/functions/function-woocommerce.php:335
 msgid "Medium"
 msgstr ""
 
-#: ../includes/functions/function-options.php:268
-#: ../includes/functions/function-woocommerce.php:263
+#: ../includes/functions/function-options.php:275
+#: ../includes/functions/function-woocommerce.php:336
 msgid "Large"
 msgstr ""
 
-#: ../includes/functions/function-options.php:268
+#: ../includes/functions/function-options.php:275
 msgid "Full"
 msgstr ""
 
-#: ../includes/functions/function-options.php:275
+#: ../includes/functions/function-options.php:282
 msgid "Woocommerce"
 msgstr ""
 
-#: ../includes/functions/function-options.php:279
+#: ../includes/functions/function-options.php:286
 msgid "Products per page"
 msgstr ""
 
-#: ../includes/functions/function-options.php:288
+#: ../includes/functions/function-options.php:295
 msgid "Product list layout"
 msgstr ""
 
-#: ../includes/functions/function-options.php:306
-#: ../includes/functions/function-options.php:634
+#: ../includes/functions/function-options.php:308
+msgid "User masonry"
+msgstr ""
+
+#: ../includes/functions/function-options.php:309
+msgid "Yes, display list in masonry"
+msgstr ""
+
+#: ../includes/functions/function-options.php:320
+#: ../includes/functions/function-options.php:747
 msgid "Header"
 msgstr ""
 
-#: ../includes/functions/function-options.php:310
+#: ../includes/functions/function-options.php:324
 msgid "Header Options"
 msgstr ""
 
-#: ../includes/functions/function-options.php:313
+#: ../includes/functions/function-options.php:327
 msgid "Logo file"
 msgstr ""
 
-#: ../includes/functions/function-options.php:314
+#: ../includes/functions/function-options.php:328
 msgid ""
 "This will replace the website name text and use the image instead. Also "
 "replace the admin logo."
 msgstr ""
 
-#: ../includes/functions/function-options.php:321
+#: ../includes/functions/function-options.php:335
 msgid "Logo/menu default layout"
 msgstr ""
 
-#: ../includes/functions/function-options.php:334
+#: ../includes/functions/function-options.php:348
 msgid "Breadcrumbs"
 msgstr ""
 
-#: ../includes/functions/function-options.php:336
+#: ../includes/functions/function-options.php:350
 msgid ""
 "Yes, use breadcrumbs on inner pages. If you are running Woocommerce, this "
 "will be ignored."
 msgstr ""
 
-#: ../includes/functions/function-options.php:341
+#: ../includes/functions/function-options.php:355
 msgid "Top left content"
 msgstr ""
 
-#: ../includes/functions/function-options.php:342
+#: ../includes/functions/function-options.php:356
 msgid "This will show at the very top left."
 msgstr ""
 
-#: ../includes/functions/function-options.php:347
+#: ../includes/functions/function-options.php:361
 msgid "Top right content"
 msgstr ""
 
-#: ../includes/functions/function-options.php:348
+#: ../includes/functions/function-options.php:362
 msgid "This will show at the very top right."
 msgstr ""
 
-#: ../includes/functions/function-options.php:357
-#: ../includes/functions/function-options.php:640
+#: ../includes/functions/function-options.php:371
+#: ../includes/functions/function-options.php:753
 msgid "Footer"
 msgstr ""
 
-#: ../includes/functions/function-options.php:361
+#: ../includes/functions/function-options.php:375
 msgid "Footer Options"
 msgstr ""
 
-#: ../includes/functions/function-options.php:365
-#: ../includes/functions/function-options.php:529
+#: ../includes/functions/function-options.php:379
+#: ../includes/functions/function-options.php:599
 msgid "Bucket layout"
 msgstr ""
 
-#: ../includes/functions/function-options.php:367
+#: ../includes/functions/function-options.php:381
 msgid "Shows number of footer columns to be used."
 msgstr ""
 
-#: ../includes/functions/function-options.php:378
+#: ../includes/functions/function-options.php:392
 msgid "Copyright"
 msgstr ""
 
-#: ../includes/functions/function-options.php:379
+#: ../includes/functions/function-options.php:393
 msgid "&copy; 2013 MyCompany.com. All Rights Reserved."
 msgstr ""
 
-#: ../includes/functions/function-options.php:384
+#: ../includes/functions/function-options.php:398
 msgid "Sub footer"
 msgstr ""
 
-#: ../includes/functions/function-options.php:390
+#: ../includes/functions/function-options.php:404
 msgid "Back to top button"
 msgstr ""
 
-#: ../includes/functions/function-options.php:391
+#: ../includes/functions/function-options.php:405
 msgid "Yes, show back to top button"
 msgstr ""
 
-#: ../includes/functions/function-options.php:401
+#: ../includes/functions/function-options.php:415
 msgid "Homepage"
 msgstr ""
 
-#: ../includes/functions/function-options.php:406
+#: ../includes/functions/function-options.php:420
 msgid "Oppps! Something's wrong."
 msgstr ""
 
-#: ../includes/functions/function-options.php:406
+#: ../includes/functions/function-options.php:420
 msgid ""
 "You should create a blank page for your homepage. Go to Settings > Reading > "
 "Front page displays, then select \"A static page\". Set \"Front page\" to "
 "the new page you just created."
 msgstr ""
 
-#: ../includes/functions/function-options.php:412
+#: ../includes/functions/function-options.php:426
 msgid "Homepage Options"
 msgstr ""
 
-#: ../includes/functions/function-options.php:416
+#: ../includes/functions/function-options.php:430
 msgid "Default layout of the homepage"
 msgstr ""
 
-#: ../includes/functions/function-options.php:417
+#: ../includes/functions/function-options.php:431
 msgid "This will override the default layout."
 msgstr ""
 
-#: ../includes/functions/function-options.php:428
+#: ../includes/functions/function-options.php:442
 msgid "Block sorter"
 msgstr ""
 
-#: ../includes/functions/function-options.php:430
+#: ../includes/functions/function-options.php:444
 msgid "Organize how you want the layout to appear on the homepage"
 msgstr ""
 
-#: ../includes/functions/function-options.php:442
+#: ../includes/functions/function-options.php:456
 msgid "Images"
 msgstr ""
 
-#: ../includes/functions/function-options.php:443
+#: ../includes/functions/function-options.php:457
 msgid "Unlimited slider with drag and drop sortings."
 msgstr ""
 
-#: ../includes/functions/function-options.php:455
-#: ../includes/functions/function-options.php:474
+#: ../includes/functions/function-options.php:462
+msgid "Style"
+msgstr ""
+
+#: ../includes/functions/function-options.php:467
+msgid "Swiper"
+msgstr ""
+
+#: ../includes/functions/function-options.php:467
+msgid "Fotorama"
+msgstr ""
+
+#: ../includes/functions/function-options.php:467
+msgid "Camera"
+msgstr ""
+
+#: ../includes/functions/function-options.php:470
+#: ../includes/functions/function-options.php:479
+msgid "Effects"
+msgstr ""
+
+#: ../includes/functions/function-options.php:476
+msgid "Slide"
+msgstr ""
+
+#: ../includes/functions/function-options.php:476
+#: ../includes/functions/function-options.php:487
+msgid "Fade"
+msgstr ""
+
+#: ../includes/functions/function-options.php:476
+msgid "Dissolve"
+msgstr ""
+
+#: ../includes/functions/function-options.php:486
+msgid "Random"
+msgstr ""
+
+#: ../includes/functions/function-options.php:488
+msgid "Curtain Top Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:489
+msgid "Curtain Top Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:490
+#: ../includes/functions/function-options.php:491
+msgid "Curtain Bottom Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:492
+msgid "Curtain Slice Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:493
+msgid "Curtain Slice Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:494
+msgid "Blind Curtain Top Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:495
+msgid "Blind Curtain Top Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:496
+msgid "Blind Curtain Bottom Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:497
+msgid "Blind Curtain Bottom Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:498
+msgid "Blind Curtain Slice Bottom"
+msgstr ""
+
+#: ../includes/functions/function-options.php:499
+msgid "Blind Curtain Slice Top"
+msgstr ""
+
+#: ../includes/functions/function-options.php:500
+msgid "Stampede"
+msgstr ""
+
+#: ../includes/functions/function-options.php:501
+msgid "Mosaic"
+msgstr ""
+
+#: ../includes/functions/function-options.php:502
+msgid "Mosaic Reverse"
+msgstr ""
+
+#: ../includes/functions/function-options.php:503
+msgid "Mosaic Random"
+msgstr ""
+
+#: ../includes/functions/function-options.php:504
+msgid "Mosaic Spiral"
+msgstr ""
+
+#: ../includes/functions/function-options.php:505
+msgid "Mosaic Spiral Reverse"
+msgstr ""
+
+#: ../includes/functions/function-options.php:506
+msgid "Top Left Bottom Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:507
+msgid "Bottom Right Top Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:508
+msgid "Bottom Left Top Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:509
+msgid "Scroll Left"
+msgstr ""
+
+#: ../includes/functions/function-options.php:510
+msgid "Scroll Right"
+msgstr ""
+
+#: ../includes/functions/function-options.php:511
+msgid "Scroll Horz"
+msgstr ""
+
+#: ../includes/functions/function-options.php:512
+msgid "Scroll Bottom"
+msgstr ""
+
+#: ../includes/functions/function-options.php:513
+msgid "Scroll Top"
+msgstr ""
+
 #: ../includes/functions/function-options.php:524
-#: ../includes/functions/function-woocommerce.php:248
+#: ../includes/functions/function-options.php:543
+#: ../includes/functions/function-options.php:594
+#: ../includes/functions/function-woocommerce.php:321
 #: ../includes/widgets/widget-ads.php:83
 #: ../includes/widgets/widget-contact.php:40
 #: ../includes/widgets/widget-contactform.php:31
@@ -893,247 +1056,268 @@ msgstr ""
 #: ../includes/widgets/widget-map.php:32
 #: ../includes/widgets/widget-media.php:23
 #: ../includes/widgets/widget-newsletter.php:28
-#: ../includes/widgets/widget-social.php:42
+#: ../includes/widgets/widget-social.php:48
 #: ../includes/widgets/widget-subpage.php:22
 #: ../includes/widgets/widget-testimonial.php:22
+#: ../includes/widgets/widget-twitter.php:26
 #: ../includes/widgets/widget-videogallery.php:21
 msgid "Title"
 msgstr ""
 
-#: ../includes/functions/function-options.php:461
+#: ../includes/functions/function-options.php:530
 #: ../includes/widgets/widget-contactform.php:33
 #: ../includes/widgets/widget-map.php:38
 #: ../includes/widgets/widget-newsletter.php:31
 msgid "Text"
 msgstr ""
 
-#: ../includes/functions/function-options.php:462
+#: ../includes/functions/function-options.php:531
 msgid "Can accept HTML tags and shortcodes."
 msgstr ""
 
-#: ../includes/functions/function-options.php:470
+#: ../includes/functions/function-options.php:539
 msgid "Blog"
 msgstr ""
 
-#: ../includes/functions/function-options.php:475
+#: ../includes/functions/function-options.php:544
 msgid "Latest Posts"
 msgstr ""
 
-#: ../includes/functions/function-options.php:480
+#: ../includes/functions/function-options.php:549
 msgid "Number of posts"
 msgstr ""
 
-#: ../includes/functions/function-options.php:489
+#: ../includes/functions/function-options.php:558
 msgid "Show thumbnail"
 msgstr ""
 
-#: ../includes/functions/function-options.php:490
+#: ../includes/functions/function-options.php:559
 msgid "Yes, show featured thumbnail"
 msgstr ""
 
-#: ../includes/functions/function-options.php:510
+#: ../includes/functions/function-options.php:579
 msgid "Additional query"
 msgstr ""
 
-#: ../includes/functions/function-options.php:513
+#: ../includes/functions/function-options.php:583
 msgid ""
 "It uses the function WP_Query(). <a href=\"http://codex.wordpress.org/"
 "Class_Reference/WP_Query\" target=\"_blank\">Click here</a> for "
 "documentation."
 msgstr ""
 
-#: ../includes/functions/function-options.php:520
+#: ../includes/functions/function-options.php:590
 msgid "Widgets"
 msgstr ""
 
-#: ../includes/functions/function-options.php:531
+#: ../includes/functions/function-options.php:601
 msgid "Shows number of bucket columns to be used."
 msgstr ""
 
-#: ../includes/functions/function-options.php:546
+#: ../includes/functions/function-options.php:616
 msgid "Advanced"
 msgstr ""
 
-#: ../includes/functions/function-options.php:550
+#: ../includes/functions/function-options.php:620
 msgid "Social"
 msgstr ""
 
-#: ../includes/functions/function-options.php:554
+#: ../includes/functions/function-options.php:624
 msgid "Facebook App ID"
 msgstr ""
 
-#: ../includes/functions/function-options.php:562
+#: ../includes/functions/function-options.php:632
 msgid "Social boxes"
 msgstr ""
 
-#: ../includes/functions/function-options.php:566
+#: ../includes/functions/function-options.php:636
 msgid "Facebook Like"
 msgstr ""
 
-#: ../includes/functions/function-options.php:566
+#: ../includes/functions/function-options.php:636
 msgid "Facebook Share"
 msgstr ""
 
-#: ../includes/functions/function-options.php:566
-#: ../includes/widgets/widget-social.php:45
+#: ../includes/functions/function-options.php:636
+#: ../includes/widgets/widget-social.php:51
 msgid "Twitter"
 msgstr ""
 
-#: ../includes/functions/function-options.php:566
-#: ../includes/widgets/widget-social.php:44
+#: ../includes/functions/function-options.php:636
+#: ../includes/widgets/widget-social.php:50
 msgid "Google+"
 msgstr ""
 
-#: ../includes/functions/function-options.php:566
-#: ../includes/widgets/widget-social.php:47
+#: ../includes/functions/function-options.php:636
+#: ../includes/widgets/widget-social.php:53
 msgid "Pinterest"
 msgstr ""
 
-#: ../includes/functions/function-options.php:566
+#: ../includes/functions/function-options.php:636
 msgid "ShareThis"
 msgstr ""
 
-#: ../includes/functions/function-options.php:569
+#: ../includes/functions/function-options.php:639
 msgid "Pages to appear the social boxes"
 msgstr ""
 
-#: ../includes/functions/function-options.php:573
-#: ../includes/shortcodes/shortcode-wpfunctions.php:169
+#: ../includes/functions/function-options.php:643
+#: ../includes/shortcodes/shortcode-wpfunctions.php:234
 msgid "Blog Posts"
 msgstr ""
 
-#: ../includes/functions/function-options.php:573
+#: ../includes/functions/function-options.php:643
 msgid "Blog Listings"
 msgstr ""
 
-#: ../includes/functions/function-options.php:579
+#: ../includes/functions/function-options.php:650
 msgid "SEO"
 msgstr ""
 
-#: ../includes/functions/function-options.php:583
+#: ../includes/functions/function-options.php:654
 msgid "Activate SEO"
 msgstr ""
 
-#: ../includes/functions/function-options.php:584
+#: ../includes/functions/function-options.php:655
 msgid "Activates SEO options to all pages and posts in the admin."
 msgstr ""
 
-#: ../includes/functions/function-options.php:591
+#: ../includes/functions/function-options.php:662
 msgid "Page title format"
 msgstr ""
 
-#: ../includes/functions/function-options.php:592
+#: ../includes/functions/function-options.php:663
 msgid "Accepts:"
 msgstr ""
 
-#: ../includes/functions/function-options.php:602
+#: ../includes/functions/function-options.php:674
+msgid "Twitter API"
+msgstr ""
+
+#: ../includes/functions/function-options.php:678
+msgid "Consumer key"
+msgstr ""
+
+#: ../includes/functions/function-options.php:686
+msgid "Consumer secret"
+msgstr ""
+
+#: ../includes/functions/function-options.php:694
+msgid "Access token"
+msgstr ""
+
+#: ../includes/functions/function-options.php:702
+msgid "Access token secet"
+msgstr ""
+
+#: ../includes/functions/function-options.php:715
 msgid "Scripts Support"
 msgstr ""
 
-#: ../includes/functions/function-options.php:606
+#: ../includes/functions/function-options.php:719
 msgid "Activate Fancybox"
 msgstr ""
 
-#: ../includes/functions/function-options.php:607
+#: ../includes/functions/function-options.php:720
 msgid ""
 "Activates lightbox in all linked to images, this includes WP Gallery. "
 "Supports jpg, png, gif, and bmp"
 msgstr ""
 
-#: ../includes/functions/function-options.php:613
+#: ../includes/functions/function-options.php:726
 msgid "Responsiveness"
 msgstr ""
 
-#: ../includes/functions/function-options.php:614
+#: ../includes/functions/function-options.php:727
 msgid "Allow special styles for mobile devices"
 msgstr ""
 
-#: ../includes/functions/function-options.php:620
+#: ../includes/functions/function-options.php:733
 msgid "LazyLoad"
 msgstr ""
 
-#: ../includes/functions/function-options.php:621
+#: ../includes/functions/function-options.php:734
 msgid "Activates LazyLoad in all images"
 msgstr ""
 
-#: ../includes/functions/function-options.php:630
+#: ../includes/functions/function-options.php:743
 msgid "Custom Scripts"
 msgstr ""
 
-#: ../includes/functions/function-options.php:635
+#: ../includes/functions/function-options.php:748
 msgid ""
 "Scripts and Links placed inside the head tag. Can have Google Analytics here."
 msgstr ""
 
-#: ../includes/functions/function-options.php:641
+#: ../includes/functions/function-options.php:754
 msgid "Scripts placed below the footer just before the end body tag."
 msgstr ""
 
-#: ../includes/functions/function-options.php:650
+#: ../includes/functions/function-options.php:763
 #: ../includes/widgets/widget-testimonial.php:15
 msgid "Testimonials"
 msgstr ""
 
-#: ../includes/functions/function-options.php:654
+#: ../includes/functions/function-options.php:767
 msgid "Testimonial Manager"
 msgstr ""
 
-#: ../includes/functions/function-options.php:658
+#: ../includes/functions/function-options.php:771
 msgid "Unlimited testimonial with drag and drop sortings."
 msgstr ""
 
-#: ../includes/functions/function-options.php:668
+#: ../includes/functions/function-options.php:781
 msgid "Admin"
 msgstr ""
 
-#: ../includes/functions/function-options.php:672
+#: ../includes/functions/function-options.php:785
 msgid "WP Admin"
 msgstr ""
 
-#: ../includes/functions/function-options.php:676
+#: ../includes/functions/function-options.php:789
 msgid "Login background color"
 msgstr ""
 
-#: ../includes/functions/function-options.php:682
+#: ../includes/functions/function-options.php:795
 msgid "Updates"
 msgstr ""
 
-#: ../includes/functions/function-options.php:686
+#: ../includes/functions/function-options.php:799
 msgid "Remove WP core updates"
 msgstr ""
 
-#: ../includes/functions/function-options.php:686
+#: ../includes/functions/function-options.php:799
 msgid "Remove plugin updates"
 msgstr ""
 
-#: ../includes/functions/function-options.php:692
+#: ../includes/functions/function-options.php:805
 msgid "Offline page"
 msgstr ""
 
-#: ../includes/functions/function-options.php:696
+#: ../includes/functions/function-options.php:809
 msgid "Static Page"
 msgstr ""
 
-#: ../includes/functions/function-options.php:706
+#: ../includes/functions/function-options.php:819
 msgid "Maintenance"
 msgstr ""
 
-#: ../includes/functions/function-options.php:709
+#: ../includes/functions/function-options.php:822
 msgid "Backup and Restore Options"
 msgstr ""
 
-#: ../includes/functions/function-options.php:710
+#: ../includes/functions/function-options.php:823
 msgid ""
 "You can use the two buttons below to backup your current options, and then "
 "restore it back at a later time. This is useful if you want to experiment on "
 "the options but would like to keep the old settings in case you need it back."
 msgstr ""
 
-#: ../includes/functions/function-options.php:715
+#: ../includes/functions/function-options.php:828
 msgid "Transfer Theme Options Data"
 msgstr ""
 
-#: ../includes/functions/function-options.php:716
+#: ../includes/functions/function-options.php:829
 msgid ""
 "You can tranfer the saved options data between different installs by copying "
 "the text inside the text box. To import data from another install, replace "
@@ -1141,52 +1325,52 @@ msgid ""
 "\"Import Options\"."
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:209
+#: ../includes/functions/function-woocommerce.php:282
 msgid "Your total cart:"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:209
-#: ../includes/functions/function-woocommerce.php:345
+#: ../includes/functions/function-woocommerce.php:282
+#: ../includes/functions/function-woocommerce.php:418
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:225
+#: ../includes/functions/function-woocommerce.php:298
 msgid "Displays a categories with images/description"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:226
+#: ../includes/functions/function-woocommerce.php:299
 msgid "Cyon WooCommerce Categories"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:233
+#: ../includes/functions/function-woocommerce.php:306
 msgid "Categories"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:249
+#: ../includes/functions/function-woocommerce.php:322
 msgid "Order by:"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:251
+#: ../includes/functions/function-woocommerce.php:324
 msgid "Category Order"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:255
+#: ../includes/functions/function-woocommerce.php:328
 msgid "Show image"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:256
+#: ../includes/functions/function-woocommerce.php:329
 msgid "Show Description"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:257
+#: ../includes/functions/function-woocommerce.php:330
 msgid "Show post counts"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:259
+#: ../includes/functions/function-woocommerce.php:332
 msgid "Image Size:"
 msgstr ""
 
-#: ../includes/functions/function-woocommerce.php:318
+#: ../includes/functions/function-woocommerce.php:391
 msgid "No product categories exist."
 msgstr ""
 
@@ -1297,23 +1481,23 @@ msgid "Submit Form"
 msgstr ""
 
 #: ../includes/shortcodes/shortcode-jquery.php:12
-#: ../includes/shortcodes/shortcode-jquery.php:26
-#: ../includes/shortcodes/shortcode-jquery.php:58
+#: ../includes/shortcodes/shortcode-jquery.php:31
+#: ../includes/shortcodes/shortcode-jquery.php:72
 msgid "Title Here"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-media.php:102
-#: ../includes/shortcodes/shortcode-media.php:159
+#: ../includes/shortcodes/shortcode-media.php:105
+#: ../includes/shortcodes/shortcode-media.php:163
 #: ../includes/widgets/widget-media.php:68
 #: ../includes/widgets/widget-media.php:95
 msgid "No video playback capabilities"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-media.php:118
+#: ../includes/shortcodes/shortcode-media.php:121
 msgid "No video source specified."
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-media.php:167
+#: ../includes/shortcodes/shortcode-media.php:171
 msgid "No audio source specified."
 msgstr ""
 
@@ -1321,24 +1505,32 @@ msgstr ""
 msgid "See details"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-typography.php:369
+#: ../includes/shortcodes/shortcode-pricegrid.php:87
+msgid "Yes"
+msgstr ""
+
+#: ../includes/shortcodes/shortcode-pricegrid.php:89
+msgid "No"
+msgstr ""
+
+#: ../includes/shortcodes/shortcode-typography.php:386
 msgid "Back to top"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-wpfunctions.php:162
+#: ../includes/shortcodes/shortcode-wpfunctions.php:227
 msgid "Blog Categories"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-wpfunctions.php:162
-#: ../includes/shortcodes/shortcode-wpfunctions.php:165
+#: ../includes/shortcodes/shortcode-wpfunctions.php:227
+#: ../includes/shortcodes/shortcode-wpfunctions.php:230
 msgid "feed"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-wpfunctions.php:163
+#: ../includes/shortcodes/shortcode-wpfunctions.php:228
 msgid "Blog Archives"
 msgstr ""
 
-#: ../includes/shortcodes/shortcode-wpfunctions.php:165
+#: ../includes/shortcodes/shortcode-wpfunctions.php:230
 msgid "Product Categories"
 msgstr ""
 
@@ -1605,27 +1797,39 @@ msgstr ""
 msgid "Socialize"
 msgstr ""
 
-#: ../includes/widgets/widget-social.php:43
+#: ../includes/widgets/widget-social.php:49
 msgid "Facebook"
 msgstr ""
 
-#: ../includes/widgets/widget-social.php:46
+#: ../includes/widgets/widget-social.php:52
 msgid "Linkedin"
 msgstr ""
 
-#: ../includes/widgets/widget-social.php:48
+#: ../includes/widgets/widget-social.php:54
+msgid "Instagram"
+msgstr ""
+
+#: ../includes/widgets/widget-social.php:55
 msgid "Youtube"
 msgstr ""
 
-#: ../includes/widgets/widget-social.php:49
-msgid "Vimeo"
+#: ../includes/widgets/widget-social.php:56
+msgid "Tumblr"
 msgstr ""
 
-#: ../includes/widgets/widget-social.php:50
+#: ../includes/widgets/widget-social.php:57
 msgid "Flickr"
 msgstr ""
 
-#: ../includes/widgets/widget-social.php:52
+#: ../includes/widgets/widget-social.php:58
+msgid "Dribbble"
+msgstr ""
+
+#: ../includes/widgets/widget-social.php:59
+msgid "Github"
+msgstr ""
+
+#: ../includes/widgets/widget-social.php:61
 msgid "RSS"
 msgstr ""
 
@@ -1682,7 +1886,36 @@ msgid "Cyon Testimonial"
 msgstr ""
 
 #: ../includes/widgets/widget-testimonial.php:23
+#: ../includes/widgets/widget-twitter.php:29
 msgid "Enable slide"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:7
+msgid "Displays Twitter Feed"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:8
+msgid "Cyon Twitter"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:15
+msgid "Twitter Updates"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:27
+msgid "Username"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:28
+msgid "Count"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:61
+msgid "Error: Cannot load updates"
+msgstr ""
+
+#: ../includes/widgets/widget-twitter.php:75
+msgid "ago"
 msgstr ""
 
 #: ../includes/widgets/widget-videogallery.php:7
