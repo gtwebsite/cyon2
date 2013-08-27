@@ -533,6 +533,16 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	font-size:200%;
 }
 
+/* =Bar
+----------------------------------------------- */
+.cyon-bar {
+	background:#f4f4f4;
+}
+.cyon-bar, .cyon-bar dt, .cyon-bar dd {
+	height:30px;
+	line-height:30px;
+}
+
 
 /* =WP PageNavi
 ----------------------------------------------- */

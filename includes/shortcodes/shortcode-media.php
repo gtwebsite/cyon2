@@ -307,7 +307,7 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 				});
 			</script> 
 		";
-	}elseif($attr['style']=='slider'){
+	}elseif($attr['style']=='slide'){
 		ob_start();
 			wp_enqueue_script('fotorama');
 			wp_enqueue_style('fotorama');
@@ -315,7 +315,7 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 	}
 	
 	$size_class = sanitize_html_class( $size );
-	if($attr['style']=='slider'){
+	if($attr['style']=='slide'){
 		$gallery_div = $gallery_script. "\n\t\t" . "<div id='$selector' class='fotorama' data-nav='thumbs' data-width='100%' data-autoplay='true'>";
 	}else{
 		$gallery_div = $gallery_script. "\n\t\t" . "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
@@ -337,7 +337,7 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 		if ( isset( $image_meta['height'], $image_meta['width'] ) )
 			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
 
-		if($attr['style']=='slider'){
+		if($attr['style']=='slide'){
 			$large_image_url = wp_get_attachment_image_src( $id, $attr['size']);
 			$thumbnail_image_url = wp_get_attachment_image_src( $id, 'thumbnail');
 			$output .= '<a href="'.$large_image_url[0].'"><img src="'.$thumbnail_image_url[0].'" alt="" data-caption="'. wptexturize($attachment->post_excerpt) .'" /></a>';
@@ -348,20 +348,20 @@ function cyon_post_gallery( $blank = NULL, $attr ) {
 					$image_output
 				</{$icontag}>";
 		}
-		if ( $captiontag && trim($attachment->post_excerpt) && $attr['style']!='slider' ) {
+		if ( $captiontag && trim($attachment->post_excerpt) && $attr['style']!='slide' ) {
 			$output .= "
 				<{$captiontag} class='wp-caption-text gallery-caption'>
 				" . wptexturize($attachment->post_excerpt) . "
 				</{$captiontag}>";
 		}
-		if($attr['style']!='slider'){
+		if($attr['style']!='slide'){
 			$output .= "</{$itemtag}>";
 			if ( $columns > 0 && ++$i % $columns == 0 )
 				$output .= '<br style="clear: both" />';
 		}
 	}
 
-	if($attr['style']=='slider'){
+	if($attr['style']=='slide'){
 		$output .= "</div>\n";
 	}else{
 		$output .= "

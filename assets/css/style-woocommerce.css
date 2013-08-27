@@ -83,7 +83,7 @@ ins { padding:0; background:none; }
 .star-rating span { display:block; height:16px; background:url(../images/star.png) 0 -16px repeat-x; overflow:hidden; text-indent:-9999px; }
 #comments div[itemprop='aggregateRating'] .star-rating { float:right; position:relative; top:8px; }
 #comments .commentlist .comment_container img { float:left; margin:0 10px 0 0; }
-#comments .commentlist .comment_container .comment-text { margin-left:70px; }
+
 
 .widget .product_list_widget li { position:relative; min-height:62px; padding-left:70px; }
 .widget .product_list_widget li img { width:60px; height:60px; position:absolute; top:0; left:0; }

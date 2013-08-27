@@ -835,6 +835,31 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 }
 
 
+/* =Bar
+----------------------------------------------- */
+.cyon-bar {
+	max-width:100%;
+	position:relative;
+	margin:5px 0;
+}
+.cyon-bar dt {
+	padding:0 10px;
+	z-index:2;
+}
+.cyon-bar dd {
+	margin:0;
+	z-index:1;
+}
+.cyon-bar dt, .cyon-bar dd {
+	height:40px;
+	line-height:40px;
+	position:absolute;
+	top:0;
+}
+.cyon-bar dd span {
+	display:none;
+}
+
 /* =Carousel
 ----------------------------------------------- */
 .carousel {

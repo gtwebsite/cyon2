@@ -164,7 +164,7 @@
 	.swiper-container .swiper-caption h3, .swiper-container .swiper-caption p {
 		color:inherit;
 	}
-	.swiper-container .swiper-left, .swiper-container .swiper-right {
+	.swiper-right, .swiper-left {
 		display:none;
 	}
 }

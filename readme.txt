@@ -30,6 +30,7 @@
 * Added Fotorama and Camera on homepage slider
 * Added carousel, isotope and columns on testimonial shortcode
 * Added Team
+* Added Progress bar shortcode
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4

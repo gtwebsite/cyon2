@@ -182,11 +182,11 @@ function cyon_blog( $atts, $content = null ) {
 				jQuery(\'#bloglist-'.$instance.' .swiper-left\').on(\'click\', function(e){
 					e.preventDefault();
 					cyonBloglist'.$instance.'.swipePrev();
-				})
+				});
 				jQuery(\'#bloglist-'.$instance.' .swiper-right\').on(\'click\', function(e){
 					e.preventDefault();
 					cyonBloglist'.$instance.'.swipeNext();
-				})
+				});
 			});
 		</script>';
 	}elseif($atts['style']=='masonry'){

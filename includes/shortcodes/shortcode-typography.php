@@ -17,6 +17,7 @@ function cyon_button( $atts, $content = null ) {
 			title		=> ''
 		), $atts);
 	$classname = '';
+	$style = '';
 	if($atts['classname']){
 		$classname .= ' '.$atts['classname'];
 	}
@@ -35,7 +36,7 @@ function cyon_button( $atts, $content = null ) {
 		$title = ' title="'. $atts['title'] . '"';
 		$classname .= ' hastip';
 	}
-	$html = '<a href="'. $atts['url'] . '" class="btn'.$classname.'"'.$title.'>'. $icon . $content . '</a>';
+	$html = '<a href="'. $atts['url'] . '" class="btn'.$classname.'"'.$title.$style.'>'. $icon . $content . '</a>';
 	return $html;
 }
 add_shortcode('button','cyon_button'); 
@@ -423,4 +424,31 @@ function cyon_social( $atts, $content = null ) {
 }
 add_shortcode('social','cyon_social'); 
 
+
+/* =Progress Bar
+use [bar color='' text_color='' size='' icon='' classname=''] xxx [/bar]
+----------------------------------------------- */
+function cyon_bar( $atts, $content = null ) {
+	$atts = shortcode_atts(
+		array(
+			color		=> '#444',
+			text_color	=> '#fff',
+			size		=> '100%',
+			icon		=> '',
+			classname	=> ''
+		), $atts);
+	$classname = '';
+	if($atts['classname']){
+		$classname .= ' '.$atts['classname'];
+	}
+	$icon = '';
+	if($atts['icon']){
+		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
+	}else{
+		$icon = '<span class="icon-check"></span>';
+	}
+	$html = '<dl class="cyon-bar hastip'.$classname.'" title="'.$atts['size'].'"><dt style="color:'.$atts['text_color'].'">'. $icon . $content . '</dt><dd style="width:'.$atts['size'].';background-color:'.$atts['color'].';"><span>'.$atts['size'].'</span></dd></dl>';
+	return $html;
+}
+add_shortcode('bar','cyon_bar'); 
 
