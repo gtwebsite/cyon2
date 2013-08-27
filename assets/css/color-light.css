@@ -189,6 +189,7 @@ input.error:-moz-placeholder, textarea.error:-moz-placeholder {
 }
 
 
+
 /* =Boxes
 ----------------------------------------------- */
 .box, blockquote, code {
@@ -453,7 +454,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	margin-top:-10px;  box-shadow:0 2px 20px rgba(0,0,0,.3); position:relative;
 }
 .grid .tooltip {
-	display:none; position:absolute; top:80%; left:50%; width:200px; background:#fffcdf; border-radius:5px; box-shadow:0 3px 10px rgba(0,0,0,.5); padding:10px;
+	display:none; position:absolute; top:80%; left:50%; width:200px; background:#000; border-radius:5px; box-shadow:0 3px 10px rgba(0,0,0,.5); padding:10px;
 }
 .grid .tooltip-holder:hover {
 	position:relative; cursor:pointer;
@@ -530,9 +531,6 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	float:left;
 	margin:0 10px 5px 0;
 	font-size:200%;
-}
-.cyon-testimonial .swiper-slide-wrapper {
-	padding:5px;
 }
 
 

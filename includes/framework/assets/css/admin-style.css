@@ -165,6 +165,7 @@ border-radius: 2px;
 #of_container #of-nav li.footer a {background: url(../images/icon-footer.png) no-repeat;}
 #of_container #of-nav li.advanced a {background: url(../images/icon-advanced.png) no-repeat;}
 #of_container #of-nav li.admin a {background: url(../images/icon-admin.png) no-repeat;}
+#of_container #of-nav li.team a{ background-image:url(../images/icon-addressbook.png);}
 #of_container #of-nav li.testimonials a{ background-image:url(../images/icon-chat.png);}
 #of_container #of-nav li.widgetareas a{ background-image:url(../images/icon-widget.png);}
 

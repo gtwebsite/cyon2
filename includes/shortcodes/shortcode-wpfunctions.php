@@ -112,7 +112,7 @@ function cyon_blog( $atts, $content = null ) {
 			classname 	=> '',
 			cols	 	=> '',
 			cat_id 		=> 1,
-			style		=> 'list'
+			style		=> 'list' // list, slide, masonry
 		), $atts);
 	static $instance = 0;
 	$instance++;
@@ -133,11 +133,15 @@ function cyon_blog( $atts, $content = null ) {
 		$wrapper = '<li class="span'.$cols.'">';
 		$wrapper_end = '</li>';
 		$class .= ' row-fluid';
-		$result .= '<ul class="'.$class.'">';
+		$result .= '<ul class="'.$class.'" id="bloglist-'.$instance.'">';
 	}elseif($atts['style']=='slide'){
 		$result .= '<div class="carousel '.$class.'" id="bloglist-'.$instance.'"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-container"><div class="swiper-wrapper">';
 		$wrapper = '<div class="swiper-slide"><div class="swiper-slide-wrapper">';
 		$wrapper_end = '</div></div>';
+	}elseif($atts['style']=='masonry'){
+		$wrapper = '<li class="article"><div class="article-wrapper">';
+		$wrapper_end = '</div></li>';
+		$result .= '<ul class="'.$class.'" id="bloglist-'.$instance.'">';
 	}
 	foreach ( $posts as $post ) {
 		setup_postdata($post);
@@ -145,7 +149,9 @@ function cyon_blog( $atts, $content = null ) {
 		if($atts['thumbnail']=='yes'){
 			$result .= '<div class="entry-featured-image"><a href="' . get_page_link( $post->ID ) . '">'.get_the_post_thumbnail( $post->ID, $data['content_thumbnail_size'] ).'</a></div>';
 		}
-		$result .= '<h4><a href="' . get_page_link( $post->ID ) . '">' . $post->post_title . '</a></h4>';
+		$result .= '<h4><a href="' . get_page_link( $post->ID ) . '">' . $post->post_title . '</a></h4>
+		<p class="meta"><span class="posted-date"><span class="posted-day">'.esc_html( get_the_time('d') ).'</span> <span class="posted-month">'.esc_html( get_the_time('M') ).'</span> <span class="posted-year">'.esc_html( get_the_time('Y') ).'</span></span></p>';
+		
 		if($atts['excerpt']=='yes'){
 			if($post->post_excerpt){
 				$result .= $post->post_excerpt;
@@ -183,6 +189,40 @@ function cyon_blog( $atts, $content = null ) {
 				})
 			});
 		</script>';
+	}elseif($atts['style']=='masonry'){
+		$result .= "</ul>
+		<script type=\"text/javascript\">
+			jQuery(window).load(function(){
+				jQuery('#bloglist-".$instance."').imagesLoaded(function(){
+					jQuery('#bloglist-".$instance."').isotope({
+						itemSelector: 'li.article',
+						animationOptions: {
+							duration: 750,
+							easing: 'linear',
+							queue: false
+						}
+					});
+					checkMasonryBloglist".$instance."();
+					jQuery(window).trigger('scroll');
+				});
+			});
+			function checkMasonryBloglist".$instance."() {
+				var pagesize = jQuery('.page_wrapper').width();
+				if (pagesize <= 480) {
+					jQuery('#bloglist-".$instance." li.article').width(jQuery('#content').width());
+				}else if (pagesize <= 974) {
+					jQuery('#bloglist-".$instance." li.article').width((jQuery('#content').width() / 2)-2);
+				}else{
+					jQuery('#bloglist-".$instance." li.article').width((jQuery('#content').width() / ".$atts['cols'].")-3);
+				}
+				jQuery(window).trigger('scroll');
+			}
+			jQuery(window).resize(checkMasonryBloglist".$instance.");
+			jQuery(window).scroll(function(){
+				jQuery('#bloglist-".$instance."').isotope('reLayout');
+			});
+		</script>
+		";
 	}
 	wp_reset_query();
 	return $result;

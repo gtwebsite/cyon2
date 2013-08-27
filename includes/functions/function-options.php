@@ -775,6 +775,23 @@ function cyon_of_options() {
 	/* Create End ------- */
 	$of_options[] = array( 'type' => 'group_end');
 
+	/* =Team
+	----------------------------------------------- */
+	$of_options[] = array( 'name' => __( 'Team', 'cyon' ),
+						'type' => 'heading');
+
+	/* Create Begin ------- */
+	$of_options[] = array( 'name' => __( 'Team Manager', 'cyon' ),
+						'type' => 'group_begin');
+
+	/* Slider */
+	$of_options[] = array( 'desc' => __( 'Unlimited member with drag and drop sortings.', 'cyon' ),
+						'id' => 'team',
+						'type' => 'team');
+
+	/* Create End ------- */
+	$of_options[] = array( 'type' => 'group_end');
+
 
 	/* =Admin
 	----------------------------------------------- */

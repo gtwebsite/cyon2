@@ -3,7 +3,6 @@
 * by the Greater Than Website team, http://gtwebsite.com/
 
 == Todos ==
-* Messagebox
 * Portfolio
 
 == Description ==
@@ -29,7 +28,8 @@
 * Added Isotope on product list
 * Added Tooltipster
 * Added Fotorama and Camera on homepage slider
-* Added carousel and columns on testimonial shortcode
+* Added carousel, isotope and columns on testimonial shortcode
+* Added Team
 
 = 2.0.0 =
 * Replaced framework to SMOF 1.4

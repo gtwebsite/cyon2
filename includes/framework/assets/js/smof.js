@@ -436,6 +436,35 @@ jQuery(document).ready(function($){
 		return false; //prevent jumps, as always..
 	});	
 
+	//Add new member
+	$(".team_add_button").live('click', function(){		
+		var slidesContainer = $(this).prev();
+		var sliderId = slidesContainer.attr('id');
+		var sliderInt = $('#'+sliderId).attr('rel');
+		
+		var numArr = $('#'+sliderId +' li').find('.order').map(function() { 
+			var str = this.id; 
+			str = str.replace(/\D/g,'');
+			str = parseFloat(str);
+			return str;			
+		}).get();
+		
+		var maxNum = Math.max.apply(Math, numArr);
+		if (maxNum < 1 ) { maxNum = 0};
+		var newNum = maxNum + 1;
+		
+		var newSlide = '<li class="temphide"><div class="slide_header"><strong>Member ' + newNum + '</strong><input type="hidden" class="slide of-input order" name="' + sliderId + '[' + newNum + '][order]" id="' + sliderId + '_slide_order-' + newNum + '" value="' + newNum + '"><a class="slide_edit_button" href="#">Edit</a></div><div class="slide_body" style="display: none; "><label>Name</label><input class="slide of-input of-slider-title" name="' + sliderId + '[' + newNum + '][title]" id="' + sliderId + '_' + newNum + '_slide_title" value=""><label>Title / Job</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][job]" id="' + sliderId + '_' + newNum + '_slide_job" value=""><label>Phone Number</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][phone]" id="' + sliderId + '_' + newNum + '_slide_phone" value=""><label>Photo</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][url]" id="' + sliderId + '_' + newNum + '_slide_url" value=""><div class="upload_button_div"><span class="button media_upload_button" id="' + sliderId + '_' + newNum + '" rel="'+sliderInt+'">Upload</span><span class="button mlu_remove_button hide" id="reset_' + sliderId + '_' + newNum + '" title="' + sliderId + '_' + newNum + '">Remove</span></div><div class="screenshot"></div><label>Text</label><textarea class="slide of-input" name="' + sliderId + '[' + newNum + '][description]" id="' + sliderId + '_' + newNum + '_slide_text" cols="8" rows="8"></textarea><label>Email</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][email]" id="' + sliderId + '_' + newNum + '_slide_email" value=""><label>Facebook URL</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][facebook]" id="' + sliderId + '_' + newNum + '_slide_facebook" value=""><label>Twitter URL</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][twitter]" id="' + sliderId + '_' + newNum + '_slide_twitter" value=""><label>Google Plus URL</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][g_plus]" id="' + sliderId + '_' + newNum + '_slide_g_plus" value=""><label>LinkedIn URL</label><input class="slide of-input" name="' + sliderId + '[' + newNum + '][linkedin]" id="' + sliderId + '_' + newNum + '_slide_linkedin" value=""><a class="slide_delete_button" href="#">Delete</a><div class="clear"></div></div></li>';
+		
+		slidesContainer.append(newSlide);
+		$('.temphide').fadeIn('fast', function() {
+			$(this).removeClass('temphide');
+		});
+				
+		of_image_upload(); // re-initialise upload image..
+		
+		return false; //prevent jumps, as always..
+	});	
+
 	$(".newslide_add_button").live('click', function(){		
 		var slidesContainer = $(this).prev();
 		var sliderId = slidesContainer.attr('id');

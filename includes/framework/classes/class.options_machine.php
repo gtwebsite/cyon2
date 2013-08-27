@@ -593,6 +593,37 @@ class Options_Machine {
 
 				break;
 
+				/***** Added by Gtwebsite *****/
+				//drag & drop testimonial manager
+				case 'team':
+					if(!isset($data[$value['id']])) {
+						$data[$value['id']] = '';
+					}
+					$_id = strip_tags( strtolower($value['id']) );
+					$int = '';
+					$int = optionsframework_mlu_get_silentpost( $_id );
+					$output .= '<div class="slider"><ul id="'.$value['id'].'" rel="'.$int.'">';
+					$team = $data[$value['id']];
+					$count = count($team);
+					if(!isset($value['std'])) $value['std'] = '';
+					if ($count < 2) {
+						$oldorder = 1;
+						$order = 1;
+						$output .= Options_Machine::optionsframework_team_function($value['id'],$value['std'],$oldorder,$order,$int);
+					} else {
+						$i = 0;
+						foreach ($team as $member) {
+							$oldorder = $member['order'];
+							$i++;
+							$order = $i;
+							$output .= Options_Machine::optionsframework_team_function($value['id'],$value['std'],$oldorder,$order,$int);
+						}
+					}			
+					$output .= '</ul>';
+					$output .= '<a href="#" class="button team_add_button">'. __( 'Add New Member','cyon' ) .'</a></div>';
+
+				break;
+
 				case 'newslider':
 					/***** Updated by Gtwebsite *****/
 					if(!isset($data[$value['id']])) {
@@ -889,6 +920,102 @@ class Options_Machine {
 		$slider .= '<label>Text</label>';
 		$slider .= '<textarea class="slide of-input" name="'. $id .'['.$order.'][description]" id="'. $id .'_'.$order .'_slide_description" cols="8" rows="8">'.stripslashes($val['description']).'</textarea>';
 	
+		$slider .= '<a class="slide_delete_button" href="#">'.__( 'Delete', 'cyon' ).'</a>';
+	    $slider .= '<div class="clear"></div>' . "\n";
+	
+		$slider .= '</div>';
+		$slider .= '</li>';
+	
+		return $slider;
+		
+	}
+
+	/**
+	 * Drag and drop team manager
+	 *
+	 * @uses get_option()
+	 *
+	 * @return string
+	 */
+	public static function optionsframework_team_function($id,$std,$oldorder,$order,$int){
+	
+	    $data = get_option(OPTIONS);
+		
+		if(!isset($data[$id])) $data[$id] = '';
+
+		$slider = '';
+		$slide = array();
+	    $slide = $data[$id];
+		
+	    if (isset($slide[$oldorder])) { $val = $slide[$oldorder]; } else {$val = $std;}
+		
+		//initialize all vars
+		$slidevars = array('title','url','link','description');
+		
+		foreach ($slidevars as $slidevar) {
+			if (!isset($val[$slidevar])) {
+				$val[$slidevar] = '';
+			}
+		}
+		
+		//begin slider interface	
+		if (!empty($val['title'])) {
+			$slider .= '<li><div class="slide_header"><strong>'.stripslashes($val['title']).'</strong>';
+		} else {
+			$slider .= '<li><div class="slide_header"><strong>'.__( 'Member', 'cyon' ).' '.$order.'</strong>';
+		}
+		
+		$slider .= '<input type="hidden" class="slide of-input order" name="'. $id .'['.$order.'][order]" id="'. $id.'_'.$order .'_slide_order" value="'.$order.'" />';
+	
+		$slider .= '<a class="slide_edit_button" href="#">'.__( 'Edit', 'cyon' ).'</a></div>';
+		
+		$slider .= '<div class="slide_body">';
+		
+		$slider .= '<label>'.__( 'Name', 'cyon' ).'</label>';
+		$slider .= '<input class="slide of-input of-slider-title" name="'. $id .'['.$order.'][title]" id="'. $id .'_'.$order .'_slide_title" value="'. stripslashes($val['title']) .'" />';
+		
+		$slider .= '<label>'.__( 'Title / Job', 'cyon' ).'</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][job]" id="'. $id .'_'.$order .'_slide_job" value="'. $val['job'] .'" />';
+
+		$slider .= '<label>'.__( 'Phone Number', 'cyon' ).'</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][phone]" id="'. $id .'_'.$order .'_slide_phone" value="'. $val['phone'] .'" />';
+
+		$slider .= '<label>'.__( 'Photo', 'cyon' ).'</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
+		
+		$slider .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'" rel="' . $int . '">'.__( 'Upload', 'cyon' ).'</span>';
+		
+		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}
+		$slider .= '<span class="button mlu_remove_button '. $hide.'" id="reset_'. $id .'_'.$order .'" title="' . $id . '_'.$order .'">'.__( 'Remove', 'cyon' ).'</span>';
+		$slider .='</div>' . "\n";
+		$slider .= '<div class="screenshot">';
+		if(!empty($val['url'])){
+			
+	    	$slider .= '<a class="of-uploaded-image" href="'. $val['url'] . '">';
+	    	$slider .= '<img class="of-option-image" id="image_'.$id.'_'.$order .'" src="'.$val['url'].'" alt="" />';
+	    	$slider .= '</a>';
+			
+			}
+		$slider .= '</div>';	
+		
+		$slider .= '<label>Text</label>';
+		$slider .= '<textarea class="slide of-input" name="'. $id .'['.$order.'][description]" id="'. $id .'_'.$order .'_slide_description" cols="8" rows="8">'.stripslashes($val['description']).'</textarea>';
+	
+		$slider .= '<label>'.__( 'Email', 'cyon' ).'</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][email]" id="'. $id .'_'.$order .'_slide_email" value="'. $val['email'] .'" />';
+
+		$slider .= '<label>'.__( 'Facebook', 'cyon' ).' URL</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][facebook]" id="'. $id .'_'.$order .'_slide_facebook" value="'. $val['facebook'] .'" />';
+
+		$slider .= '<label>'.__( 'Twitter', 'cyon' ).' URL</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][twitter]" id="'. $id .'_'.$order .'_slide_twitter" value="'. $val['twitter'] .'" />';
+
+		$slider .= '<label>'.__( 'Google Plus', 'cyon' ).' URL</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][g_plus]" id="'. $id .'_'.$order .'_slide_g_plus" value="'. $val['g_plus'] .'" />';
+
+		$slider .= '<label>'.__( 'LinkedIn', 'cyon' ).' URL</label>';
+		$slider .= '<input class="slide of-input" name="'. $id .'['.$order.'][linkedin]" id="'. $id .'_'.$order .'_slide_linkedin" value="'. $val['linkedin'] .'" />';
+
 		$slider .= '<a class="slide_delete_button" href="#">'.__( 'Delete', 'cyon' ).'</a>';
 	    $slider .= '<div class="clear"></div>' . "\n";
 	

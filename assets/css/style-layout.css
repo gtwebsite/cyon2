@@ -773,7 +773,8 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	padding:0;
 }
 .cyon-testimonial {
-	overflow:hidden;
+	overflow:visible;
+	position:relative;
 }
 .cyon-testimonial > ul {
 	padding:0;
@@ -781,6 +782,7 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .cyon-testimonial > ul > li {
 	margin:0 0 20px 0;
 	padding:0;
+	list-style:none;
 }
 .cyon-testimonial blockquote {
 	border:none;
@@ -802,7 +804,35 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .cyon-twitter .swiper-left, .cyon-twitter .swiper-right, .cyon-twitter .swiper-pager {
 	display:none;
 }
+.cyon-testimonial .swiper-slide-wrapper {
+	padding:5px;
+}
 
+
+/* =Team
+----------------------------------------------- */
+.cyon-team {
+	overflow:visible;
+	position:relative;
+}
+.cyon-team > ul {
+	padding:0;
+}
+.cyon-team > ul > li {
+	margin:0 0 20px 0;
+	padding:0;
+	list-style:none;
+}
+.cyon-team .swiper-slide-wrapper {
+	padding:5px;
+}
+.cyon-team h4 {
+	margin-bottom:5px;
+}
+.cyon-team .job {
+	font-size:85%;
+	margin-top:0;
+}
 
 
 /* =Carousel
@@ -1051,8 +1081,15 @@ p.nocomments {
 }
 .subpages > li, .postlist > li {
 	margin-bottom:20px;
+	list-style:none;
 }
-
+.postlist h4 {
+	margin-bottom:5px;
+}
+.postlist .meta {
+	font-size:85%;
+	margin-top:0;
+}
 
 
 /* =Blocks

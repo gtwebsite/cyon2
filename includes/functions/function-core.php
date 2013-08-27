@@ -1061,6 +1061,12 @@ function cyon_footer_jquery(){
 				closeEffect	: 'none',
 				helpers : {
 					media : { }
+				},
+				beforeShow: function(){
+					jQuery('#page').css('-webkit-filter','blur(6px)');
+				},
+				afterClose: function(){
+					jQuery('#page').css('-webkit-filter','blur(0)');
 				}
 			});
 			jQuery('.fancybox').fancybox({
@@ -1071,6 +1077,12 @@ function cyon_footer_jquery(){
 					title : {
 						type : 'over'
 					}
+				},
+				beforeShow: function(){
+					jQuery('#page').css('-webkit-filter','blur(6px)');
+				},
+				afterClose: function(){
+					jQuery('#page').css('-webkit-filter','blur(0)');
 				}
 			});
 			jQuery('.iframe').fancybox({
@@ -1084,7 +1096,13 @@ function cyon_footer_jquery(){
 				autoSize	: false,
 				closeClick	: false,
 				openEffect	: 'none',
-				closeEffect	: 'none'
+				closeEffect	: 'none',
+				beforeShow: function(){
+					jQuery('#page').css('-webkit-filter','blur(6px)');
+				},
+				afterClose: function(){
+					jQuery('#page').css('-webkit-filter','blur(0)');
+				}
 			});
 			jQuery('.gallery a').filter(function() {
 				return jQuery(this).attr('href').match(/\.(jpg|jpeg|png|gif|bmp|JPG|JPEG|PNG|GIF|BMP)/);
@@ -1097,6 +1115,12 @@ function cyon_footer_jquery(){
 					title : {
 						type : 'over'
 					}
+				},
+				beforeShow: function(){
+					jQuery('#page').css('-webkit-filter','blur(6px)');
+				},
+				afterClose: function(){
+					jQuery('#page').css('-webkit-filter','blur(0)');
 				}
 			});
 			<?php } ?>
