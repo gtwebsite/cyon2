@@ -112,8 +112,30 @@ ins { padding:0; background:none; }
 .type-product .product_meta { margin-bottom:20px; }
 .type-product .group_table { width:100%; }
 .type-product .group_table td { padding:10px 0; border-bottom:1px solid #ddd; }
-.type-product .tabs { border-bottom:0; }
-.type-product .tabs h2 { }
+
+.type-product .woocommerce-tabs .tabs {
+	margin:0 0 7px 0; padding:0;
+	position:relative;
+	z-index:2;
+}
+.type-product .woocommerce-tabs .tabs li:first-chid a {
+	color:inherit; cursor:default; background:#fff; border-bottom-color:#fff;
+}
+.type-product .woocommerce-tabs .tabs li {
+	display:inline;
+}
+.type-product .woocommerce-tabs .tabs li a {
+	text-shadow:1px 1px 0 #fff; border:1px solid #efefef; white-space:nowrap; border-top-left-radius:3px; border-top-right-radius:3px; box-shadow:inset 1px 1px 1px rgba(255,255,255,.5); background:#f8f8f8; padding:7px 10px;
+	transition:background-color ease-in-out .3s;
+	-moz-transition:background-color ease-in-out .3s;
+	-webkit-transition:background-color ease-in-out .3s;
+	-ms-transition:background-color ease-in-out .3s;
+}
+.type-product .woocommerce-tabs .tabs a.active, .type-product .woocommerce-tabs .tabs .active a {
+	color:inherit; cursor:default; background:#fff; border-bottom-color:#fff;
+}
+.type-product .woocommerce-tabs .panel { border:1px solid #eee; border-radius:3px; border-top-left-radius:0; padding:20px; }
+
 .type-product div[itemprop=aggregateRating] h2 {
 	margin-bottom:20px;
 }

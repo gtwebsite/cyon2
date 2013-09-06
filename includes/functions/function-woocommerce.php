@@ -15,7 +15,6 @@ function cyon_woo_init(){
 
 	/* Replace breadcrumb */
 	remove_action('woocommerce_before_main_content', 	'woocommerce_breadcrumb',20);
-	add_action('woocommerce_before_main_content',		'cyon_breadcrumb',20);
 
 	/* Add scripts */
 	add_action('wp_enqueue_scripts',					'cyon_register_scripts_styles_woocommerce',110);
@@ -44,10 +43,6 @@ function cyon_woo_init(){
 		add_filter( 'woocommerce_product_thumbnails_columns', 'cyon_woocommerce_product_thumbnails_columns' );
 	}
 	
-	/* Override product tabs */
-	remove_action('woocommerce_after_single_product_summary','woocommerce_output_product_data_tabs',10);
-	add_action('woocommerce_after_single_product_summary','cyon_woocommerce_output_product_data_tabs',10);
-
 	/* Product Columns */
 	add_action('wp_head', 'cyon_woocommerce_reset_loop');
 	add_filter('cyon_the_list_layout','cyon_woocommerce_product_cols');
@@ -71,8 +66,8 @@ function cyon_register_scripts_styles_woocommerce(){
 		}
 	}
 	if (is_product() && get_option('woocommerce_frontend_css') == 'no'){
-		wp_dequeue_script('wc-single-product');
-		wp_enqueue_script('cyon-wc-single-product', THEME_ASSETS_URI . 'js/jquery.single.product.js', array('jquery'),'1.0.0', false);
+		//wp_dequeue_script('wc-single-product');
+		//wp_enqueue_script('cyon-wc-single-product', THEME_ASSETS_URI . 'js/jquery.single.product.js', array('jquery'),'1.0.0', false);
 	}
 } }
 
@@ -161,6 +156,7 @@ if(!function_exists('cyon_woocommerce_output_content_wrapper')) {
 function cyon_woocommerce_output_content_wrapper() { ?>
 		<div id="main" class="<?php echo cyon_get_page_layout(); ?>">
 			<div class="wrapper clearfix">
+				<?php cyon_breadcrumb(); ?>
 				<!-- Center -->
 				<div id="primary">
 <?php } }

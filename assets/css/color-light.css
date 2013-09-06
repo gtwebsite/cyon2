@@ -352,7 +352,7 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	background-color:#f4f4f4;
 	font-size:18px;
 	line-height:32px;
-	min-width:32px;
+	height:32px;
 	min-width:32px;
 	text-align:center;
 	padding:0;
@@ -497,6 +497,9 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Tabs
 ----------------------------------------------- */
+.tabs .tab_nav li:first-chid a {
+	color:inherit; cursor:default; background:#fff; border-bottom-color:#fff;
+}
 .tabs .tab_nav li a {
 	text-shadow:1px 1px 0 #fff; border:1px solid #efefef; white-space:nowrap; border-top-left-radius:3px; border-top-right-radius:3px; box-shadow:inset 1px 1px 1px rgba(255,255,255,.5); background:#f8f8f8;
 	transition:background-color ease-in-out .3s;
@@ -504,8 +507,8 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 	-webkit-transition:background-color ease-in-out .3s;
 	-ms-transition:background-color ease-in-out .3s;
 }
-.tabs .tab_nav a.active {
-	color:inherit; cursor:default; background:none; border-bottom-color:#fff;
+.tabs .tab_nav a.active, .tabs .tab_nav .active a {
+	color:inherit; cursor:default; background:#fff; border-bottom-color:#fff;
 }
 .tabs .panel { 
 	border:1px solid #eee; border-radius:3px; border-top-left-radius:0;
