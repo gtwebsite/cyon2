@@ -42,6 +42,7 @@
 										a.addImmediate(c,"Horizontal Line",'[line style=""]' );
 										a.addImmediate(c,"Icon",'[icon element="" icon="" title="" url="" color="" size=""]Text here[/icon]' );
 										a.addImmediate(c,"Lists",'[lists icon="" cols="" size=""]<br/>[list icon=""]Item name[/list]<br/>[list icon=""]Item name[/list]<br/>[/lists]' );
+										a.addImmediate(c,"Social",'[social facebook="" twitter="" google_plus="" pinterest=""]' );
 
 								c=b.addMenu({title:"Table"});
 										a.addImmediate(c,"Table",'[table caption="" headers="Column 1|Column 2" footers="Footer 1|Footer 2"]<br/>[row color=""]<br/>[data color=""]Data 1[/data]<br/>[data color=""]Data 2[/data]<br/>[/row]<br/>[/table]' );
