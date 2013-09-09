@@ -25,7 +25,6 @@
 	.type-product form.cart .single_variation, .type-product form.cart .variations_button { float:none; width:100%; }
 	.woocommerce-result-count { float:none; margin-bottom:5px; }
 	.woocommerce-ordering { float:none; }
-	.products li { margin-left:2%!important; width:49%!important; }
 	.products li.first { clear:none!important; }
 	.products li:first-chid { margin-left:0!important; }
 	.products li:nth-of-type(2n+1) { clear:both; margin-left:0!important; }

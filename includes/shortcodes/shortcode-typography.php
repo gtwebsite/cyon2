@@ -452,3 +452,48 @@ function cyon_bar( $atts, $content = null ) {
 }
 add_shortcode('bar','cyon_bar'); 
 
+
+/* =Social Icons
+use [social facebook='' twitter='' classname='']
+----------------------------------------------- */
+function cyon_social_icons( $atts, $content = null ) {
+	$atts = shortcode_atts(
+		array(
+			facebook		=> '',
+			google_plus		=> '',
+			twitter			=> '',
+			linkedin		=> '',
+			pinterest		=> '',
+			instagram		=> '',
+			skype			=> '',
+			youtube			=> '',
+			tumblr			=> '',
+			flickr			=> '',
+			dribbble		=> '',
+			github			=> '',
+			email			=> '',
+			rss				=> '',
+			classname		=> ''
+		), $atts);
+	$classname = '';
+	if($atts['classname']){
+		$classname .= ' '.$atts['classname'];
+	}
+	$html = '<div class="cyon-social'.$classname.'">'; 
+	$html .= empty($atts['facebook']) ? '' : '<a href="'.$atts['facebook'].'" class="hastip" title="Facebook" target="_blank"><span class="icon-facebook"></span><span class="icon-facebook copy"></span></a>';
+	$html .= empty($atts['google_plus']) ? '' : '<a href="'.$atts['google_plus'].'" class="hastip" title="Google+" target="_blank"><span class="icon-google-plus"></span><span class="icon-facebook copy"></span></a>';
+	$html .= empty($atts['twitter']) ? '' : '<a href="'.$atts['twitter'].'" class="hastip" title="Twitter" target="_blank"><span class="icon-twitter"></span><span class="icon-twitter copy"></span></a>';
+	$html .= empty($atts['linkedin']) ? '' : '<a href="'.$atts['linkedin'].'" class="hastip" title="Linkedin" target="_blank"><span class="icon-linkedin"></span><span class="icon-linkedin copy"></span></a>';
+	$html .= empty($atts['pinterest']) ? '' : '<a href="'.$atts['pinterest'].'" class="hastip" title="Pinterest" target="_blank"><span class="icon-pinterest"></span><span class="icon-pinterest copy"></span></a>';
+	$html .= empty($atts['instagram']) ? '' : '<a href="'.$atts['instagram'].'" class="hastip" title="Instagram" target="_blank"><span class="icon-instagram"></span><span class="icon-instagram copy"></span></a>';
+	$html .= empty($atts['youtube']) ? '' : '<a href="'.$atts['youtube'].'" class="hastip" title="Youtube" target="_blank"><span class="icon-youtube"></span><span class="icon-youtube copy"></span></a>';
+	$html .= empty($atts['tumblr']) ? '' : '<a href="'.$atts['tumblr'].'" class="hastip" title="Tumblr" target="_blank"><span class="icon-tumblr"></span><span class="icon-tumblr copy"></span></a>';
+	$html .= empty($atts['flickr']) ? '' : '<a href="'.$atts['flickr'].'" class="hastip" title="Flickr" target="_blank"><span class="icon-flickr"></span><span class="icon-flickr copy"></span></a>';
+	$html .= empty($atts['dribbble']) ? '' : '<a href="'.$atts['dribbble'].'" class="hastip" title="Dribbble" target="_blank"><span class="icon-dribbble"></span><span class="icon-dribbble copy"></span></a>';
+	$html .= empty($atts['github']) ? '' : '<a href="'.$atts['github'].'" class="hastip" title="Github" target="_blank"><span class="icon-github"></span><span class="icon-github copy"></span></a>';
+	$html .= empty($atts['email']) ? '' : '<a href="mailto:'.$atts['email'].'" class="hastip" title="Email" target="_blank"><span class="icon-envelope"></span><span class="icon-envelope copy"></span></a>';
+	$html .= empty($atts['rss']) ? '' : '<a href="'.$atts['rss'].'" class="hastip" title="RSS" target="_blank"><span class="icon-rss"></span><span class="icon-rss copy"></span></a>';
+	$html .= '</div>'; 
+	return $html;
+}
+add_shortcode('social','cyon_social_icons'); 

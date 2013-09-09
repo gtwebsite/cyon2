@@ -226,12 +226,12 @@ function cyon_header_columns(){
 	<div id="top"<?php if($data['top_left_content'] && $data['top_right_content']){ ?> class="row-fluid"<?php } ?>>
 		<?php if($data['top_left_content']){ ?>
 		<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6"><?php } ?>
-			<p><?php echo do_shortcode($data['top_left_content']); ?></p>
+			<?php echo do_shortcode($data['top_left_content']); ?>
 		<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
 		<?php } ?>
 		<?php if($data['top_right_content']){ ?>
 		<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6 right"><?php } ?>
-			<p><?php echo do_shortcode($data['top_right_content']); ?></p>
+			<?php echo do_shortcode($data['top_right_content']); ?>
 		<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
 		<?php } ?>
 	</div>

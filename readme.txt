@@ -4,7 +4,6 @@
 
 == Todos ==
 * Portfolio
-* Fix tab on woo especially for reviews
 
 == Description ==
 
