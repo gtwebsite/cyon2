@@ -276,6 +276,7 @@ class Options_Machine {
 						
 						$faces = array('Arial, serif'=>'Arial',
 										/***** Updated by Gtwebsite *****/
+										'\'Century Gothic\', Arial, sans-serif'=>'Century Gothic',
 										'\'Lucida Grande\', \'Lucida Sans Unicode\', Arial, sans-serif'=>'Lucida Grande',
 										'Helvetica, sans-serif'=>'Helvetica',		
 										'\'Segoe UI\', Arial, sans-serif'=>'Segoe UI',		
