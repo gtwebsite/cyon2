@@ -16,6 +16,7 @@
 * Replace tabs with Tabulous
 * Updated FancyBox 2.1.5
 * Updated social icons
+* Updated Google fonts
 * Added carousel on bloglist shortcode
 * Added carousel on subpage shortcode
 * Added offline option

@@ -1601,7 +1601,7 @@ if(!function_exists('cyon_post_content_featured')) {
 function cyon_post_content_featured(){
 	global $data;
 	$pages = $data['content_featured_image']; ?>
-	<?php if(has_post_thumbnail() && (is_single() && $pages['posts']==1) || (is_page() && $pages['pages']==1)){ ?>
+	<?php if(has_post_thumbnail() && ((is_single() && $pages['posts']==1) || (is_page() && $pages['pages']==1))){ ?>
 		<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large'); ?>
 		<div class="entry-featured-image">
 			<?php if(has_post_format('video')){ ?>
@@ -1614,7 +1614,7 @@ function cyon_post_content_featured(){
 				<?php the_post_thumbnail( 'large' ); ?>
 			<?php } ?>
 		</div>
-	<?php }elseif(has_post_thumbnail() && (is_category() || is_archive() || is_home() || (is_front_page() && $data['homepage_blog_thumbnail']==1)) && $pages['listing']==1 ){ ?>
+	<?php }elseif(has_post_thumbnail() && ((is_category() || is_archive() || is_home() || (is_front_page() && $data['homepage_blog_thumbnail']==1))) && $pages['listing']==1 ){ ?>
 		<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $data['content_thumbnail_size']); ?>
 		<div class="entry-featured-image">
 			<?php if(has_post_format('video')){ ?>
@@ -1665,7 +1665,7 @@ function cyon_post_content_featured(){
 				<?php } ?>
 			<?php } ?>
 		</div>
-	<?php }elseif(has_post_format('gallery') && (is_category() || is_archive() || is_home() || is_front_page()) && $pages['listing']==1){ ?>
+	<?php }elseif(has_post_format('gallery') && ((is_category() || is_archive() || is_home() || is_front_page())) && $pages['listing']==1){ ?>
 		<div class="entry-featured-image swiper">
 			<div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">
 			<?php 
