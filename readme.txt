@@ -10,6 +10,17 @@
 
 == Changelog ==
 
+= 2.2.0 =
+* Updated core HTML codes
+* Updated Metabox 4.3.3
+* Updated admin style
+* Updated language
+* Updated Team shortcode
+* Updated Swiper 2.2
+* Updated blank style
+* Added dark style
+* Added divide style
+
 = 2.1.0 =
 * Replaced Glyphicons to Font Awesome
 * Replaced Flexslider to Swiper 2.0

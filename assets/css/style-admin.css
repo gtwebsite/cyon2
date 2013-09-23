@@ -5,6 +5,19 @@ span.mce_cyon_plugin {
 }
 
 .mceButtonMenu div[role="presentation"] { 
-	max-height:200px!important; max-width:150px; overflow:auto; overflow-x: hidden;
+	max-height:200px!important;
+	max-width:150px;
+	overflow:auto;
+	overflow-x: hidden;
+}
+
+/* =Metabox
+----------------------------------------------- */
+.rwmb-label label {
+	font-weight:bold;
+}
+.rwmb-radio-wrapper .rwmb-input label {
+	display:block;
+	margin-bottom:2px;
 }
 

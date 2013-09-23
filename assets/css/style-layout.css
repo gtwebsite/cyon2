@@ -289,6 +289,36 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	margin-right:5px; margin-left:5px;
 }
 
+/* =Social Icons
+----------------------------------------------- */
+.cyon-social a {
+	display:inline-block;
+	overflow:hidden;
+	margin:0 5px 5px 0;
+	width:32px;
+	height:32px;
+	position:relative;
+}
+.cyon-social a span {
+	font-size:18px;
+	line-height:32px;
+	height:32px;
+	min-width:32px;
+	text-align:center;
+	padding:0;
+	position:relative;
+	transition:all ease-in-out .2s;
+	-moz-transition:all ease-in-out .2s;
+	-webkit-transition:all ease-in-out .2s;
+	-ms-transition:all ease-in-out .2s;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+}
+.cyon-social a:hover > span {
+	top:-32px;
+}
+
 
 /* Widget */
 .widget .cyonform .gform_fields > li { 
@@ -995,14 +1025,12 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 #author-info {
 	margin-bottom:10px;
 }
-#author-avatar {
-	float:left; margin:0 -80px 5px 0;
+#author-info img {
+	float:left; margin:0 10px 10px 0;
 }
-#author-description {
-	float:left; margin-left:80px;
-}
-#author-description h2 {
-	font-weight:bold; margin-top:0;
+#author-description h3 {
+	 margin-top:0;
+	 margin-bottom:5px;
 }
 #author-link {
 	margin:10px 0;
@@ -1131,6 +1159,12 @@ p.nocomments {
 #slider-block img {
 	width:100%; height:auto; display:block;
 }
+#slider-block .swiper-left {
+	left:20px;
+}
+#slider-block .swiper-right {
+	right:20px;
+}
 
 
 /* =Featured Image
@@ -1167,7 +1201,7 @@ p.nocomments {
 	.width-wide .page_wrapper {
 		min-width:1020px;
 	}
-	.width-wide .wrapper, .width-centered .page_wrapper {
+	.width-wide .wrapper, .width-centered .page_wrapper, .home.width-wide .block-wrapper {
 		width:1000px;
 		margin:0 auto;
 		padding-left:10px;
@@ -1183,12 +1217,12 @@ p.nocomments {
 }
 
 	/* Topmost content */
-	#top { }
-	#top p { }
-	#top > div {
+	#header-bucket { }
+	#header-bucket p { }
+	#header-bucket > div {
 		 margin-bottom:10px;
 	}
-	#top > div.right {
+	#header-bucket .right {
 		text-align:right;
 	}
 
@@ -1265,17 +1299,18 @@ p.nocomments {
 		}
 
 	/* Logo and Navigation */
-	header.logo-right hgroup {
+	.logo-right {
 		text-align:right;
 	}
-	header.logo-center hgroup {
+	.logo-center {
 		text-align:center;
 	}
-	header.logo-right-menu #access, header.logo-left-menu hgroup {
+	.logo-right-menu #access, .logo-left-menu hgroup {
 		float:left;
 	}
-	header.logo-left-menu #access, header.logo-right-menu hgroup {
+	.logo-left-menu #access, .logo-right-menu hgroup {
 		float:right;
+		text-align:right;
 	}
 
 #main {
@@ -1310,7 +1345,7 @@ p.nocomments {
 
 #colophon { }
 
-	#bottom { }
+	#footer-nav { }
 
 	/* Copyright */
 	#colophon .copyright {
@@ -1333,7 +1368,7 @@ p.nocomments {
 	}
 	
 	/* Sub footer */
-	#subfooter {
+	#footer-sub {
 		margin-bottom:10px;
 	}
 	

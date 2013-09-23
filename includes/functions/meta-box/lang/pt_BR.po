@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Meta Box Script For WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-06 22:13+0800\n"
-"PO-Revision-Date: 2013-01-06 22:13+0800\n"
+"POT-Creation-Date: 2012-03-02 14:08+0700\n"
+"PO-Revision-Date: 2012-03-19 02:59-0300\n"
 "Last-Translator: name <email@domain.com>\n"
 "Language-Team: Rilwis <rilwis@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,110 +17,108 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: ../inc/fields\n"
 
-#: ../inc/classes/meta-box.php:286
-msgid "Please correct the errors highlighted below and try again."
-msgstr ""
-
-#: ../inc/classes/meta-box.php:344
+#: ../meta-box.php:334
 msgid "+"
 msgstr ""
 
-#: ../inc/classes/meta-box.php:366
+#: ../meta-box.php:358
 msgid "&#8211;"
 msgstr ""
 
-#: ../inc/fields/file.php:65
+#: ../meta-box.php:691
+msgid "RW_Meta_Box Debug:"
+msgstr ""
+
+#: ../inc/fields/color.php:45
+msgid "Select a color"
+msgstr "Selecione a cor"
+
+#: ../inc/fields/file.php:69
 msgid "Error: Cannot delete file"
 msgstr ""
 
-#: ../inc/fields/file.php:79
+#: ../inc/fields/file.php:83
+msgctxt "file upload"
+msgid "Uploaded files"
+msgstr "Arquivos carregados"
+
+#: ../inc/fields/file.php:84
+msgctxt "file upload"
+msgid "Delete this file"
+msgstr "Deletar esse arquivo"
+
+#: ../inc/fields/file.php:85
 msgctxt "file upload"
 msgid "Delete"
 msgstr "Deletar"
 
-#: ../inc/fields/file.php:80
+#: ../inc/fields/file.php:86
 msgctxt "file upload"
 msgid "Upload files"
 msgstr "Carregar arquivos"
 
-#: ../inc/fields/file.php:81
-#, fuzzy
+#: ../inc/fields/file.php:87
 msgctxt "file upload"
-msgid "+ Add new file"
+msgid "Add another file"
 msgstr "Adicionar outro arquivo"
 
-#: ../inc/fields/image.php:64
+#: ../inc/fields/image.php:68
 msgid "Order saved"
 msgstr "Salvar ordem"
 
-#: ../inc/fields/image.php:78
-#: ../inc/fields/thickbox-image.php:35
-#, fuzzy
+#: ../inc/fields/image.php:84
+#: ../inc/fields/plupload-image.php:178
 msgctxt "image upload"
-msgid "Upload images"
-msgstr "Carregar arquivos"
+msgid "Uploaded files"
+msgstr "Arquivos carregados"
 
-#: ../inc/fields/image.php:79
+#: ../inc/fields/image.php:85
+#: ../inc/fields/plupload-image.php:140
 msgctxt "image upload"
-msgid "+ Add new image"
-msgstr ""
+msgid "Delete this file"
+msgstr "Deletar esse arquivo"
 
-#: ../inc/fields/image.php:136
+#: ../inc/fields/image.php:86
+#: ../inc/fields/plupload-image.php:141
 msgctxt "image upload"
 msgid "Delete"
 msgstr "Deletar"
 
-#: ../inc/fields/image.php:137
+#: ../inc/fields/image.php:87
+#: ../inc/fields/plupload-image.php:142
 msgctxt "image upload"
 msgid "Edit"
 msgstr "Editar"
 
-#: ../inc/fields/map.php:46
-msgid "Find Address"
-msgstr ""
+#: ../inc/fields/image.php:88
+#: ../inc/fields/plupload-image.php:179
+msgctxt "image upload"
+msgid "Upload files"
+msgstr "Carregar arquivos"
 
-#: ../inc/fields/plupload-image.php:87
+#: ../inc/fields/image.php:89
+#: ../inc/fields/plupload-image.php:180
+msgctxt "image upload"
+msgid "Add another file"
+msgstr "Adicionar outro arquivo"
+
+#: ../inc/fields/plupload-image.php:112
 msgctxt "image upload"
 msgid "Allowed Image Files"
 msgstr "Arquivos de imagem permetidos"
 
-#: ../inc/fields/plupload-image.php:111
+#: ../inc/fields/plupload-image.php:183
 msgctxt "image upload"
 msgid "Drop images here"
 msgstr "Largue as imagens aqui"
 
-#: ../inc/fields/plupload-image.php:112
+#: ../inc/fields/plupload-image.php:184
 msgctxt "image upload"
 msgid "or"
 msgstr "ou"
 
-#: ../inc/fields/plupload-image.php:113
+#: ../inc/fields/plupload-image.php:185
 msgctxt "image upload"
 msgid "Select Files"
 msgstr "Selecione os arquivos"
 
-#: ../inc/fields/select-advanced.php:81
-#, fuzzy
-msgid "Select a value"
-msgstr "Selecione a cor"
-
-#~ msgctxt "file upload"
-
-#~ msgid "Uploaded files"
-#~ msgstr "Arquivos carregados"
-#~ msgctxt "file upload"
-
-#~ msgid "Delete this file"
-#~ msgstr "Deletar esse arquivo"
-#~ msgctxt "image upload"
-
-#~ msgid "Uploaded files"
-#~ msgstr "Arquivos carregados"
-#~ msgctxt "image upload"
-
-#~ msgid "Delete this file"
-#~ msgstr "Deletar esse arquivo"
-#~ msgctxt "image upload"
-
-#~ msgid "Add another file"
-#~ msgstr "Adicionar outro arquivo"

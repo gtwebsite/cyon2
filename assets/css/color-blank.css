@@ -340,33 +340,8 @@ div.box, .woocommerce_message, .woocommerce_error, .woocommerce-message, .woocom
 
 /* =Social Icons
 ----------------------------------------------- */
-.cyon-social a {
-	display:inline-block;
-	overflow:hidden;
-	margin:0 5px 5px 0;
-	width:32px;
-	height:32px;
-	position:relative;
-}
 .cyon-social a span {
 	background-color:#f4f4f4;
-	font-size:18px;
-	line-height:32px;
-	height:32px;
-	min-width:32px;
-	text-align:center;
-	padding:0;
-	position:relative;
-	transition:all ease-in-out .2s;
-	-moz-transition:all ease-in-out .2s;
-	-webkit-transition:all ease-in-out .2s;
-	-ms-transition:all ease-in-out .2s;
-	transform: translate3d(0,0,0);
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-transform-style: preserve-3d;
-}
-.cyon-social a:hover > span {
-	top:-32px;
 }
 .cyon-social a span.copy {
 	background:#1e7ec8;

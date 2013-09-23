@@ -145,16 +145,16 @@ class Cyon {
 	
 	function registers(){
 		/* Javascripts */
-		wp_register_script('cyon_jquery_all',THEME_ASSETS_URI . 'js/jquery.all.js',array('jquery'),'1.0.0');
-		wp_register_script('cyon_jquery_custom',THEME_ASSETS_URI . 'js/jquery.custom.js',array('cyon_jquery_all'),'1.0.0');
+		wp_register_script('cyon_jquery_all',THEME_ASSETS_URI . 'js/jquery.all.js',array('jquery'),'1.0.0',true);
+		wp_register_script('cyon_jquery_custom',THEME_ASSETS_URI . 'js/jquery.custom.js',array('cyon_jquery_all'),'1.0.0',true);
 		wp_register_script('gmap_api','http://maps.google.com/maps/api/js?sensor=false',array('jquery'),'1.0.0',false);
-		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery','gmap_api'),'3.3.3');
-		wp_register_script('mediaelement',THEME_ASSETS_URI . 'js/jquery.mediaelement.min.js',array('jquery'),'2.12.0');
-		wp_register_script('transit',THEME_ASSETS_URI . 'js/jquery.transit.js',array('jquery'),'0.9.9');
-		wp_register_script('supersized',THEME_ASSETS_URI . 'js/jquery.supersized.js',array('jquery'),'3.2.7');
-		wp_register_script('isotope',THEME_ASSETS_URI . 'js/jquery.isotope.min.js',array('jquery'),'1.5.25');
-		wp_register_script('fotorama',THEME_ASSETS_URI . 'js/jquery.fotorama.min.js',array('jquery'),'4.3.0');
-		wp_register_script('camera',THEME_ASSETS_URI . 'js/jquery.camera.min.js',array('jquery'),'1.3.4');
+		wp_register_script('gmap',THEME_ASSETS_URI . 'js/jquery.gmap.min.js',array('jquery','gmap_api'),'3.3.3',true);
+		wp_register_script('mediaelement',THEME_ASSETS_URI . 'js/jquery.mediaelement.min.js',array('jquery'),'2.12.0',true);
+		wp_register_script('transit',THEME_ASSETS_URI . 'js/jquery.transit.js',array('jquery'),'0.9.9',true);
+		wp_register_script('supersized',THEME_ASSETS_URI . 'js/jquery.supersized.js',array('jquery'),'3.2.7',true);
+		wp_register_script('isotope',THEME_ASSETS_URI . 'js/jquery.isotope.min.js',array('jquery'),'1.5.25',true);
+		wp_register_script('fotorama',THEME_ASSETS_URI . 'js/jquery.fotorama.min.js',array('jquery'),'4.3.0',true);
+		wp_register_script('camera',THEME_ASSETS_URI . 'js/jquery.camera.min.js',array('jquery'),'1.3.4',true);
 		
 		/* Styles */
 		wp_register_style('cyon_style_responsive', THEME_ASSETS_URI . 'css/style-responsive.css',array(),'1.0.0',false);

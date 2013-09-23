@@ -165,7 +165,7 @@ function cyon_of_options() {
 	$of_options[] = array( 'name' => __( 'Color', 'cyon' ),
 						'id' => 'theme_color',
 						'type' => 'select',
-						'std' => 'color-light.css',
+						'std' => 'color-blank.css',
 						'options' => $alt_stylesheets_color);  
 
 	/* Gutter */
@@ -836,14 +836,14 @@ function cyon_of_options() {
 	$of_options[] = array( 'name' => __( 'Maintenance', 'cyon' ),
 						'type' => 'group_begin');
 	/* Backup */
-	$of_options[] = array( 'name' => __( 'Backup and Restore Options', 'cyon' ),
+	$of_options[] = array( 'name' => __( 'Backup and Restore Theme Options', 'cyon' ),
 						'desc' => __( 'You can use the two buttons below to backup your current options, and then restore it back at a later time. This is useful if you want to experiment on the options but would like to keep the old settings in case you need it back.', 'cyon' ),
 						'id' => 'of_backup',
 						'type' => 'backup');
 
 	/* Transfer */
 	$of_options[] = array( 'name' => __( 'Transfer Theme Options Data', 'cyon' ),
-						'desc' => __( 'You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Options".', 'cyon' ),
+						'desc' => __( 'You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Theme Options".', 'cyon' ),
 						'id' => 'of_transfer',
 						'type' => 'transfer');
 

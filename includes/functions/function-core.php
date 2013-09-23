@@ -197,21 +197,10 @@ function cyon_header_styles(){
 /* =Header Layout
 ----------------------------------------------- */
 if(!function_exists('cyon_header_hook')) {
-function cyon_header_hook(){
-	global $data;  ?>
+function cyon_header_hook(){ ?>
 	<!-- Header -->
-	<header id="branding" role="banner" class="<?php echo $data['header_layout']; ?>">
-		<div class="wrapper clearfix">
-
-			<!-- Screen Readers -->
-			<ul class="skip-link hide-text">
-				<li><a href="#primary" title="<?php esc_attr_e( 'Skip to primary content', 'cyon' ); ?>"><?php _e( 'Skip to primary content', 'cyon' ); ?></a></li>
-				<li><a href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'cyon' ); ?>"><?php _e( 'Skip to secondary content', 'cyon' ); ?></a></li>
-			</ul>
-			
-			<?php cyon_header_wrapper(); ?>
-			
-		</div>
+	<header id="branding" role="banner">
+		<?php cyon_header_wrapper(); ?>
 	</header>
 <?php } }
 
@@ -220,60 +209,97 @@ function cyon_header_hook(){
 ----------------------------------------------- */
 if(!function_exists('cyon_header_columns')) {
 function cyon_header_columns(){
-	global $data;
+	global $data; ?>
+	<!-- Screen Readers -->
+	<ul class="skip-link hide-text">
+		<li><a href="#primary" title="<?php esc_attr_e( 'Skip to primary content', 'cyon' ); ?>"><?php _e( 'Skip to primary content', 'cyon' ); ?></a></li>
+		<li><a href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'cyon' ); ?>"><?php _e( 'Skip to secondary content', 'cyon' ); ?></a></li>
+	</ul>
+<?php
 	if($data['top_left_content'] || $data['top_right_content']){ ?>
 	<!-- Top Contents -->
-	<div id="top"<?php if($data['top_left_content'] && $data['top_right_content']){ ?> class="row-fluid"<?php } ?>>
-		<?php if($data['top_left_content']){ ?>
-		<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6"><?php } ?>
-			<?php echo do_shortcode($data['top_left_content']); ?>
-		<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
-		<?php } ?>
-		<?php if($data['top_right_content']){ ?>
-		<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6 right"><?php } ?>
-			<?php echo do_shortcode($data['top_right_content']); ?>
-		<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
-		<?php } ?>
+	<div id="header-bucket">
+		<div class="wrapper clearfix<?php if($data['top_left_content'] && $data['top_right_content']){ ?> row-fluid<?php } ?>">
+			<?php if($data['top_left_content']){ ?>
+			<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6"><?php } ?>
+				<?php echo do_shortcode($data['top_left_content']); ?>
+			<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
+			<?php } ?>
+			<?php if($data['top_right_content']){ ?>
+			<?php if($data['top_left_content'] && $data['top_right_content']){ ?><div class="span6 right"><?php } ?>
+				<?php echo do_shortcode($data['top_right_content']); ?>
+			<?php if($data['top_left_content'] && $data['top_right_content']){ ?></div><?php } ?>
+			<?php } ?>
+		</div>
 	</div>
 	<?php }
 } }
 
 
-/* =Logo / Sitename
+/* =Logo / Sitename / Navigation
 ----------------------------------------------- */
 if(!function_exists('cyon_header_logo')) {
-function cyon_header_logo(){
+function cyon_header_nav(){
 	global $data;  ?>
-	<!-- Logo / Site Name -->
-	<hgroup>
-		<?php if($data['header_logo']!=''){ ?>
-		<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo $data['header_logo']; ?>" /></a></span></h1>
+	<div id="header-navigation">
+		<?php if($data['header_layout']=='logo-left-menu' || $data['header_layout']=='logo-right-menu'){ ?>
+		<div class="wrapper clearfix <?php echo $data['header_layout']; ?>">
+			<!-- Logo / Site Name -->
+			<hgroup>
+				<?php if($data['header_logo']!=''){ ?>
+				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo $data['header_logo']; ?>" /></a></span></h1>
+				<?php }else{ ?>
+				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+				<?php } ?>
+				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</hgroup>
+
+			<!-- Main Menu -->
+			<nav id="access" class="clearfix" role="navigation">
+				<h3 class="assistive-text hide-text"><?php _e( 'Main menu', 'cyon' ); ?></h3>
+				<?php
+				$locations = get_nav_menu_locations();
+				$header_id = wp_get_nav_menu_object( $locations['main-menu'] );
+				if($header_id->term_id!=''){
+					wp_nav_menu(array('menu'=>$header_id->term_id,'container'=>'','menu_class'=>'menu clearfix'));
+				}else{
+					echo '<ul class="menu clearfix">'.wp_list_pages(array('title_li'=>'','echo'=>false)).'</ul>';
+				}
+				?>
+			</nav>
+		</div>
 		<?php }else{ ?>
-		<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+			<!-- Logo / Site Name -->
+			<hgroup>
+				<div class="wrapper clearfix <?php echo $data['header_layout']; ?>">
+					<?php if($data['header_logo']!=''){ ?>
+					<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo $data['header_logo']; ?>" /></a></span></h1>
+					<?php }else{ ?>
+					<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+					<?php } ?>
+					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</div>
+			</hgroup>
+
+			<!-- Main Menu -->
+			<nav id="access" class="clearfix" role="navigation">
+				<div class="wrapper clearfix">
+					<h3 class="assistive-text hide-text"><?php _e( 'Main menu', 'cyon' ); ?></h3>
+					<?php
+					$locations = get_nav_menu_locations();
+					$header_id = wp_get_nav_menu_object( $locations['main-menu'] );
+					if($header_id->term_id!=''){
+						wp_nav_menu(array('menu'=>$header_id->term_id,'container'=>'','menu_class'=>'menu clearfix'));
+					}else{
+						echo '<ul class="menu clearfix">'.wp_list_pages(array('title_li'=>'','echo'=>false)).'</ul>';
+					}
+					?>
+				</div>
+			</nav>
 		<?php } ?>
-		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-	</hgroup> <?php
+	</div><?php
 } }
 
-
-/* =Main Navigation
------------------------------------------------ */
-if(!function_exists('cyon_header_mainnav')) {
-function cyon_header_mainnav(){ ?>
-	<!-- Main Menu -->
-	<nav id="access" class="clearfix" role="navigation">
-		<h3 class="assistive-text hide-text"><?php _e( 'Main menu', 'cyon' ); ?></h3>
-		<?php
-		$locations = get_nav_menu_locations();
-		$header_id = wp_get_nav_menu_object( $locations['main-menu'] );
-		if($header_id->term_id!=''){
-			wp_nav_menu(array('menu'=>$header_id->term_id,'container'=>'','menu_class'=>'menu clearfix'));
-		}else{
-			echo '<ul class="menu clearfix">'.wp_list_pages(array('title_li'=>'','echo'=>false)).'</ul>';
-		}
-		?>
-	</nav> <?php
-} }
 
 /* =Body Layout
 ----------------------------------------------- */
@@ -281,10 +307,19 @@ if(!function_exists('cyon_body_hook')) {
 function cyon_body_hook(){ ?>
 		<!-- Body -->
 		<div id="main" class="<?php echo cyon_get_page_layout(); ?>">
+			<?php if(is_front_page() && get_option('show_on_front', true) == 'page' && cyon_get_page_layout()=='general-1column'){ ?>
+				
+				<?php cyon_home_content(); ?>
+			
+			<?php }else { ?>
+
 			<div class="wrapper clearfix">
 				<?php cyon_body_wrapper(); ?>
 			</div>
+			
+			<?php } ?>
 		</div>
+
 <?php } }
 
 
@@ -310,14 +345,14 @@ function cyon_primary_content(){ ?>
 				if(is_front_page() && get_option('show_on_front', true) == 'page'){
 					cyon_home_content();
 				}else{ ?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div class="article-wrapper">
-						<header class="page-header">
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><div class="article-wrapper clearfix">
+						<header class="page-header clearfix">
 							<?php cyon_post_header(); ?>
 						</header>
 						<div class="page-content clearfix">
 							<?php cyon_post_content(); ?>
 						</div>
-						<footer class="entry-meta">
+						<footer class="entry-meta clearfix">
 							<?php cyon_post_footer(); ?>
 							<?php edit_post_link( __( 'Edit', 'cyon' ), '<span class="edit-link">', '</span>' ); ?>
 						</footer>
@@ -682,11 +717,9 @@ function cyon_author(){
 	if($data['content_author']==1 && is_single()) { 
 		if ( get_the_author_meta( 'description' ) && ( ! function_exists( 'is_multi_author' ) || is_multi_author() ) ) { // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
 		<div id="author-info">
-			<div id="author-avatar">
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), '68' ); ?>
-			</div>
+			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '68' ); ?>
 			<div id="author-description">
-				<h2><?php printf( __( 'About %s', 'cion' ), get_the_author() ); ?></h2>
+				<h3><?php printf( __( 'About %s', 'cion' ), get_the_author() ); ?></h3>
 				<?php the_author_meta( 'description' ); ?>
 				<div id="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author" class="button">
@@ -827,7 +860,7 @@ function cyon_home_block_bucket(){
 			$class=' row-fluid';
 		} ?>
 		<div class="block" id="bucket-block">
-			<?php echo $data['homepage_bucket_title'] ? '<h2 class="block-title">'.$data['homepage_bucket_title'].'</h2>' : ''; ?>
+			<?php echo $data['homepage_bucket_title'] ? '<div class="block-wrapper"><h2 class="block-title">'.$data['homepage_bucket_title'].'</h2></div>' : ''; ?>
 			<div class="block-wrapper<?php echo $class; ?>">
 				<?php dynamic_sidebar( 'home-columns' ); ?>
 			</div>
@@ -842,7 +875,7 @@ function cyon_home_block_static(){
 	global $data; ?>
 	<?php if($data['homepage_middle_block']!=''){ ?>
 	<div class="block" id="static-block">
-		<?php echo $data['homepage_middle_block_title'] ? '<h2 class="block-title">'.$data['homepage_middle_block_title'].'</h2>' : ''; ?>
+		<?php echo $data['homepage_middle_block_title'] ? '<div class="block-wrapper"><h2 class="block-title">'.$data['homepage_middle_block_title'].'</h2></div>' : ''; ?>
 		<div class="block-wrapper">
 			<?php echo do_shortcode($data['homepage_middle_block']); ?>
 		</div>
@@ -865,7 +898,7 @@ function cyon_home_block_blog(){
 	}
 	if ( $posts_array->have_posts() ) : ?>
 		<div class="block" id="blog-block">
-			<?php echo $data['homepage_blog_title'] ? '<h2 class="block-title">'.$data['homepage_blog_title'].'</h2>' : ''; ?>
+			<?php echo $data['homepage_blog_title'] ? '<div class="block-wrapper"><h2 class="block-title">'.$data['homepage_blog_title'].'</h2></div>' : ''; ?>
 			<div class="block-wrapper<?php echo $data['homepage_blog_layout']>1 ? ' row-fluid' : ''; ?>">
 			<?php while ( $posts_array->have_posts() ) : $posts_array->the_post(); ?>
 				<?php
@@ -930,9 +963,7 @@ function cyon_footer_hook(){
 	global $data;  ?>
 	<!-- Footer -->
 	<footer id="colophon" role="contentinfo">
-		<div class="wrapper clearfix">
-			<?php cyon_footer_wrapper(); ?>
-		</div>
+		<?php cyon_footer_wrapper(); ?>
 	</footer>
 <?php } }
 
@@ -946,11 +977,13 @@ function cyon_footer_columns(){
 	<?php
 		$class='';
 		if($data['footer_bucket_layout']!='bucket-1column'){
-			$class=' class="row-fluid"';
+			$class=' row-fluid';
 		}
 	?>
-	<div id="footer-buckets" role="complementary"<?php echo $class; ?>>
-		<?php dynamic_sidebar( 'footer-columns' ); ?>
+	<div id="footer-buckets" role="complementary">
+		<div class="wrapper clearfix<?php echo $class; ?>">
+			<?php dynamic_sidebar( 'footer-columns' ); ?>
+		</div>
 	</div>
 	<?php }
 } }
@@ -965,12 +998,14 @@ function cyon_footer_copyright(){
 		$class='';
 		$span='';
 		if($data['footer_copyright'] !='' && has_nav_menu( 'footer-menu' ) ){
-			$class=' class="row-fluid"';
+			$class=' row-fluid';
 			$span='span6';
 		} ?>
-	<div id="bottom"<?php echo $class; ?>>
-		<?php echo $data['footer_copyright'] != '' ? '<div class="copyright '.$span.'">'.do_shortcode($data['footer_copyright']).'</div>' : ''; ?>
-		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1', 'container_id' => 'access2', 'container_class' => $span, 'fallback_cb' => false ) ); ?>
+	<div id="footer-nav">
+		<div class="wrapper clearfix<?php echo $class; ?>">
+			<?php echo $data['footer_copyright'] != '' ? '<div class="copyright '.$span.'">'.do_shortcode($data['footer_copyright']).'</div>' : ''; ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1', 'container_id' => 'access2', 'container_class' => $span, 'fallback_cb' => false ) ); ?>
+		</div>
 	</div><?php
 } }
 
@@ -981,8 +1016,10 @@ function cyon_footer_subfooter(){
 	global $data;
 	if ( $data['footer_sub'] ){ ?>
 	<!-- Sub Footer -->
-	<div id="subfooter">
-		<?php echo do_shortcode($data['footer_sub']); ?>
+	<div id="footer-sub">
+		<div class="wrapper clearfix">
+			<?php echo do_shortcode($data['footer_sub']); ?>
+		</div>
 	</div>
 	<?php }
 } }
@@ -995,7 +1032,9 @@ function cyon_footer_backtotop(){
 	if ( $data['footer_backtotop'] ){ ?>
 	<!-- Back to Top -->
 	<div id="backtotop">
-		<a href="#topmost" class="backtotop"><?php _e('Back to Top','cyon'); ?> </a>
+		<div class="wrapper clearfix">
+			<a href="#topmost" class="backtotop"><?php _e('Back to Top','cyon'); ?></a>
+		</div>
 	</div>
 	<?php }
 } }

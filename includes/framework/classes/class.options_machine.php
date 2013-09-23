@@ -550,8 +550,8 @@ array('ABeeZee'=>'ABeeZee','Abel'=>'Abel','Abril Fatface'=>'Abril Fatface','Aclo
 					$output .= '<div class="backup-box">';
 					$output .= '<div class="instructions">'.$instructions."\n";
 					$output .= '<p><strong>'. __('Last Backup : ').'<span class="backup-log">'.$log.'</span></strong></p></div>'."\n";
-					$output .= '<a href="#" id="of_backup_button" class="button" title="Backup Options">Backup Options</a>';
-					$output .= '<a href="#" id="of_restore_button" class="button" title="Restore Options">Restore Options</a>';
+					$output .= '<a href="#" id="of_backup_button" class="button" title="'.__('Backup Theme Options','cyon').'">'.__('Backup Theme Options','cyon').'</a>';
+					$output .= '<a href="#" id="of_restore_button" class="button" title="'.__('Restore Theme Options','cyon').'">'.__('Restore Theme Options','cyon').'</a>';
 					$output .= '</div>';
 				
 				break;
@@ -561,7 +561,7 @@ array('ABeeZee'=>'ABeeZee','Abel'=>'Abel','Abril Fatface'=>'Abril Fatface','Aclo
 				
 					$instructions = $value['desc'];
 					$output .= '<textarea id="export_data" rows="8">'.base64_encode(serialize($data)) /* 100% safe - ignore theme check nag */ .'</textarea>'."\n";
-					$output .= '<a href="#" id="of_import_button" class="button" title="Restore Options">Import Options</a>';
+					$output .= '<a href="#" id="of_import_button" class="button" title="'.__('Import Theme Options','cyon').'">'.__('Import Theme Options','cyon').'</a>';
 				
 				break;
 			

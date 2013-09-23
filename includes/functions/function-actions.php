@@ -18,8 +18,7 @@ add_filter('wp_title', 				'cyon_wp_title' );
 ----------------------------------------------- */
 add_action('cyon_header',			'cyon_header_hook',10);
 add_action('cyon_header_wrapper',	'cyon_header_columns',10);
-add_action('cyon_header_wrapper',	'cyon_header_logo',20);
-add_action('cyon_header_wrapper',	'cyon_header_mainnav',30);
+add_action('cyon_header_wrapper',	'cyon_header_nav',20);
 
 /* =Body
 ----------------------------------------------- */
