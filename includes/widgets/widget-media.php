@@ -52,10 +52,10 @@ class CyonMediaWidget extends WP_Widget {
 		$domain = parse_url(strtolower($instance['text']));
 		if($domain['host']=='www.youtube.com' || $domain['host']=='youtube.com'){
 			//echo '<video type="video/youtube" src="'.$instance['text'].'" preload="none" style="width:100%; height:100%;" />';
-			echo '<div class="flex-video"><iframe width="480" height="270" src="http://www.youtube.com/embed/'.get_youtube_id($instance['text']).'?showinfo=0" frameborder="0" allowfullscreen></iframe></div>';
+			echo '<div class="flex-video"><iframe width="480" height="270" src="http://www.youtube.com/embed/'.cyon_get_youtube_id($instance['text']).'?showinfo=0" frameborder="0" allowfullscreen></iframe></div>';
 		}elseif($domain['host']=='www.vimeo.com' || $domain['host']=='vimeo.com'){
 			//echo '<video type="video/vimeo" src="'.$instance['text'].'" preload="none" style="width:100%; height:100%;" />';
-			echo '<div class="flex-video flex-video-vimeo"><iframe src="http://player.vimeo.com/video/'.get_vimeo_id($instance['text']).'" width="480" height="270" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>';
+			echo '<div class="flex-video flex-video-vimeo"><iframe src="http://player.vimeo.com/video/'.cyon_get_vimeo_id($instance['text']).'" width="480" height="270" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>';
 		}elseif($domain['scheme']=='rtmp'){
 			echo '<video type="video/flv" src="'.$instance['text'].'" autoplay style="width:100%; height:100%;" /></video>';
 			add_action('wp_footer','cyon_video_audio_js_css',20);
@@ -108,8 +108,8 @@ class CyonMediaWidget extends WP_Widget {
 // Adding your widget to WordPress
 add_action( 'widgets_init', create_function('', 'return register_widget("CyonMediaWidget");') );
 
-if (!function_exists('get_youtube_id')){
-	function get_youtube_id($content) {
+if (!function_exists('cyon_get_youtube_id')){
+	function cyon_get_youtube_id($content) {
 	
 		// find the youtube-based URL in the post
 		$urls = array();
@@ -125,10 +125,10 @@ if (!function_exists('get_youtube_id')){
 	
 		return $youtube_id; 
 	
-	} // end get_youtube_id
+	} // end cyon_get_youtube_id
 }
-if (!function_exists('get_vimeo_id')){
-	function get_vimeo_id($content) {
+if (!function_exists('cyon_get_vimeo_id')){
+	function cyon_get_vimeo_id($content) {
 	
 		return (int) substr(parse_url($content, PHP_URL_PATH), 1);; 
 	

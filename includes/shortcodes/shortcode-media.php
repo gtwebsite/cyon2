@@ -64,12 +64,12 @@ function cyon_video( $atts, $content = null ) {
 		if($domain['host']=='www.youtube.com' || $domain['host']=='youtube.com' || $domain['host']=='youtu.be'){
 			//$html .= '<video width="'.$atts['width'].'" height="'.$atts['height'].'" type="video/youtube" src="'.$atts['src'].'" preload="none"'.$style.' />';
 			if($data['responsive']==1){ $html .= '<div class="flex-video">'; }
-			$html .= '<iframe width="'.$atts['width'].'" height="'.$atts['height'].'" src="http://www.youtube.com/embed/'.get_youtube_id($atts['src']).'?showinfo=0" frameborder="0" allowfullscreen></iframe>';
+			$html .= '<iframe width="'.$atts['width'].'" height="'.$atts['height'].'" src="http://www.youtube.com/embed/'.cyon_get_youtube_id($atts['src']).'?showinfo=0" frameborder="0" allowfullscreen></iframe>';
 			if($data['responsive']==1){ $html .= '</div>'; }
 		}elseif($domain['host']=='www.vimeo.com' || $domain['host']=='vimeo.com'){
 			//$html .= '<video width="'.$atts['width'].'" height="'.$atts['height'].'" type="video/vimeo" src="'.$atts['src'].'" preload="none"'.$style.' />';
 			if($data['responsive']==1){ $html .= '<div class="flex-video flex-video-vimeo">'; }
-			$html .= '<iframe src="http://player.vimeo.com/video/'.get_vimeo_id($atts['src']).'" width="'.$atts['width'].'" height="'.$atts['height'].'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+			$html .= '<iframe src="http://player.vimeo.com/video/'.cyon_get_vimeo_id($atts['src']).'" width="'.$atts['width'].'" height="'.$atts['height'].'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
 			if($data['responsive']==1){ $html .= '</div>'; }
 		}elseif($domain['scheme']=='rtmp'){
 			$html .= '<video width="'.$atts['width'].'" height="'.$atts['height'].'" type="video/flv" src="'.$atts['src'].'" autoplay'.$style.' /></video>';
@@ -124,18 +124,18 @@ function cyon_video( $atts, $content = null ) {
 } }
 add_shortcode('video','cyon_video'); 
 
-if (!function_exists('get_youtube_id')){
-	function get_youtube_id($url) {
+if (!function_exists('cyon_get_youtube_id')){
+	function cyon_get_youtube_id($url) {
 	
 		// find the youtube-based URL in the post
 		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
 			return $match[1];
 		}	
 	
-	} // end get_youtube_id
+	} // end cyon_get_youtube_id
 }
-if (!function_exists('get_vimeo_id')){
-	function get_vimeo_id($content) {
+if (!function_exists('cyon_get_vimeo_id')){
+	function cyon_get_vimeo_id($content) {
 	
 		return (int) substr(parse_url($content, PHP_URL_PATH), 1);; 
 	

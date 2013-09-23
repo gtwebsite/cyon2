@@ -162,7 +162,7 @@ class CyonAdsWidget extends WP_Widget {
 				$target = ' class="iframe"';
 				$domain = parse_url(strtolower($instance['ad_url_'.$i]));
 				if($domain['host']=='www.youtube.com' || $domain['host']=='youtube.com'){
-					$href = 'http://www.youtube.com/embed/'.get_youtube_id($instance['ad_url_'.$i]).'?showinfo=0&amp;autoplay=1';
+					$href = 'http://www.youtube.com/embed/'.cyon_get_youtube_id($instance['ad_url_'.$i]).'?showinfo=0&amp;autoplay=1';
 				}else{
 					$href = $instance['ad_url_'.$i];
 				}
@@ -258,8 +258,8 @@ class CyonAdsWidget extends WP_Widget {
 // Adding your widget to WordPress
 add_action( 'widgets_init', create_function('', 'return register_widget("CyonAdsWidget");') );
 
-if (!function_exists('get_youtube_id')){
-	function get_youtube_id($content) {
+if (!function_exists('cyon_get_youtube_id')){
+	function cyon_get_youtube_id($content) {
 	
 		// find the youtube-based URL in the post
 		$urls = array();
@@ -275,5 +275,5 @@ if (!function_exists('get_youtube_id')){
 	
 		return $youtube_id; 
 	
-	} // end get_youtube_id
+	} // end cyon_get_youtube_id
 }
