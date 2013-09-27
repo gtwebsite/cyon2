@@ -36,6 +36,7 @@
 
 								c=b.addMenu({title:"Typo"});
 										a.addImmediate(c,"Back to Top",'[backtotop style=""]' );
+										a.addImmediate(c,"Progress Bar",'[bar color="#444" text_color="#fff" size="100%" icon=""] Text Here [/bar]' );
 										a.addImmediate(c,"Button",'[button color="" size="" icon="" url="" title=""]Button Name[/button]' );
 										a.addImmediate(c,"Code",'[code inline="yes"][/code]' );
 										a.addImmediate(c,"Header",'[header size="" icon=""]Title Here[/header]' );

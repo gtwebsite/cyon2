@@ -20,6 +20,7 @@
 * Updated blank style
 * Added dark style
 * Added divide style
+* Added Blog List widget
 
 = 2.1.0 =
 * Replaced Glyphicons to Font Awesome

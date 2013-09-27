@@ -479,6 +479,32 @@ a, img, h1, h2, h3, input[type=radio], input[type=checkbox] {
 	width:22%; float:right;
 }
 
+/* =Blog List
+----------------------------------------------- */
+.cyon-blog-list { }
+.cyon-blog-list article {
+	position:relative;
+	margin-bottom:10px;
+}
+.cyon-blog-list h4 {
+	margin:0 0 5px 0;
+	padding:0
+}
+.cyon-blog-list p {
+	margin:0;
+}
+.cyon-blog-list .meta {
+	font-size:90%;
+	margin-bottom:5px;
+}
+.cyon-blog-list .featured-thumbnail {
+	display:block;
+	width:80px;
+	height:80px;
+	float:left;
+	margin:0 10px 5px 0;
+}
+
 
 /* =Product Search
 ----------------------------------------------- */
@@ -1206,6 +1232,11 @@ p.nocomments {
 		margin:0 auto;
 		padding-left:10px;
 		padding-right:10px;
+	}
+	.home.width-wide .general-2right .block-wrapper {
+		width:auto;
+		padding-left:0;
+		padding-right:0;
 	}
 	
 #branding {
