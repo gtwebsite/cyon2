@@ -9,7 +9,7 @@ if(!function_exists('cyon_check_jquery')) {
 function cyon_check_jquery(){ ?>
 	<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {  
-			document.write('<?php __('Javascript is not running. This website requires javascript, please turn it on.', 'cyon'); ?>');
+			document.write('<?php echo __('Javascript is not running. This website requires javascript, please turn it on.', 'cyon'); ?>');
 		}
 	</script>
 <?php } }
@@ -168,8 +168,9 @@ function cyon_header_styles(){
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo THEME_ASSETS_URI; ?>css/<?php echo $data['theme_color']; ?>" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo THEME_ASSETS_URI; ?>css/<?php echo $data['theme_gutter']; ?>" />
 
-	<!--[if lte IE 8]>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php echo THEME_ASSETS_URI; ?>css/style-ie8.css" />
+	<!--[if lt IE 9]>
+		<script src="<?php echo THEME_ASSETS_URI; ?>/js/html5.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="<?php echo THEME_ASSETS_URI; ?>css/style-ie8.css" />
 	<![endif]-->
 	<!--[if lte IE 7]>
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo THEME_ASSETS_URI; ?>css/style-ie7.css" />

@@ -1,10 +1,7 @@
 jQuery(document).ready(function(){
 	
-	jQuery('#page').transition({ opacity:1 })
+	jQuery('#page').transition({ opacity:1 });
 
-	// Enable active on tap
-	document.addEventListener("touchstart", function(){}, true);
-	
 	// Menu
 	jQuery('#access li').each(function(){
 		var org_height = jQuery(this).find('> ul').css('height');
