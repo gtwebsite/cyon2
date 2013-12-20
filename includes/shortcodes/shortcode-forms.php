@@ -113,7 +113,7 @@ function cyon_contact_form( $atts, $content = null ) {
 	$html .= '<dl class="field"><dt class="label"><label for="contact_name">'.__('Name','cyon').':</label></dt><dd class="inputs"><input type="text" id="contact_name" name="name" class="medium" /></dd></dl>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_email">'.__('Email','cyon').':</label></dt><dd class="inputs"><input type="email" id="contact_email" name="email" class="medium" /></dd></dl>';
 	$html .= '<dl class="field"><dt class="label"><label for="contact_phone">'.__('Phone','cyon').':</label></dt><dd class="inputs"><input type="phone" id="contact_phone" name="phone" class="medium" /></dd></dl>';
-	$html .= '<dl class="field"><dt class="label"><label for="contact_message">'.__('Messsage','cyon').':</label></dt><dd class="inputs"><textarea id="contact_message" name="message" class="medium"></textarea></dd></dl>';
+	$html .= '<dl class="field"><dt class="label"><label for="contact_message">'.__('Message','cyon').':</label></dt><dd class="inputs"><textarea id="contact_message" name="message" class="medium"></textarea></dd></dl>';
 	$html .= '<p class="submit"><button type="submit" name="contact_submit">'.__('Submit','cyon').'</button></p>';
 	$html .= '</fieldset>';
 	$html .= '</form></div>';

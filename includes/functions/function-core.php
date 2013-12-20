@@ -720,7 +720,7 @@ function cyon_author(){
 		<div id="author-info">
 			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '68' ); ?>
 			<div id="author-description">
-				<h3><?php printf( __( 'About %s', 'cion' ), get_the_author() ); ?></h3>
+				<h3><?php printf( __( 'About the author, %s', 'cion' ), get_the_author() ); ?></h3>
 				<?php the_author_meta( 'description' ); ?>
 				<div id="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author" class="button">
@@ -1614,7 +1614,7 @@ function cyon_comment( $comment, $args, $depth ) {
 					?>
 
 					<?php edit_comment_link( __( 'Edit', 'cyon' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-author .vcard -->
+				</div>
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'cyon' ); ?></em>
@@ -1627,8 +1627,8 @@ function cyon_comment( $comment, $args, $depth ) {
 
 			<div class="reply">
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'cyon' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
+			</div>
+		</article>
 
 	<?php
 			break;

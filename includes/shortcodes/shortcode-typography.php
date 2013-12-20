@@ -331,7 +331,7 @@ function cyon_box( $atts, $content = null ) {
 	if($classname!=''){
 		$class = ' class="'.$classname.'"';
 	}
-	$html = '<'.$quote.$class.$style.'>'. $title . do_shortcode($content) . $close .'</'.$quote.'>';
+	$html = '<'.$quote.$class.$style.'>'. $icon . $title . do_shortcode($content) . $close .'</'.$quote.'>';
 	return $html;
 }
 add_shortcode('box','cyon_box'); 
