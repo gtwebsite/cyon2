@@ -1258,7 +1258,7 @@ if(!function_exists('cyon_get_list_layout')) {
 function cyon_get_list_layout(){
 	global $post, $data;
 	$cols = 1;
-	if(is_category()){
+	if(is_category() && $data['blog_list_layout_list']!='1column'){
 		if(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_listing')=='list-2columns'){
 			$cols = '2';
 		}elseif(get_tax_meta(cyon_get_term_id(),'cyon_cat_layout_listing')=='list-3columns'){
@@ -1274,7 +1274,7 @@ function cyon_get_list_layout(){
 				$cols = '4';
 			}
 		}
-	}elseif((is_front_page() && get_option('page_on_front')!='') || is_home() || is_archive() || is_category() && $data['blog_list_layout_list']!='1column'){
+	}elseif((is_front_page() && get_option('page_on_front')!='') || is_home() || is_archive() && $data['blog_list_layout_list']!='1column'){
 		if($data['blog_list_layout_list']=='2columns'){
 			$cols = '2';
 		}elseif($data['blog_list_layout_list']=='3columns'){
