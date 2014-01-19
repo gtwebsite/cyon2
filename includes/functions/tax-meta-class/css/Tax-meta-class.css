@@ -22,60 +22,6 @@
 /* =Form Fields
 ----------------------------------------------- */
 .form-field input, .form-field textarea {width: auto !important;}
-.form-field input[type=button] {
-display: block;
-text-decoration: none;
-font-size: 12px;
-line-height: 23px;
-height: 24px;
-margin: 0;
-padding: 0 10px 1px;
-cursor: pointer;
-border-width: 1px;
-border-style: solid;
--webkit-border-radius: 3px;
--webkit-appearance: none;
-border-radius: 3px;
-white-space: nowrap;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-background: #F3F3F3;
-background-image: -webkit-gradient(linear,left top,left bottom,from(#FEFEFE),to(#F4F4F4));
-background-image: -webkit-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: -moz-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: -o-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: linear-gradient(to bottom,#FEFEFE,#F4F4F4);
-border-color: #BBB;
-color: #333;
-text-shadow: 0 1px 0 white;
-clear:both;
-}
-.form-field input[type=button]:active {
-background: #EEE;
-background-image: -webkit-gradient(linear,left top,left bottom,from(#F4F4F4),to(#FEFEFE));
-background-image: -webkit-linear-gradient(top,#F4F4F4,#FEFEFE);
-background-image: -moz-linear-gradient(top,#F4F4F4,#FEFEFE);
-background-image: -ms-linear-gradient(top,#F4F4F4,#FEFEFE);
-background-image: -o-linear-gradient(top,#F4F4F4,#FEFEFE);
-background-image: linear-gradient(to bottom,#F4F4F4,#FEFEFE);
-border-color: #999;
-color: #333;
-text-shadow: 0 -1px 0 white;
--webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, 0.5);
-}
-.form-field input[type=button]:hover {
-background: #F3F3F3;
-background-image: -webkit-gradient(linear,left top,left bottom,from(white),to(#F3F3F3));
-background-image: -webkit-linear-gradient(top,white,#F3F3F3);
-background-image: -moz-linear-gradient(top,white,#F3F3F3);
-background-image: -ms-linear-gradient(top,white,#F3F3F3);
-background-image: -o-linear-gradient(top,white,#F3F3F3);
-background-image: linear-gradient(to bottom,white,#F3F3F3);
-border-color: #999;
-color: #222;
-}
 .wp-editor-wrap{width: 500px;} textarea.at-wysiwyg{width: 498px !important;}
 .rw-checkbox, .at-select, .at-text , .at-textarea{width: auto!important;}
 .postbox .at-field input,
@@ -98,28 +44,8 @@ color: #222;
 
 /* =Upload Button
 ----------------------------------------------- */
-.at-upload-button { float: left; clear: both; margin-top: 10px;
-
-background: #F3F3F3;
-background-image: -webkit-gradient(linear,left top,left bottom,from(#FEFEFE),to(#F4F4F4));
-background-image: -webkit-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: -moz-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: -o-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: linear-gradient(to bottom,#FEFEFE,#F4F4F4);
-border-color: #BBB;
-color: #333;
-text-shadow: 0 1px 0 white;
-}
-.at-add-file { float: left; clear: both; margin-top: 10px;
-background: #F3F3F3;
-background-image: -webkit-gradient(linear,left top,left bottom,from(#FEFEFE),to(#F4F4F4));
-background-image: -webkit-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: -moz-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: -o-linear-gradient(top,#FEFEFE,#F4F4F4);
-background-image: linear-gradient(to bottom,#FEFEFE,#F4F4F4);
-border-color: #BBB;
-color: #333;
-text-shadow: 0 1px 0 white;}
+.at-upload-button { float: left; clear: both; margin-top: 10px; }
+.at-add-file { float: left; clear: both; margin-top: 10px; }
  
 /* =Time Picker
 ----------------------------------------------- */

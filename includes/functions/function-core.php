@@ -33,10 +33,10 @@ function cyon_register_scripts_styles(){
 	wp_enqueue_script('cyon_jquery_all');
 	wp_enqueue_script('isotope');
 	wp_enqueue_script('transit');
-	if($data['responsive']==1){
+	if( $data['responsive'] == 1 ){
 		wp_enqueue_style('cyon_style_responsive'); 
 	}
-	if(((cyon_get_page_bg()!='' && $data['background_style_pattern_repeat']=='full'))){
+	if( ( ( cyon_get_page_bg() != '' && $data['background_style_pattern_repeat'] == 'full') ) ){
 		wp_enqueue_script('supersized');
 	}
 	wp_enqueue_script('cyon_jquery_custom');
@@ -655,7 +655,7 @@ function cyon_post_comments(){
 ----------------------------------------------- */
 if(!function_exists('cyon_socialshare')) {
 function cyon_socialshare() {
-	global $data;
+	global $data,$post;
 	$social = $data['socialshare'];
 	$socialb = $data['socialshareboxes'];
 	$socialboxes = '';
@@ -663,22 +663,22 @@ function cyon_socialshare() {
 		$socialboxes .= '<iframe src="//www.facebook.com/plugins/like.php?href='.get_permalink( $post->ID ).'&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=35&amp;appId='.$data['socialshare_fbid'].'" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe><br />';
 	}
 	if($socialb['facebook']==1){
-		$socialboxes .= '<span class="st_facebook_hcount" displayText="Facebook"></span>';
+		$socialboxes .= '<span class="st_facebook_hcount" displayText="Facebook" st_url="'.get_permalink( $post->ID ).'" st_title="'.get_the_title( $post->ID ).'"></span>';
 	}
 	if($socialb['twitter']==1){
-		$socialboxes .= '<span class="st_twitter_hcount" displayText="Tweet"></span>';
+		$socialboxes .= '<span class="st_twitter_hcount" displayText="Tweet" st_url="'.get_permalink( $post->ID ).'" st_title="'.get_the_title( $post->ID ).'"></span>';
 	}
 	if($socialb['plus']==1){
-		$socialboxes .= '<span class="st_googleplus_hcount" displayText="Google +"></span>';
+		$socialboxes .= '<span class="st_googleplus_hcount" displayText="Google +" st_url="'.get_permalink( $post->ID ).'" st_title="'.get_the_title( $post->ID ).'"></span>';
 	}
 	if($socialb['pinterest']==1){
-		$socialboxes .= '<span class="st_pinterest_hcount" displayText="Pinterest"></span>';
+		$socialboxes .= '<span class="st_pinterest_hcount" displayText="Pinterest" st_url="'.get_permalink( $post->ID ).'" st_title="'.get_the_title( $post->ID ).'"></span>';
 	}
 	if($socialb['mail']==1){
-		$socialboxes .= '<span class="st_email_hcount" displayText="Email"></span>';
+		$socialboxes .= '<span class="st_email_hcount" displayText="Email" st_url="'.get_permalink( $post->ID ).'" st_title="'.get_the_title( $post->ID ).'"></span>';
 	}
 	if($socialb['sharethis']==1){
-		$socialboxes .= '<span class="st_sharethis_hcount" displayText="ShareThis"></span>';
+		$socialboxes .= '<span class="st_sharethis_hcount" displayText="ShareThis" st_url="'.get_permalink( $post->ID ).'" st_title="'.get_the_title( $post->ID ).'"></span>';
 	}
 	if(($social['posts']==1 && (is_single())) || ($social['listings']==1 && (is_category() || is_home() || is_archive()))){
 		echo '<p class="share">'.$socialboxes.'</p>';
