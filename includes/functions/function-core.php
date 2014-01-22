@@ -1353,21 +1353,22 @@ function cyon_admin_login() {
 	global $data; ?>
 	<style type="text/css">
 		body.login { background-color:<?php echo $data['admin_login_bgcolor']; ?>; }
-		body.login #login h1 a {
+		#login h1 a {
 			<?php if($data['header_logo']!=''){ ?>
 			background: url('<?php echo $data['header_logo']; ?>') no-repeat scroll 50% transparent;
-			height:150px;
 			margin-bottom:10px;
+			height:150px;
+			line-height:150px;
 			<?php }else{ ?>
 			text-indent:0;
 			background:none;
 			<?php } ?>
+			width:auto;
 			text-align:center;
 			text-decoration:none;
-			line-height:30px;
 			font-size:30px;
 		}
-		body.login #login { padding-top:50px; }
+		#login { padding-top:50px; }
 	</style>
 <?php } }
 

@@ -200,7 +200,7 @@
 
 #of_container #content .section {
 	margin-bottom: 10px;
-	overflow-x : hidden;
+	overflow:hidden;
 }
 #of_container #content .section div.label {
 	font-weight:bold;
@@ -358,7 +358,7 @@
 	border-style:solid;
 	border-width:1px;
 }
-#of_container .controls input, #of_container .controls select, #of_container .controls textarea {
+#of_container .controls input[type=text], #of_container .controls .slide_body input, #of_container .controls input.upload, #of_container .controls select, #of_container .controls textarea {
 	margin-bottom: 9px !important;
 	background-color: #f1f1f1;
 	border: 1px solid;
@@ -403,20 +403,11 @@
 #of_container input[type=text] {
 	width: 340px;
 }
-#of_container input.checkbox {
-	width: 30px;
-/***** Updated by Gtwebsite *****/
-	margin-top:1px;
-	/*margin-top:3px;*/
+#of_container input.checkbox, #of_container input.of-radio {
+	width: 16px;
+	margin-top:0;
+	margin-right:6px;
 }
-#of_container input.of-radio {
-	width: 30px;
-}
-/***** Updated by Gtwebsite *****/
-/*label.radio, label.checkbox, label.multicheck {
-  position: relative;
-  bottom: 9px;
-}*/
 /********************************/
 #of_container .controls .input-text-small {
 	width: 60px;
@@ -427,7 +418,7 @@
 }
 #of_container .controls .of-color {
 	float:left;
-	width: 70px;
+	width: 70px!important;
 	margin-left:5px; /* font-size:20px; height:34px;*/
 }
 #of_container #content .section-typography .controls {
@@ -791,7 +782,7 @@ color: #464646;
 }
 
 
-#of_container .slider li input,#of_container .slider li textarea,#of_container .slider li .screenshot,#of_container .slider li .of-option-image {
+#of_container .slider li input,#of_container .slider li textarea,#of_container .slider li .screenshot,#of_container .slider li .of-option-image, #of_container .controls .slide_body input {
 	width:311px;
 }
 
@@ -809,9 +800,14 @@ color: #464646;
 	width:32px;
 	height:32px;
 	background: url(../images/dropdown-arrow.png) no-repeat 9px -28px;
+	transition:none;
+	-moz-transition:none;
+	-webkit-transition:none;
+	-ms-transition:none;
 }
-	#of_container a:hover.slide_edit_button {
-	background: url(../images/dropdown-arrow.png) no-repeat 9px 11px;}
+#of_container a:hover.slide_edit_button {
+	background: url(../images/dropdown-arrow.png) no-repeat 9px 11px;
+}
 	
 #of_container a.slide_delete_button { 
 	float: right;
