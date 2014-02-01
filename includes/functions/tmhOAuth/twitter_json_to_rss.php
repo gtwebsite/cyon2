@@ -43,7 +43,7 @@
 	}
 	$code = $tmhOAuth->request('GET', $tmhOAuth->url($statuses_url), $options);
 	$return = json_decode($tmhOAuth->response['response']);
-	$now = date("D, d M Y H:i:s T");
+	$now = gmdate("D, d M Y H:i:s T");
 	$link = htmlspecialchars('http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].'?'.$_SERVER['QUERY_STRING']);
 	header("Content-Type: application/xml; charset=UTF-8");
 ?>

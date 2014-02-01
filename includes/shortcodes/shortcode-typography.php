@@ -465,6 +465,7 @@ function cyon_social_icons( $atts, $content = null ) {
 			linkedin		=> '',
 			pinterest		=> '',
 			instagram		=> '',
+			vimeo			=> '',
 			skype			=> '',
 			youtube			=> '',
 			tumblr			=> '',
@@ -486,6 +487,8 @@ function cyon_social_icons( $atts, $content = null ) {
 	$html .= empty($atts['linkedin']) ? '' : '<a href="'.$atts['linkedin'].'" class="hastip" title="Linkedin" target="_blank"><span class="icon-linkedin"></span><span class="icon-linkedin copy"></span></a>';
 	$html .= empty($atts['pinterest']) ? '' : '<a href="'.$atts['pinterest'].'" class="hastip" title="Pinterest" target="_blank"><span class="icon-pinterest"></span><span class="icon-pinterest copy"></span></a>';
 	$html .= empty($atts['instagram']) ? '' : '<a href="'.$atts['instagram'].'" class="hastip" title="Instagram" target="_blank"><span class="icon-instagram"></span><span class="icon-instagram copy"></span></a>';
+	$html .= empty($atts['vimeo']) ? '' : '<a href="'.$atts['vimeo'].'" class="hastip" title="Vimeo" target="_blank"><span class="icon-vimeo-square"></span><span class="icon-vimeo-square copy"></span></a>';
+	$html .= empty($atts['skype']) ? '' : '<a href="'.$atts['skype'].'" class="hastip" title="Skype" target="_blank"><span class="icon-skype"></span><span class="icon-skype copy"></span></a>';
 	$html .= empty($atts['youtube']) ? '' : '<a href="'.$atts['youtube'].'" class="hastip" title="Youtube" target="_blank"><span class="icon-youtube"></span><span class="icon-youtube copy"></span></a>';
 	$html .= empty($atts['tumblr']) ? '' : '<a href="'.$atts['tumblr'].'" class="hastip" title="Tumblr" target="_blank"><span class="icon-tumblr"></span><span class="icon-tumblr copy"></span></a>';
 	$html .= empty($atts['flickr']) ? '' : '<a href="'.$atts['flickr'].'" class="hastip" title="Flickr" target="_blank"><span class="icon-flickr"></span><span class="icon-flickr copy"></span></a>';

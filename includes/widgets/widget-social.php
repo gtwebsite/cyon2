@@ -19,6 +19,7 @@ class CyonSocialWidget extends WP_Widget {
 			'linkedin'		=> '',
 			'pinterest'		=> '',
 			'instagram'		=> '',
+			'vimeo'			=> '',
 			'skype'			=> '',
 			'youtube'		=> '',
 			'tumblr'		=> '',
@@ -35,6 +36,7 @@ class CyonSocialWidget extends WP_Widget {
 		$linkedin = $instance['linkedin'];
 		$pinterest = $instance['pinterest'];
 		$instagram = $instance['instagram'];
+		$vimeo = $instance['vimeo'];
 		$skype = $instance['skype'];
 		$youtube = $instance['youtube'];
 		$tumblr = $instance['tumblr'];
@@ -52,6 +54,8 @@ class CyonSocialWidget extends WP_Widget {
 		  <p><label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('Linkedin') ?>: <input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="text" value="<?php echo attribute_escape($linkedin); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('pinterest'); ?>"><?php _e('Pinterest') ?>: <input class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" name="<?php echo $this->get_field_name('pinterest'); ?>" type="text" value="<?php echo attribute_escape($pinterest); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram') ?>: <input class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" type="text" value="<?php echo attribute_escape($instagram); ?>" /></label></p>
+		  <p><label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo') ?>: <input class="widefat" id="<?php echo $this->get_field_id('vimeo'); ?>" name="<?php echo $this->get_field_name('vimeo'); ?>" type="text" value="<?php echo attribute_escape($vimeo); ?>" /></label></p>
+		  <p><label for="<?php echo $this->get_field_id('skype'); ?>"><?php _e('Skype') ?>: <input class="widefat" id="<?php echo $this->get_field_id('skype'); ?>" name="<?php echo $this->get_field_name('skype'); ?>" type="text" value="<?php echo attribute_escape($skype); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('youtube'); ?>"><?php _e('Youtube') ?>: <input class="widefat" id="<?php echo $this->get_field_id('youtube'); ?>" name="<?php echo $this->get_field_name('youtube'); ?>" type="text" value="<?php echo attribute_escape($youtube); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('tumblr'); ?>"><?php _e('Tumblr') ?>: <input class="widefat" id="<?php echo $this->get_field_id('tumblr'); ?>" name="<?php echo $this->get_field_name('tumblr'); ?>" type="text" value="<?php echo attribute_escape($tumblr); ?>" /></label></p>
 		  <p><label for="<?php echo $this->get_field_id('flickr'); ?>"><?php _e('Flickr') ?>: <input class="widefat" id="<?php echo $this->get_field_id('flickr'); ?>" name="<?php echo $this->get_field_name('flickr'); ?>" type="text" value="<?php echo attribute_escape($flickr); ?>" /></label></p>
@@ -73,6 +77,8 @@ class CyonSocialWidget extends WP_Widget {
 		$instance['linkedin'] = $new_instance['linkedin'];
 		$instance['pinterest'] = $new_instance['pinterest'];
 		$instance['instagram'] = $new_instance['instagram'];
+		$instance['vimeo'] = $new_instance['vimeo'];
+		$instance['skype'] = $new_instance['skype'];
 		$instance['youtube'] = $new_instance['youtube'];
 		$instance['tumblr'] = $new_instance['tumblr'];
 		$instance['flickr'] = $new_instance['flickr'];
@@ -97,6 +103,8 @@ class CyonSocialWidget extends WP_Widget {
 		$html .= empty($instance['linkedin']) ? '' : '<a href="'.$instance['linkedin'].'" class="hastip" title="Linkedin" target="_blank"><span class="icon-linkedin"></span><span class="icon-linkedin copy"></span></a>';
 		$html .= empty($instance['pinterest']) ? '' : '<a href="'.$instance['pinterest'].'" class="hastip" title="Pinterest" target="_blank"><span class="icon-pinterest"></span><span class="icon-pinterest copy"></span></a>';
 		$html .= empty($instance['instagram']) ? '' : '<a href="'.$instance['instagram'].'" class="hastip" title="Instagram" target="_blank"><span class="icon-instagram"></span><span class="icon-instagram copy"></span></a>';
+		$html .= empty($instance['vimeo']) ? '' : '<a href="'.$instance['vimeo'].'" class="hastip" title="Vimeo" target="_blank"><span class="icon-vimeo-square"></span><span class="icon-vimeo-square copy"></span></a>';
+		$html .= empty($instance['skype']) ? '' : '<a href="'.$instance['skype'].'" class="hastip" title="Skype" target="_blank"><span class="icon-skype"></span><span class="icon-skype copy"></span></a>';
 		$html .= empty($instance['youtube']) ? '' : '<a href="'.$instance['youtube'].'" class="hastip" title="Youtube" target="_blank"><span class="icon-youtube"></span><span class="icon-youtube copy"></span></a>';
 		$html .= empty($instance['tumblr']) ? '' : '<a href="'.$instance['tumblr'].'" class="hastip" title="Tumblr" target="_blank"><span class="icon-tumblr"></span><span class="icon-tumblr copy"></span></a>';
 		$html .= empty($instance['flickr']) ? '' : '<a href="'.$instance['flickr'].'" class="hastip" title="Flickr" target="_blank"><span class="icon-flickr"></span><span class="icon-flickr copy"></span></a>';
