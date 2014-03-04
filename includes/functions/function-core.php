@@ -1064,7 +1064,7 @@ function cyon_footer_jquery(){
 				if (pagesize <= 767) {
 					if(jQuery('#access_r').length == 0){
 						jQuery('#access').hide().clone().prependTo('body').attr('id','access_r').show();
-						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-bards"></span>');
+						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-bars"></span>');
 					}
 				}else{
 					jQuery('#access_r').hide().remove();
