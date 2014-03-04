@@ -1060,11 +1060,11 @@ function cyon_footer_jquery(){
 			<?php if($data['responsive']==1){ ?>
 			// Responsive Menu Support
 			function checkWidth() {
-				var pagesize = jQuery('body').width();
-				if (pagesize <= 974) {
+				var pagesize = jQuery(window).width();
+				if (pagesize <= 767) {
 					if(jQuery('#access_r').length == 0){
 						jQuery('#access').hide().clone().prependTo('body').attr('id','access_r').show();
-						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-reorder"></span>');
+						jQuery('#access_r h3').css('textIndent','0').prepend('<span class="icon-bards"></span>');
 					}
 				}else{
 					jQuery('#access_r').hide().remove();

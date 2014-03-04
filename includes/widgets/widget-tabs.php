@@ -55,7 +55,7 @@ class CyonTabsWidget extends WP_Widget {
 			echo '<li><a href="#'.$widget.'">'.$title['given_title'].'</a></li>';
 			//echo $widget;
 		}
-		echo '</ul><div class="panel">';
+		echo '</ul><div class="panel" id="tabs_container">';
 		//print_r($wp_registered_widgets['cyonsocialwidget-3']);
 		//print_r(wp_get_sidebars_widgets());
 		dynamic_sidebar( $instance['widgetarea'] );

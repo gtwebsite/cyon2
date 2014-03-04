@@ -58,6 +58,7 @@ class CyonAdsWidget extends WP_Widget {
 			'ad_img_7'	=> '',
 			'ad_url_7'	=> '',
 			'ad_name_7'	=> '',
+			'ad_pop_7'	=> 'parent',
 			'ad_img_8'	=> '',
 			'ad_url_8'	=> '',
 			'ad_name_8'	=> '',
