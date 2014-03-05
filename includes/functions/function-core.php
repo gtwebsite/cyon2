@@ -794,14 +794,23 @@ function cyon_home_block_slider(){
 						jQuery(\'#slider-block\').camera({
 							easing: \'easeInOutExpo\',
 							time: 5000,
+							minHeight: \'200px\',
 							fx: \''.$data['homepage_slider_camera_effects'].'\'
 						});
 					});
 				</script> 
 				<div class="block camera_wrap" id="slider-block">';
 			foreach ($slides as $slide) {
+				$description = '';
+				if($slide['description']!=''){
+					$description = '<div class="camera_caption fadeFromBottom camera_effected">'.apply_filters('the_content',$slide['description']).'</div>';
+				}
+				$link = '';
+				if($slide['link']!=''){
+					$link = ' data-link="' . $slide['link'] . '"';
+				}
 				if($slide['url']!=''){
-					echo '<div data-src="'.$slide['url'].'"><div class="camera_caption fadeFromBottom camera_effected">'.apply_filters('the_content',$slide['description']).'</div></div>';
+					echo '<div data-src="'. $slide['url']. '"'. $link .'>'. $description .'</div>';
 				}
 			}
 			echo '</div>';
@@ -842,7 +851,7 @@ function cyon_home_block_page(){
 	$page = get_post(get_option('page_on_front', true)); ?>
 	<article class="block page type-page" id="page-block"><div class="block-wrapper article-wrapper">
 		<header class="page-header">
-			<h1 class="paget-title"><?php echo apply_filters('the_title',$page->post_title); ?></h1>
+			<h1 class="page-title"><?php echo apply_filters('the_title',$page->post_title); ?></h1>
 		</header>
 		<div class="page-content clearfix">
 			<?php echo apply_filters('the_content',$page->post_content); ?>
