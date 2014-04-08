@@ -54,14 +54,15 @@ function cyon_wp_title($title){
 	if($data['seo_activate']==1){
 		if(is_page() || is_single()){
 			if(get_post_meta($post->ID,'cyon_meta_title',true)!=''){
-				$PAGETITLE = get_post_meta($post->ID,'cyon_meta_title',true);
+				$filtered_title = get_post_meta($post->ID,'cyon_meta_title',true);
 			}else{
 				$PAGETITLE = get_the_title($post->ID);
+				$filtered_title = preg_replace('/\{([A-Z]+)\}/e', '$$1', $data['seo_title_format']);
 			}
 		}else{
 			$PAGETITLE = $title;
+			$filtered_title = preg_replace('/\{([A-Z]+)\}/e', '$$1', $data['seo_title_format']);
 		}
-		$filtered_title = preg_replace('/\{([A-Z]+)\}/e', '$$1', $data['seo_title_format']);
 	}else{
 		if(is_home() || is_front_page()){
 			$filtered_title = $BLOGTITLE.' | '.$BLOGTAGLINE;
@@ -1472,7 +1473,7 @@ function cyon_newsletter_email() {
 		$subject = __('New subscriber from').' '.get_bloginfo('name');
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= 'From: '.$_REQUEST['name'].' <'.$_REQUEST['email'].'>' . "\r\n";
+		$headers .= 'From: '.$_REQUEST['name'].' <'.$_REQUEST['emailto'].'>' . "\r\n";
 		$body = __('Name').': <b>'.$_REQUEST['name'].'</b><br>';
 		$body .= __('Email').': <b>'.$_REQUEST['email'].'</b><br>';
 

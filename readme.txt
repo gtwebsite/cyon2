@@ -10,6 +10,14 @@
 
 == Changelog ==
 
+= 2.2.1 =
+* A lot of fixes on PHP and CSS
+* Updated send from email to admin email
+* Updated Admin css to work on WP v3.8
+* Updated Swiper 2.4.3
+* Updated Toggle/Accordion/Tabulous to work well with images delay loading
+* Update Font Awesome
+
 = 2.2.0 =
 * Updated core HTML codes
 * Updated Metabox 4.3.3

@@ -34,7 +34,7 @@
 
 </head>
 
-<body id="topmost" <?php body_class(); ?>>
+<body id="topmost" <?php body_class(); ?> ontouchstart="">
 
 	<div id="page" class="hfeed"><div class="page_wrapper">
 

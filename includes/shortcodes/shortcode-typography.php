@@ -49,21 +49,20 @@ function cyon_header_style( $atts, $content = null ) {
 		array(
 			size		=> '2',
 			classname	=> '',
-			icon		=> 'right_arrow'
+			icon		=> ''
 		), $atts);
 	$classname = '';
 	if($atts['size']==''){
 		$atts['size'] = '2';
 	}
-	if($atts['icon']==''){
-		$atts['icon'] = 'right_arrow';
-	}
 	$size = 'h'.$atts['size'];
 	if($atts['classname']){
 		$classname .= ' class="'.$atts['classname'].'"';
 	}
-	$icon = '<span class="icon-'.$atts['icon'].'"></span>';
-	$icon_content = array('<'.$size.$classname.'>'. $icon . $content . '</'.$size.'>');
+	if($atts['icon']){
+		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
+	}
+	$icon_content = array('<'.$size.$classname.'><span>'. $icon . $content . '</span></'.$size.'>');
 	foreach ($icon_content as $value){
 		return $value ;
 	}

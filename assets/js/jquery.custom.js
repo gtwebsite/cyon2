@@ -53,42 +53,47 @@ jQuery(document).ready(function(){
 	})
 
 			
+});
+
+jQuery(window).load(function(){
+	// Tabs
+	jQuery('.tabs').imagesLoaded(function(){
+		jQuery('.tabs').tabulous();
+	});
+
 	// Toggle
-	jQuery('.toggle .toggle-wrapper').each(function(){
-		var org_height = jQuery(this).css('height');
-		jQuery(this).css({ height:'0px', display:'block' });
-		jQuery(this).parent().find('h3').click(function(){
-			if(jQuery(this).parent().find('.toggle-wrapper').height()==0){
-				jQuery(this).parent().addClass('toggle-active');
-				jQuery(this).parent().find('.toggle-wrapper').height(org_height);
-			}else{
-				jQuery(this).parent().removeClass('toggle-active');
-				jQuery(this).parent().find('.toggle-wrapper').height(0);
-			}
+	jQuery('.toggle').imagesLoaded(function(){
+		jQuery('.toggle .toggle-wrapper').each(function(){
+			var org_height = jQuery(this).css('height');
+			jQuery(this).css({ height:'0px', display:'block' });
+			jQuery(this).parent().find('h3').click(function(){
+				if(jQuery(this).parent().find('.toggle-wrapper').height()==0){
+					jQuery(this).parent().addClass('toggle-active');
+					jQuery(this).parent().find('.toggle-wrapper').height(org_height);
+				}else{
+					jQuery(this).parent().removeClass('toggle-active');
+					jQuery(this).parent().find('.toggle-wrapper').height(0);
+				}
+			});
 		});
 	});
 
 	// Accordion
-	jQuery('.accordion .accordion-wrapper').each(function(){
-		var org_height = jQuery(this).css('height');
-		jQuery(this).css({ height:'0px', display:'block' });
-		jQuery(this).parent().find('h3').click(function(){
-			if(jQuery(this).parent().find('.accordion-wrapper').height()==0){
-				jQuery('.accordion').removeClass('accordion-active');
-				jQuery('.accordion .accordion-wrapper').height(0);
-				jQuery(this).parent().find('.accordion-wrapper').height(org_height);
-				jQuery(this).parent().addClass('accordion-active');
-			}else{
-				jQuery(this).parent().removeClass('accordion-active');
-				jQuery(this).parent().find('.accordion-wrapper').height(0);
-			}
+	jQuery('.accordion').imagesLoaded(function(){
+		jQuery('.accordion .accordion-wrapper').each(function(){
+			var org_height = jQuery(this).css('height');
+			jQuery(this).css({ height:'0px', display:'block' });
+			jQuery(this).parent().find('h3').click(function(){
+				if(jQuery(this).parent().find('.accordion-wrapper').height()==0){
+					jQuery('.accordion').removeClass('accordion-active');
+					jQuery('.accordion .accordion-wrapper').height(0);
+					jQuery(this).parent().find('.accordion-wrapper').height(org_height);
+					jQuery(this).parent().addClass('accordion-active');
+				}else{
+					jQuery(this).parent().removeClass('accordion-active');
+					jQuery(this).parent().find('.accordion-wrapper').height(0);
+				}
+			});
 		});
-	});
-
-});
-
-jQuery(window).load(function(){
-	jQuery('.tabs').imagesLoaded(function(){
-		jQuery('.tabs').tabulous();
 	});
 });

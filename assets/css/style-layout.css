@@ -1267,10 +1267,9 @@ p.nocomments {
 		margin-bottom:10px;
 	}
 	#access ul, #access ul li {
-		margin:0; padding:0; list-style:none;
-		transform: translate3d(0,0,0);
-		-webkit-transform: translate3d(0,0,0);
-		-webkit-transform-style: preserve-3d;
+		margin:0;
+		padding:0;
+		list-style:none;
 	}
 		/* First Level */
 		#access ul.menu > li, #access .menu > ul > li {
@@ -1287,7 +1286,6 @@ p.nocomments {
 			height:30px;
 			line-height:30px;
 			padding:0 20px;
-			white-space:nowrap;
 		}
 		#access ul.menu > li a:hover, #access ul.menu li:hover > a, #access ul.menu li.current-menu-item > a, #access ul.menu > li.current-menu-parent > a,
 		#access .menu > ul > li a:hover, #access .menu > ul > li:hover > a, #access .menu > ul > li.current-menu-item > a, #access .menu > ul > li.current-menu-parent > a, #access .menu > ul > li.current_page_item > a {

@@ -111,14 +111,16 @@ function cyon_blog( $atts, $content = null ) {
 			items 		=> 4,
 			classname 	=> '',
 			cols	 	=> '',
-			cat_id 		=> 1,
+			cat_id 		=> '',
+			post_type 	=> 'post',
 			style		=> 'list' // list, slide, masonry
 		), $atts);
 	static $instance = 0;
 	$instance++;
 	$args = array(
 		'posts_per_page' 	=> $atts['items'],
-		'category' 		=> $atts['cat_id']
+		'category' 			=> $atts['cat_id'],
+		'post_type' 		=> $atts['post_type']
 	);
 	$posts = get_posts($args);
 	$result = '';
