@@ -124,12 +124,12 @@ obj[what]||($.isPlainObject(opts[what])?opts[what].params:null));url=$.type(item
                  tab_content = this.$elem.find('div, aside').not(':first').not(':nth-child(1)').addClass('hideflip');
             }
 
-            var firstdiv = this.$elem.find('#tabs_container');
+            var firstdiv = this.$elem.find('#tabs_container, .panel');
             var firstdivheight = firstdiv.find('div:first, aside:first').height();
 
             var alldivs = this.$elem.find('div:first, aside:first').find('div, aside');
 
-            alldivs.css({'position': 'absolute','top':'40px'});
+            alldivs.css({'position': 'absolute','top':'0'});
 
             firstdiv.css('height',firstdivheight+'px');
 
