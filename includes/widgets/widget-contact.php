@@ -14,6 +14,8 @@ class CyonContactWidget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array(
 			'title' 		=> 'Contact Info',
 			'address'		=> '',
+			'address2'		=> '',
+			'address3'		=> '',
 			'phone'			=> '',
 			'fax'			=> '',
 			'email'			=> '',
@@ -26,6 +28,8 @@ class CyonContactWidget extends WP_Widget {
 		) );
 		$title = $instance['title'];
 		$address = $instance['address'];
+		$address2 = $instance['address2'];
+		$address3 = $instance['address3'];
 		$phone = $instance['phone'];
 		$fax = $instance['fax'];
 		$email = $instance['email'];
@@ -39,6 +43,8 @@ class CyonContactWidget extends WP_Widget {
 		?>
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title') ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('address'); ?>"><?php _e('Address') ?>: <input class="widefat" id="<?php echo $this->get_field_id('address'); ?>" name="<?php echo $this->get_field_name('address'); ?>" type="text" value="<?php echo attribute_escape($address); ?>" /></label></p>
+		<p><label for="<?php echo $this->get_field_id('address2'); ?>"><?php _e('Address 2') ?>: <input class="widefat" id="<?php echo $this->get_field_id('address2'); ?>" name="<?php echo $this->get_field_name('address2'); ?>" type="text" value="<?php echo attribute_escape($address2); ?>" /></label></p>
+		<p><label for="<?php echo $this->get_field_id('address3'); ?>"><?php _e('Address 3') ?>: <input class="widefat" id="<?php echo $this->get_field_id('address3'); ?>" name="<?php echo $this->get_field_name('address3'); ?>" type="text" value="<?php echo attribute_escape($address3); ?>" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('phone'); ?>"><?php _e('Phone') ?>: <input class="widefat" id="<?php echo $this->get_field_id('phone'); ?>" name="<?php echo $this->get_field_name('phone'); ?>" type="text" value="<?php echo attribute_escape($phone); ?>" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('fax'); ?>"><?php _e('Fax') ?>: <input class="widefat" id="<?php echo $this->get_field_id('fax'); ?>" name="<?php echo $this->get_field_name('fax'); ?>" type="text" value="<?php echo attribute_escape($fax); ?>" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('email'); ?>"><?php _e('Email') ?>: <input class="widefat" id="<?php echo $this->get_field_id('email'); ?>" name="<?php echo $this->get_field_name('email'); ?>" type="text" value="<?php echo attribute_escape($email); ?>" /></label></p>
@@ -59,6 +65,8 @@ class CyonContactWidget extends WP_Widget {
 		// Override new values of each fields
 		$instance['title'] = $new_instance['title'];
 		$instance['address'] = $new_instance['address'];
+		$instance['address2'] = $new_instance['address2'];
+		$instance['address3'] = $new_instance['address3'];
 		$instance['phone'] = $new_instance['phone'];
 		$instance['fax'] = $new_instance['fax'];
 		$instance['email'] = $new_instance['email'];
@@ -80,6 +88,8 @@ class CyonContactWidget extends WP_Widget {
 		$html = ''; 
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$html .= empty($instance['address']) ? '' : '<address><span class="icon-map-marker"></span>'.$instance['address'].'</address>';
+		$html .= empty($instance['address2']) ? '' : '<address class="line">'.$instance['address2'].'</address>';
+		$html .= empty($instance['address3']) ? '' : '<address class="line">'.$instance['address3'].'</address>';
 		$html .= empty($instance['phone']) ? '' : '<address><a href="tel:'.$instance['phone'].'"><span class="icon-phone"></span>'.$instance['phone'].'</a></address>';
 		$html .= empty($instance['fax']) ? '' : '<address><span class="icon-print"></span>'.$instance['fax'].'</address>';
 		$html .= empty($instance['email']) ? '' : '<address><a href="mailto:'.$instance['email'].'"><span class="icon-envelope"></span>'.$instance['email'].'</a></address>';

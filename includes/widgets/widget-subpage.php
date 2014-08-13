@@ -58,7 +58,7 @@ class CyonSupageWidget extends WP_Widget {
 
 
 		// Start widget
-		if(is_page() && get_pages(array('child_of'=>$parent) && !is_home() && !is_front_page())){
+		if(is_page() && get_pages(array('child_of'=>$parent)) && !is_home() && !is_front_page()){
 			echo $before_widget;
 			$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 			

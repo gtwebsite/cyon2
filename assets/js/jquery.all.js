@@ -115,19 +115,19 @@ obj[what]||($.isPlainObject(opts[what])?opts[what].params:null));url=$.type(item
             var lastchild = this.$elem.find('ul:first-child li:last-child').after('<span class="tabulousclear"></span>');
 
             if (this.options.effect == 'scale') {
-             tab_content = this.$elem.find('div, aside').not(':first').not(':nth-child(1)').addClass('hidescale');
+             	tab_content = this.$elem.find('.tab-content').not(':first').not(':nth-child(1)').addClass('hidescale');
             } else if (this.options.effect == 'slideLeft') {
-                 tab_content = this.$elem.find('div, aside').not(':first').not(':nth-child(1)').addClass('hideleft');
+                 tab_content = this.$elem.find('.tab-content').not(':first').not(':nth-child(1)').addClass('hideleft');
             } else if (this.options.effect == 'scaleUp') {
-                 tab_content = this.$elem.find('div, aside').not(':first').not(':nth-child(1)').addClass('hidescaleup');
+                 tab_content = this.$elem.find('.tab-content').not(':first').not(':nth-child(1)').addClass('hidescaleup');
             } else if (this.options.effect == 'flip') {
-                 tab_content = this.$elem.find('div, aside').not(':first').not(':nth-child(1)').addClass('hideflip');
+                 tab_content = this.$elem.find('.tab-content').not(':first').not(':nth-child(1)').addClass('hideflip');
             }
 
             var firstdiv = this.$elem.find('#tabs_container, .panel');
             var firstdivheight = firstdiv.find('div:first, aside:first').height();
 
-            var alldivs = this.$elem.find('div:first, aside:first').find('div, aside');
+            var alldivs = this.$elem.find('.tab-content');
 
             alldivs.css({'position': 'absolute','top':'0'});
 
@@ -154,7 +154,7 @@ obj[what]||($.isPlainObject(opts[what])?opts[what].params:null));url=$.type(item
 
                 if (effect == 'scale') {
                     alldivs.removeClass('showscale').addClass('make_transist').addClass('hidescale');
-                    thisform.find('div'+thislink+',aside'+thislink).addClass('make_transist').addClass('showscale');
+                    thisform.find('div'+thislink+',aside'+thislink).addClass('make_transist').addClass('showscale').removeClass('hidescale');
                 } else if (effect == 'slideLeft') {
                     alldivs.removeClass('showleft').addClass('make_transist').addClass('hideleft');
                     thisform.find('div'+thislink+',aside'+thislink).addClass('make_transist').addClass('showleft');

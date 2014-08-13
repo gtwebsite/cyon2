@@ -12,8 +12,7 @@ cyon_header
 
 cyon_header_wrapper
 - cyon_header_columns, 10
-- cyon_header_logo, 20
-- cyon_header_mainnav, 30
+- cyon_header_nav, 30
 
 cyon_body
 - cyon_body_hook, 10

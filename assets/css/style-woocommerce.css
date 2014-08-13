@@ -3,7 +3,7 @@
 /* Forms */
 .checkout { margin-top:40px; }
 
-.orderby, .variations_form select, .variations_form input, .country_select, .variations_form button, .add_to_cart_button, .cart input.input-text, .cart button, .cart input[type=button], #commentform input, #commentform textarea, .shipping_calculator input[type=text], .shipping_calculator select, .shipping_calculator button, .checkout input[type=text], .checkout input[type=password], .checkout input[type=submit], .checkout select, .checkout textarea, .login input[type=password], .login input[type=text], .checkout_coupon input[type=text], .form-row input[type=text], .button, #billing_country, .edit { 
+.orderby, .variations_form select, .variations_form input, .country_select, .variations_form button, .add_to_cart_button, .cart input.input-text, .cart button, .cart input[type=button], #commentform input, #commentform textarea, .shipping_calculator input[type=text], .shipping_calculator select, .shipping_calculator button, .checkout input[type=text], .checkout input[type=password], .checkout input[type=submit], .checkout select, .checkout textarea, .login input[type=password], .login input[type=text], .checkout_coupon input[type=text], .form-row input[type=email], .form-row input[type=password], .form-row input[type=text], .button, #billing_country, .edit { 
 	border:0; margin:0; font-family:inherit; font-size:inherit; border:1px solid #ccc; border-radius:3px; padding:6px 5px; color:#888; white-space:nowrap; line-height:normal; background:#f8f8f8;
 	transition:all ease-in-out .3s;
 	-moz-transition:all ease-in-out .3s;

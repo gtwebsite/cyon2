@@ -43,7 +43,7 @@ add_shortcode('iframe','cyon_iframe');
 
 
 /* =Video
-use [video width='480' height='270' src='' poster='' subtitles='' chapters='']
+use [media width='480' height='270' src='' poster='' subtitles='' chapters='']
 ----------------------------------------------- */
 if(!function_exists('cyon_video')){
 function cyon_video( $atts, $content = null ) {
@@ -122,7 +122,7 @@ function cyon_video( $atts, $content = null ) {
 	}
 	return $html;
 } }
-add_shortcode('video','cyon_video'); 
+add_shortcode('media','cyon_video'); 
 
 if (!function_exists('cyon_get_youtube_id')){
 	function cyon_get_youtube_id($url) {
