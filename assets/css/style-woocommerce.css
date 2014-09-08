@@ -69,7 +69,7 @@ ins { padding:0; background:none; }
 .products li .added::before { background:url(../images/success.png) no-repeat 50% 50%; }
 
 
-.stars { float:left; }
+.stars { float:left; margin: 0; }
 .stars span, .star-rating { position:relative; height:16px; width:80px; display:block; background:url(../images/star.png) repeat-x; }
 .stars a { display:block; position:absolute; left:0; top:0; height:16px; overflow:hidden; text-indent:-999px; }
 .stars a:hover, .stars span a:focus { background:url(../images/star.png) 0 -32px repeat-x; }
@@ -140,6 +140,9 @@ ins { padding:0; background:none; }
 	margin-bottom:20px;
 }
 .type-product .tabs .panel { padding:15px; border:1px solid #eee; border-radius:3px; border-top-left-radius:0; }
+.type-product .comment-text {
+	margin-left: 80px;
+}
 
 .type-product form.cart { margin-bottom:10px; }
 .type-product form.cart .variations { margin-bottom:0; }

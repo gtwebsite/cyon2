@@ -1366,6 +1366,7 @@ function cyon_admin_login() {
 		#login h1 a {
 			<?php if($data['header_logo']!=''){ ?>
 			background: url('<?php echo $data['header_logo']; ?>') no-repeat scroll 50% transparent;
+			background-size: 70% auto;
 			margin-bottom:10px;
 			height:150px;
 			line-height:150px;
@@ -1657,10 +1658,10 @@ function cyon_post_content_featured(){
 		<div class="entry-featured-image">
 			<?php if(has_post_format('video')){ ?>
 				<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large'); ?>
-				<?php echo do_shortcode('[video width="100%" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
+				<?php echo do_shortcode('[video width="1000" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
 			<?php }elseif(has_post_format('audio')){ ?>
 				<?php the_post_thumbnail( 'large' ); ?>
-				<?php echo do_shortcode('[audio width="100%" src="'.rwmb_meta( 'cyon_audio_url' ).'"]'); ?>
+				<?php echo do_shortcode('[audio width="1000" src="'.rwmb_meta( 'cyon_audio_url' ).'"]'); ?>
 			<?php }else{ ?>
 				<?php the_post_thumbnail( 'large' ); ?>
 			<?php } ?>
@@ -1689,7 +1690,7 @@ function cyon_post_content_featured(){
 				}
 				if($type!=''){ 
 				?>
-					<?php echo do_shortcode('[video width="100%" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
+					<?php echo do_shortcode('[video width="1000" src="'.rwmb_meta( 'cyon_video_url' ).'" poster="'.$large_image_url[0].'"]'); ?>
 				<?php }else{
 				$icon = 'facetime-video';
 					?>

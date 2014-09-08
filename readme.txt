@@ -10,6 +10,11 @@
 
 == Changelog ==
 
+= 2.3.0 =
+* Updated core HTML/CSS
+* Updated Swiper 2.7
+* Removed media
+
 = 2.2.1 =
 * A lot of fixes on PHP and CSS
 * Updated send from email to admin email

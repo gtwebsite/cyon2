@@ -17,8 +17,11 @@ function cyon_woo_init(){
 	remove_action('woocommerce_before_main_content', 	'woocommerce_breadcrumb',20);
 
 	/* Add scripts */
-	add_action('wp_enqueue_scripts',					'cyon_register_scripts_styles_woocommerce',110);
-	add_action('wp_footer', 							'cyon_woo_header_js_css_hook',130);
+	if( !is_admin() ) {
+		add_action('wp_enqueue_scripts',					'cyon_register_scripts_styles_woocommerce',110);
+		add_action('wp_footer', 							'cyon_woo_header_js_css_hook',130);
+		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+	}
 
 	/* Replace main wrapper */
 	remove_action('woocommerce_before_main_content', 	'woocommerce_output_content_wrapper', 10);
@@ -59,15 +62,9 @@ if ( ! is_admin() || defined('DOING_AJAX') ) {
 if(!function_exists('cyon_register_scripts_styles_woocommerce')) {
 function cyon_register_scripts_styles_woocommerce(){
 	global $data;
-	if(get_option('woocommerce_frontend_css') == 'no'){
-		wp_enqueue_style('cyon_style_woocommerce');
-		if($data['responsive']==1){
-			wp_enqueue_style('cyon_style_woocommerce_responsive'); 
-		}
-	}
-	if (is_product() && get_option('woocommerce_frontend_css') == 'no'){
-		//wp_dequeue_script('wc-single-product');
-		//wp_enqueue_script('cyon-wc-single-product', THEME_ASSETS_URI . 'js/jquery.single.product.js', array('jquery'),'1.0.0', false);
+	wp_enqueue_style('cyon_style_woocommerce');
+	if($data['responsive']==1){
+		wp_enqueue_style('cyon_style_woocommerce_responsive'); 
 	}
 } }
 
@@ -78,7 +75,6 @@ if(!function_exists('cyon_woo_header_js_css_hook')) {
 function cyon_woo_header_js_css_hook(){
 	global $data;
 ?>
-<?php if(get_option('woocommerce_frontend_css') == 'no'){  ?>
 	<?php if(is_shop() || is_product_category() || is_product_tag() || is_product()){  ?>
 	<script type="text/javascript">
 			<?php if($data['woocommerce_product_cols_masonry']){ ?>
@@ -146,7 +142,6 @@ function cyon_woo_header_js_css_hook(){
 		}
 
 	</style>
-	<?php } ?>
 <?php } }
  
 
