@@ -1081,8 +1081,10 @@ function cyon_footer_jquery(){
 					jQuery('#access').show();
 				}
 			}
-			checkWidth();
-			jQuery(window).resize(checkWidth);
+			if( !(jQuery.browser.msie && jQuery.browser.version < 9 ) ) {
+				checkWidth();
+				jQuery(window).resize(checkWidth);
+			}
 			jQuery('#access_r h3').live( 'click', function(){
 				if(jQuery('.open_menu').length == 0){
 					jQuery('#access_r').addClass('open_menu').transition({ height:jQuery('#access_r ul.menu').height() + 40 + 'px' });; 
