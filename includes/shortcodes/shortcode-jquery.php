@@ -9,15 +9,20 @@ use [toggle title='title' icon=''] xxx [/accordion]
 function cyon_toggle( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			title 		=> __( 'Title Here' , 'cyon' ),
-			icon		=> '',
+			'title' 		=> __( 'Title Here' , 'cyon' ),
+			'icon'			=> '',
+			'active'		=> false
 		), $atts);
 		
 	$icon = '';
 	if($atts['icon']){
 		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
 	}
-	$toggle_content .= '<div class="toggle"><h3 class="toggle-title">' . $icon . $atts['title'] . '</h3><div class="toggle-wrapper"><div class="toggle-content clearfix">'. do_shortcode( $content ) . '</div></div></div>';
+	$active = '';
+	if($atts['active']) {
+		$active = ' toggle-active';
+	}
+	$toggle_content .= '<div class="toggle'.$active.'"><h3 class="toggle-title">' . $icon . $atts['title'] . '</h3><div class="toggle-wrapper"><div class="toggle-content clearfix">'. do_shortcode( $content ) . '</div></div></div>';
 	return $toggle_content;
 }
 add_shortcode('toggle','cyon_toggle');
@@ -28,14 +33,19 @@ use [accordion title='title' icon=''] xxx [/accordion]
 function cyon_accordion( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			title 		=> __( 'Title Here' , 'cyon' ),
-			icon		=> '',
+			'title' 		=> __( 'Title Here' , 'cyon' ),
+			'icon'			=> '',
+			'active'		=> false
 		), $atts);
 	$icon = '';
 	if($atts['icon']){
 		$icon = '<span class="icon-'.$atts['icon'].'"></span>';
 	}
-	$accordion_content = array('<div class="accordion"> <h3 class="accordion-title">' . $icon . $atts['title'] . '</h3><div class="accordion-wrapper"><div class="accordion-content clearfix">'. do_shortcode( $content ) . '</div></div></div>');
+	$active = '';
+	if($atts['active']) {
+		$active = ' accordion-active';
+	}
+	$accordion_content = array('<div class="accordion'.$active.'"> <h3 class="accordion-title">' . $icon . $atts['title'] . '</h3><div class="accordion-wrapper"><div class="accordion-content clearfix">'. do_shortcode( $content ) . '</div></div></div>');
 	foreach ($accordion_content as $value){
 		return $value ;
 	}

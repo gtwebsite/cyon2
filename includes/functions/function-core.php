@@ -837,9 +837,16 @@ function cyon_home_block_slider(){
 	}else{
 		if($slides[1]['url']!=''){
 			echo '<div class="block" id="slider-block">';
-			echo $slides[1]['link']!='' ? '<a href="'.$slides[1]['link'].'">' : '';
-			echo '<img src="'.$slides[1]['url'].'" alt="'.$slides[1]['title'].'" />';
-			echo $slides[1]['link']!='' ? '</a>' : '';
+			if( $slides[1]['title'] ) {
+				echo '<img src="'.$slides[1]['url'].'" alt="'.$slides[1]['title'].'" />';
+				echo '<div class="block-wrapper"><h3 class="swiper-title">'.$slides[1]['title'].'</h3>'.apply_filters('the_content',$slides[1]['description']);
+				echo $slides[1]['link']!='' ? '<p class="readmore"><a href="'.$slides[1]['link'].'" class="btn">'.__('Read more').'</a></p>' : '';
+				echo '</div>';
+			}else{
+				echo $slides[1]['link']!='' ? '<a href="'.$slides[1]['link'].'">' : '';
+				echo '<img src="'.$slides[1]['url'].'" alt="'.$slides[1]['title'].'" />';
+				echo $slides[1]['link']!='' ? '</a>' : '';
+			}
 			echo '</div>';
 		}
 	}

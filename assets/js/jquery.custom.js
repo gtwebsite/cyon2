@@ -65,7 +65,11 @@ jQuery(window).load(function(){
 	jQuery('.toggle').imagesLoaded(function(){
 		jQuery('.toggle .toggle-wrapper').each(function(){
 			var org_height = jQuery(this).css('height');
-			jQuery(this).css({ height:'0px', display:'block' });
+			if( !jQuery(this).parent().hasClass('toggle-active') ){
+				jQuery(this).css({ height:'0px', display:'block' });
+			}else{
+				jQuery(this).height(org_height);
+			}
 			jQuery(this).parent().find('h3').click(function(){
 				if(jQuery(this).parent().find('.toggle-wrapper').height()==0){
 					jQuery(this).parent().addClass('toggle-active');
@@ -82,7 +86,11 @@ jQuery(window).load(function(){
 	jQuery('.accordion').imagesLoaded(function(){
 		jQuery('.accordion .accordion-wrapper').each(function(){
 			var org_height = jQuery(this).css('height');
-			jQuery(this).css({ height:'0px', display:'block' });
+			if( !jQuery(this).parent().hasClass('accordion-active') ){
+				jQuery(this).css({ height:'0px', display:'block' });
+			}else{
+				jQuery(this).height(org_height);
+			}
 			jQuery(this).parent().find('h3').click(function(){
 				if(jQuery(this).parent().find('.accordion-wrapper').height()==0){
 					jQuery('.accordion').removeClass('accordion-active');

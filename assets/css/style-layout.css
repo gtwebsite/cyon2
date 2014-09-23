@@ -13,6 +13,7 @@ div.alignleft:empty, div.alignright:empty {
 }
 .aligncenter {
 	display:block;
+	margin: 0 auto;
 	text-align:center;
 }
 .wp-caption {
