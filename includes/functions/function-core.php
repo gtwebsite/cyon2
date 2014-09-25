@@ -767,6 +767,8 @@ function cyon_homepage_blocks(){
 
 /* =Homepage Block Slider
 ----------------------------------------------- */
+/* =Homepage Block Slider
+----------------------------------------------- */
 if(!function_exists('cyon_home_block_slider')) {
 function cyon_home_block_slider(){
 	global $data;
@@ -819,29 +821,27 @@ function cyon_home_block_slider(){
 			echo '<div class="block swiper" id="slider-block"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
 			foreach ($slides as $slide) {
 				if($slide['url']!=''){
-					echo '<div class="swiper-slide">';
-					echo $slide['link']!='' ? '<a href="'.$slide['link'].'">' : '';
+					echo '<div class="swiper-slide"><div class="swiper-bg" style="background: url('.$slide['url'].') 50% 50% no-repeat; background-size: cover;">';
 					echo '<img src="'.$slide['url'].'" alt="'.$slide['title'].'" />';
-					echo $slide['link']!='' ? '</a>' : '';
 					if($slide['description']!=''){
-						echo '<div class="swiper-caption">';
+						echo '<div class="block-wrapper"><div class="swiper-caption">';
 						echo '<h3 class="swiper-title">'.$slide['title'].'</h3><div class="swiper-content">'.apply_filters('the_content',$slide['description']).'</div>';
 						echo $slide['link']!='' ? '<p class="readmore"><a href="'.$slide['link'].'">'.__('Read more').'</a></p>' : '';
-						echo '</div>';
+						echo '</div></div>';
 					}
-					echo '</div>';
+					echo '</div></div>';
 				}
 			}
 			echo '</div></div></div>';
 		}
 	}else{
 		if($slides[1]['url']!=''){
-			echo '<div class="block" id="slider-block">';
+			echo '<div class="block" id="slider-block" style="background: url('.$slides[1]['url'].') 50% 50% no-repeat; background-size: cover;">';
 			if( $slides[1]['title'] ) {
 				echo '<img src="'.$slides[1]['url'].'" alt="'.$slides[1]['title'].'" />';
-				echo '<div class="block-wrapper"><h3 class="swiper-title">'.$slides[1]['title'].'</h3>'.apply_filters('the_content',$slides[1]['description']);
+				echo '<div class="block-wrapper"><div><h3 class="swiper-title">'.$slides[1]['title'].'</h3>'.apply_filters('the_content',$slides[1]['description']);
 				echo $slides[1]['link']!='' ? '<p class="readmore"><a href="'.$slides[1]['link'].'" class="btn">'.__('Read more').'</a></p>' : '';
-				echo '</div>';
+				echo '</div></div>';
 			}else{
 				echo $slides[1]['link']!='' ? '<a href="'.$slides[1]['link'].'">' : '';
 				echo '<img src="'.$slides[1]['url'].'" alt="'.$slides[1]['title'].'" />';
