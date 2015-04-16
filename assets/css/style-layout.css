@@ -307,6 +307,7 @@ img, input[type=radio], input[type=checkbox] {
 	min-width:32px;
 	text-align:center;
 	padding:0;
+	top: 0;
 	position:relative;
 	transition:all ease-in-out .2s;
 	-moz-transition:all ease-in-out .2s;

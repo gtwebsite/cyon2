@@ -1465,7 +1465,7 @@ function cyon_contact_email() {
 		}
 
 		/* Send mail */
-		if( mail($_REQUEST['emailto'], $subject, $body, $headers) ) {
+		if( wp_mail($_REQUEST['emailto'], $subject, $body, $headers) ) {
 			echo 1;
 		} else {
 			echo 0;
@@ -1499,7 +1499,7 @@ function cyon_newsletter_email() {
 		}
 
 		/* Send mail */
-		if( mail($_REQUEST['emailto'], $subject, $body, $headers) ) {
+		if( wp_mail($_REQUEST['emailto'], $subject, $body, $headers) ) {
 			echo 1;
 		} else {
 			echo 0;

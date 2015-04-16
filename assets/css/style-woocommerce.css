@@ -273,7 +273,7 @@ dl.customer_details dd {
 
 .col2-set { margin-bottom:20px; }
 .col2-set .col-1 { float:left; width:47%; overflow:visible; }
-.col2-set .col-2 { float:right; width:47%; overflow:visible; margin-top:-22px; }
+.col2-set .col-2 { float:right; width:47%; overflow:visible; }
 .col2-set .col-2 .notes { width:97%; }
 .addresses .col-2 { margin-top:0; }
 
