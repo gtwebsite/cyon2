@@ -110,20 +110,14 @@ function cyon_carousel( $atts, $content = null ) {
 	}
 	
 	$carousel_content = array('
-		<div class="carousel" id="carousel-'.$instance.'" style="width:'.$atts['width'].';"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-container" style="height:'.$atts['height'].'px"><div class="swiper-wrapper">'.do_shortcode($content).'</div></div></div>
+		<div class="carousel" id="carousel-'.$instance.'" style="width:'.$atts['width'].';"><a class="swiper-button-prev swiper-button-prev-'.$instance.'" href="#"></a><a class="swiper-button-next swiper-button-next-'.$instance.'" href="#"></a><div class="swiper-container" style="height:'.$atts['height'].'px"><div class="swiper-wrapper">'.do_shortcode($content).'</div></div></div>
 		<script type="text/javascript">
 			jQuery(document).ready(function(){
 				var cyonCarousel'.$instance.' = jQuery(\'#carousel-'.$instance.' .swiper-container\').swiper({'.$loop.'
 					slidesPerGroup: '.$atts['slidesperview'].',
-					slidesPerView: '.$atts['slidesperview'].'
-				});
-				jQuery(\'#carousel-'.$instance.' .swiper-left\').on(\'click\', function(e){
-					e.preventDefault();
-					cyonCarousel'.$instance.'.swipePrev();
-				});
-				jQuery(\'#carousel-'.$instance.' .swiper-right\').on(\'click\', function(e){
-					e.preventDefault();
-					cyonCarousel'.$instance.'.swipeNext();
+					slidesPerView: '.$atts['slidesperview'].',
+			        nextButton: \'.swiper-button-next-'.$instance.'\',
+			        prevButton: \'.swiper-button-prev-'.$instance.'\'
 				});
 			});
 		</script>

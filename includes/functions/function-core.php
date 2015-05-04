@@ -767,8 +767,6 @@ function cyon_homepage_blocks(){
 
 /* =Homepage Block Slider
 ----------------------------------------------- */
-/* =Homepage Block Slider
------------------------------------------------ */
 if(!function_exists('cyon_home_block_slider')) {
 function cyon_home_block_slider(){
 	global $data;
@@ -818,7 +816,7 @@ function cyon_home_block_slider(){
 			}
 			echo '</div>';
 		} else {
-			echo '<div class="block swiper" id="slider-block"><a class="swiper-left" href="#"><span class="icon-chevron-left"></span></a><a class="swiper-right" href="#"><span class="icon-chevron-right"></span></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
+			echo '<div class="block swiper" id="slider-block"><a class="swiper-button-next" href="#"></a><a class="swiper-button-prev" href="#"></a><div class="swiper-pager"></div><div class="swiper-container"><div class="swiper-wrapper">';
 			foreach ($slides as $slide) {
 				if($slide['url']!=''){
 					echo '<div class="swiper-slide"><div class="swiper-bg" style="background: url('.$slide['url'].') 50% 50% no-repeat; background-size: cover;">';

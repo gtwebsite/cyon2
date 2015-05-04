@@ -35,22 +35,18 @@ jQuery(document).ready(function(){
 	var cyonSwipe = [];
 	jQuery('.swiper').each(function(index){
 		jQuery(this).find('.swiper-pager').addClass('swiper-pager-' + index);
+		jQuery(this).find('.swiper-button-next').addClass('swiper-button-next-' + index);
+		jQuery(this).find('.swiper-button-prev').addClass('swiper-button-prev-' + index);
 		cyonSwipe[index] = jQuery(this).find('.swiper-container').swiper({
 			autoplay:Math.floor(Math.random() * 6000) + 4000,
 			loop: true,
 			calculateHeight: true,
 			pagination: '.swiper-pager-' + index,
-			paginationClickable: true
+			paginationClickable: true,
+	        nextButton: '.swiper-button-next-' + index,
+	        prevButton: '.swiper-button-prev-' + index
 		});
 	});
-	jQuery('.swiper .swiper-left').on('click', function(e){
-		e.preventDefault();
-		cyonSwipe[jQuery('.swiper-left').index(this)].swipePrev();
-	})
-	jQuery('.swiper .swiper-right').on('click', function(e){
-		e.preventDefault();
-		cyonSwipe[jQuery('.swiper-right').index(this)].swipeNext();
-	})
 
 			
 });

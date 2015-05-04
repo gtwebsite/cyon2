@@ -10,6 +10,10 @@
 
 == Changelog ==
 
+= 2.4.0 =
+* Use wp_mail instead of mail
+* Update Swiper 3.0.6
+
 = 2.3.0 =
 * Updated core HTML/CSS
 * Updated Swiper 2.7

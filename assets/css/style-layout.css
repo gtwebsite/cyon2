@@ -50,9 +50,10 @@ pre {
 .hide-text {
 	display:none;
 }
-a, input, button, select, textarea, img, h1, h2, h3 {
+a, a:active, a:focus, input, button, select, textarea, img, h1, h2, h3 {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-touch-callout: none;
+	outline: 0;
 }
 img, input[type=radio], input[type=checkbox] {
 	-webkit-user-select: none;
@@ -933,10 +934,6 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 .swiper, .carousel, .swiper-slide {
 	position:relative;
 }
-.swiper-wrapper {
-	height:0;
-	overflow:hidden;
-}
 .swiper-caption {
 	position:absolute;
 	bottom:0;
@@ -951,55 +948,17 @@ table.table th, table.table td, .shop_table th, .shop_table td {
 	color:#fff;
 	margin:0;
 }
-
-.swiper-right, .swiper-left {
-	position:absolute;
-	z-index:100;
-	top:50%;
-	display:block;
-	width:30px;
-	height:30px;
-	line-height:30px;
-	font-size:30px;
-	text-align:center;
-	margin-top:-15px;
-	color:#000;
-	opacity:0.5;
-	-webkit-backface-visibility: hidden;
-}
-.swiper-right span, .swiper-left span {
-	padding-right:0;
-}
-.swiper-right:hover, .swiper-left:hover {
-	color:#666;
-}
-.swiper-right {
-	right:-40px;
-}
-.swiper-left {
-	left:-40px;
-}
-.swiper-pager{
+.swiper-pager {
 	position:absolute;
 	z-index:100;
 	right:5px;
 	top:5px;
 }
-.swiper-pagination-switch{
-	display:inline-block;
-	width:10px;
-	height:10px;
-	border-radius:10px;
-	background:#000;
-	margin-left:5px;
-	opacity:0.5;
-	cursor:pointer;
+.swiper-pagination-bullet {
+	margin-left: 3px;
 }
-.swiper-visible-switch{
-	background:#aaa;
-}
-.swiper-active-switch{
-	background:#fff;
+.swiper-bg {
+	background: none!important;
 }
 
 

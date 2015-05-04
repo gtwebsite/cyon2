@@ -164,12 +164,12 @@ function cyon_formatter($content) {
 }
 
 // Remove the 2 main auto-formatters
-remove_filter('the_content', 'wpautop');
-remove_filter('the_content', 'wptexturize');
+//remove_filter('the_content', 'wpautop');
+//remove_filter('the_content', 'wptexturize');
 
 // Before displaying for viewing, apply this function
-add_filter('the_content', 'cyon_formatter', 99);
-add_filter('widget_text', 'cyon_formatter', 99);
+//add_filter('the_content', 'cyon_formatter', 99);
+//add_filter('widget_text', 'cyon_formatter', 99);
 
 //Long posts should require a higher limit, see http://core.trac.wordpress.org/ticket/8553
 @ini_set('pcre.backtrack_limit', 500000);
